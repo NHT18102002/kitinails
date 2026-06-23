@@ -1,0 +1,317 @@
+/* Foundation */
+:root {
+  --foundation-page-gutter-mobile: 1.8rem;
+  --foundation-page-gutter-desktop: clamp(3.2rem, 4vw, 5.6rem);
+  --foundation-section-gap-mobile: max(var(--spacing-sections-mobile, 0rem), 3.2rem);
+  --foundation-section-gap-desktop: max(var(--spacing-sections-desktop, 0rem), 4.8rem);
+  --foundation-border-subtle: rgba(var(--color-foreground), 0.1);
+  --foundation-border-medium: rgba(var(--color-foreground), 0.18);
+  --foundation-surface-soft: rgba(var(--color-background), 0.96);
+  --foundation-shadow-soft: 0 1rem 2.8rem rgba(var(--color-shadow), 0.08);
+  --foundation-shadow-strong: 0 1.6rem 3.8rem rgba(var(--color-shadow), 0.12);
+  --foundation-radius-card: max(var(--product-card-corner-radius, 0rem), 0.8rem);
+  --foundation-radius-control: max(var(--buttons-radius, 0rem), 0.8rem);
+  --foundation-focus-ring: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.55rem rgba(var(--color-foreground), 0.24);
+}
+
+body.gradient {
+  background:
+    radial-gradient(circle at 50% -8rem, rgba(var(--color-background-contrast), 0.08), transparent 36rem),
+    linear-gradient(180deg, rgba(var(--color-background), 0.98), rgb(var(--color-background)));
+}
+
+#MainContent .page-width,
+#MainContent .page-width-desktop,
+#MainContent .page-width-tablet,
+.shopify-section-group-footer-group .page-width,
+.shopify-section-group-footer-group .page-width-desktop,
+.shopify-section-group-footer-group .page-width-tablet {
+  padding-left: var(--foundation-page-gutter-mobile);
+  padding-right: var(--foundation-page-gutter-mobile);
+}
+
+.content-for-layout > .shopify-section {
+  scroll-margin-top: 8rem;
+}
+
+.content-for-layout > .shopify-section + .shopify-section {
+  margin-top: var(--foundation-section-gap-mobile);
+}
+
+/* Typography */
+body,
+.rte,
+.article-template__content,
+.product__description {
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4 {
+  letter-spacing: 0;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.title,
+.banner__heading,
+.rich-text__heading,
+.main-page-title,
+.collection-hero__title {
+  max-width: 18ch;
+}
+
+.rte p,
+.product__description p {
+  max-width: 66ch;
+}
+
+.rte p:not(:last-child),
+.rte ul:not(:last-child),
+.rte ol:not(:last-child),
+.product__description p:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.caption-with-letter-spacing,
+.caption-large,
+.subtitle {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Buttons and controls */
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
+  min-height: 4.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  transition:
+    box-shadow var(--duration-default) ease,
+    transform var(--duration-short) ease,
+    background-color var(--duration-default) ease,
+    color var(--duration-default) ease;
+}
+
+.button:after,
+.shopify-challenge__button:after,
+.customer button:after,
+button.shopify-payment-button__button--unbranded:after {
+  border-radius: max(var(--buttons-radius-outset, 0rem), var(--foundation-radius-control));
+}
+
+.button:not([disabled]):is(:hover, :focus-visible),
+.shopify-challenge__button:not([disabled]):is(:hover, :focus-visible),
+.customer button:not([disabled]):is(:hover, :focus-visible),
+button.shopify-payment-button__button--unbranded:not([disabled]):is(:hover, :focus-visible) {
+  box-shadow: var(--foundation-shadow-soft);
+  transform: translateY(-0.1rem);
+}
+
+.button--secondary:not([disabled]):is(:hover, :focus-visible),
+.button--tertiary:not([disabled]):is(:hover, :focus-visible) {
+  color: rgb(var(--color-foreground));
+}
+
+.field:after,
+.select:after,
+.customer .field:after,
+.localization-form__select:after {
+  border-radius: max(var(--inputs-radius, 0rem), 0.8rem);
+}
+
+.field__input,
+.select__select,
+.customer .field input,
+.customer select,
+.customer textarea,
+textarea {
+  min-height: 5rem;
+  background-color: var(--foundation-surface-soft);
+  transition:
+    box-shadow var(--duration-default) ease,
+    border-color var(--duration-default) ease,
+    background-color var(--duration-default) ease;
+}
+
+.field:hover:after,
+.select:hover:after,
+.customer .field:hover:after,
+.field:focus-within:after,
+.select:focus-within:after,
+.customer .field:focus-within:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) var(--foundation-border-medium);
+}
+
+.quantity {
+  border-color: var(--foundation-border-subtle);
+  border-radius: max(var(--inputs-radius, 0rem), 0.8rem);
+}
+
+.quantity__button:is(:hover, :focus-visible) {
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+/* Cards and media */
+#MainContent .card--card,
+#MainContent .card--standard .card__inner,
+#MainContent .article-card .card__inner {
+  overflow: hidden;
+  border-color: var(--foundation-border-subtle);
+  border-radius: var(--foundation-radius-card);
+  background-color: var(--foundation-surface-soft);
+  box-shadow: var(--foundation-shadow-soft);
+}
+
+#MainContent .card--card:after,
+#MainContent .card--standard .card__inner:after,
+#MainContent .article-card .card__inner:after {
+  border-radius: inherit;
+}
+
+#MainContent .card .card__inner .card__media {
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(var(--color-background-contrast), 0.08), rgba(var(--color-background), 0.18)),
+    rgb(var(--color-background));
+}
+
+.contains-card--product .card__inner .card__media,
+.contains-card--collection .card__inner .card__media,
+.article-card .card__inner .card__media {
+  border-bottom: 1px solid var(--foundation-border-subtle);
+}
+
+.contains-card--product .card__inner .media {
+  box-shadow: inset 0 0 0 1px rgba(var(--color-foreground), 0.05);
+}
+
+.card-information {
+  padding-top: 1.6rem;
+}
+
+#MainContent .card-wrapper:is(:hover, :focus-within) .card--card,
+#MainContent .card-wrapper:is(:hover, :focus-within) .card--standard .card__inner,
+#MainContent .article-card-wrapper:is(:hover, :focus-within) .card__inner {
+  border-color: var(--foundation-border-medium);
+  box-shadow: var(--foundation-shadow-strong);
+}
+
+.card__heading a,
+.full-unstyled-link {
+  text-underline-offset: 0.22em;
+}
+
+/* Accessibility and focus */
+*:focus-visible {
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.75);
+  outline-offset: 0.3rem;
+  box-shadow: var(--foundation-focus-ring);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.button:focus-visible,
+.shopify-challenge__button:focus-visible,
+.shopify-payment-button__button--unbranded:focus-visible,
+.field__input:focus-visible,
+.select__select:focus-visible,
+.customer .field input:focus-visible,
+.customer select:focus-visible,
+.localization-form__select:focus-visible,
+.quantity__button:focus-visible,
+.quantity__input:focus-visible {
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.75);
+  outline-offset: 0.3rem;
+  box-shadow: var(--foundation-focus-ring);
+  border-radius: 0.8rem;
+}
+
+.card__heading a:focus-visible:after,
+.link:focus-visible,
+.underlined-link:focus-visible {
+  box-shadow: var(--foundation-focus-ring);
+}
+
+.card-wrapper:focus-within .card__heading a,
+.article-card-wrapper:focus-within .card__heading a {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .title,
+  .banner__heading,
+  .rich-text__heading,
+  .main-page-title,
+  .collection-hero__title {
+    max-width: 14ch;
+  }
+
+  .button,
+  .shopify-challenge__button,
+  .customer button,
+  button.shopify-payment-button__button--unbranded {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .card-information {
+    padding-top: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #MainContent .page-width,
+  #MainContent .page-width-desktop,
+  #MainContent .page-width-tablet,
+  .shopify-section-group-footer-group .page-width,
+  .shopify-section-group-footer-group .page-width-desktop,
+  .shopify-section-group-footer-group .page-width-tablet {
+    padding-left: var(--foundation-page-gutter-desktop);
+    padding-right: var(--foundation-page-gutter-desktop);
+  }
+
+  .content-for-layout > .shopify-section + .shopify-section {
+    margin-top: var(--foundation-section-gap-desktop);
+  }
+
+  .card-information {
+    padding-top: 1.8rem;
+  }
+}
+
+/* Future extension notes */
+/*
+  Reserve brand-specific color palette, logo, typography settings, product facts,
+  header shell changes, collection merchandising, and PDP guide UI for later phases.
+*/
