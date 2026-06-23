@@ -42,6 +42,12 @@
 >
   <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
     {%- paginate collection.products by section.settings.products_per_page -%}
+      {%- liquid
+        assign collection_has_active_filters = false
+        if collection.products_count != collection.all_products_count
+          assign collection_has_active_filters = true
+        endif
+      -%}
       {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
       {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
         <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
@@ -132,14 +138,27 @@
             <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
               <div class="loading-overlay gradient"></div>
               <div class="title-wrapper center">
-                <h2 class="title title--primary">
-                  {{ 'sections.collection_template.empty' | t -}}
-                  <br>
-                  {{
-                    'sections.collection_template.use_fewer_filters_html'
-                    | t: link: collection.url, class: 'underlined-link link'
-                  }}
-                </h2>
+                <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t -}}</h2>
+                {%- if collection_has_active_filters -%}
+                  <div class="rte">
+                    {{
+                      'sections.collection_template.use_fewer_filters_html'
+                      | t: link: collection.url, class: 'underlined-link link'
+                    }}
+                  </div>
+                {%- endif -%}
+                <div class="collection-empty__actions">
+                  {%- if collection_has_active_filters -%}
+                    <a href="{{ collection.url }}" class="button button--secondary">
+                      {{ 'products.facets.clear_all' | t }}
+                    </a>
+                  {%- endif -%}
+                  {%- if collection.url != routes.all_products_collection_url -%}
+                    <a href="{{ routes.all_products_collection_url }}" class="button button--secondary">
+                      {{ 'sections.featured_collection.view_all' | t }}
+                    </a>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
           {%- else -%}

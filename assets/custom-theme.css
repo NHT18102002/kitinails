@@ -257,6 +257,20 @@ textarea {
   padding-top: 1.6rem;
 }
 
+.product-grid .card__information,
+.template-search__results .card__information {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.product-card__details {
+  margin: 0.4rem 0 0;
+  overflow: hidden;
+  color: rgba(var(--color-foreground), 0.72);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #MainContent .card-wrapper:is(:hover, :focus-within) .card--card,
 #MainContent .card-wrapper:is(:hover, :focus-within) .card--standard .card__inner,
 #MainContent .article-card-wrapper:is(:hover, :focus-within) .card__inner {
@@ -563,6 +577,35 @@ textarea {
   margin-top: 0.8rem;
 }
 
+.facets__form,
+.facets__form-vertical {
+  gap: 1.6rem;
+}
+
+.active-facets {
+  gap: 0.8rem;
+}
+
+.mobile-facets__open {
+  min-height: 4.4rem;
+  border-radius: var(--shell-pill-radius);
+}
+
+.collection-empty__actions,
+.search-recovery__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+
+.search-recovery {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
 /* Accessibility and focus */
 *:focus-visible {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.75);
@@ -638,6 +681,10 @@ textarea:focus-visible,
 
   .card-information {
     padding-top: 1.4rem;
+  }
+
+  .product-card__details {
+    white-space: normal;
   }
 
   .header__icon {

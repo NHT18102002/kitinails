@@ -141,7 +141,14 @@
           {%- endif -%}
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
-          <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <div class="search-recovery">
+            <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+            <div class="search-recovery__actions">
+              <a href="{{ routes.all_products_collection_url }}" class="button button--secondary">
+                {{ 'sections.featured_collection.view_all' | t }}
+              </a>
+            </div>
+          </div>
         {%- endif -%}
       {%- endif -%}
     </div>
@@ -235,14 +242,21 @@
             >
               <div class="loading-overlay gradient"></div>
               <div class="title-wrapper center">
-                <h2 class="title title--primary">
-                  {{ 'sections.collection_template.empty' | t -}}
-                  <br>
+                <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t -}}</h2>
+                <div class="rte">
                   {{
                     'sections.collection_template.use_fewer_filters_html'
                     | t: link: search_url, class: 'underlined-link link'
                   }}
-                </h2>
+                </div>
+                <div class="collection-empty__actions">
+                  <a href="{{ search_url }}" class="button button--secondary">
+                    {{ 'products.facets.clear_all' | t }}
+                  </a>
+                  <a href="{{ routes.all_products_collection_url }}" class="button button--secondary">
+                    {{ 'sections.featured_collection.view_all' | t }}
+                  </a>
+                </div>
               </div>
             </div>
           {%- else -%}
