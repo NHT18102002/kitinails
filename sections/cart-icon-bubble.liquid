@@ -4,6 +4,7 @@
   <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
 {% endif %}
 
+<span class="header__icon-label">{{ 'templates.cart.cart' | t }}</span>
 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
   <div class="cart-count-bubble">

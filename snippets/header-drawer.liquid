@@ -49,6 +49,17 @@
                             </span>
                             {{ link.title | escape }}
                           </button>
+                          {%- if link.url != blank -%}
+                            <a
+                              href="{{ link.url }}"
+                              class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                              {% if link.current %}
+                                aria-current="page"
+                              {% endif %}
+                            >
+                              {{ link.title | escape }}
+                            </a>
+                          {%- endif -%}
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
@@ -90,6 +101,17 @@
                                         </span>
                                         {{ childlink.title | escape }}
                                       </button>
+                                      {%- if childlink.url != blank -%}
+                                        <a
+                                          href="{{ childlink.url }}"
+                                          class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                          {% if childlink.current %}
+                                            aria-current="page"
+                                          {% endif %}
+                                        >
+                                          {{ childlink.title | escape }}
+                                        </a>
+                                      {%- endif -%}
                                       <ul
                                         class="menu-drawer__menu list-menu"
                                         role="list"
@@ -137,6 +159,14 @@
           </nav>
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
+              <div class="menu-drawer__utility-menu">
+                <a href="{{ routes.search_url }}" class="menu-drawer__utility-link link focus-inset">
+                  {{ 'general.search.search' | t }}
+                </a>
+                <a href="{{ routes.cart_url }}" class="menu-drawer__utility-link link focus-inset">
+                  {{ 'templates.cart.cart' | t }}
+                </a>
+              </div>
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
                 class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
@@ -165,10 +195,21 @@
                   endif
                 -%}
               </a>
+            {%- else -%}
+              <div class="menu-drawer__utility-menu">
+                <a href="{{ routes.search_url }}" class="menu-drawer__utility-link link focus-inset">
+                  {{ 'general.search.search' | t }}
+                </a>
+                <a href="{{ routes.cart_url }}" class="menu-drawer__utility-link link focus-inset">
+                  {{ 'templates.cart.cart' | t }}
+                </a>
+              </div>
             {%- endif -%}
-            {%- if localization.available_countries or localization.available_languages -%}
+            {%- if section.settings.enable_country_selector and localization.available_countries.size > 1
+              or section.settings.enable_language_selector and localization.available_languages.size > 1
+            -%}
               <div class="menu-drawer__localization header-localization">
-                {%- if localization.available_countries and localization.available_countries.size > 1 -%}
+                {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
                   <localization-form>
                     {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
                       <div>
@@ -181,7 +222,7 @@
                   </localization-form>
                 {% endif %}
 
-                {%- if localization.available_languages and localization.available_languages.size > 1 -%}
+                {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
                   <localization-form>
                     {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
                       <div>

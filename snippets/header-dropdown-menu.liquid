@@ -8,7 +8,7 @@
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
-      <li>
+      <li class="header__menu-list-item{% if link.links != blank %} header__menu-list-item--has-children{% endif %}">
         {%- if link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}">
@@ -31,8 +31,21 @@
                 role="list"
                 tabindex="-1"
               >
+                {%- if link.url != blank -%}
+                  <li class="header__submenu-item header__submenu-item--parent">
+                    <a
+                      href="{{ link.url }}"
+                      class="header__menu-item header__submenu-parent-link list-menu__item link link--text focus-inset caption-large{% if link.current %} list-menu__item--active{% endif %}"
+                      {% if link.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{ link.title | escape }}
+                    </a>
+                  </li>
+                {%- endif -%}
                 {%- for childlink in link.links -%}
-                  <li>
+                  <li class="header__submenu-item{% if childlink.links != blank %} header__submenu-item--has-children{% endif %}">
                     {%- if childlink.links == blank -%}
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
@@ -57,6 +70,19 @@
                           id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                           class="header__submenu list-menu motion-reduce"
                         >
+                          {%- if childlink.url != blank -%}
+                            <li class="header__submenu-item header__submenu-item--parent">
+                              <a
+                                href="{{ childlink.url }}"
+                                class="header__menu-item header__submenu-parent-link list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                                {% if childlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ childlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endif -%}
                           {%- for grandchildlink in childlink.links -%}
                             <li>
                               <a

@@ -8,7 +8,7 @@
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
-      <li>
+      <li class="header__menu-list-item{% if link.links != blank %} header__menu-list-item--has-children{% endif %}">
         {%- if link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
@@ -30,12 +30,28 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+                {%- if link.url != blank -%}
+                  <div class="mega-menu__overview page-width">
+                    <a
+                      href="{{ link.url }}"
+                      class="mega-menu__overview-link link focus-inset{% if link.current %} mega-menu__overview-link--active{% endif %}"
+                      {% if link.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      <span>{{ link.title | escape }}</span>
+                      <span class="svg-wrapper">
+                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                      </span>
+                    </a>
+                  </div>
+                {%- endif -%}
                 <ul
                   class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
                 >
                   {%- for childlink in link.links -%}
-                    <li>
+                    <li class="mega-menu__item{% if childlink.links != blank %} mega-menu__item--nested{% endif %}">
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
@@ -47,7 +63,7 @@
                         {{ childlink.title | escape }}
                       </a>
                       {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
+                        <ul class="mega-menu__child-list list-unstyled" role="list">
                           {%- for grandchildlink in childlink.links -%}
                             <li>
                               <a
