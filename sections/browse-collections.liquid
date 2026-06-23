@@ -43,7 +43,7 @@
   endif
 -%}
 
-{%- if visible_blocks > 0 -%}
+{%- if visible_blocks > 1 -%}
   <div class="browse-collections color-{{ section.settings.color_scheme }} gradient">
     <div class="page-width section-{{ section.id }}-padding">
       {%- if section.settings.title != blank or section.settings.text != blank -%}
@@ -180,9 +180,15 @@
             {{ section.settings.title }}
           </h2>
         {%- endif -%}
-        <p class="browse-collections__placeholder-note">
-          Add collection blocks to show browse tiles on the homepage.
-        </p>
+        {%- if visible_blocks == 1 -%}
+          <p class="browse-collections__placeholder-note">
+            Add one more collection block to reach the approved 2 to 6 tile range.
+          </p>
+        {%- else -%}
+          <p class="browse-collections__placeholder-note">
+            Add 2 to 6 collection blocks to show browse tiles on the homepage.
+          </p>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -193,7 +199,7 @@
   "name": "Browse collections",
   "tag": "section",
   "class": "section section-browse-collections",
-  "max_blocks": 8,
+  "max_blocks": 6,
   "disabled_on": {
     "groups": ["header", "footer"]
   },

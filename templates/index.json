@@ -7,7 +7,8 @@
           "type": "heading",
           "settings": {
             "heading": "Find your next press-on set",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
         "text": {

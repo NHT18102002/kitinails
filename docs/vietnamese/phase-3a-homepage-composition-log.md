@@ -60,7 +60,7 @@ Behavior chính:
 - tile link toàn khối tới collection đã chọn
 - block không có collection sẽ không render trên storefront thường
 - trong Theme Editor design mode, block chưa chọn collection hiện trạng thái placeholder an toàn để merchant cấu hình
-- section tự co giãn tốt với 2-8 tiles
+- section tự co giãn tốt với 2-6 tiles
 
 ## 5. Theme Editor controls available
 
@@ -191,7 +191,7 @@ Theme Editor note:
 - Chưa có featured products collection thật, shape collections, length collections, accessories collection hoặc curated bundle collection để bật các homepage modules data-dependent.
 - Trust/education content vẫn chưa có approved copy thực tế cho size/application/care/shipping/support.
 - Newsletter copy mới chỉ là baseline neutral copy, chưa gắn incentive hay provider-specific behavior.
-- Hero main headline chưa thể là semantic `h1` riêng nếu vẫn giữ nguyên Dawn `image-banner.liquid`.
+- Limitation semantic `h1` của hero đã được xử lý ở Phase 3A.1; các limitation còn lại vẫn là brand/content/data dependent.
 
 ## 11. Required merchant inputs before Phase 3B population
 
@@ -217,3 +217,48 @@ Lý do:
 - homepage shell và reusable browse section đã sẵn
 - product taxonomy/metafield foundation đã có
 - bước tiếp theo hợp lý là collection grid, filters, sort, product-card rules, quick-add safety, và search/discovery parity
+
+## 13. Phase 3A.1 semantic and schema cleanup
+
+### What changed
+
+- `sections/image-banner.liquid` được extend bằng setting `heading_tag` giới hạn ở `h1` hoặc `h2`, mặc định là `h2`.
+- Homepage hero instance trong `templates/index.json` được set `heading_tag: h1` để hero headline trở thành semantic page heading trong main content.
+- `sections/header.liquid` được chỉnh tối thiểu để brand/logo wrapper trên homepage dùng `div.header__heading` thay vì `h1`, giữ nguyên styling header hiện có.
+- `sections/browse-collections.liquid` được siết lại theo constraint đã duyệt: schema `max_blocks` là `6`, storefront chỉ render bình thường khi có từ 2 tile hợp lệ trở lên, và Theme Editor placeholder nhắc đúng range 2-6.
+
+### Why the H1 correction was necessary
+
+Phase 3A đã xác minh một lệch semantic quan trọng của Dawn: `image-banner` cho phép chọn `heading_size: h1` nhưng vẫn render tag thật là `h2`, trong khi header brand/logo lại đang là `h1` trên homepage. Kết quả là homepage có `h1` nằm ở chrome của header thay vì ở nội dung chính, không khớp với mục tiêu semantic và accessibility của storefront.
+
+### How exactly one meaningful H1 is ensured on homepage
+
+- Homepage hero heading là block duy nhất trong `templates/index.json` được set `heading_tag: h1`.
+- `image-banner` mặc định vẫn giữ semantic tag là `h2` cho các use case khác, nên patch không đổi hành vi chung của Dawn ngoài những instance được opt in.
+- Header brand/logo trên homepage không còn render bằng `h1`; wrapper chỉ còn là `div.header__heading`.
+- Kết quả sau patch: homepage chỉ còn đúng một `h1`, nằm trong `main` và là hero heading.
+
+### Browse section tile-limit correction
+
+- Range được chốt cho `browse-collections` là 2-6 tile.
+- Schema block limit hiện là `6`.
+- Nếu merchant mới cấu hình 1 collection block, section không render ngoài storefront thường; trong Theme Editor sẽ hiện note yêu cầu thêm một block nữa để đạt range đã duyệt.
+- Layout desktop/mobile hiện tại vẫn dùng cùng settings cũ và wrap ổn trong phạm vi 2-6 block.
+
+### Files changed
+
+- `sections/header.liquid`
+- `sections/image-banner.liquid`
+- `sections/browse-collections.liquid`
+- `templates/index.json`
+- `docs/vietnamese/phase-3a-homepage-composition-log.md`
+
+### Validation results
+
+- `shopify theme check`: pass, `170 files inspected`, `8 warnings`, `0 errors`; 8 warnings còn lại là baseline warnings của Dawn.
+- Local preview: kiểm tra trên `http://127.0.0.1:9293/` thành công ở desktop mặc định `1280x720` và mobile `390x844`.
+- Homepage DOM: đúng `1` thẻ `h1`, text là `Find your next press-on set`, nằm trong `main`; header không còn `h1`.
+- Header wrapper trên homepage hiện là `DIV.header__heading`; hero heading render tag thật là `H1`.
+- Collection page `http://127.0.0.1:9293/collections/all` và product page `http://127.0.0.1:9293/products/gift-card` vẫn giữ `1` main-content `h1` và không có `h1` trong header.
+- Keyboard evidence: hero CTA và header logo link đều là native anchor có `href`, `tabIndex: 0`, visible, và automation có thể focus trực tiếp vào từng link; browser runtime vẫn không replay ổn định full `Tab` traversal/Enter navigation nên keyboard proof được ghi nhận theo native semantics + focusability.
+- Browser console check trên homepage: không có `error` hoặc `warn`.
