@@ -1,0 +1,50 @@
+{%- assign size_guide = product.metafields.custom.size_guide_group.value -%}
+{%- if size_guide != blank -%}
+  {%- assign size_guide_title = size_guide.title.value | default: size_guide.title | default: '' -%}
+  {%- assign measurement_unit = size_guide.measurement_unit.value | default: size_guide.measurement_unit -%}
+  <div class="product-size-guide quick-add-hidden">
+    <modal-opener
+      class="product-size-guide__opener"
+      data-modal="#ProductSizeGuide-{{ section_id }}"
+    >
+      <button
+        type="button"
+        class="product-popup-modal__button link"
+        aria-haspopup="dialog"
+      >
+        {{ 'products.product.size_guide' | t }}
+      </button>
+    </modal-opener>
+  </div>
+
+  <modal-dialog id="ProductSizeGuide-{{ section_id }}" class="product-popup-modal">
+    <div
+      role="dialog"
+      aria-label="{{ size_guide_title | default: 'products.product.size_guide' | t | escape }}"
+      aria-modal="true"
+      class="product-popup-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ProductSizeGuideClose-{{ section_id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </button>
+      <div class="product-popup-modal__content-info">
+        <h2 class="h2">{{ size_guide_title | default: 'products.product.size_guide' | t | escape }}</h2>
+        {%- if measurement_unit != blank -%}
+          <p class="caption-with-letter-spacing">{{ measurement_unit | escape }}</p>
+        {%- endif -%}
+        {%- if size_guide.content != blank -%}
+          {{ size_guide.content | metafield_tag }}
+        {%- endif -%}
+        {%- if size_guide.measuring_instructions != blank -%}
+          {{ size_guide.measuring_instructions | metafield_tag }}
+        {%- endif -%}
+      </div>
+    </div>
+  </modal-dialog>
+{%- endif -%}

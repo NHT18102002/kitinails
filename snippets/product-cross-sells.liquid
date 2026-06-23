@@ -1,0 +1,29 @@
+{%- assign accessory_products = product.metafields.custom.cross_sell_accessories.value -%}
+
+{%- if accessory_products != blank -%}
+  <div class="product-cross-sells quick-add-hidden">
+    <div class="summary__title">
+      <h2 class="h4 accordion__title">{{ 'products.product.recommended_accessories' | t }}</h2>
+    </div>
+    <ul class="product-cross-sells__grid list-unstyled" role="list">
+      {%- assign skip_card_product_styles = false -%}
+      {%- for accessory_product in accessory_products limit: 4 -%}
+        <li class="product-cross-sells__item">
+          {% render 'card-product',
+            card_product: accessory_product,
+            media_aspect_ratio: 'square',
+            show_secondary_image: false,
+            lazy_load: false,
+            skip_styles: skip_card_product_styles,
+            quick_add: 'standard',
+            section_id: section_id,
+            horizontal_class: true,
+            horizontal_quick_add: true,
+            product_view_context: 'product_cross_sell'
+          %}
+        </li>
+        {%- assign skip_card_product_styles = true -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

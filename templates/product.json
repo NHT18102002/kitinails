@@ -13,6 +13,9 @@
         "title": {
           "type": "title"
         },
+        "rating": {
+          "type": "rating"
+        },
         "price": {
           "type": "price"
         },
@@ -46,6 +49,7 @@
       "block_order": [
         "vendor",
         "title",
+        "rating",
         "price",
         "variant_picker",
         "quantity_selector",
@@ -84,7 +88,7 @@
         "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,

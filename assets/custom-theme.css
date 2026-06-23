@@ -103,6 +103,69 @@ h4,
   margin-bottom: 1.6rem;
 }
 
+.product-facts,
+.product-cross-sells,
+.product-support-accordions {
+  margin-top: 1.8rem;
+}
+
+.product-facts {
+  padding: 1.6rem;
+  border: 0.1rem solid var(--foundation-border-subtle);
+  border-radius: var(--foundation-radius-panel);
+  background-color: var(--foundation-surface-soft);
+}
+
+.product-facts__list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.product-facts__item {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.product-facts__label,
+.product-size-guide__opener .product-popup-modal__button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.product-facts__value {
+  margin: 0;
+}
+
+.product-size-guide {
+  margin-top: 1rem;
+}
+
+.product-size-guide__opener {
+  display: inline-flex;
+}
+
+.product-support-accordions {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-support-accordions__list {
+  margin: 0;
+  padding-left: 1.8rem;
+}
+
+.product-support-accordions__list li + li {
+  margin-top: 0.8rem;
+}
+
+.product-cross-sells__grid {
+  display: grid;
+  gap: 1.6rem;
+  margin: 1.2rem 0 0;
+}
+
 .caption-with-letter-spacing,
 .caption-large,
 .subtitle {
@@ -722,6 +785,10 @@ textarea:focus-visible,
 
   .card-information {
     padding-top: 1.8rem;
+  }
+
+  .product-cross-sells__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

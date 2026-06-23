@@ -1,0 +1,41 @@
+{%- liquid
+  assign nail_shape = product.metafields.custom.nail_shape.value | default: product.metafields.custom.nail_shape
+  assign nail_length = product.metafields.custom.nail_length.value | default: product.metafields.custom.nail_length
+  assign finish_style = blank
+
+  if product.metafields.custom.finish_style.value != blank
+    assign finish_style = product.metafields.custom.finish_style.value | join: ', '
+  endif
+
+  assign has_product_facts = false
+  if nail_shape != blank or nail_length != blank or finish_style != blank
+    assign has_product_facts = true
+  endif
+-%}
+
+{%- if has_product_facts -%}
+  <div class="product-facts quick-add-hidden">
+    <dl class="product-facts__list" aria-label="{{ 'products.product.product_facts' | t }}">
+      {%- if nail_shape != blank -%}
+        <div class="product-facts__item">
+          <dt class="product-facts__label">{{ 'products.product.shape' | t }}</dt>
+          <dd class="product-facts__value">{{ nail_shape | escape }}</dd>
+        </div>
+      {%- endif -%}
+
+      {%- if nail_length != blank -%}
+        <div class="product-facts__item">
+          <dt class="product-facts__label">{{ 'products.product.length' | t }}</dt>
+          <dd class="product-facts__value">{{ nail_length | escape }}</dd>
+        </div>
+      {%- endif -%}
+
+      {%- if finish_style != blank -%}
+        <div class="product-facts__item">
+          <dt class="product-facts__label">{{ 'products.product.finish' | t }}</dt>
+          <dd class="product-facts__value">{{ finish_style | escape }}</dd>
+        </div>
+      {%- endif -%}
+    </dl>
+  </div>
+{%- endif -%}

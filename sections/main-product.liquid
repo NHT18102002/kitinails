@@ -141,6 +141,7 @@
                       {{ form | payment_terms }}
                     {%- endform -%}
                   </div>
+                  {% render 'product-facts', product: product %}
                 {%- when 'inventory' -%}
                   <p
                     class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -491,6 +492,7 @@
                     block: block,
                     product_form_id: product_form_id
                   %}
+                  {% render 'product-size-guide', product: product, section_id: section.id %}
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,
@@ -499,6 +501,8 @@
                     section_id: section.id,
                     show_pickup_availability: true
                   -%}
+                  {% render 'product-support-accordions', product: product, section_id: section.id %}
+                  {% render 'product-cross-sells', product: product, section_id: section.id %}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">

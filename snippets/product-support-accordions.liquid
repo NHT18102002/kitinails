@@ -1,0 +1,95 @@
+{%- liquid
+  assign included_items = product.metafields.custom.whats_included.value
+  assign application_guide = product.metafields.custom.application_instructions.value
+  assign care_guide = product.metafields.custom.care_instructions.value
+
+  assign application_title = application_guide.title.value | default: application_guide.title
+  assign application_method = application_guide.method_label.value | default: application_guide.method_label
+
+  assign care_title = care_guide.title.value | default: care_guide.title
+-%}
+
+{%- if included_items != blank or application_guide != blank or care_guide != blank -%}
+  <div class="product-support-accordions">
+    {%- if included_items != blank -%}
+      <div class="product__accordion accordion quick-add-hidden">
+        <details id="Details-WhatsIncluded-{{ section_id }}">
+          <summary>
+            <div class="summary__title">
+              {% render 'icon-accordion', icon: 'check_mark' %}
+              <h2 class="h4 accordion__title inline-richtext">{{ 'products.product.whats_included' | t }}</h2>
+            </div>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <div class="accordion__content rte" id="ProductAccordion-WhatsIncluded-{{ section_id }}">
+            <ul class="product-support-accordions__list">
+              {%- for item in included_items -%}
+                <li>{{ item | escape }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </details>
+      </div>
+    {%- endif -%}
+
+    {%- if application_guide != blank -%}
+      <div class="product__accordion accordion quick-add-hidden">
+        <details id="Details-ApplicationGuide-{{ section_id }}">
+          <summary>
+            <div class="summary__title">
+              {% render 'icon-accordion', icon: 'clipboard' %}
+              <h2 class="h4 accordion__title inline-richtext">
+                {{ application_title | default: 'products.product.application' | t | escape }}
+              </h2>
+            </div>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <div class="accordion__content rte" id="ProductAccordion-ApplicationGuide-{{ section_id }}">
+            {%- if application_method != blank -%}
+              <p class="caption-with-letter-spacing">{{ application_method | escape }}</p>
+            {%- endif -%}
+            {%- if application_guide.steps != blank -%}
+              {{ application_guide.steps | metafield_tag }}
+            {%- endif -%}
+            {%- if application_guide.timing_notes != blank -%}
+              {{ application_guide.timing_notes | metafield_tag }}
+            {%- endif -%}
+            {%- if application_guide.safety_notes != blank -%}
+              {{ application_guide.safety_notes | metafield_tag }}
+            {%- endif -%}
+          </div>
+        </details>
+      </div>
+    {%- endif -%}
+
+    {%- if care_guide != blank -%}
+      <div class="product__accordion accordion quick-add-hidden">
+        <details id="Details-CareGuide-{{ section_id }}">
+          <summary>
+            <div class="summary__title">
+              {% render 'icon-accordion', icon: 'washing' %}
+              <h2 class="h4 accordion__title inline-richtext">
+                {{ care_title | default: 'products.product.care_and_removal' | t | escape }}
+              </h2>
+            </div>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <div class="accordion__content rte" id="ProductAccordion-CareGuide-{{ section_id }}">
+            {%- if care_guide.care_steps != blank -%}
+              {{ care_guide.care_steps | metafield_tag }}
+            {%- endif -%}
+            {%- if care_guide.removal_steps != blank -%}
+              {{ care_guide.removal_steps | metafield_tag }}
+            {%- endif -%}
+            {%- if care_guide.storage_reuse_notes != blank -%}
+              {{ care_guide.storage_reuse_notes | metafield_tag }}
+            {%- endif -%}
+            {%- if care_guide.warning_notes != blank -%}
+              {{ care_guide.warning_notes | metafield_tag }}
+            {%- endif -%}
+          </div>
+        </details>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
