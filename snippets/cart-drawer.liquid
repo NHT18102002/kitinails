@@ -508,6 +508,9 @@
           </details>
         {%- endif -%}
 
+        {% render 'free-shipping-progress' %}
+        {% render 'cart-cross-sells', cart: cart, surface: 'drawer' %}
+
         <!-- Start blocks -->
         <!-- Subtotals -->
 

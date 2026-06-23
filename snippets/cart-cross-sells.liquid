@@ -1,0 +1,41 @@
+{%- liquid
+  assign accessory_products = blank
+
+  for item in cart.items
+    if item.product.metafields.custom.cross_sell_accessories.value != blank
+      assign accessory_products = item.product.metafields.custom.cross_sell_accessories.value
+      break
+    endif
+  endfor
+-%}
+
+{%- if accessory_products != blank -%}
+  <div class="cart-cross-sells cart-cross-sells--{{ surface | default: 'page' }}">
+    <h2 class="cart-cross-sells__heading h4">{{ 'sections.cart.recommended_accessories' | t }}</h2>
+    <ul class="cart-cross-sells__list list-unstyled" role="list">
+      {%- for accessory_product in accessory_products limit: 3 -%}
+        <li class="cart-cross-sells__item">
+          <a href="{{ accessory_product.url }}" class="cart-cross-sells__link">
+            {%- if accessory_product.featured_media -%}
+              <span class="cart-cross-sells__media">
+                {{
+                  accessory_product.featured_media
+                  | image_url: width: 160
+                  | image_tag:
+                    widths: '80, 120, 160',
+                    sizes: '7.2rem',
+                    class: 'cart-cross-sells__image',
+                    alt: accessory_product.featured_media.alt
+                }}
+              </span>
+            {%- endif -%}
+            <span class="cart-cross-sells__content">
+              <span class="cart-cross-sells__title">{{ accessory_product.title | escape }}</span>
+              <span class="cart-cross-sells__price">{{ accessory_product.price | money_with_currency }}</span>
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

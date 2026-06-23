@@ -37,6 +37,9 @@
         </cart-note>
       {%- endif -%}
 
+      {% render 'free-shipping-progress' %}
+      {% render 'cart-cross-sells', cart: cart, surface: 'page' %}
+
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}

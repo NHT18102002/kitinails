@@ -1435,6 +1435,17 @@
         "default": false
       },
       {
+        "type": "range",
+        "id": "free_shipping_threshold",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "unit": "$",
+        "label": "Free shipping threshold",
+        "info": "Enter the threshold in the store's primary currency. Leave at 0 to disable the progress message.",
+        "default": 0
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.cart.settings.cart_drawer.header"
       },
