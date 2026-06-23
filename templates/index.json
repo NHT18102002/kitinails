@@ -1,21 +1,28 @@
 {
   "sections": {
-    "image_banner": {
+    "hero": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Find your next press-on set",
+            "heading_size": "h1"
           }
         },
-        "button": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Explore the catalog, then browse by shape, length, and collection focus.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_label_1": "Shop collections",
+            "button_link_1": "shopify://collections",
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -24,52 +31,209 @@
       },
       "block_order": [
         "heading",
-        "button"
+        "text",
+        "buttons"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 10,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": true
       }
     },
-    "featured_collection": {
+    "featured_products": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "",
+        "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
         "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "browse_shape": {
+      "type": "browse-collections",
+      "disabled": true,
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "title": "Browse by shape",
+        "heading_size": "h2",
+        "text": "<p>Group shape-led collections so shoppers can head straight to their preferred silhouette.</p>",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "browse_length": {
+      "type": "browse-collections",
+      "disabled": true,
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "title": "Browse by length",
+        "heading_size": "h2",
+        "text": "<p>Use length-based collections to guide quick browsing for shorter, everyday, or longer looks.</p>",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "education": {
+      "type": "multicolumn",
+      "disabled": true,
+      "blocks": {
+        "size_guidance": {
+          "type": "column",
+          "settings": {
+            "title": "Size guidance",
+            "text": "<p>Use this space for approved sizing support once guide content is ready.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "application_help": {
+          "type": "column",
+          "settings": {
+            "title": "Application help",
+            "text": "<p>Share original prep and application guidance after merchant review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "care_support": {
+          "type": "column",
+          "settings": {
+            "title": "Care support",
+            "text": "<p>Add care, removal, or support education when approved content is available.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "size_guidance",
+        "application_help",
+        "care_support"
+      ],
+      "settings": {
+        "title": "Support the buying decision",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "featured_accessories": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Accessories and curated bundles",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay in the loop",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Share updates on new arrivals, future restocks, and approved launches.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 28,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "featured_products",
+    "browse_shape",
+    "browse_length",
+    "education",
+    "featured_accessories",
+    "newsletter"
   ]
 }

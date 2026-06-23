@@ -1,0 +1,116 @@
+.browse-collections__header {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 64rem;
+  margin-bottom: 2rem;
+}
+
+.browse-collections__description {
+  color: rgba(var(--color-foreground), 0.78);
+}
+
+.browse-collections__description p {
+  max-width: 56ch;
+}
+
+.browse-collections__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--browse-collections-columns-mobile), minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.browse-collections__item {
+  min-width: 0;
+}
+
+.browse-collections__tile {
+  display: grid;
+  height: 100%;
+  gap: 0;
+  overflow: hidden;
+  border: 0.1rem solid var(--foundation-border-subtle);
+  border-radius: var(--foundation-radius-card);
+  background-color: var(--foundation-surface-soft);
+  box-shadow: var(--foundation-shadow-soft);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-default) ease,
+    box-shadow var(--duration-default) ease,
+    transform var(--duration-short) ease;
+}
+
+.browse-collections__tile:is(:hover, :focus-visible) {
+  border-color: var(--foundation-border-medium);
+  box-shadow: var(--foundation-shadow-strong);
+  transform: translateY(-0.2rem);
+}
+
+.browse-collections__tile--disabled {
+  border-style: dashed;
+  transform: none;
+}
+
+.browse-collections__media {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(var(--color-background-contrast), 0.08), rgba(var(--color-background), 0.18)),
+    rgb(var(--color-background));
+}
+
+.browse-collections__media::before {
+  content: '';
+  display: block;
+  padding-bottom: var(--browse-collections-media-ratio, 125%);
+}
+
+.browse-collections__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.browse-collections__content {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 1.8rem;
+}
+
+.browse-collections__tile-title {
+  margin: 0;
+}
+
+.browse-collections__tile-text,
+.browse-collections__placeholder-note {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.browse-collections__placeholder-note {
+  font-size: 1.3rem;
+}
+
+.browse-collections__item--no-media .browse-collections__content {
+  min-height: 18rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 750px) {
+  .browse-collections__header {
+    margin-bottom: 2.4rem;
+  }
+
+  .browse-collections__content {
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .browse-collections__grid {
+    grid-template-columns: repeat(var(--browse-collections-columns-desktop), minmax(0, 1fr));
+    gap: 2rem;
+  }
+}

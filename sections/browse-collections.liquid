@@ -1,0 +1,368 @@
+{{ 'section-browse-collections.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign visible_blocks = 0
+  for block in section.blocks
+    if request.design_mode or block.settings.collection != blank
+      assign visible_blocks = visible_blocks | plus: 1
+    endif
+  endfor
+
+  assign columns_mobile = section.settings.columns_mobile | plus: 0
+  assign columns_desktop = section.settings.columns_desktop | plus: 0
+
+  if visible_blocks > 0
+    if columns_desktop > visible_blocks
+      assign columns_desktop = visible_blocks
+    endif
+    if columns_mobile > visible_blocks
+      assign columns_mobile = visible_blocks
+    endif
+  endif
+
+  if columns_mobile < 1
+    assign columns_mobile = 1
+  endif
+
+  if columns_desktop < 1
+    assign columns_desktop = 1
+  endif
+-%}
+
+{%- if visible_blocks > 0 -%}
+  <div class="browse-collections color-{{ section.settings.color_scheme }} gradient">
+    <div class="page-width section-{{ section.id }}-padding">
+      {%- if section.settings.title != blank or section.settings.text != blank -%}
+        <div class="browse-collections__header title-wrapper title-wrapper--no-top-margin">
+          {%- if section.settings.title != blank -%}
+            <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.title }}
+            </h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="browse-collections__description rte">
+              {{ section.settings.text }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {% capture sizes %}
+        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 12rem) / {{ columns_desktop }}),
+        (min-width: 990px) calc((100vw - 12rem) / {{ columns_desktop }}),
+        (min-width: 750px) calc((100vw - 8rem) / {{ columns_mobile }}),
+        calc((100vw - 4rem) / {{ columns_mobile }})
+      {% endcapture %}
+
+      <ul
+        class="browse-collections__grid list-unstyled"
+        role="list"
+        style="--browse-collections-columns-mobile: {{ columns_mobile }}; --browse-collections-columns-desktop: {{ columns_desktop }};"
+      >
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign tile_collection = block.settings.collection
+            assign has_collection = false
+            if tile_collection != blank
+              assign has_collection = true
+            endif
+
+            if has_collection == false and request.design_mode == false
+              continue
+            endif
+
+            assign tile_title = block.settings.custom_title | strip
+            if tile_title == blank and has_collection
+              assign tile_title = tile_collection.title
+            endif
+            if tile_title == blank
+              assign tile_title = 'Select a collection'
+            endif
+
+            assign tile_text = block.settings.text | strip
+            assign tile_image = block.settings.custom_image
+            if tile_image == blank and has_collection
+              assign tile_image = tile_collection.featured_image
+            endif
+
+            assign image_ratio = 1
+            if tile_image != blank
+              if section.settings.image_ratio == 'portrait'
+                assign image_ratio = 0.8
+              elsif section.settings.image_ratio == 'adapt'
+                assign image_ratio = tile_image.aspect_ratio
+              endif
+            endif
+            if image_ratio == 0 or image_ratio == blank
+              assign image_ratio = 1
+            endif
+
+            assign tile_alt = tile_title
+            if tile_image != blank and tile_image.alt != blank
+              assign tile_alt = tile_image.alt
+            endif
+          -%}
+
+          <li
+            class="browse-collections__item{% if tile_image == blank %} browse-collections__item--no-media{% endif %}{% unless has_collection %} browse-collections__item--placeholder{% endunless %}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if has_collection -%}
+              <a href="{{ tile_collection.url }}" class="browse-collections__tile link link--text focus-inset">
+            {%- else -%}
+              <div class="browse-collections__tile browse-collections__tile--disabled" aria-disabled="true">
+            {%- endif -%}
+              {%- if tile_image != blank -%}
+                <div
+                  class="browse-collections__media media"
+                  style="--browse-collections-media-ratio: {{ 1 | divided_by: image_ratio | times: 100 }}%;"
+                >
+                  {{
+                    tile_image
+                    | image_url: width: 2400
+                    | image_tag:
+                      widths: '320, 480, 640, 800, 960, 1200, 1600, 2000, 2400',
+                      sizes: sizes,
+                      alt: tile_alt,
+                      loading: 'lazy',
+                      class: 'browse-collections__image'
+                  }}
+                </div>
+              {%- endif -%}
+
+              <div class="browse-collections__content">
+                <h3 class="browse-collections__tile-title h4">
+                  {{ tile_title | escape }}
+                </h3>
+
+                {%- if tile_text != blank -%}
+                  <p class="browse-collections__tile-text">
+                    {{ tile_text | escape }}
+                  </p>
+                {%- endif -%}
+
+                {%- unless has_collection -%}
+                  <p class="browse-collections__placeholder-note">
+                    Select a collection for this tile in Theme Editor.
+                  </p>
+                {%- endunless -%}
+              </div>
+            {%- if has_collection -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- elsif request.design_mode -%}
+  <div class="browse-collections color-{{ section.settings.color_scheme }} gradient">
+    <div class="page-width section-{{ section.id }}-padding">
+      <div class="browse-collections__header title-wrapper title-wrapper--no-top-margin">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        <p class="browse-collections__placeholder-note">
+          Add collection blocks to show browse tiles on the homepage.
+        </p>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Browse collections",
+  "tag": "section",
+  "class": "section section-browse-collections",
+  "max_blocks": 8,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Browse collections"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        },
+        {
+          "value": "hxl",
+          "label": "Extra large"
+        },
+        {
+          "value": "hxxl",
+          "label": "2XL"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Supporting text"
+    },
+    {
+      "type": "header",
+      "content": "Tiles"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "portrait",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Mobile columns",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_tile",
+      "name": "Collection tile",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image override"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom title override"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Short supporting text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Browse collections",
+      "blocks": [
+        {
+          "type": "collection_tile"
+        },
+        {
+          "type": "collection_tile"
+        },
+        {
+          "type": "collection_tile"
+        },
+        {
+          "type": "collection_tile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
