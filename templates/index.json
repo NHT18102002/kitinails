@@ -50,20 +50,19 @@
     },
     "featured_products": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
-        "title": "Featured products",
+        "title": "Shop the current edit",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "",
-        "products_to_show": 4,
+        "collection": "all",
+        "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "outline",
+        "view_all_style": "link",
         "enable_desktop_slider": false,
         "swipe_on_mobile": false,
         "image_ratio": "portrait",
@@ -73,8 +72,8 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 24,
-        "padding_bottom": 24
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "browse_shape": {
@@ -113,13 +112,12 @@
     },
     "education": {
       "type": "multicolumn",
-      "disabled": true,
       "blocks": {
         "size_guidance": {
           "type": "column",
           "settings": {
-            "title": "Size guidance",
-            "text": "<p>Use this space for approved sizing support once guide content is ready.</p>",
+            "title": "Choose with more confidence",
+            "text": "<p>Compare shape, finish, and length details directly on the product page before you commit.</p>",
             "link_label": "",
             "link": ""
           }
@@ -127,8 +125,8 @@
         "application_help": {
           "type": "column",
           "settings": {
-            "title": "Application help",
-            "text": "<p>Share original prep and application guidance after merchant review.</p>",
+            "title": "Keep the path simple",
+            "text": "<p>Browse the full catalog first, then narrow down with filters when you already know the look you want.</p>",
             "link_label": "",
             "link": ""
           }
@@ -136,8 +134,8 @@
         "care_support": {
           "type": "column",
           "settings": {
-            "title": "Care support",
-            "text": "<p>Add care, removal, or support education when approved content is available.</p>",
+            "title": "Support stays close",
+            "text": "<p>Size guidance, application help, and aftercare content can surface next to the products that need it.</p>",
             "link_label": "",
             "link": ""
           }
@@ -149,7 +147,7 @@
         "care_support"
       ],
       "settings": {
-        "title": "Support the buying decision",
+        "title": "Built to feel easier to shop",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",

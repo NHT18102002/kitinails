@@ -32,6 +32,11 @@
 {%- liquid
   assign full_width = '100vw'
   assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+  assign homepage_fallback_collection = blank
+
+  if request.page_type == 'index' and section.settings.image == blank and section.settings.image_2 == blank
+    assign homepage_fallback_collection = collections['all']
+  endif
 
   if section.settings.image_behavior == 'ambient'
     assign half_width = '60vw'
@@ -83,9 +88,36 @@
       }}
     </div>
   {%- elsif section.settings.image_2 == blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
+    {%- if homepage_fallback_collection != blank and homepage_fallback_collection.products_count > 0 -%}
+      <div class="banner__media banner__media--product-collage media{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        <div class="banner__collage" aria-hidden="true">
+          {%- for hero_product in homepage_fallback_collection.products limit: 4 -%}
+            {%- liquid
+              assign hero_image = hero_product.featured_media | default: hero_product.images.first
+              if hero_image == blank
+                continue
+              endif
+            -%}
+            <div class="banner__collage-card banner__collage-card--{{ forloop.index }}">
+              {{
+                hero_image
+                | image_url: width: 1200
+                | image_tag:
+                  widths: '320, 480, 640, 800, 960, 1200',
+                  sizes: '(min-width: 990px) 20vw, (min-width: 750px) 28vw, 42vw',
+                  alt: hero_product.title,
+                  loading: 'eager',
+                  class: 'banner__collage-image'
+              }}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
   {%- endif -%}
   {%- if section.settings.image_2 != blank -%}
     <div class="banner__media media{% if section.settings.image != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">

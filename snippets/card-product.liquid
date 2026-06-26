@@ -53,7 +53,7 @@
     endif
     if card_length != blank
       if card_meta_line != blank
-        assign card_meta_line = card_meta_line | append: ' • '
+        assign card_meta_line = card_meta_line | append: ' / '
       endif
       assign card_meta_line = card_meta_line | append: card_length
     endif

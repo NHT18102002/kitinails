@@ -53,3 +53,6 @@ Desktop.ini
 
 # Theme exports and archives
 *.zip
+
+# Private clean-room visual references
+public/image-website/
