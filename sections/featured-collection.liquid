@@ -43,6 +43,10 @@
   if section.settings.collection != blank
     assign has_collection = true
   endif
+  assign is_homepage_best_sellers = false
+  if request.page_type == 'index' and has_collection and section.settings.collection.handle == 'best-sellers'
+    assign is_homepage_best_sellers = true
+  endif
 
   assign has_products = false
   if has_collection and section.settings.collection.products.size > 0
@@ -84,32 +88,49 @@
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
   <div
-    class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
+    class="collection featured-collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}{% if is_homepage_best_sellers %} featured-collection--homepage-best-sellers{% endif %}"
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
-      {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {{ section.settings.title }}
-        </h2>
-      {%- endif -%}
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
-        <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
-          {%- else -%}
-            {{ section.settings.description -}}
-          {%- endif %}
-        </div>
+    <div class="collection__title featured-collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+      <div class="collection__title-content">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank
+          or section.settings.show_description
+          and section.settings.collection.description != empty
+        -%}
+          <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {%- if section.settings.show_description -%}
+              {{ section.settings.collection.description }}
+            {%- else -%}
+              {{ section.settings.description -}}
+            {%- endif %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if is_homepage_best_sellers and section.settings.show_view_all -%}
+        <a
+          href="{{ section.settings.collection.url }}"
+          class="button featured-collection__header-link"
+          aria-label="Shop best sellers"
+        >
+          Shop best sellers
+        </a>
       {%- endif -%}
     </div>
 
     {%- if has_products -%}
-      <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <slider-component
+        class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if is_homepage_best_sellers %} featured-collection__slider featured-collection__slider--homepage-best-sellers{% endif %}"
+        {% if is_homepage_best_sellers %}
+          data-drag-scroll="homepage-best-sellers"
+        {% endif %}
+      >
       <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
@@ -118,6 +139,10 @@
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {% assign skip_card_product_styles = false %}
+        {% assign card_layout_context = '' %}
+        {% if is_homepage_best_sellers %}
+          {% assign card_layout_context = 'homepage-best-sellers' %}
+        {% endif %}
 
         {%- if section.settings.collection.products.size > 0 -%}
           {% assign lazy_load = false %}
@@ -145,6 +170,7 @@
                   skip_styles: skip_card_product_styles,
                   section_id: section.id,
                   quick_add: section.settings.quick_add,
+                  card_layout_context: card_layout_context,
                   product_view_context: 'collection'
                 %}
               </li>
@@ -154,7 +180,7 @@
         {%- endif -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons">
+        <div class="slider-buttons{% if is_homepage_best_sellers %} featured-collection__slider-buttons featured-collection__slider-buttons--homepage-best-sellers{% endif %}">
           <button
             type="button"
             class="slider-button slider-button--prev"
@@ -163,7 +189,11 @@
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+              {%- if is_homepage_best_sellers -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- else -%}
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              {%- endif -%}
             </span>
           </button>
           <div class="slider-counter caption">
@@ -180,7 +210,11 @@
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+              {%- if is_homepage_best_sellers -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- else -%}
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              {%- endif -%}
             </span>
           </button>
         </div>
@@ -198,7 +232,7 @@
       </div>
     {%- endif -%}
 
-    {%- if has_products and section.settings.show_view_all and more_in_collection -%}
+    {%- if has_products and section.settings.show_view_all and more_in_collection and is_homepage_best_sellers == false -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
           href="{{ section.settings.collection.url }}"

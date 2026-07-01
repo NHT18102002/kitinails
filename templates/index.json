@@ -6,7 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Find your next press-on set",
+            "heading": "Island Glow Club",
             "heading_size": "h1",
             "heading_tag": "h1"
           }
@@ -14,32 +14,39 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Explore the catalog, then browse by shape, length, and collection focus.",
+            "text": "Welcome to the glowiest club of the summer.",
             "text_style": "body"
           }
         },
         "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop collections",
-            "button_link_1": "shopify://collections",
+            "button_label_1": "SHOP SUMMER",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_label_2": "SHOP ALL NAILS",
+            "button_link_2": "shopify://collections/all",
+            "button_style_secondary_2": true
+          }
+        },
+        "review_badge": {
+          "type": "review_badge",
+          "settings": {
+            "badge_text": "4.9 from 5000+ Reviews"
           }
         }
       },
       "block_order": [
         "heading",
         "text",
-        "buttons"
+        "buttons",
+        "review_badge"
       ],
       "settings": {
         "image_overlay_opacity": 10,
         "image_height": "large",
         "desktop_content_position": "middle-left",
-        "show_text_box": true,
+        "show_text_box": false,
         "image_behavior": "none",
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-1",
@@ -51,34 +58,34 @@
     "featured_products": {
       "type": "featured-collection",
       "settings": {
-        "title": "Shop the current edit",
+        "title": "Best Sellers Loved by Thousands",
         "heading_size": "h2",
-        "description": "",
+        "description": "<p>Our most popular nail sets, chosen by over 100,000 customers. Proven styles that deliver salon-quality results—every time.</p>",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "best-sellers",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "swipe_on_mobile": true,
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
+        "show_rating": true,
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 28,
+        "padding_bottom": 36
       }
     },
     "browse_shape": {
       "type": "browse-collections",
-      "disabled": true,
+      "disabled": false,
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -95,7 +102,7 @@
     },
     "browse_length": {
       "type": "browse-collections",
-      "disabled": true,
+      "disabled": false,
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -165,7 +172,7 @@
     },
     "featured_accessories": {
       "type": "featured-collection",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "title": "Accessories and curated bundles",
         "heading_size": "h2",
@@ -224,15 +231,334 @@
         "padding_top": 28,
         "padding_bottom": 40
       }
+    },
+    "trust_row": {
+      "type": "ersa-icon-row",
+      "blocks": {
+        "handmade": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "title": "Handmade",
+            "text": "<p>Detailed press-on nail sets finished with a studio-inspired look.</p>"
+          }
+        },
+        "reusable": {
+          "type": "item",
+          "settings": {
+            "icon": "recycle",
+            "title": "Reusable",
+            "text": "<p>Designed for careful removal, storage and repeat wear.</p>"
+          }
+        },
+        "loved": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "title": "Last 4 weeks",
+            "text": "<p>Showcase recent demand, launches or best-selling styles.</p>"
+          }
+        },
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "text": "<p>Promote your current free shipping threshold and delivery promise.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "handmade",
+        "reusable",
+        "loved",
+        "shipping"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "testimonials": {
+      "type": "ersa-testimonials",
+      "blocks": {
+        "one": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "The nails looked polished, photographed beautifully and felt easy to wear.",
+            "author": "Verified customer"
+          }
+        },
+        "two": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Application was simple and the finished look felt like a salon appointment.",
+            "author": "Verified customer"
+          }
+        },
+        "three": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "A statement set that still felt lightweight enough for everyday plans.",
+            "author": "Verified customer"
+          }
+        }
+      },
+      "block_order": [
+        "one",
+        "two",
+        "three"
+      ],
+      "settings": {
+        "eyebrow": "Customer love",
+        "heading": "Let customers speak for us",
+        "heading_size": "h1",
+        "text": "<p>Use this editable section for reviews, social proof or press highlights.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "social_gallery": {
+      "type": "ersa-social-gallery",
+      "blocks": {
+        "look_1": {
+          "type": "image",
+          "settings": {
+            "caption": "@studio",
+            "link": ""
+          }
+        },
+        "look_2": {
+          "type": "image",
+          "settings": {
+            "caption": "@nails",
+            "link": ""
+          }
+        },
+        "look_3": {
+          "type": "image",
+          "settings": {
+            "caption": "@pressons",
+            "link": ""
+          }
+        },
+        "look_4": {
+          "type": "image",
+          "settings": {
+            "caption": "@inspo",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4"
+      ],
+      "settings": {
+        "heading": "Get Inspired by Every Look",
+        "heading_size": "h1",
+        "text": "<p>Add campaign shots, creator content or customer nail looks from the Theme Customizer.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "seo_h1": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<h1 class=\"visually-hidden\">Luxury Handmade Press-On Nails</h1>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I find my size?",
+            "icon": "ruler",
+            "row_content": "<p>Use this editable FAQ row to explain sizing, measuring and fit guidance for your nail sets.</p>",
+            "page": ""
+          }
+        },
+        "lasting": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long do press-on nails last?",
+            "icon": "heart",
+            "row_content": "<p>Explain expected wear time, application prep and care tips based on your products.</p>",
+            "page": ""
+          }
+        },
+        "reusable": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are the nails reusable?",
+            "icon": "recycle",
+            "row_content": "<p>Describe removal, cleaning and storage recommendations here.</p>",
+            "page": ""
+          }
+        },
+        "shipping": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where do you ship?",
+            "icon": "truck",
+            "row_content": "<p>Summarize shipping regions, thresholds and processing times, or link to a policy page.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "sizing",
+        "lasting",
+        "reusable",
+        "shipping"
+      ],
+      "settings": {
+        "caption": "Need help?",
+        "heading": "FAQs",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "as_seen_in": {
+      "type": "ersa-as-seen-in",
+      "blocks": {
+        "logo_1": { "type": "logo" },
+        "logo_2": { "type": "logo" },
+        "logo_3": { "type": "logo" },
+        "logo_4": { "type": "logo" },
+        "logo_5": { "type": "logo" }
+      },
+      "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5"],
+      "settings": {
+        "heading": "As Seen In",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "collection_grid": {
+      "type": "ersa-collection-grid",
+      "blocks": {
+        "col_1": { "type": "collection_card", "settings": { "title": "Best Sellers" } },
+        "col_2": { "type": "collection_card", "settings": { "title": "New Arrivals" } },
+        "col_3": { "type": "collection_card", "settings": { "title": "Floral Beauty" } },
+        "col_4": { "type": "collection_card", "settings": { "title": "Summer Collection" } }
+      },
+      "block_order": ["col_1", "col_2", "col_3", "col_4"],
+      "settings": {
+        "heading": "Curated for Your Style",
+        "heading_size": "h2",
+        "subheading": "Explore our handpicked collections",
+        "columns_desktop": 4,
+        "show_product_count": true,
+        "show_view_all": true,
+        "view_all_label": "View All Collections",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "reviews_carousel": {
+      "type": "ersa-reviews-carousel",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "Absolutely stunning!",
+            "review_text": "<p>I get compliments everywhere I go. The quality is amazing and they last so long. Best press-on nails I've ever tried!</p>",
+            "author_name": "Sarah M.",
+            "verified": true
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "Perfect fit every time",
+            "review_text": "<p>The sizing guide was super helpful and each set fits like they were custom made. Love the variety of designs available.</p>",
+            "author_name": "Jessica L.",
+            "verified": true
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "So easy to apply!",
+            "review_text": "<p>I was nervous about trying press-ons but these were so simple. They look like I just left the salon. Already ordered my next set!</p>",
+            "author_name": "Emily K.",
+            "verified": true
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "Worth every penny",
+            "review_text": "<p>These nails are beautiful and high quality. They lasted 3 weeks with no lifting. So much better than going to the nail salon!</p>",
+            "author_name": "Maria T.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3", "review_4"],
+      "settings": {
+        "eyebrow": "CUSTOMER REVIEWS",
+        "heading": "Loved by Thousands",
+        "heading_size": "h1",
+        "rating_text": "4.9 from 5000+ Reviews",
+        "subheading": "See what our customers are saying",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
+    "seo_h1",
     "hero",
+    "trust_row",
     "featured_products",
+    "collection_grid",
     "browse_shape",
     "browse_length",
-    "education",
+    "as_seen_in",
     "featured_accessories",
+    "education",
+    "reviews_carousel",
+    "testimonials",
+    "social_gallery",
+    "faq",
     "newsletter"
   ]
 }

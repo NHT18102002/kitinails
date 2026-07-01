@@ -4,12 +4,46 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "shop_menu": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "brand_menu": {
+          "type": "text",
+          "settings": {
+            "heading": "Brand",
+            "subtext": "<p><a href=\"/pages/about-us\">About us</a><br><a href=\"/pages/contact\">Contact us</a><br><a href=\"/blogs/news\">Blogs</a></p>"
+          }
+        },
+        "service_menu": {
+          "type": "text",
+          "settings": {
+            "heading": "Customer Service",
+            "subtext": "<p><a href=\"/pages/contact\">Help Center</a><br><a href=\"/policies/shipping-policy\">Shipping Policy</a><br><a href=\"/policies/refund-policy\">Returns & Exchanges</a></p>"
+          }
+        },
+        "footer_note": {
+          "type": "text",
+          "settings": {
+            "heading": "Ersa essentials",
+            "subtext": "<p>Use these editable footer blocks for shipping, sizing, care, rewards and support links.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shop_menu",
+        "brand_menu",
+        "service_menu",
+        "footer_note"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Subscribe to Our Newsletter",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
@@ -17,8 +51,8 @@
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 40
       }
     }
   },

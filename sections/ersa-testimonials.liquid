@@ -1,0 +1,59 @@
+{%- style -%}
+  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
+  @media screen and (min-width: 750px) { .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; } }
+{%- endstyle -%}
+
+<section class="ersa-testimonials color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="ersa-testimonials__inner page-width">
+    <div class="ersa-testimonials__header">
+      {%- if section.settings.eyebrow != blank -%}<p class="ersa-testimonials__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2 class="ersa-testimonials__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.text != blank -%}<div class="ersa-testimonials__text rte">{{ section.settings.text }}</div>{%- endif -%}
+    </div>
+    <div class="ersa-testimonials__grid">
+      {%- for block in section.blocks -%}
+        <figure class="ersa-testimonials__card" {{ block.shopify_attributes }}>
+          <div class="ersa-testimonials__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+            {%- for i in (1..5) -%}<span aria-hidden="true">бя</span>{%- endfor -%}
+          </div>
+          {%- if block.settings.quote != blank -%}<blockquote>{{ block.settings.quote }}</blockquote>{%- endif -%}
+          <figcaption>
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 96 | image_tag: loading: 'lazy', widths: '48, 72, 96', class: 'ersa-testimonials__avatar' }}
+            {%- endif -%}
+            <span>{{ block.settings.author }}</span>
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ersa testimonials",
+  "tag": "section",
+  "class": "section section-ersa-testimonials",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Customer love" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Let customers speak for us" },
+    { "type": "select", "id": "heading_size", "label": "Heading size", "default": "h1", "options": [ { "value": "h2", "label": "Small" }, { "value": "h1", "label": "Medium" }, { "value": "h0", "label": "Large" } ] },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Highlight real review quotes, press mentions or customer stories.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 56 }
+  ],
+  "blocks": [
+    { "type": "testimonial", "name": "Testimonial", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Avatar" },
+      { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Rating", "default": 5 },
+      { "type": "inline_richtext", "id": "quote", "label": "Quote", "default": "The set looked salon-fresh and was easy to apply at home." },
+      { "type": "text", "id": "author", "label": "Author", "default": "Verified customer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Ersa testimonials", "blocks": [ { "type": "testimonial" }, { "type": "testimonial" }, { "type": "testimonial" } ] }
+  ]
+}
+{% endschema %}

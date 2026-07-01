@@ -108,6 +108,7 @@
       assign has_app_block = true
     endif
   endfor
+  assign header_fallback_name = 'Ersa Nails'
 -%}
 
 {% liquid
@@ -172,7 +173,7 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">{{ header_fallback_name }}</span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -217,7 +218,7 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">{{ header_fallback_name }}</span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}

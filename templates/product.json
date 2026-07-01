@@ -37,6 +37,64 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "toolkit": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Complimentary Tool Kit Includes",
+            "icon": "box",
+            "content": "<p>Use this editable block to describe the application tools included with each set.</p>",
+            "page": ""
+          }
+        },
+        "how_to_use": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How to Use",
+            "icon": "clipboard",
+            "content": "<p>Clean, size, apply adhesive, press firmly, and avoid water immediately after application.</p>",
+            "page": ""
+          }
+        },
+        "ingredients": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Safe Ingredients",
+            "icon": "leaf",
+            "content": "<p>Add material, adhesive, care and safety information for your press-on nail products.</p>",
+            "page": ""
+          }
+        },
+        "shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping Policy",
+            "icon": "truck",
+            "content": "<p>Summarize processing times, shipping thresholds and delivery regions here.</p>",
+            "page": ""
+          }
+        },
+        "returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns & Exchanges",
+            "icon": "return",
+            "content": "<p>Explain your return policy, faulty item process and exchange rules here.</p>",
+            "page": ""
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Buy It With",
+            "make_collapsible_row": false,
+            "icon": "none",
+            "product_list_limit": 4,
+            "products_per_page": 4,
+            "pagination_style": "counter",
+            "image_ratio": "portrait",
+            "enable_quick_add": true
+          }
         }
       },
       "block_order": [
@@ -46,7 +104,13 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "complementary",
         "description",
+        "toolkit",
+        "how_to_use",
+        "ingredients",
+        "shipping",
+        "returns",
         "share"
       ],
       "settings": {
@@ -56,13 +120,13 @@
         "gallery_layout": "stacked",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "disclosures": {
@@ -77,17 +141,17 @@
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 48,
+        "padding_bottom": 56
       }
     }
   },
