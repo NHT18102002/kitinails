@@ -29,11 +29,24 @@ build/
 .tmp/
 tmp/
 coverage/
+test-results/
+.codex-temp/
+.codegraph/
+_edge-profile/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Local scrape/debug dumps
+ersanails*.html
+local_*.html
+ref_*.html
+extracted_css_vars.txt
+clean_css.py
+extract_css.py
+get_hero.py
 
 # OS files
 .DS_Store
@@ -56,3 +69,11 @@ Desktop.ini
 
 # Private clean-room visual references
 public/image-website/
+
+# Catalog import tooling outputs
+data/catalog/raw/
+data/catalog/assets/
+data/catalog/tmp/
+tools/catalog-import/.env
+tools/catalog-import/.env.*
+tools/catalog-import/config/import-approval.json
