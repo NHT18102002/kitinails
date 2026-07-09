@@ -92,13 +92,21 @@ class PredictiveSearch extends SearchForm {
       case 'ArrowDown':
         this.switchOption('down');
         break;
-      case 'Enter':
-        this.selectOption();
-        break;
     }
   }
 
   onKeydown(event) {
+    if (event.code === 'Enter') {
+      const selectedOption = this.querySelector(
+        '[aria-selected="true"] a, a[aria-selected="true"], button[aria-selected="true"]'
+      );
+
+      if (this.getAttribute('open') && selectedOption) {
+        event.preventDefault();
+        selectedOption.click();
+      }
+    }
+
     // Prevent the cursor from moving in the input when using the up and down arrow keys
     if (event.code === 'ArrowUp' || event.code === 'ArrowDown') {
       event.preventDefault();
@@ -126,7 +134,7 @@ class PredictiveSearch extends SearchForm {
 
     // Filter out hidden elements (duplicated page and article resources) thanks
     // to this https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
-    const allVisibleElements = Array.from(this.querySelectorAll('li, button.predictive-search__item')).filter(
+    const allVisibleElements = Array.from(this.querySelectorAll('li, button.predictive-search__item, a.predictive-search__item')).filter(
       (element) => element.offsetParent !== null
     );
     let activeElementIndex = 0;
@@ -162,7 +170,7 @@ class PredictiveSearch extends SearchForm {
   }
 
   selectOption() {
-    const selectedOption = this.querySelector('[aria-selected="true"] a, button[aria-selected="true"]');
+    const selectedOption = this.querySelector('[aria-selected="true"] a, a[aria-selected="true"], button[aria-selected="true"]');
 
     if (selectedOption) selectedOption.click();
   }
@@ -180,7 +188,16 @@ class PredictiveSearch extends SearchForm {
 
     const searchDeferred = this.dispatchSearchUpdateEvent(searchTerm);
 
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&section_id=predictive-search`, {
+    const searchParams = new URLSearchParams({
+      q: searchTerm,
+      section_id: 'predictive-search',
+      'resources[type]': 'product',
+      'resources[limit]': '8',
+      'resources[options][unavailable_products]': 'last',
+      'resources[options][fields]': 'title,product_type,variants.title,vendor,tag',
+    });
+
+    fetch(`${routes.predictive_search_url}?${searchParams.toString()}`, {
       signal: this.abortController.signal,
     })
       .then((response) => {
@@ -253,10 +270,20 @@ class PredictiveSearch extends SearchForm {
 
   renderSearchResults(resultsMarkup) {
     this.predictiveSearchResults.innerHTML = resultsMarkup;
+    this.updateSearchForTermLink();
     this.setAttribute('results', true);
 
     this.setLiveRegionResults();
     this.open();
+  }
+
+  updateSearchForTermLink() {
+    const searchForTermLink = this.querySelector('#predictive-search-option-search-keywords a');
+    const query = this.getQuery();
+
+    if (!searchForTermLink || !query) return;
+
+    searchForTermLink.href = SearchForm.buildProductSearchUrl(query);
   }
 
   setLiveRegionResults() {

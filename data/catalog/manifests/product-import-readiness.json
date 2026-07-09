@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-05T13:01:29.038Z",
+  "status": "pass",
+  "blockers": [],
+  "warnings": [
+    "merchantInputRequired",
+    "adminPrepDrift",
+    "unobservableSourceCollections"
+  ],
+  "summary": {
+    "approvedManifestSha256": "5e68351a2a590c0020ffd2341a7c853b4ec146ea385f4351c1238bb1c9ebca68",
+    "currentManifestSha256": "5e68351a2a590c0020ffd2341a7c853b4ec146ea385f4351c1238bb1c9ebca68",
+    "readyFileCount": 3645,
+    "uniqueAssetHashes": 3645,
+    "productCount": 591,
+    "variantCount": 2700,
+    "payloadStatus": "DRAFT",
+    "emptyApprovedCollections": [],
+    "unobservableSourceCollections": [
+      "mini",
+      "retrowave",
+      "zodiac"
+    ],
+    "merchantInputRequired": {
+      "totalProducts": 114,
+      "byField": {
+        "color": 95,
+        "shape": 70,
+        "length": 69,
+        "style": 89
+      },
+      "byCategory": {
+        "press_on_nails": 26,
+        "tool_accessory": 54,
+        "service_or_custom": 4,
+        "gift_card": 1,
+        "bundle": 28,
+        "other": 1
+      }
+    }
+  }
+}

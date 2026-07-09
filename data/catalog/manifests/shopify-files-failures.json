@@ -1,0 +1,698 @@
+{
+  "generatedAt": "2026-07-05T07:11:03.910Z",
+  "failures": [
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "0ebf30d6b431d43da80b4098f95528966988263ee29da8a908af853d3d2e841b",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\celestial-star\\07-celestial-star-0ebf30d6.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/af6b715f2aed42b6a857f4df0aa3a631.thumbnail.0000000000.jpg?v=1743157204",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "dc806857b5a66887931cdd8075ddd60534cb6b12e89a3a5e46831bb62b6bd993",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\neon-twist\\11-neon-twist-dc806857.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/e3cd4ccb3c444c458562fb5a4ebb3dad.thumbnail.0000000000.jpg?v=1743157208",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "22455f1a9bd938e401527d0dd646aa491554867e9f4ee5862c58eb046ecd7c43",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\sweetheart\\15-sweetheart-22455f1a.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/60ca5f895e884f769077cc307a6dba04.thumbnail.0000000000.jpg?v=1709277497",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "2f73e47e6c9a82432cf0154bb20b21d13d18dfbe1dff1e3d1ae9eb3b3dd0825f",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\qipao\\03-qipao-2f73e47e.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/cb728b9b43204023a0f1d04ee19b89a4.thumbnail.0000000000.jpg?v=1708678060",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "a13572afd7af7deffb4e3dd11a347cb2828fd925a8608a5244f8b81f4e18e6a6",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\qinghuaci\\03-qinghuaci-a13572af.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/eb29722b7c0d48babdf62defa2cfb46f.thumbnail.0000000000.jpg?v=1708678137",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "cba3d39d6077df947b976ba1b02a61ef58930e43a7771d6f69156e2cf7a6e656",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\olive-s\\04-olive-s-cba3d39d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/f8fa23d9dc99459b8cc986b9d9c3ede3.thumbnail.0000000000.jpg?v=1708678245",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "79d515fce4b0e7324825ee71c8832f02be157c76ad17d7807f806b967d9b1c18",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\porcelain-dragon\\03-porcelain-dragon-79d515fc.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/eb24623655ad44ad992a4c105935b863.thumbnail.0000000000.jpg?v=1708678381",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "9bb9e07c3356ed1d1768548ddca78f392463a907458c4f1c98d6c9173dea7087",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\lotus-fairy\\03-lotus-fairy-9bb9e07c.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/130d692de4cf432686a4b7996166e3e6.thumbnail.0000000000.jpg?v=1708678417",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "2a880d5abd801f08c85a035d3fd4a9775c9d07ecfcf23d6bf2db6638cb944fc0",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\blaze-dragon\\03-blaze-dragon-2a880d5a.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/0ae55b91af184c2db6a6f34bc0d423c0.thumbnail.0000000000.jpg?v=1708678556",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "bdde19b6e469230c4be977af56260613493f72fb5bf85ea3f96e0ec430484958",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\mamianqun\\03-mamianqun-bdde19b6.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/5e43d7dd9f2a44f68134de61c7c317a0.thumbnail.0000000000.jpg?v=1708678590",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "e9c03eaefa962ae21098fa9c30f5e9d3452d5a720c36d87274b4f6c76789ec24",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\gildenfire-dragon\\04-gildenfire-dragon-e9c03eae.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/1b3005f8f02543a8a892d77e8afb555c.thumbnail.0000000000.jpg?v=1708678662",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f8c1c35f43dfd47c0ba04b0499a86262ca85c139f5c4d21d77dcd637af22fbbb",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\indigo-aristocracy\\16-indigo-aristocracy-f8c1c35f.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/44e3648b9922402eadd4aed2c25bed2d.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "6499628a7aaaac6c3d25a1b0cbbc37ca385994bbca1c7439bd621101a7b19015",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\virgencita\\09-virgencita-6499628a.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/981aa7bed62b40009191b1f61b00879a.thumbnail.0000000000.jpg?v=1709798197",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "7827d9f82ce4b683755638af873cf7bbcbb5524587b47f64c50efb1d2766a33d",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\night-angel\\07-night-angel-7827d9f8.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/3e5f3b7fd03d47dcbb2edf09e8f5499c.thumbnail.0000000000.jpg?v=1709798534",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "1d5e37cf9217f527251c1808aca17d86b057c687f6fc8b2ec08d94fdc3b59049",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\la-reine\\11-la-reine-1d5e37cf.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/9680c254588f4d72bc4efeb117573e8f.thumbnail.0000000000.jpg?v=1709798771",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "cc42d661c55b1a84f163bdce767f044c0bb124464eba98b53f078889570dc365",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\floral-dreamland\\09-floral-dreamland-cc42d661.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/024cf552675f49c9a834c8b71a3d4f4e.thumbnail.0000000000.jpg?v=1743157205",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "945979bb4d626e6bd034a451a66feebac5861ca4a8b12d2232beabd6c1674c24",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\venus\\08-venus-945979bb.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/5edcfccaf5bc4dee9c6627c80d64b138.thumbnail.0000000000.jpg?v=1743157199",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "dc9120b1dcc3ce834786459556ab918f7c20d8d1bc62ae251f357ec3a5d4018c",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\spiced-bloom\\11-spiced-bloom-dc9120b1.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/f0ae44eb94d54753a66b1d90e1115772.thumbnail.0000000000.jpg?v=1743157204",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "c8c02f2886af85a15193c535b676bcc7aefa30b85c21fcd80a49152523aa1227",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\aurora-s-touch\\07-aurora-s-touch-c8c02f28.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/73a433b20fa84dd9a1359eb72950687d.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f339eb13cb19df8bd05cda9c2eeed875b3fc90181404e6efcf02d0fc4be79579",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\amber-bloom\\08-amber-bloom-f339eb13.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/9ccacd27cd6149769facf3221420e43d.thumbnail.0000000000.jpg?v=1743157206",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "bc0808d9c87e73dcd0114d324274e713b8ed5fc67fc076d93fb007f518c5758e",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\enchanted-florals\\11-enchanted-florals-bc0808d9.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/97503f9e7b174dc4acdd96a2c7e4af80.thumbnail.0000000000.jpg?v=1743157205",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "af6b0339c23051d47e1b6b9c4709f722dc5e2bd8a9f548a9801da4a8a16b6ff9",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\a-touch-of-gold\\07-a-touch-of-gold-af6b0339.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/cff351803edd46c0914804f28fe068e7.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "a16b45c6e1a2923d2f99456e625f5e8120b1c00422dd96f2310df0d32adc5018",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\rose-divinity\\08-rose-divinity-a16b45c6.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/39e2c2667d644e0588197280be4ff804.thumbnail.0000000000.jpg?v=1743157208",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "44d8dec5025789d9e7885a6bf0b0abc63223f70c7a2fa7818558713a3c179828",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\eldorado\\10-eldorado-44d8dec5.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/d315415456184d87b7d6766484d4c5c3.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f25bdc394ceaf969fb3c98f4972f544d41c346719eebef2460419173006ed7c0",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\solid-glue-tabs\\04-solid-glue-tabs-f25bdc39.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/eccf6f825afd452fa3a67c15e0589934.thumbnail.0000000000.jpg?v=1738888971",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "98d6580711e853120a5659c3f147e1ef3df33459c3818ff0021d9dee00692811",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\lush-green\\10-lush-green-98d65807.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/c5e7259f7df0493b9ca2f626c8649eb5.thumbnail.0000000000.jpg?v=1743157206",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "b90b2acc9cb57d4946254c0db9324c7e8a7d71539704049878b38f441dbb4416",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\kaleidoscope-1\\07-kaleidoscope-1-b90b2acc.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/17119baa76f341c7884aa0bf3691f6b7.thumbnail.0000000000.jpg?v=1743157203",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "b44e9a10e93c08f0dbee98d0b6c1934bb545d1fbd9789376ea63ae936ebecd36",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\when-the-rain-stops\\09-when-the-rain-stops-b44e9a10.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/f2ffc831840e44f1997431694eb4499b.thumbnail.0000000000.jpg?v=1743157206",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "094587d8ebf9016939b52b9681320ae6c7e76254306f180ce99feb91372045bb",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\from-the-garden\\06-from-the-garden-094587d8.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/6c1cdce63d824dd1b3e539e35cec0ac6.thumbnail.0000000000.jpg?v=1743157206",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "ac8ebaef418c18cf8a9d0b70919bab4faec49598dd0774531c2df676e182128f",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\velvet-rouge\\09-velvet-rouge-ac8ebaef.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/0b8da5e4adfa4e7f869574cab802f93d.thumbnail.0000000000.jpg?v=1743157204",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "9c0fff0de2a2d8517eac7f6e32a5516d7d05d67f0db1917e2ec9ab2abf776462",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\into-the-warmth\\06-into-the-warmth-9c0fff0d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/d55d474a8127473e94a37a02cc7a17e2.thumbnail.0000000000.jpg?v=1743157205",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "1d3ad6e26610f86f80d22144267b0216f48cbd3e28599461afe15e31b2ceb5f9",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\summer-bay\\10-summer-bay-1d3ad6e2.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/21bf72c53ef244a6b2b58c313bdf1f3d.thumbnail.0000000000.jpg?v=1743157206",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "5c56d1f2081fbddcc1201a8da4c2e92f0dd71c78a1312d9863bf8b3b8268f4cc",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\honolulu\\08-honolulu-5c56d1f2.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/6b3fe3a99b05420099edc982e8678729.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "d9af6561d897f8f9ea938c37a7ca4c2a7b0bff4114ea201e9e3e50298fadc01e",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\bubbly-splash\\07-bubbly-splash-d9af6561.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/8301d720c50e45089dfea702c38d6d58.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "c7969d6205ec135e388b88793b056dc8ce0f53891b4ef60ab2950d6f08c22a8b",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\beyond-the-sea\\13-beyond-the-sea-c7969d62.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/3e0af328c9ca4e70856a2743e1901465.thumbnail.0000000000.jpg?v=1743157207",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "62475b8d27db69fa87b06a092c8a13e09ef340ca15b54d1e8ef54fd553446e26",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\golden-shoreline\\08-golden-shoreline-62475b8d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/c426525863fe45459942ec3431919d25.thumbnail.0000000000.jpg?v=1743573828",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "037894e826ad4aeb29c359866aaa321bb54c31a960b1bf942be2beacdb3a24cc",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\amethyst-glow\\14-amethyst-glow-037894e8.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/4451a4a6bb5049ec83ff58d11e7877db.thumbnail.0000000000.jpg?v=1743573924",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f8132ab15679bc1ecc162f77b6a47b9ad2fa66cf35eca2838832b09a46c2bbd3",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\blossom-beaded-necklace-work-piece\\08-blossom-beaded-necklace-work-piece-f8132ab1.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/5a1a157011994191aba423594a9cf7ee.thumbnail.0000000000.jpg?v=1743647150",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "3cbab46d1d051acc63b4105c8cff2a3f04407dc9279b122dbbf8f240af63fdd5",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\blossom-beaded-necklace-work-piece\\09-blossom-beaded-necklace-work-piece-3cbab46d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/ea6756fd727c46b7b6dcc0dbfaec22ec.thumbnail.0000000000.jpg?v=1743647179",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "a89aa2016123e2e87ea7e90d4f47e5ea1157e655c81bd87b3f7cbc2246379a13",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\deep-woods\\07-deep-woods-a89aa201.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/86dd4f536670451ebc242eb51f94bd19.thumbnail.0000000000.jpg?v=1744186565",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f8a653c014f31ccfa1100526b6dbb87648d3ff360f33fc603c8f478d9d8ff4d0",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\flowerbomb\\09-flowerbomb-f8a653c0.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/34f9e1b846994c6a89219734ef6d46d6.thumbnail.0000000000.jpg?v=1744957922",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "57dc0195af80846bdb1c91db9a1fb5d24a64b56e470aae1e9d7b299940ce1396",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-nail-stamp\\09-ersa-nail-stamp-57dc0195.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/992ab4532eba43cf9f46b1da014fef51.thumbnail.0000000000.jpg?v=1744363728",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "276dc643f2eac30938d3583ecf6b2f398d9cdc41749f8554afeb5b89d84b2ca5",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\sumptuous\\06-sumptuous-276dc643.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/bc4a0a26e0134f34b5284e99c175ed77.thumbnail.0000000000.jpg?v=1745394970",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "8cb5cc73d964a2a7a024c5bc7bc86198a4eda424a0b06c2595f6552b57019a9f",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-ombre-series\\13-ersa-ombre-series-8cb5cc73.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/43087f964fd345bb94589d545de25d76.thumbnail.0000000000.jpg?v=1745995985",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "b9403a42f013184e0edc580210ebdc09418f018208196dcaad03e09ca0977591",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-nude-series\\30-ersa-nude-series-b9403a42.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/56696c49fa5a4bcf874d1e010f0ee3b6.thumbnail.0000000000.jpg?v=1745995789",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "f9d9f5f49688bf37e56e6a66d1b90aa0e5bfed395f45958cc52becbd7f9a239a",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\yinyang\\08-yinyang-f9d9f5f4.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/e1e5726c253d4ff3b21fae4514aa930a.thumbnail.0000000000.jpg?v=1746697114",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "eb8bd358c65a4e2f8ce49aa75535c93686f8d36c7cf50052041a33087ec41639",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\lunaflora\\06-lunaflora-eb8bd358.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/260a43789b654851a6044bd4801ac300.thumbnail.0000000000.jpg?v=1746697209",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "a61db655d0791f99a3b16b910ae0a2c05b3b19e238976420246dd38aa312aaff",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\blush-peony\\06-blush-peony-a61db655.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/facd71bb3b434e4cbebe0be042823adc.thumbnail.0000000000.jpg?v=1746697180",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "1c999a9f1c1ac4fd57198a0357a1078edfa2076526874cd221a71d4ef2f18c6f",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-f04-red-velvet\\08-ersa-f04-red-velvet-1c999a9f.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/5ac75d0e7e65485198b929c2c9bee24d.thumbnail.0000000000.jpg?v=1747200238",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "0cba5d66cfade74d321549d18c1144362fbf5d4b1e36ff6e4a393eae469395a3",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-f05-black-swan\\06-ersa-f05-black-swan-0cba5d66.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/3a1b01d8678b40e0a3da0ca7cc621143.thumbnail.0000000000.jpg?v=1747200272",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "340797277358b23987071e97bf39b41ca15f735521fe354b0f6780d5565212ea",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-n01-porcelain\\13-ersa-n01-porcelain-34079727.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/e81ce32a985d4ff2923ef7d8305417d5.thumbnail.0000000000.jpg?v=1747820861",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "4fd8045dd8d95b30fa6e018b0aa1eb9b2c243016528e21536f17245c698b1946",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\seafoam\\07-seafoam-4fd8045d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/d2c6b5c5b0884891a503e4c4c04907ab.thumbnail.0000000000.jpg?v=1748507670",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "67c4b0f24160b84288a37d3a5793f030965c70647490a0e37cd1a7d146a36c69",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\on-my-way\\07-on-my-way-67c4b0f2.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/c14c8115878346a082f36a01240d4a92.thumbnail.0000000000.jpg?v=1748507701",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "c281e1041484cbca1a62a3dcfe3dd003476039858255e1abdc0c564aa6857f4a",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-c09-pink-garnet\\07-ersa-c09-pink-garnet-c281e104.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/ec8bd61c68494c4b92e8edc711074b0a.thumbnail.0000000000.jpg?v=1748507885",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "7b70d3b8a71b860a6343b37171c1047fbf9ee86ccecf6fac72a98c3f49a84e66",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\never-ending-summer\\08-never-ending-summer-7b70d3b8.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/f9377ae1345d4236b625cc66cf2a97bd.thumbnail.0000000000.jpg?v=1749023943",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "2044ce741abb7ed33891820e9895bb183f5c44c9e9c4f2f5315966334dab4af2",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\beach-its-time\\10-beach-its-time-2044ce74.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/be1b0d5cc0ff49d1a9f1d557effbadc7.thumbnail.0000000000.jpg?v=1749024065",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "0b7ed0f788be494b687ccd07e74f82e3e85efb0f7b5c7dd009b126e96f9e7789",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\my-happy-hour\\07-my-happy-hour-0b7ed0f7.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/487c24a5a55e43aa89054d828c84f76d.thumbnail.0000000000.jpg?v=1749624009",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "70a33523e996ca256a1f062a0f4639e5f1d76cfdcc51723b8192e7e60572042c",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\the-abyss\\07-the-abyss-70a33523.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/c6c3fb6d59724ab397710762e5785818.thumbnail.0000000000.jpg?v=1750237090",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "95140b554813292309e160d1b013c7f331e49537a395b119788df4393fc5ac26",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\shining\\06-shining-95140b55.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/f9f55554b9d242229443e8ee67c2b0d4.thumbnail.0000000000.jpg?v=1750236955",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "657b9f7a22fb03418a62195e071086e3baafaf0b69661d513255bb6a34c323b2",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\dune-glimmer\\07-dune-glimmer-657b9f7a.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/0a6a559402894e1d83488c15ced9690d.thumbnail.0000000000.jpg?v=1750237157",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "58d2a76dc7ff7085fe4de582dc63c98f44fef1142e1f93efb1cafa02813ef2b5",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\desert-flower\\07-desert-flower-58d2a76d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/dffc2727d87a4c85be49c36d9b327816.thumbnail.0000000000.jpg?v=1750237125",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "e899141d022914c0595421123d06cf52924e0d4bd6105d5466bc545653cb61e3",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\express-yourself\\10-express-yourself-e899141d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/a8adace9a0da4f2a9ff447b3491ba55d.thumbnail.0000000000.jpg?v=1750237188",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "b51c6116f40b520abf2ea8b73c34c10740beede373707d3f5b49e85ef63f1a89",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\rebel-bloom\\09-rebel-bloom-b51c6116.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/71aee2eecda7407d9d407ccf398cee5d.thumbnail.0000000000.jpg?v=1751361575",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "1cf5d8a88ff5e811f2d8316d89ce4b285c6c067b983ff1ed28af3bee8befd3a9",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\wild-flame\\10-wild-flame-1cf5d8a8.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/100ee59de93b47f8b2f7f72bc141c10a.thumbnail.0000000000.jpg?v=1750237219",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "9700279d02952be558d18fdfd67539660c90cac4802615d29f9e3ed133e698ec",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\like-a-star\\10-like-a-star-9700279d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/796aff3e6788419a88bf32248c939b0c.thumbnail.0000000000.jpg?v=1751361652",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "76d5866c49f7d6e27ef256caeadfb99cfb7a53ad29769c085bcf898aeb41f062",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\wild-heart\\11-wild-heart-76d5866c.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/a525b3a1b1744ed5ac05ac9e0e5f572b.thumbnail.0000000000.jpg?v=1751361749",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "4b8ffe6d24083c075c449dc004bb401ff904c55d6315f1fce46cb37e185c435a",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\pixie\\06-pixie-4b8ffe6d.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/fc1f517c9f8e4e16b51768a7780c5bf0.thumbnail.0000000000.jpg?v=1752657779",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "3948ea890d7cd00e2bd5884451ad4eed6817e3c91e7d6a0bb795d805194bcd8a",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\armageddon\\07-armageddon-3948ea89.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/58f74f0f5283413aac3506512445ca4c.thumbnail.0000000000.jpg?v=1752655357",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "10b8ff0ee428829f1af67b5462484dff5cfb4ca23eb4861d5709cf6df97a4634",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\siren\\05-siren-10b8ff0e.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/ef6c54ff4ff4463aa51a0a451980582f.thumbnail.0000000000.jpg?v=1752657396",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "759566a438342f0482c0af9783d1fe96e78af25aa80199d3a21ce64636400b90",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\insane\\06-insane-759566a4.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/32d1eeb47f9b4259bdd92695f4f35ad2.thumbnail.0000000000.jpg?v=1752658011",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "d5faac8034c0418c2935822ba15b1ef8dad03408a2fe37bb5329e00429c3eca5",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\supernova\\06-supernova-d5faac80.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/066750915f2245798f710bc78696fb3c.thumbnail.0000000000.jpg?v=1752658091",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "e265f3f9bcbb9bc0314159576df6384697c548e93b57ab5a19dfc6c2089ce521",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\sea-vivid\\06-sea-vivid-e265f3f9.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/1ae3d9fbfd48402289061c4b90fd902a.thumbnail.0000000000.jpg?v=1753424974",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "fcae0493a003fc97a7b6b2b34389c171cc9eeef1b6fd7e0b769f9cdb02be650c",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\polka-pop\\09-polka-pop-fcae0493.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/1eaf7c4007d44cdb9983853297091b5c.thumbnail.0000000000.jpg?v=1754616217",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "1fb784433112535fd19e2ba83f67d8bbf01efa97558429c678e117276bccf541",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\latte-kiss\\07-latte-kiss-1fb78443.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/3f26553a424344a6863471e58432ffae.thumbnail.0000000000.jpg?v=1754616282",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "c4c215b7be0b04c2a1718f65b87fc230f64e0a74959b98e483ec5af6516d4273",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-cat-eye-seriesⅱ\\04-ersa-cat-eye-seriesⅱ-c4c215b7.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/79451c2caf2d4f51a314644c86104a54.thumbnail.0000000000.jpg?v=1754616473",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "52a129164f94d802bd4688b1650ab943707204aa4473f781d206635cd5089365",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-cat-eye-seriesⅱ\\08-ersa-cat-eye-seriesⅱ-52a12916.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/2ed3b8fc75554427b0325c3a14068255.thumbnail.0000000000.jpg?v=1754616477",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    },
+    {
+      "type": "video_source_missing",
+      "severity": "warning",
+      "sha256": "962476134d9bf0dfb79dee519aaeab4a46206225221a098cdb7b85435c7c0cf6",
+      "localPath": "D:\\work\\shopify\\ersanails\\data\\catalog\\assets\\ersa-cat-eye-seriesⅱ\\12-ersa-cat-eye-seriesⅱ-96247613.jpg",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/0825/4275/6119/files/preview_images/3ad8ec527c4248d192a97b15d3af4066.thumbnail.0000000000.jpg?v=1754616482",
+      "mediaType": "video",
+      "message": "Source media was marked video publicly, but only a preview image was available in the crawl; uploading the thumbnail as an image."
+    }
+  ]
+}

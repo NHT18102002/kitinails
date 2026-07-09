@@ -2,6 +2,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-search.css' | asset_url | stylesheet_tag }}
+{{ 'search-page.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag }}
@@ -13,6 +14,7 @@
 {%- endif -%}
 
 <script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-page.js' | asset_url }}" defer="defer"></script>
 
 <style>
   .template-search__header {
@@ -45,8 +47,19 @@
 
 {%- liquid
   assign sort_by = search.sort_by | default: search.default_sort_by
-  assign terms = search.terms | escape
-  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  assign terms = search.terms | default: ''
+  assign display_terms = terms | replace: '*', ''
+  assign escaped_display_terms = display_terms | escape
+  assign encoded_terms = terms | url_encode
+  assign encoded_display_terms = display_terms | url_encode
+  assign search_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&type=product&options%5Bprefix%5D=last&options%5Bunavailable_products%5D=last&sort_by=' | append: sort_by
+  assign product_tab_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&type=product&options%5Bprefix%5D=last&options%5Bunavailable_products%5D=last'
+  if display_terms != terms and display_terms != blank
+    assign search_url = search_url | append: '&display_q=' | append: encoded_display_terms
+    assign product_tab_url = product_tab_url | append: '&display_q=' | append: encoded_display_terms
+  endif
+  assign blog_tab_url = routes.search_url | append: '?q=' | append: encoded_display_terms | append: '&type=article&options%5Bprefix%5D=last'
+  assign page_tab_url = routes.search_url | append: '?q=' | append: encoded_display_terms | append: '&type=page&options%5Bprefix%5D=last'
 -%}
 
 {%- style -%}
@@ -64,15 +77,8 @@
 {%- endstyle -%}
 
 {% paginate search.results by 24 %}
-  <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
+  <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding" data-search-page-root>
     <div class="template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      <h1 class="h2 center">
-        {%- if search.performed -%}
-          {{- 'templates.search.title' | t -}}
-        {%- else -%}
-          {{- 'general.search.search' | t -}}
-        {%- endif -%}
-      </h1>
       <div class="template-search__search">
         {%- if settings.predictive_search_enabled -%}
           <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
@@ -85,7 +91,7 @@
                 id="Search-In-Template"
                 type="search"
                 name="q"
-                value="{{ search.terms | escape }}"
+                value="{{ escaped_display_terms }}"
                 placeholder="{{ 'general.search.search' | t }}"
                 {%- if settings.predictive_search_enabled -%}
                   role="combobox"
@@ -101,7 +107,12 @@
                 {%- endif -%}
               >
               <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+              <input name="type" type="hidden" value="product">
               <input name="options[prefix]" type="hidden" value="last">
+              <input name="options[unavailable_products]" type="hidden" value="last">
+              {%- if display_terms != terms and display_terms != blank -%}
+                <input name="display_q" type="hidden" value="{{ escaped_display_terms }}">
+              {%- endif -%}
 
               {%- if settings.predictive_search_enabled -%}
                 <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
@@ -132,17 +143,32 @@
           </predictive-search>
         {%- endif -%}
       </div>
+      <p class="template-search__eyebrow">Search for products on our site</p>
+      <h1 class="template-search__title center">
+        {%- if search.performed and display_terms != blank -%}
+          Results for "{{ escaped_display_terms }}"
+        {%- elsif search.performed -%}
+          {{- 'templates.search.title' | t -}}
+        {%- else -%}
+          {{- 'general.search.search' | t -}}
+        {%- endif -%}
+      </h1>
+      <nav class="template-search__tabs" data-search-tabs aria-label="Search result types">
+        <a href="{{ product_tab_url }}" aria-current="page">Products</a>
+        <a href="{{ blog_tab_url }}">Blogs</a>
+        <a href="{{ page_tab_url }}">Pages</a>
+      </nav>
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
           {%- if search.results_count > 0 -%}
             <p role="status">
-              {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
+              {{ 'templates.search.results_with_count_and_term' | t: terms: display_terms, count: search.results_count }}
             </p>
           {%- endif -%}
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
           <div class="search-recovery">
-            <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+            <p role="status">{{ 'templates.search.no_results' | t: terms: display_terms }}</p>
             <div class="search-recovery__actions">
               <a href="{{ routes.all_products_collection_url }}" class="button button--secondary">
                 {{ 'sections.featured_collection.view_all' | t }}
@@ -159,6 +185,13 @@
       -%}
         <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
           <form class="facets-vertical-form" id="FacetSortForm">
+            <input type="hidden" name="q" value="{{ search.terms | escape }}">
+            <input name="type" type="hidden" value="product">
+            <input name="options[prefix]" type="hidden" value="last">
+            <input name="options[unavailable_products]" type="hidden" value="last">
+            {%- if display_terms != terms and display_terms != blank -%}
+              <input name="display_q" type="hidden" value="{{ escaped_display_terms }}">
+            {%- endif -%}
             <div class="facet-filters sorting caption">
               <div class="facet-filters__field">
                 <h2 class="facet-filters__label caption-large text-body">
@@ -192,9 +225,13 @@
 
             <div class="product-count-vertical light" role="status">
               <h2 class="product-count__text text-body">
-                <span id="ProductCountDesktop">
+                <span
+                  id="ProductCountDesktop"
+                  data-product-count="{{ search.products_count | default: search.results_count }}"
+                  data-total-count="{{ search.all_products_count | default: search.products_count | default: search.results_count }}"
+                >
                   {%- if search.results_count -%}
-                    {{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+                    {{ 'templates.search.results_with_count' | t: terms: display_terms, count: search.results_count }}
                   {%- elsif search.products_count == search.all_products_count -%}
                     {{ 'products.facets.product_count_simple' | t: count: search.products_count }}
                   {%- else -%}
@@ -285,7 +322,6 @@
                   >
                     {%- case item.object_type -%}
                       {%- when 'product' -%}
-                        {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
                         {% render 'card-product',
                           card_product: item,
                           media_aspect_ratio: section.settings.image_ratio,
@@ -295,6 +331,8 @@
                           show_rating: section.settings.show_rating,
                           lazy_load: lazy_load,
                           skip_styles: skip_card_product_styles,
+                          quick_add: 'standard',
+                          section_id: section.id,
                           product_view_context: 'search'
                         %}
                         {%- assign skip_card_product_styles = true -%}

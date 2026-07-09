@@ -1,0 +1,17 @@
+{
+  "status": "skipped",
+  "reason": "missing_admin_api_credentials",
+  "conflicts": [],
+  "pendingHandlesCount": 591,
+  "diagnostics": {
+    "storeDomain": "develop-store-5y6bipog.myshopify.com",
+    "previewProbe": {
+      "status": 401,
+      "reason": "preview_access_token_invalid"
+    },
+    "themeInfoProbe": {
+      "status": "ok",
+      "themeId": ""
+    }
+  }
+}

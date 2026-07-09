@@ -1,10 +1,89 @@
 {
   "sections": {
+    "collection_campaign": {
+      "type": "ersa-collection-campaign",
+      "blocks": {
+        "marquee_1": {
+          "type": "marquee_item",
+          "settings": {
+            "icon": "tag",
+            "text": "New collections just released -",
+            "link_label": "Shop Now",
+            "link": "/collections/all"
+          }
+        },
+        "marquee_2": {
+          "type": "marquee_item",
+          "settings": {
+            "icon": "heart",
+            "text": "Handmade with love using gel",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "marquee_3": {
+          "type": "marquee_item",
+          "settings": {
+            "icon": "clock",
+            "text": "Salon-quality nails in 10 min",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "marquee_4": {
+          "type": "marquee_item",
+          "settings": {
+            "icon": "diamond",
+            "text": "Last up to 4 weeks with solid glue",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "marquee_5": {
+          "type": "marquee_item",
+          "settings": {
+            "icon": "smile",
+            "text": "No damage to your natural nails",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "marquee_1",
+        "marquee_2",
+        "marquee_3",
+        "marquee_4",
+        "marquee_5"
+      ],
+      "settings": {
+        "hero_image_filename": "collection-july-hero.webp",
+        "mobile_hero_image_filename": "collection-july-hero-mobile.jpg",
+        "hero_alt": "Island Glow Club beach campaign",
+        "image_position": "center center",
+        "mobile_image_position": "0% center",
+        "overlay_opacity": 10,
+        "eyebrow": "SITEWIDE 10% OFF",
+        "heading": "July 4th Sale",
+        "countdown_days": "02",
+        "countdown_hours": "15",
+        "countdown_minutes": "33",
+        "countdown_seconds": "21",
+        "days_label": "DAYS",
+        "hours_label": "HOURS",
+        "minutes_label": "MINUTES",
+        "seconds_label": "SECONDS",
+        "show_marquee": false,
+        "marquee_speed": 28,
+        "deal_heading": "BUY MORE SAVE MORE",
+        "deal_content": "<p>Spend more and save more during the current campaign.</p>"
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": true,
+        "show_collection_description": false,
+        "show_collection_image": false,
         "color_scheme": "scheme-1"
       }
     },
@@ -20,16 +99,25 @@
         "show_vendor": false,
         "show_rating": true,
         "quick_add": "standard",
+        "show_promo_tile": true,
+        "promo_tile_position": 4,
+        "promo_tile_image_filename": "collection-flash-sale-reference.jpg",
+        "promo_tile_alt": "July 4th Flash Sale",
+        "promo_tile_title": "July 4th Flash Sale",
+        "promo_tile_text": "Enjoy up to 60% off!",
+        "promo_tile_button_label": "SHOP",
+        "promo_tile_link": "/collections/all",
         "enable_filtering": true,
-        "filter_type": "drawer",
+        "filter_type": "vertical",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 56
+        "padding_top": 8,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
+    "collection_campaign",
     "banner",
     "product-grid"
   ]

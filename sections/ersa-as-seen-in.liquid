@@ -34,42 +34,47 @@
           data-cascade
         {% endif %}
       >
-        {%- for block in section.blocks -%}
-          <div
-            class="ersa-as-seen-in__logo-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}" class="ersa-as-seen-in__logo-link" aria-label="{{ block.settings.alt_text | default: 'Media logo' | escape }}">
-            {%- endif -%}
+        <div class="ersa-as-seen-in__logos-track">
+          {%- for repeat_index in (1..2) -%}
+            {%- for block in section.blocks -%}
+              <div
+                class="ersa-as-seen-in__logo-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+                {% if repeat_index == 1 %}{{ block.shopify_attributes }}{% endif %}
+                {% if settings.animations_reveal_on_scroll %}
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="ersa-as-seen-in__logo-link" aria-label="{{ block.settings.alt_text | default: 'Media logo' | escape }}">
+                {%- endif -%}
 
-            {%- if block.settings.logo_image != blank -%}
-              {{
-                block.settings.logo_image
-                | image_url: width: 400
-                | image_tag:
-                  widths: '100, 200, 400',
-                  sizes: '(min-width: 990px) 160px, 120px',
-                  class: 'ersa-as-seen-in__logo-img',
-                  loading: 'lazy',
-                  alt: block.settings.alt_text | default: block.settings.logo_image.alt | escape
-              }}
-            {%- else -%}
-              <span class="ersa-as-seen-in__logo-placeholder">
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-              </span>
-            {%- endif -%}
+                {%- if block.settings.logo_image != blank -%}
+                  {{
+                    block.settings.logo_image
+                    | image_url: width: 400
+                    | image_tag:
+                      widths: '100, 200, 400',
+                      sizes: '(min-width: 990px) 160px, 120px',
+                      class: 'ersa-as-seen-in__logo-img',
+                      loading: 'lazy',
+                      alt: block.settings.alt_text | default: block.settings.logo_image.alt | escape
+                  }}
+                {%- else -%}
+                  <span class="ersa-as-seen-in__logo-placeholder ersa-as-seen-in__logo-placeholder--{{ block.settings.alt_text | handleize }}" aria-label="{{ block.settings.alt_text | default: 'Media logo' | escape }}">
+                    {{ block.settings.alt_text | default: 'PRESS' | escape }}
+                  </span>
+                {%- endif -%}
 
-            {%- if block.settings.link != blank -%}
-              </a>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
       </div>
     {%- endif -%}
+
   </div>
 </div>
 
@@ -127,7 +132,7 @@
     {
       "type": "logo",
       "name": "Logo",
-      "limit": 8,
+      "limit": 12,
       "settings": [
         {
           "type": "image_picker",

@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-07-05T09:19:45.530Z",
+  "source": "tools/catalog-import/config/collection-map.proposed.json",
+  "collections": [
+    {
+      "handle": "all",
+      "title": "All"
+    },
+    {
+      "handle": "almond",
+      "title": "almond"
+    },
+    {
+      "handle": "best-seller",
+      "title": "Best Sellers"
+    },
+    {
+      "handle": "bridal",
+      "title": "Bridal Collection"
+    },
+    {
+      "handle": "cat-eye",
+      "title": "Cat Eye"
+    },
+    {
+      "handle": "chrome",
+      "title": "Chrome"
+    },
+    {
+      "handle": "clearance",
+      "title": "Clearance"
+    },
+    {
+      "handle": "coffin",
+      "title": "Coffin"
+    },
+    {
+      "handle": "ersa-essence",
+      "title": "Ersa Essence"
+    },
+    {
+      "handle": "ersa-nails-tools",
+      "title": "Ersa nails Tools"
+    },
+    {
+      "handle": "ersas-accessories",
+      "title": "Ersa's Accessories"
+    },
+    {
+      "handle": "flower-nails",
+      "title": "Flower Nails"
+    },
+    {
+      "handle": "french-tip",
+      "title": "French Tip"
+    },
+    {
+      "handle": "long",
+      "title": "Long"
+    },
+    {
+      "handle": "medium",
+      "title": "Medium"
+    },
+    {
+      "handle": "mermaid",
+      "title": "Mermaid"
+    },
+    {
+      "handle": "metallic",
+      "title": "Metallic"
+    },
+    {
+      "handle": "nails-under-30",
+      "title": "Nails Under $30"
+    },
+    {
+      "handle": "new-arrival",
+      "title": "New Arrivals"
+    },
+    {
+      "handle": "ombre",
+      "title": "Ombre"
+    },
+    {
+      "handle": "oval",
+      "title": "Oval"
+    },
+    {
+      "handle": "short",
+      "title": "Short"
+    },
+    {
+      "handle": "square",
+      "title": "Square"
+    },
+    {
+      "handle": "squoval",
+      "title": "Squoval"
+    },
+    {
+      "handle": "aura",
+      "title": "Aura"
+    },
+    {
+      "handle": "baroque",
+      "title": "Baroque"
+    },
+    {
+      "handle": "best-of-the-best",
+      "title": "Best of the Best"
+    },
+    {
+      "handle": "bloom-for-yourself",
+      "title": "Bloom For Yourself"
+    },
+    {
+      "handle": "bundle",
+      "title": "BUNDLES"
+    },
+    {
+      "handle": "classy-nails",
+      "title": "Classy Nails"
+    },
+    {
+      "handle": "fairy",
+      "title": "fairy"
+    },
+    {
+      "handle": "gift-card",
+      "title": "Gift Card"
+    },
+    {
+      "handle": "golden-glamour",
+      "title": "Golden Glamour"
+    },
+    {
+      "handle": "gothic",
+      "title": "Gothic"
+    },
+    {
+      "handle": "island-glow-club",
+      "title": "Island Glow Club"
+    },
+    {
+      "handle": "mini",
+      "title": "Mini"
+    },
+    {
+      "handle": "new-nails",
+      "title": "New Nails"
+    },
+    {
+      "handle": "pearl",
+      "title": "Pearl"
+    },
+    {
+      "handle": "petite-nails",
+      "title": "Petite Nails"
+    },
+    {
+      "handle": "press-on-nails",
+      "title": "Press On Nails"
+    },
+    {
+      "handle": "press-on-toenails",
+      "title": "Press-on Toenails"
+    },
+    {
+      "handle": "religions",
+      "title": "Religions"
+    },
+    {
+      "handle": "retrowave",
+      "title": "Retrowave"
+    },
+    {
+      "handle": "simple",
+      "title": "Simple"
+    },
+    {
+      "handle": "simple-nails",
+      "title": "Simple Nails"
+    },
+    {
+      "handle": "soft-glam",
+      "title": "Soft Glam"
+    },
+    {
+      "handle": "tools-accessories",
+      "title": "Tools & Accessories"
+    },
+    {
+      "handle": "trending-nails",
+      "title": "Trending Nails"
+    },
+    {
+      "handle": "zodiac",
+      "title": "Zodiac"
+    }
+  ]
+}

@@ -47,75 +47,106 @@
         if collection.products_count != collection.all_products_count
           assign collection_has_active_filters = true
         endif
+        assign sort_by = collection.sort_by | default: collection.default_sort_by
+        assign collection_reset_url = collection.url
+        if collection.sort_by != blank
+          assign collection_reset_url = collection.url | append: '?sort_by=' | append: collection.sort_by
+        endif
+        assign promo_tile_image = section.settings.promo_tile_image
+        assign promo_tile_fallback = section.settings.promo_tile_image_filename | strip
       -%}
       {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
-      {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
-        <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
-          <form class="facets-vertical-form" id="FacetSortForm">
-            <div class="facet-filters sorting caption">
-              <div class="facet-filters__field">
-                <h2 class="facet-filters__label caption-large text-body">
-                  <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-                </h2>
-                <div class="select">
-                  {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                  <select
-                    name="sort_by"
-                    class="facet-filters__sort select__select caption-large"
-                    id="SortBy"
-                    aria-describedby="a11y-refresh-page-message"
-                  >
-                    {%- for option in collection.sort_options -%}
-                      <option
-                        value="{{ option.value | escape }}"
-                        {% if option.value == sort_by %}
-                          selected="selected"
-                        {% endif %}
+      {%- if section.settings.filter_type == 'vertical' -%}
+        <div class="facets-vertical-sort page-width small-hide">
+          {%- if section.settings.enable_sorting -%}
+            <facet-filters-form class="facets facets-vertical-form">
+              <form class="facets-vertical-form" id="FacetSortForm">
+                <div class="facet-filters sorting caption">
+                  <div class="facet-filters__field">
+                    <h2 class="facet-filters__label caption-large text-body">
+                      <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+                    </h2>
+                    <div class="select">
+                      <select
+                        name="sort_by"
+                        class="facet-filters__sort select__select caption-large"
+                        id="SortBy"
+                        aria-describedby="a11y-refresh-page-message"
                       >
-                        {{ option.name | escape }}
-                      </option>
-                    {%- endfor -%}
-                  </select>
-                  <span class="svg-wrapper">
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
-                  </span>
+                        {%- for option in collection.sort_options -%}
+                          <option
+                            value="{{ option.value | escape }}"
+                            {% if option.value == sort_by %}
+                              selected="selected"
+                            {% endif %}
+                          >
+                            {{ option.name | escape }}
+                          </option>
+                        {%- endfor -%}
+                      </select>
+                      <span class="svg-wrapper">
+                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="product-count-vertical light" role="status">
-              <h2 class="product-count__text text-body">
-                <span id="ProductCountDesktop">
-                  {%- if collection.results_count -%}
-                    {{
-                      'templates.search.results_with_count'
-                      | t: terms: collection.terms, count: collection.results_count
-                    }}
-                  {%- elsif collection.products_count == collection.all_products_count -%}
-                    {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
-                  {%- else -%}
-                    {{
-                      'products.facets.product_count'
-                      | t: product_count: collection.products_count, count: collection.all_products_count
-                    }}
-                  {%- endif -%}
-                </span>
-              </h2>
-              {%- render 'loading-spinner' -%}
-            </div>
-          </form>
-        </facet-filters-form>
+              </form>
+            </facet-filters-form>
+          {%- endif -%}
+          <div class="product-count-vertical light" role="status">
+            <h2 class="product-count__text text-body">
+              <span
+                id="ProductCount"
+                class="collection-filter-count-source"
+                data-product-count="{{ collection.products_count }}"
+                data-total-count="{{ collection.all_products_count }}"
+                aria-hidden="true"
+              >
+                {%- if collection.results_count -%}
+                  {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
+                {%- elsif collection.products_count == collection.all_products_count -%}
+                  {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+                {%- else -%}
+                  {{
+                    'products.facets.product_count'
+                    | t: product_count: collection.products_count, count: collection.all_products_count
+                  }}
+                {%- endif -%}
+              </span>
+              <span id="ProductCountDesktop">
+                {%- if collection.results_count -%}
+                  {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
+                {%- elsif collection.products_count == collection.all_products_count -%}
+                  {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+                {%- else -%}
+                  {{
+                    'products.facets.product_count'
+                    | t: product_count: collection.products_count, count: collection.all_products_count
+                  }}
+                {%- endif -%}
+              </span>
+            </h2>
+            {%- render 'loading-spinner' -%}
+          </div>
+        </div>
       {%- endif -%}
 
-      <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
+      <div
+        class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}"
+        data-collection-filters-root
+      >
         {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+        {{ 'collection-filters.css' | asset_url | stylesheet_tag }}
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'collection-filters.helpers.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'collection-filters.js' | asset_url }}" defer="defer"></script>
         {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
           <aside
             aria-labelledby="verticalTitle"
-            class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+            class="facets-wrapper collection-filters-panel{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
             id="main-collection-filters"
             data-id="{{ section.id }}"
+            data-collection-filter-panel
           >
             {% render 'facets',
               results: collection,
@@ -143,13 +174,13 @@
                   <div class="rte">
                     {{
                       'sections.collection_template.use_fewer_filters_html'
-                      | t: link: collection.url, class: 'underlined-link link'
+                      | t: link: collection_reset_url, class: 'underlined-link link'
                     }}
                   </div>
                 {%- endif -%}
                 <div class="collection-empty__actions">
                   {%- if collection_has_active_filters -%}
-                    <a href="{{ collection.url }}" class="button button--secondary">
+                    <a href="{{ collection_reset_url }}" class="button button--secondary">
                       {{ 'products.facets.clear_all' | t }}
                     </a>
                   {%- endif -%}
@@ -175,8 +206,52 @@
                   {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
                 "
               >
+                {%- capture collection_promo_tile -%}
+                  <li class="grid__item collection-promo-tile__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <a
+                      class="collection-promo-tile"
+                      href="{% if section.settings.promo_tile_link != blank %}{{ section.settings.promo_tile_link }}{% else %}{{ collection.url }}{% endif %}"
+                      aria-label="{{ section.settings.promo_tile_title | escape }}"
+                    >
+                      {%- if promo_tile_image != blank -%}
+                        {{ promo_tile_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 18vw, 50vw', alt: section.settings.promo_tile_alt, class: 'collection-promo-tile__image' }}
+                      {%- elsif promo_tile_fallback != blank -%}
+                        <img
+                          src="{{ promo_tile_fallback | asset_url }}"
+                          alt="{{ section.settings.promo_tile_alt | escape }}"
+                          width="900"
+                          height="990"
+                          loading="lazy"
+                          class="collection-promo-tile__image"
+                        >
+                      {%- else -%}
+                        {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg collection-promo-tile__placeholder' }}
+                      {%- endif -%}
+                      <span class="collection-promo-tile__overlay" aria-hidden="true"></span>
+                      <span class="collection-promo-tile__content">
+                        {%- if section.settings.promo_tile_title != blank -%}
+                          <span class="collection-promo-tile__title">{{ section.settings.promo_tile_title }}</span>
+                        {%- endif -%}
+                        {%- if section.settings.promo_tile_text != blank -%}
+                          <span class="collection-promo-tile__text">{{ section.settings.promo_tile_text }}</span>
+                        {%- endif -%}
+                        {%- if section.settings.promo_tile_button_label != blank -%}
+                          <span class="collection-promo-tile__button">{{ section.settings.promo_tile_button_label }}</span>
+                        {%- endif -%}
+                      </span>
+                    </a>
+                  </li>
+                {%- endcapture -%}
+                {% assign promo_tile_rendered = false %}
                 {% assign skip_card_product_styles = false %}
                 {%- for product in collection.products -%}
+                  {%- if section.settings.show_promo_tile
+                    and promo_tile_rendered == false
+                    and forloop.index == section.settings.promo_tile_position
+                  -%}
+                    {{ collection_promo_tile }}
+                    {% assign promo_tile_rendered = true %}
+                  {%- endif -%}
                   {% assign lazy_load = false %}
                   {%- if forloop.index > 2 -%}
                     {%- assign lazy_load = true -%}
@@ -204,6 +279,9 @@
                   </li>
                   {%- assign skip_card_product_styles = true -%}
                 {%- endfor -%}
+                {%- if section.settings.show_promo_tile and promo_tile_rendered == false -%}
+                  {{ collection_promo_tile }}
+                {%- endif -%}
               </ul>
 
               {%- if paginate.pages > 1 -%}
@@ -368,6 +446,65 @@
           "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Promo tile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_promo_tile",
+      "default": true,
+      "label": "Show promo tile in product grid"
+    },
+    {
+      "type": "range",
+      "id": "promo_tile_position",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Promo tile position"
+    },
+    {
+      "type": "image_picker",
+      "id": "promo_tile_image",
+      "label": "Promo tile image"
+    },
+    {
+      "type": "text",
+      "id": "promo_tile_image_filename",
+      "label": "Theme asset filename fallback",
+      "default": "collection-flash-sale.webp"
+    },
+    {
+      "type": "text",
+      "id": "promo_tile_alt",
+      "label": "Promo tile image alt text",
+      "default": "July 4th Flash Sale"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "promo_tile_title",
+      "label": "Promo tile title",
+      "default": "July 4th Flash Sale"
+    },
+    {
+      "type": "text",
+      "id": "promo_tile_text",
+      "label": "Promo tile text",
+      "default": "Enjoy up to 60% off!"
+    },
+    {
+      "type": "text",
+      "id": "promo_tile_button_label",
+      "label": "Promo tile button label",
+      "default": "SHOP"
+    },
+    {
+      "type": "url",
+      "id": "promo_tile_link",
+      "label": "Promo tile link"
     },
     {
       "type": "header",

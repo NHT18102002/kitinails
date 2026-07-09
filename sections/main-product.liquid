@@ -91,12 +91,44 @@
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'text' -%}
-                  <p
+                  {%- liquid
+                    assign text_lines = block.settings.text | newline_to_br | split: '<br />'
+                    assign text_has_list = false
+                    assign product_text_intro = ''
+                    for text_line in text_lines
+                      assign stripped_text_line = text_line | strip
+                      assign text_line_prefix = stripped_text_line | slice: 0, 2
+                      if text_line_prefix == '- '
+                        assign text_has_list = true
+                      elsif stripped_text_line != blank and product_text_intro == blank
+                        assign product_text_intro = stripped_text_line
+                      endif
+                    endfor
+                  -%}
+                  <div
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                     {{ block.shopify_attributes }}
                   >
-                    {{- block.settings.text -}}
-                  </p>
+                    {%- if text_has_list -%}
+                      {%- capture product_text_list_items -%}
+                        {%- for text_line in text_lines -%}
+                          {%- assign stripped_text_line = text_line | strip -%}
+                          {%- assign text_line_prefix = stripped_text_line | slice: 0, 2 -%}
+                          {%- if stripped_text_line != blank and text_line_prefix == '- ' -%}
+                            <li>{{ stripped_text_line | remove_first: '- ' }}</li>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endcapture -%}
+                      {%- if product_text_intro != blank -%}
+                        <p>{{ product_text_intro }}</p>
+                      {%- endif -%}
+                      <ul>
+                        {{ product_text_list_items }}
+                      </ul>
+                    {%- else -%}
+                      {{- block.settings.text -}}
+                    {%- endif -%}
+                  </div>
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
                     <h1>{{ product.title | escape }}</h1>
@@ -195,8 +227,18 @@
                   </p>
                 {%- when 'description' -%}
                   {%- if product.description != blank -%}
-                    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                      {{ product.description }}
+                    <div class="product__accordion product__accordion--description accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                      <details id="Details-Description-{{ section.id }}">
+                        <summary>
+                          <div class="summary__title">
+                            <h2 class="h4 accordion__title inline-richtext">Product Description</h2>
+                          </div>
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </summary>
+                        <div class="accordion__content rte product__description" id="ProductAccordion-Description-{{ section.id }}">
+                          {{ product.description }}
+                        </div>
+                      </details>
                     </div>
                   {%- endif -%}
                 {%- when 'sku' -%}
@@ -264,40 +306,48 @@
                       </span>
                     </label>
                     <div class="price-per-item__container">
-                      <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                        <button class="quantity__button" name="minus" type="button">
-                          <span class="visually-hidden">
-                            {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
-                          </span>
-                          <span class="svg-wrapper">
-                            {{- 'icon-minus.svg' | inline_asset_content -}}
-                          </span>
-                        </button>
-                        <input
+                      {%- liquid
+                        assign quantity_rule = product.selected_or_first_available_variant.quantity_rule
+                        assign quantity_min = quantity_rule.min
+                        assign quantity_increment = quantity_rule.increment
+                        assign quantity_max = quantity_rule.max | default: 10
+                        if quantity_max > 10
+                          assign quantity_max = 10
+                        endif
+                      -%}
+                      <div class="product-quantity-select-wrapper">
+                        <select
                           class="quantity__input"
-                          type="number"
                           name="quantity"
                           id="Quantity-{{ section.id }}"
                           data-cart-quantity="{{ cart_qty }}"
-                          data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                          min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                          {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-                            data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                            max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                          data-min="{{ quantity_min }}"
+                          {% if quantity_rule.max != null %}
+                            data-max="{{ quantity_rule.max }}"
                           {% endif %}
-                          step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-                          value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                          data-step="{{ quantity_increment }}"
                           form="{{ product_form_id }}"
+                          aria-label="{{ 'products.product.quantity.input_label' | t: product: product.title | escape }}"
                         >
-                        <button class="quantity__button" name="plus" type="button">
-                          <span class="visually-hidden">
-                            {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
-                          </span>
-                          <span class="svg-wrapper">
-                            {{- 'icon-plus.svg' | inline_asset_content -}}
-                          </span>
-                        </button>
-                      </quantity-input>
+                          {%- for quantity_option in (quantity_min..quantity_max) -%}
+                            {%- assign quantity_offset = quantity_option | minus: quantity_min -%}
+                            {%- assign quantity_modulo = quantity_offset | modulo: quantity_increment -%}
+                            {%- if quantity_modulo == 0 -%}
+                              <option
+                                value="{{ quantity_option }}"
+                                {% if quantity_option == quantity_min %}
+                                  selected
+                                {% endif %}
+                              >
+                                {{ quantity_option }}
+                              </option>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </select>
+                        <span class="svg-wrapper product-quantity-select__caret" aria-hidden="true">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
+                      </div>
                       {%- liquid
                         assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
                         assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.min
@@ -487,12 +537,19 @@
                     surface: 'product_page'
                   -%}
                 {%- when 'variant_picker' -%}
-                  {% render 'product-variant-picker',
-                    product: product,
-                    block: block,
-                    product_form_id: product_form_id
-                  %}
-                  {% render 'product-size-guide', product: product, section_id: section.id %}
+                  <div class="product-variant-size-row">
+                    {% render 'product-variant-picker',
+                      product: product,
+                      block: block,
+                      product_form_id: product_form_id
+                    %}
+                    {% render 'product-size-guide',
+                      product: product,
+                      section_id: section.id,
+                      size_guide_page: section.settings.size_guide_page,
+                      size_guide_fallback_text: section.settings.size_guide_fallback_text
+                    %}
+                  </div>
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,
@@ -532,10 +589,11 @@
                           {{ product.metafields.reviews.rating.value.scale_max -}}
                         </span>
                       </p>
+                      {%- assign rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count -%}
                       <p class="rating-count caption">
-                        <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+                        <span aria-hidden="true">{{ rating_count }} reviews</span>
                         <span class="visually-hidden">
-                          {{- product.metafields.reviews.rating_count }}
+                          {{- rating_count }}
                           {{ 'accessibility.total_reviews' | t -}}
                         </span>
                       </p>
@@ -548,7 +606,20 @@
                     data-section-id="{{ section.id }}"
                     data-product-id="{{ product.id }}"
                   >
-                    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+                    {%- liquid
+                      assign complementary_products = recommendations.products
+                      assign complementary_products_count = recommendations.products_count
+                      if recommendations.performed == false or recommendations.products_count == 0
+                        if block.settings.fallback_collection != blank and block.settings.fallback_collection.products_count > 0
+                          assign complementary_products = block.settings.fallback_collection.products
+                          assign complementary_products_count = block.settings.fallback_collection.products_count
+                        endif
+                      endif
+                      if complementary_products_count > block.settings.product_list_limit
+                        assign complementary_products_count = block.settings.product_list_limit
+                      endif
+                    -%}
+                    {%- if complementary_products_count > 0 -%}
                       <aside
                         aria-label="{{ 'accessibility.complementary_products' | t }}"
                         {{ block.shopify_attributes -}}
@@ -574,7 +645,7 @@
                             </summary>
                           {%- endif -%}
                           <slideshow-component class="slider-mobile-gutter">
-                            {%- assign number_of_slides = recommendations.products_count
+                            {%- assign number_of_slides = complementary_products_count
                               | plus: 0.0
                               | divided_by: block.settings.products_per_page
                               | ceil
@@ -600,7 +671,7 @@
                                   {% endif %}
                                 >
                                   <ul class="list-unstyled" role="list">
-                                    {%- for product in recommendations.products
+                                    {%- for product in complementary_products
                                       limit: block.settings.products_per_page
                                       offset: continue
                                     -%}
@@ -1461,6 +1532,12 @@
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
         },
         {
+          "type": "collection",
+          "id": "fallback_collection",
+          "label": "Fallback collection",
+          "info": "Used when Shopify complementary recommendations are empty."
+        },
+        {
           "type": "range",
           "id": "product_list_limit",
           "min": 1,
@@ -2288,6 +2365,17 @@
       ],
       "default": "lightbox",
       "label": "t:sections.main-product.settings.image_zoom.label"
+    },
+    {
+      "type": "page",
+      "id": "size_guide_page",
+      "label": "Size guide page"
+    },
+    {
+      "type": "richtext",
+      "id": "size_guide_fallback_text",
+      "default": "<p>Measure your natural nails and compare them with XS, S, M, and L before choosing your set.</p>",
+      "label": "Size guide fallback text"
     },
     {
       "type": "checkbox",

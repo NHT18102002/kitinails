@@ -1,0 +1,1115 @@
+{
+  "generatedAt": "2026-07-05T09:19:45.529Z",
+  "source": "tools/catalog-import/config/collection-map.proposed.json",
+  "summary": {
+    "reviewTotal": 117,
+    "approveNow": 25,
+    "seasonalCampaign": 78,
+    "drop": 14,
+    "approvedCollectionTotalAfterUpdate": 49,
+    "sourceMembershipTagRuleCount": 15
+  },
+  "approveNow": [
+    {
+      "handle": "aura",
+      "title": "Aura",
+      "productsCount": 267,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style collection; backed by Style_Aura tag."
+    },
+    {
+      "handle": "baroque",
+      "title": "Baroque",
+      "productsCount": 29,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "best-of-the-best",
+      "title": "Best of the Best",
+      "productsCount": 40,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen merchandising collection similar to best sellers; preserve with source membership tag."
+    },
+    {
+      "handle": "bloom-for-yourself",
+      "title": "Bloom For Yourself",
+      "productsCount": 183,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Public storefront collection explicitly requested; preserve with source membership tag."
+    },
+    {
+      "handle": "bundle",
+      "title": "BUNDLES",
+      "productsCount": 154,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen product class; backed by Bundle product type."
+    },
+    {
+      "handle": "classy-nails",
+      "title": "Classy Nails",
+      "productsCount": 156,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "fairy",
+      "title": "fairy",
+      "productsCount": 125,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "gift-card",
+      "title": "Gift Card",
+      "productsCount": 1,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Core product utility collection; preserve with source membership tag."
+    },
+    {
+      "handle": "golden-glamour",
+      "title": "Golden Glamour",
+      "productsCount": 40,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "gothic",
+      "title": "Gothic",
+      "productsCount": 35,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style collection; backed by Style_Gothic tag."
+    },
+    {
+      "handle": "island-glow-club",
+      "title": "Island Glow Club",
+      "productsCount": 210,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Active public storefront collection explicitly requested; backed by Summer2026 tag for current catalog."
+    },
+    {
+      "handle": "mini",
+      "title": "Mini",
+      "productsCount": 6,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen product size/category collection; preserve with source membership tag."
+    },
+    {
+      "handle": "new-nails",
+      "title": "New Nails",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen newness collection adjacent to New Arrivals; preserve with source membership tag."
+    },
+    {
+      "handle": "pearl",
+      "title": "Pearl",
+      "productsCount": 176,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style collection; backed by Style_Pearl tag."
+    },
+    {
+      "handle": "petite-nails",
+      "title": "Petite Nails",
+      "productsCount": 447,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen product size/category collection; preserve with source membership tag."
+    },
+    {
+      "handle": "press-on-nails",
+      "title": "Press On Nails",
+      "productsCount": 1115,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Core product category; backed by Press On Nails product type."
+    },
+    {
+      "handle": "press-on-toenails",
+      "title": "Press-on Toenails",
+      "productsCount": 22,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Core product category; backed by Press On Toenails tag."
+    },
+    {
+      "handle": "religions",
+      "title": "Religions",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; backed by Style_Religions tag."
+    },
+    {
+      "handle": "retrowave",
+      "title": "Retrowave",
+      "productsCount": 13,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "simple",
+      "title": "Simple",
+      "productsCount": 80,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style collection; backed by Style_Simple tag."
+    },
+    {
+      "handle": "simple-nails",
+      "title": "Simple Nails",
+      "productsCount": 48,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/SEO collection; backed by Style_Simple tag to keep public handle available."
+    },
+    {
+      "handle": "soft-glam",
+      "title": "Soft Glam",
+      "productsCount": 592,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen style/theme collection; preserve with source membership tag."
+    },
+    {
+      "handle": "tools-accessories",
+      "title": "Tools & Accessories",
+      "productsCount": 92,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Core accessories category; backed by TOOLS & ACCESSORIES product type."
+    },
+    {
+      "handle": "trending-nails",
+      "title": "Trending Nails",
+      "productsCount": 85,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen merchandising collection; preserve with source membership tag."
+    },
+    {
+      "handle": "zodiac",
+      "title": "Zodiac",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "approve_now",
+      "recommendationReason": "Evergreen theme collection; preserve with source membership tag."
+    }
+  ],
+  "seasonalCampaign": [
+    {
+      "handle": "manicure-3-nails-for-99",
+      "title": "3 Nails for $99",
+      "productsCount": 95,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "aug_best",
+      "title": "Aug_Best",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "back-to-school",
+      "title": "Back To School",
+      "productsCount": 93,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "back-to-school-picks",
+      "title": "Back to School Picks",
+      "productsCount": 79,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "best-sellers-collab",
+      "title": "Best Sellers Collab",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "coachella-nails-best",
+      "title": "Coachella Nails/Best",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "coachella-nails-desert-boho",
+      "title": "Coachella Nails/Desert Boho",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "coachella-nails-new",
+      "title": "Coachella Nails/New",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "coachella-nails-vibrant-fiesta",
+      "title": "Coachella Nails/Vibrant Fiesta",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "coffee-day",
+      "title": "Coffee Day",
+      "productsCount": 53,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "creepy-carnival",
+      "title": "Creepy Carnival",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "dark-nails",
+      "title": "Dark Nails Sale",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "year-of-the-dragon-collection",
+      "title": "Dragon Collection",
+      "productsCount": 20,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "ersa-birthday",
+      "title": "Ersa Birthday",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "ersa-festival-faves-collab",
+      "title": "Ersa Festival Faves Collab",
+      "productsCount": 23,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "ersa-valentine-sale",
+      "title": "Ersa Valentine Sale",
+      "productsCount": 109,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "ersa-x-work-piece",
+      "title": "Ersa x Work Piece",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "glow-duo-bundle",
+      "title": "Glow Duo Bundle",
+      "productsCount": 7,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "gothic-halloween",
+      "title": "Gothic Halloween",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "halloween",
+      "title": "Halloween",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "halloween-sale-2025",
+      "title": "halloween sale 2025",
+      "productsCount": 145,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "holiday",
+      "title": "Holiday",
+      "productsCount": 142,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "holiday-collection2023",
+      "title": "Holiday Collection2023",
+      "productsCount": 21,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "holiday-nail-trends",
+      "title": "Holiday Nail Trends",
+      "productsCount": 97,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "holiday-nails",
+      "title": "Holiday Nails",
+      "productsCount": 201,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "holiday-nails-2025",
+      "title": "Holiday Nails 2025",
+      "productsCount": 188,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "hot-girl-summer-nails",
+      "title": "Hot Girl Summer-nails",
+      "productsCount": 153,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "hot-sale",
+      "title": "Hot Sale",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "island-glow-club-island-spark",
+      "title": "Island Glow Club - Island Spark",
+      "productsCount": 22,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "island-glow-club-mermaid-glow",
+      "title": "Island Glow Club - Mermaid Glow",
+      "productsCount": 27,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "island-glow-club-tropical-bloom",
+      "title": "Island Glow Club - Tropical Bloom",
+      "productsCount": 49,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "island-glow-club-bundle",
+      "title": "Island Glow Club Bundle",
+      "productsCount": 5,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "jul_best",
+      "title": "Jul_Best",
+      "productsCount": 1399,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lny-2026",
+      "title": "LNY 2026",
+      "productsCount": 81,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lost-atlantis",
+      "title": "Lost Atlantis",
+      "productsCount": 32,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "love-bundles",
+      "title": "Love Bundles",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lunar-new-year",
+      "title": "Lunar New Year",
+      "productsCount": 39,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lunar-new-year-1",
+      "title": "Lunar New Year 1",
+      "productsCount": 37,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lunar-new-year-collab",
+      "title": "Lunar New Year Collab",
+      "productsCount": 17,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "lunar-new-year-collection",
+      "title": "Lunar New Year Collection",
+      "productsCount": 37,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day",
+      "title": "Mother's Day",
+      "productsCount": 131,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-bundle",
+      "title": "Mother's Day Bundle",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-best-sellers",
+      "title": "Mother's Day-Best Sellers",
+      "productsCount": 30,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-cool-bold",
+      "title": "Mother's Day-Cool & Bold",
+      "productsCount": 24,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-floral-vibes",
+      "title": "Mother's Day-Floral Vibes",
+      "productsCount": 48,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-short-sweet",
+      "title": "Mother's Day-Short & Sweet",
+      "productsCount": 34,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "mothers-day-simple-chic",
+      "title": "Mother's Day-Simple Chic",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "music-festival",
+      "title": "Music Festival",
+      "productsCount": 103,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "new-year-new-nails",
+      "title": "New Year New Nails",
+      "productsCount": 259,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "pride-collection",
+      "title": "Pride Collection",
+      "productsCount": 6,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "sales",
+      "title": "Sales",
+      "productsCount": 776,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "spring-bogo-sale",
+      "title": "Spring BOGO Sale",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "spring-collection",
+      "title": "Spring Collection",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "spring-summer-sale",
+      "title": "Spring-Summer Sale",
+      "productsCount": 120,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "springtime",
+      "title": "springtime",
+      "productsCount": 130,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "st-patrick-s-day-nails",
+      "title": "St. Patrick\u2019s Day Nails",
+      "productsCount": 67,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-10-off",
+      "title": "Summer 10% off",
+      "productsCount": 207,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection",
+      "title": "Summer Collection",
+      "productsCount": 216,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-best-sellers",
+      "title": "Summer Collection - Best Sellers",
+      "productsCount": 19,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-bundles",
+      "title": "Summer Collection - Bundles",
+      "productsCount": 9,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-glowing-flowers",
+      "title": "Summer Collection - Glowing Flowers",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-new-arrivals",
+      "title": "Summer Collection - New Arrivals",
+      "productsCount": 19,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-poolside-pop",
+      "title": "Summer Collection - Poolside Pop",
+      "productsCount": 16,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-shimmer-glow",
+      "title": "Summer Collection - Shimmer & Glow",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-collection-tropical-fruity",
+      "title": "Summer Collection - Tropical Fruity",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-glow-sale",
+      "title": "Summer Glow Sale",
+      "productsCount": 301,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-glow-sale-under-25",
+      "title": "Summer Glow Sale Under $25",
+      "productsCount": 245,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-glow-sale-under-35",
+      "title": "Summer Glow Sale Under $35",
+      "productsCount": 275,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-glow-sale-up-to-40-off",
+      "title": "Summer Glow Sale Up To 40% Off",
+      "productsCount": 50,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-glow-sale-up-to-70-off",
+      "title": "Summer Glow Sale Up To 70% Off",
+      "productsCount": 239,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-nails",
+      "title": "Summer Nails",
+      "productsCount": 59,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "summer-party",
+      "title": "Summer Party",
+      "productsCount": 92,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "sweater-weather",
+      "title": "Sweater Weather",
+      "productsCount": 232,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "v-day-sale",
+      "title": "V-Day Sale",
+      "productsCount": 115,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "valentine",
+      "title": "Valentine's Collection",
+      "productsCount": 163,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "valentine-s-nails-collection",
+      "title": "Valentine\u2019s Nails Collection",
+      "productsCount": 163,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "wonderfall",
+      "title": "Wonderfall",
+      "productsCount": 196,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    },
+    {
+      "handle": "the-year-of-the-snake-collection",
+      "title": "Year of the Snake",
+      "productsCount": 21,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "seasonal_campaign",
+      "recommendationReason": "Campaign, seasonal, collab, sale, or time-bound merchandising collection. Keep out of default dev approved set unless this campaign becomes active storefront scope."
+    }
+  ],
+  "drop": [
+    {
+      "handle": "discover-fashion-essentials",
+      "title": "Discover Fashion Essentials",
+      "productsCount": 438,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Generic SEO/feed collection, not a distinct storefront merchandising group."
+    },
+    {
+      "handle": "island-glow-club-except-sale",
+      "title": "Island Glow Club - except sale",
+      "productsCount": 156,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Operational exclusion collection, not public-facing merchandising."
+    },
+    {
+      "handle": "length",
+      "title": "Length",
+      "productsCount": 1216,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Aggregate navigation duplicate; individual length collections already exist."
+    },
+    {
+      "handle": "non-clearance",
+      "title": "Non-clearance",
+      "productsCount": 823,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Operational inverse of clearance, not needed as storefront collection."
+    },
+    {
+      "handle": "renaissance-nail",
+      "title": "renaissance nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Broad SEO/catch-all duplicate with near-catalog membership."
+    },
+    {
+      "handle": "shape",
+      "title": "Shape",
+      "productsCount": 1253,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Aggregate navigation duplicate; individual shape collections already exist."
+    },
+    {
+      "handle": "shape_cat-claw",
+      "title": "Shape_Cat Claw",
+      "productsCount": 0,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Empty public collection in source data."
+    },
+    {
+      "handle": "show-me",
+      "title": "SHOW ME",
+      "productsCount": 43,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Internal/unclear merchandising handle with no durable public rule."
+    },
+    {
+      "handle": "show-you",
+      "title": "SHOW YOU",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Internal/unclear merchandising handle with no durable public rule."
+    },
+    {
+      "handle": "simple-nail",
+      "title": "simple nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Broad SEO/catch-all duplicate; simple/simple-nails cover the public concept."
+    },
+    {
+      "handle": "spring-nail",
+      "title": "spring nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Broad SEO/catch-all duplicate; seasonal spring collections cover the concept."
+    },
+    {
+      "handle": "summer2026_except-sale",
+      "title": "summer2026_except sale",
+      "productsCount": 138,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Operational exclusion collection, not public-facing merchandising."
+    },
+    {
+      "handle": "upsell-best-sellers",
+      "title": "upsell best sellers",
+      "productsCount": 58,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "Upsell/internal merchandising collection; should not become storefront collection."
+    },
+    {
+      "handle": "worry-free",
+      "title": "worry-free",
+      "productsCount": 5,
+      "decision": "review",
+      "reason": "needs_allowlist_review",
+      "group": "drop",
+      "recommendationReason": "System/protection-related collection, not a storefront browsing collection."
+    }
+  ],
+  "promotedExistingApproved": [
+    {
+      "handle": "best-seller",
+      "title": "Best Sellers",
+      "productsCount": 1194,
+      "decision": "include",
+      "reason": "core_storefront_collection",
+      "group": "approved_rule_updated",
+      "recommendationReason": "Already approved core storefront collection; use broad catalog tags until exact rank/order membership is available."
+    },
+    {
+      "handle": "new-arrival",
+      "title": "New Arrivals",
+      "productsCount": 1204,
+      "decision": "include",
+      "reason": "core_storefront_collection",
+      "group": "approved_rule_updated",
+      "recommendationReason": "Already approved core storefront collection; use broad catalog tags until exact recency membership is available."
+    },
+    {
+      "handle": "ersas-accessories",
+      "title": "Ersa's Accessories",
+      "productsCount": 40,
+      "decision": "include",
+      "reason": "core_storefront_collection",
+      "group": "approved_rule_updated",
+      "recommendationReason": "Already approved core storefront collection; backed by TOOLS & ACCESSORIES product type."
+    },
+    {
+      "handle": "flower-nails",
+      "title": "Flower Nails",
+      "productsCount": 132,
+      "decision": "include",
+      "reason": "core_storefront_collection",
+      "group": "approved_rule_updated",
+      "recommendationReason": "Already approved core storefront collection; preserve with source membership tag."
+    }
+  ],
+  "sourceMembershipTagPattern": "SrcCollection_<collection-handle>",
+  "notes": [
+    "Rule-backed collections using SrcCollection_* require the later productSet import phase to add the same tag to products from source collection membership.",
+    "Collections with native product tag, product type, or price rules can populate immediately after product import without source membership tags.",
+    "Seasonal/campaign collections are retained in this report but are not added to the default approved map."
+  ]
+}

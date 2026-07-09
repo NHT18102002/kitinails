@@ -1,4 +1,4 @@
-.product--no-media .rating-wrapper {
+﻿.product--no-media .rating-wrapper {
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .rating-star::before {
-  content: '★★★★★';
+  content: '\2605\2605\2605\2605\2605';
   background: linear-gradient(
     90deg,
     var(--color-rating-star) var(--percent),

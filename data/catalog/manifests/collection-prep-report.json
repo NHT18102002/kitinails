@@ -1,0 +1,483 @@
+{
+  "generatedAt": "2026-07-05T09:21:07.187Z",
+  "apiVersion": "2026-07",
+  "conflicts": {
+    "approvedAdopts": [
+      {
+        "handle": "seafoam",
+        "existingProductId": "gid://shopify/Product/9650366644375",
+        "sourceUrl": "https://ersanails.com/products/seafoam",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "my-happy-hour",
+        "existingProductId": "gid://shopify/Product/9650359107735",
+        "sourceUrl": "https://ersanails.com/products/my-happy-hour",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "fairy-garden",
+        "existingProductId": "gid://shopify/Product/9650357305495",
+        "sourceUrl": "https://ersanails.com/products/fairy-garden",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "green-muse",
+        "existingProductId": "gid://shopify/Product/9650359009431",
+        "sourceUrl": "https://ersanails.com/products/green-muse",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "hoppy-spring",
+        "existingProductId": "gid://shopify/Product/9650354520215",
+        "sourceUrl": "https://ersanails.com/products/hoppy-spring",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "sweet-nothing",
+        "existingProductId": "gid://shopify/Product/9650347409559",
+        "sourceUrl": "https://ersanails.com/products/sweet-nothing",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "safari",
+        "existingProductId": "gid://shopify/Product/9650248253591",
+        "sourceUrl": "https://ersanails.com/products/safari",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "maldives-sunset",
+        "existingProductId": "gid://shopify/Product/9650366742679",
+        "sourceUrl": "https://ersanails.com/products/maldives-sunset",
+        "action": "adopt_existing"
+      },
+      {
+        "handle": "lost-in-paradise",
+        "existingProductId": "gid://shopify/Product/9650366808215",
+        "sourceUrl": "https://ersanails.com/products/lost-in-paradise",
+        "action": "adopt_existing"
+      }
+    ]
+  },
+  "metafields": {
+    "created": [],
+    "alreadyPresent": [
+      {
+        "namespace": "custom",
+        "key": "source_url",
+        "type": "url",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500489879"
+      },
+      {
+        "namespace": "custom",
+        "key": "source_product_id",
+        "type": "single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500522647"
+      },
+      {
+        "namespace": "custom",
+        "key": "demo_inventory",
+        "type": "boolean",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500555415"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_shape",
+        "type": "single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187008663"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_length",
+        "type": "single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187041431"
+      },
+      {
+        "namespace": "custom",
+        "key": "finish_style",
+        "type": "list.single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187631255"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_color_values",
+        "type": "list.single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500588183"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_shape_values",
+        "type": "list.single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500620951"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_length_values",
+        "type": "list.single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500653719"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_style_values",
+        "type": "list.single_line_text_field",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500686487"
+      }
+    ],
+    "missingAfterRun": [],
+    "typeMismatches": []
+  },
+  "collections": {
+    "created": [
+      {
+        "handle": "best-seller",
+        "id": "gid://shopify/Collection/323908108439",
+        "title": "Best Sellers"
+      },
+      {
+        "handle": "ersas-accessories",
+        "id": "gid://shopify/Collection/323908141207",
+        "title": "Ersa's Accessories"
+      },
+      {
+        "handle": "flower-nails",
+        "id": "gid://shopify/Collection/323908173975",
+        "title": "Flower Nails"
+      },
+      {
+        "handle": "new-arrival",
+        "id": "gid://shopify/Collection/323908206743",
+        "title": "New Arrivals"
+      },
+      {
+        "handle": "aura",
+        "id": "gid://shopify/Collection/323908239511",
+        "title": "Aura"
+      },
+      {
+        "handle": "baroque",
+        "id": "gid://shopify/Collection/323908272279",
+        "title": "Baroque"
+      },
+      {
+        "handle": "best-of-the-best",
+        "id": "gid://shopify/Collection/323908305047",
+        "title": "Best of the Best"
+      },
+      {
+        "handle": "bloom-for-yourself",
+        "id": "gid://shopify/Collection/323908337815",
+        "title": "Bloom For Yourself"
+      },
+      {
+        "handle": "bundle",
+        "id": "gid://shopify/Collection/323908370583",
+        "title": "BUNDLES"
+      },
+      {
+        "handle": "classy-nails",
+        "id": "gid://shopify/Collection/323908403351",
+        "title": "Classy Nails"
+      },
+      {
+        "handle": "fairy",
+        "id": "gid://shopify/Collection/323908436119",
+        "title": "fairy"
+      },
+      {
+        "handle": "gift-card",
+        "id": "gid://shopify/Collection/323908468887",
+        "title": "Gift Card"
+      },
+      {
+        "handle": "golden-glamour",
+        "id": "gid://shopify/Collection/323908501655",
+        "title": "Golden Glamour"
+      },
+      {
+        "handle": "gothic",
+        "id": "gid://shopify/Collection/323908534423",
+        "title": "Gothic"
+      },
+      {
+        "handle": "island-glow-club",
+        "id": "gid://shopify/Collection/323908567191",
+        "title": "Island Glow Club"
+      },
+      {
+        "handle": "mini",
+        "id": "gid://shopify/Collection/323908599959",
+        "title": "Mini"
+      },
+      {
+        "handle": "new-nails",
+        "id": "gid://shopify/Collection/323908632727",
+        "title": "New Nails"
+      },
+      {
+        "handle": "pearl",
+        "id": "gid://shopify/Collection/323908665495",
+        "title": "Pearl"
+      },
+      {
+        "handle": "petite-nails",
+        "id": "gid://shopify/Collection/323908698263",
+        "title": "Petite Nails"
+      },
+      {
+        "handle": "press-on-nails",
+        "id": "gid://shopify/Collection/323908731031",
+        "title": "Press On Nails"
+      },
+      {
+        "handle": "press-on-toenails",
+        "id": "gid://shopify/Collection/323908763799",
+        "title": "Press-on Toenails"
+      },
+      {
+        "handle": "religions",
+        "id": "gid://shopify/Collection/323908796567",
+        "title": "Religions"
+      },
+      {
+        "handle": "retrowave",
+        "id": "gid://shopify/Collection/323908829335",
+        "title": "Retrowave"
+      },
+      {
+        "handle": "simple",
+        "id": "gid://shopify/Collection/323908862103",
+        "title": "Simple"
+      },
+      {
+        "handle": "simple-nails",
+        "id": "gid://shopify/Collection/323908894871",
+        "title": "Simple Nails"
+      },
+      {
+        "handle": "soft-glam",
+        "id": "gid://shopify/Collection/323908927639",
+        "title": "Soft Glam"
+      },
+      {
+        "handle": "tools-accessories",
+        "id": "gid://shopify/Collection/323908960407",
+        "title": "Tools & Accessories"
+      },
+      {
+        "handle": "trending-nails",
+        "id": "gid://shopify/Collection/323908993175",
+        "title": "Trending Nails"
+      },
+      {
+        "handle": "zodiac",
+        "id": "gid://shopify/Collection/323909025943",
+        "title": "Zodiac"
+      }
+    ],
+    "resolvedAfterRun": [
+      {
+        "handle": "almond",
+        "id": "gid://shopify/Collection/323906437271"
+      },
+      {
+        "handle": "best-seller",
+        "id": "gid://shopify/Collection/323908108439"
+      },
+      {
+        "handle": "bridal",
+        "id": "gid://shopify/Collection/323906470039"
+      },
+      {
+        "handle": "cat-eye",
+        "id": "gid://shopify/Collection/323906502807"
+      },
+      {
+        "handle": "chrome",
+        "id": "gid://shopify/Collection/323906535575"
+      },
+      {
+        "handle": "clearance",
+        "id": "gid://shopify/Collection/323906568343"
+      },
+      {
+        "handle": "coffin",
+        "id": "gid://shopify/Collection/323906601111"
+      },
+      {
+        "handle": "ersa-essence",
+        "id": "gid://shopify/Collection/323906633879"
+      },
+      {
+        "handle": "ersa-nails-tools",
+        "id": "gid://shopify/Collection/323906666647"
+      },
+      {
+        "handle": "ersas-accessories",
+        "id": "gid://shopify/Collection/323908141207"
+      },
+      {
+        "handle": "flower-nails",
+        "id": "gid://shopify/Collection/323908173975"
+      },
+      {
+        "handle": "french-tip",
+        "id": "gid://shopify/Collection/323906699415"
+      },
+      {
+        "handle": "long",
+        "id": "gid://shopify/Collection/323906732183"
+      },
+      {
+        "handle": "medium",
+        "id": "gid://shopify/Collection/323906764951"
+      },
+      {
+        "handle": "mermaid",
+        "id": "gid://shopify/Collection/323906797719"
+      },
+      {
+        "handle": "metallic",
+        "id": "gid://shopify/Collection/323906830487"
+      },
+      {
+        "handle": "nails-under-30",
+        "id": "gid://shopify/Collection/323906863255"
+      },
+      {
+        "handle": "new-arrival",
+        "id": "gid://shopify/Collection/323908206743"
+      },
+      {
+        "handle": "ombre",
+        "id": "gid://shopify/Collection/323906896023"
+      },
+      {
+        "handle": "oval",
+        "id": "gid://shopify/Collection/323906928791"
+      },
+      {
+        "handle": "short",
+        "id": "gid://shopify/Collection/323906961559"
+      },
+      {
+        "handle": "square",
+        "id": "gid://shopify/Collection/323906994327"
+      },
+      {
+        "handle": "squoval",
+        "id": "gid://shopify/Collection/323907027095"
+      },
+      {
+        "handle": "aura",
+        "id": "gid://shopify/Collection/323908239511"
+      },
+      {
+        "handle": "baroque",
+        "id": "gid://shopify/Collection/323908272279"
+      },
+      {
+        "handle": "best-of-the-best",
+        "id": "gid://shopify/Collection/323908305047"
+      },
+      {
+        "handle": "bloom-for-yourself",
+        "id": "gid://shopify/Collection/323908337815"
+      },
+      {
+        "handle": "bundle",
+        "id": "gid://shopify/Collection/323908370583"
+      },
+      {
+        "handle": "classy-nails",
+        "id": "gid://shopify/Collection/323908403351"
+      },
+      {
+        "handle": "fairy",
+        "id": "gid://shopify/Collection/323908436119"
+      },
+      {
+        "handle": "gift-card",
+        "id": "gid://shopify/Collection/323908468887"
+      },
+      {
+        "handle": "golden-glamour",
+        "id": "gid://shopify/Collection/323908501655"
+      },
+      {
+        "handle": "gothic",
+        "id": "gid://shopify/Collection/323908534423"
+      },
+      {
+        "handle": "island-glow-club",
+        "id": "gid://shopify/Collection/323908567191"
+      },
+      {
+        "handle": "mini",
+        "id": "gid://shopify/Collection/323908599959"
+      },
+      {
+        "handle": "new-nails",
+        "id": "gid://shopify/Collection/323908632727"
+      },
+      {
+        "handle": "pearl",
+        "id": "gid://shopify/Collection/323908665495"
+      },
+      {
+        "handle": "petite-nails",
+        "id": "gid://shopify/Collection/323908698263"
+      },
+      {
+        "handle": "press-on-nails",
+        "id": "gid://shopify/Collection/323908731031"
+      },
+      {
+        "handle": "press-on-toenails",
+        "id": "gid://shopify/Collection/323908763799"
+      },
+      {
+        "handle": "religions",
+        "id": "gid://shopify/Collection/323908796567"
+      },
+      {
+        "handle": "retrowave",
+        "id": "gid://shopify/Collection/323908829335"
+      },
+      {
+        "handle": "simple",
+        "id": "gid://shopify/Collection/323908862103"
+      },
+      {
+        "handle": "simple-nails",
+        "id": "gid://shopify/Collection/323908894871"
+      },
+      {
+        "handle": "soft-glam",
+        "id": "gid://shopify/Collection/323908927639"
+      },
+      {
+        "handle": "tools-accessories",
+        "id": "gid://shopify/Collection/323908960407"
+      },
+      {
+        "handle": "trending-nails",
+        "id": "gid://shopify/Collection/323908993175"
+      },
+      {
+        "handle": "zodiac",
+        "id": "gid://shopify/Collection/323909025943"
+      }
+    ],
+    "virtualSkips": [
+      {
+        "handle": "all",
+        "title": "All",
+        "strategy": "virtual_skip",
+        "ruleSet": null
+      }
+    ],
+    "pending": [],
+    "missingRule": [],
+    "unresolvedRuleBacked": []
+  }
+}

@@ -1,0 +1,147 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .ersa-marquee__track {
+    display: flex;
+    white-space: nowrap;
+    animation: ersa-marquee {{ section.settings.speed }}s linear infinite;
+    min-width: 100%;
+  }
+
+  .ersa-marquee__content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+
+  .ersa-marquee__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .ersa-marquee__item svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  @keyframes ersa-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+{%- endstyle -%}
+
+<div class="ersa-marquee section-{{ section.id }}-padding">
+  <div class="ersa-marquee__track">
+    <div class="ersa-marquee__content">
+      {%- for block in section.blocks -%}
+        <div class="ersa-marquee__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            {%- case block.settings.icon -%}
+              {%- when 'heart' -%}{{ 'icon-heart.svg' | inline_asset_content }}
+              {%- when 'star' -%}{{ 'icon-star.svg' | inline_asset_content }}
+              {%- when 'leaf' -%}{{ 'icon-leaf.svg' | inline_asset_content }}
+              {%- when 'clock' -%}{{ 'icon-stopwatch.svg' | inline_asset_content }}
+              {%- when 'flower' -%}{{ 'icon-flower.svg' | inline_asset_content }}
+              {%- else -%}{{ 'icon-checkmark.svg' | inline_asset_content }}
+            {%- endcase -%}
+          {%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+    <!-- Duplicate for seamless looping -->
+    <div class="ersa-marquee__content" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <div class="ersa-marquee__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            {%- case block.settings.icon -%}
+              {%- when 'heart' -%}{{ 'icon-heart.svg' | inline_asset_content }}
+              {%- when 'star' -%}{{ 'icon-star.svg' | inline_asset_content }}
+              {%- when 'leaf' -%}{{ 'icon-leaf.svg' | inline_asset_content }}
+              {%- when 'clock' -%}{{ 'icon-stopwatch.svg' | inline_asset_content }}
+              {%- when 'flower' -%}{{ 'icon-flower.svg' | inline_asset_content }}
+              {%- else -%}{{ 'icon-checkmark.svg' | inline_asset_content }}
+            {%- endcase -%}
+          {%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+    <!-- Duplicate a 3rd time for wide screens -->
+    <div class="ersa-marquee__content" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <div class="ersa-marquee__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            {%- case block.settings.icon -%}
+              {%- when 'heart' -%}{{ 'icon-heart.svg' | inline_asset_content }}
+              {%- when 'star' -%}{{ 'icon-star.svg' | inline_asset_content }}
+              {%- when 'leaf' -%}{{ 'icon-leaf.svg' | inline_asset_content }}
+              {%- when 'clock' -%}{{ 'icon-stopwatch.svg' | inline_asset_content }}
+              {%- when 'flower' -%}{{ 'icon-flower.svg' | inline_asset_content }}
+              {%- else -%}{{ 'icon-checkmark.svg' | inline_asset_content }}
+            {%- endcase -%}
+          {%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Kiti Marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#111111" },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#FFFFFF" },
+    { "type": "range", "id": "speed", "min": 10, "max": 60, "step": 1, "unit": "s", "label": "Animation Speed", "default": 20 },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 16 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 16 }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Marquee Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Value proposition" },
+        { "type": "select", "id": "icon", "label": "Icon", "default": "check", "options": [ { "value": "none", "label": "None" }, { "value": "check", "label": "Check" }, { "value": "heart", "label": "Heart" }, { "value": "star", "label": "Star" }, { "value": "leaf", "label": "Leaf" }, { "value": "clock", "label": "Clock" }, { "value": "flower", "label": "Flower" } ] }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kiti Marquee",
+      "blocks": [
+        { "type": "text", "settings": { "text": "Trusted by 100,000+ customers", "icon": "heart" } },
+        { "type": "text", "settings": { "text": "Handcrafted by nail techs using gel", "icon": "flower" } },
+        { "type": "text", "settings": { "text": "Salon quality in under 10 min", "icon": "clock" } },
+        { "type": "text", "settings": { "text": "Last up to 4 weeks each wear", "icon": "check" } },
+        { "type": "text", "settings": { "text": "Zero nail damage & reusable for life", "icon": "leaf" } },
+        { "type": "text", "settings": { "text": "Best reusable nails by Byrdie & Teen Vogue", "icon": "star" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

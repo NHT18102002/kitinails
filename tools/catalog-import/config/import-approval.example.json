@@ -1,0 +1,7 @@
+{
+  "approvedFor": "productset-import",
+  "approvedManifestSha256": "5e68351a2a590c0020ffd2341a7c853b4ec146ea385f4351c1238bb1c9ebca68",
+  "draftOnly": true,
+  "approvedAt": "2026-07-05T00:00:00.000Z",
+  "notes": "Audit gate for preflight, staged Shopify Files upload, and later draft-only productSet import."
+}

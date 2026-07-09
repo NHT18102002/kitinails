@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-07-05T13:01:28.921Z",
+  "summary": {
+    "status": "pass_with_drift",
+    "failedChecks": [],
+    "driftChecks": [
+      "liveAllowlistedConflictMatches"
+    ]
+  },
+  "expected": {
+    "approvedAdoptPolicyCount": 9,
+    "pendingCollectionHandles": []
+  },
+  "observed": {
+    "approvedAdoptPolicyCount": 9,
+    "allowlistedAdoptMatchCount": 0,
+    "pendingCollectionHandles": [],
+    "unresolvedRuleBackedCollections": [],
+    "missingMetafields": [],
+    "typeMismatches": [],
+    "productConflicts": 0
+  },
+  "checks": {
+    "approvedAdoptPolicyConfigured": {
+      "status": "pass",
+      "expectedCount": 9,
+      "configuredCount": 9,
+      "observedCount": 9,
+      "message": "Approved adopt allowlist is configured with all 9 exact policies."
+    },
+    "liveAllowlistedConflictMatches": {
+      "status": "drift",
+      "expectedCount": 9,
+      "observedMatchCount": 0,
+      "message": "Approved adopt policies are configured, but current Shopify state no longer exposes those handle conflicts. This is store drift, not a policy misconfiguration."
+    },
+    "requiredMetafieldsReady": {
+      "status": "pass",
+      "missing": [],
+      "typeMismatches": [],
+      "missingAfterRun": [],
+      "message": "Required import and taxonomy metafield definitions exist with compatible types."
+    },
+    "ruleBackedCollectionsResolved": {
+      "status": "pass",
+      "resolvedCount": 48,
+      "missingCount": 0,
+      "unresolvedRuleBacked": [],
+      "message": "All rule-backed approved collections resolve in Shopify."
+    },
+    "pendingCollectionsNonBlocking": {
+      "status": "pass",
+      "expectedPending": [],
+      "observedPending": [],
+      "message": "Pending collections are explicitly reported and no longer appear as blocking missing collections."
+    },
+    "prepareAdminProductMutationGuard": {
+      "status": "pass",
+      "hasProductMutationImport": false,
+      "hasProductMutationUsage": false,
+      "routesPrepareAdminToRunPrepareAdmin": true,
+      "message": "prepare-admin routes only to admin prep logic and does not reference product mutation operations."
+    }
+  }
+}

@@ -1,0 +1,784 @@
+{
+  "generatedAt": "2026-07-05T09:19:45.531Z",
+  "collections": [
+    {
+      "handle": "all",
+      "title": "All",
+      "strategy": "virtual_skip"
+    },
+    {
+      "handle": "almond",
+      "title": "almond",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Shape_Almond"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "best-seller",
+      "title": "Best Sellers",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Already approved core storefront collection; use broad catalog tags until exact rank/order membership is available.",
+      "ruleSet": {
+        "appliedDisjunctively": true,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Press On Nails"
+          },
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Bundle"
+          },
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "TOOLS & ACCESSORIES"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "bridal",
+      "title": "Bridal Collection",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Bridal Collection"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "cat-eye",
+      "title": "Cat Eye",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Cat Eye"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "chrome",
+      "title": "Chrome",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Chrome"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "clearance",
+      "title": "Clearance",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": true,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "goodbye sale"
+          },
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "flashsale"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "coffin",
+      "title": "Coffin",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Shape_Coffin"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "ersa-essence",
+      "title": "Ersa Essence",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Ersa Essence"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "ersa-nails-tools",
+      "title": "Ersa nails Tools",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TYPE",
+            "relation": "EQUALS",
+            "condition": "TOOLS & ACCESSORIES"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "ersas-accessories",
+      "title": "Ersa's Accessories",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Already approved core storefront collection; backed by TOOLS & ACCESSORIES product type.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TYPE",
+            "relation": "EQUALS",
+            "condition": "TOOLS & ACCESSORIES"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "flower-nails",
+      "title": "Flower Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Already approved core storefront collection; preserve with source membership tag. Product import should assign SrcCollection_flower-nails from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_flower-nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "french-tip",
+      "title": "French Tip",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_French Tip"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "long",
+      "title": "Long",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Length_Long"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "medium",
+      "title": "Medium",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Length_Med"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "mermaid",
+      "title": "Mermaid",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Mermaid"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "metallic",
+      "title": "Metallic",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Metallic"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "nails-under-30",
+      "title": "Nails Under $30",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "VARIANT_PRICE",
+            "relation": "LESS_THAN",
+            "condition": "30"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "new-arrival",
+      "title": "New Arrivals",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Already approved core storefront collection; use broad catalog tags until exact recency membership is available.",
+      "ruleSet": {
+        "appliedDisjunctively": true,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Press On Nails"
+          },
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Bundle"
+          },
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "TOOLS & ACCESSORIES"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "ombre",
+      "title": "Ombre",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Ombr\u00e9"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "oval",
+      "title": "Oval",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Shape_Oval"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "short",
+      "title": "Short",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Length_Short"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "square",
+      "title": "Square",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Shape_Square"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "squoval",
+      "title": "Squoval",
+      "strategy": "auto_create_rule_backed",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Shape_Squoval"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "aura",
+      "title": "Aura",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style collection; backed by Style_Aura tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Aura"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "baroque",
+      "title": "Baroque",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_baroque from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_baroque"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "best-of-the-best",
+      "title": "Best of the Best",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen merchandising collection similar to best sellers; preserve with source membership tag. Product import should assign SrcCollection_best-of-the-best from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_best-of-the-best"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "bloom-for-yourself",
+      "title": "Bloom For Yourself",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Public storefront collection explicitly requested; preserve with source membership tag. Product import should assign SrcCollection_bloom-for-yourself from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_bloom-for-yourself"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "bundle",
+      "title": "BUNDLES",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen product class; backed by Bundle product type.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TYPE",
+            "relation": "EQUALS",
+            "condition": "Bundle"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "classy-nails",
+      "title": "Classy Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_classy-nails from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_classy-nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "fairy",
+      "title": "fairy",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_fairy from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_fairy"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "gift-card",
+      "title": "Gift Card",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Core product utility collection; preserve with source membership tag. Product import should assign SrcCollection_gift-card from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_gift-card"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "golden-glamour",
+      "title": "Golden Glamour",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_golden-glamour from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_golden-glamour"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "gothic",
+      "title": "Gothic",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style collection; backed by Style_Gothic tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Gothic"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "island-glow-club",
+      "title": "Island Glow Club",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Active public storefront collection explicitly requested; backed by Summer2026 tag for current catalog.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Summer2026"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "mini",
+      "title": "Mini",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen product size/category collection; preserve with source membership tag. Product import should assign SrcCollection_mini from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_mini"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "new-nails",
+      "title": "New Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen newness collection adjacent to New Arrivals; preserve with source membership tag. Product import should assign SrcCollection_new-nails from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_new-nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "pearl",
+      "title": "Pearl",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style collection; backed by Style_Pearl tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Pearl"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "petite-nails",
+      "title": "Petite Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen product size/category collection; preserve with source membership tag. Product import should assign SrcCollection_petite-nails from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_petite-nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "press-on-nails",
+      "title": "Press On Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Core product category; backed by Press On Nails product type.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TYPE",
+            "relation": "EQUALS",
+            "condition": "Press On Nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "press-on-toenails",
+      "title": "Press-on Toenails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Core product category; backed by Press On Toenails tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Press On Toenails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "religions",
+      "title": "Religions",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; backed by Style_Religions tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Religions"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "retrowave",
+      "title": "Retrowave",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_retrowave from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_retrowave"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "simple",
+      "title": "Simple",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style collection; backed by Style_Simple tag.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Simple"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "simple-nails",
+      "title": "Simple Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/SEO collection; backed by Style_Simple tag to keep public handle available.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "Style_Simple"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "soft-glam",
+      "title": "Soft Glam",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen style/theme collection; preserve with source membership tag. Product import should assign SrcCollection_soft-glam from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_soft-glam"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "tools-accessories",
+      "title": "Tools & Accessories",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Core accessories category; backed by TOOLS & ACCESSORIES product type.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TYPE",
+            "relation": "EQUALS",
+            "condition": "TOOLS & ACCESSORIES"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "trending-nails",
+      "title": "Trending Nails",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen merchandising collection; preserve with source membership tag. Product import should assign SrcCollection_trending-nails from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_trending-nails"
+          }
+        ]
+      }
+    },
+    {
+      "handle": "zodiac",
+      "title": "Zodiac",
+      "strategy": "auto_create_rule_backed",
+      "reason": "Evergreen theme collection; preserve with source membership tag. Product import should assign SrcCollection_zodiac from source collection membership.",
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "SrcCollection_zodiac"
+          }
+        ]
+      }
+    }
+  ]
+}

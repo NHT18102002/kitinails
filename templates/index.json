@@ -1,75 +1,122 @@
 {
   "sections": {
     "hero": {
-      "type": "image-banner",
+      "type": "slideshow",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_1": {
+          "type": "slide",
           "settings": {
-            "heading": "Island Glow Club",
+            "review_badge_text": "4.9 from 5000+ Reviews",
+            "heading": "Bundles & Save",
             "heading_size": "h1",
-            "heading_tag": "h1"
+            "subheading": "More to wear, more to love, all shaped by handcrafted detail.",
+            "button_label": "SHOP BUNDLES",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "link_2": "",
+            "button_style_secondary_2": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "image_overlay_opacity": 10,
+            "color_scheme": "scheme-1"
           }
         },
-        "text": {
-          "type": "text",
+        "slide_2": {
+          "type": "slide",
           "settings": {
-            "text": "Welcome to the glowiest club of the summer.",
-            "text_style": "body"
+            "review_badge_text": "4.9 from 5000+ Reviews",
+            "heading": "Soft Season",
+            "heading_size": "h1",
+            "subheading": "A refined take on floral beauty through handcrafted detail and timeless design.",
+            "button_label": "SHOP FLORAL NAILS",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "SHOP ALL",
+            "link_2": "shopify://collections/all",
+            "button_style_secondary_2": true,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "image_overlay_opacity": 10,
+            "color_scheme": "scheme-1"
           }
         },
-        "buttons": {
-          "type": "buttons",
+        "slide_3": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "SHOP SUMMER",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "SHOP ALL NAILS",
-            "button_link_2": "shopify://collections/all",
-            "button_style_secondary_2": true
-          }
-        },
-        "review_badge": {
-          "type": "review_badge",
-          "settings": {
-            "badge_text": "4.9 from 5000+ Reviews"
+            "review_badge_text": "4.9 from 5000+ Reviews",
+            "heading": "New Arrivals",
+            "heading_size": "h1",
+            "subheading": "Discover our latest premium handmade sets.",
+            "button_label": "SHOP NEW",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "link_2": "",
+            "button_style_secondary_2": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "image_overlay_opacity": 10,
+            "color_scheme": "scheme-1"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "buttons",
-        "review_badge"
+        "slide_1",
+        "slide_2",
+        "slide_3"
       ],
       "settings": {
-        "image_overlay_opacity": 10,
-        "image_height": "large",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-1",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": true
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "featured_products": {
       "type": "featured-collection",
       "settings": {
         "title": "Best Sellers Loved by Thousands",
-        "heading_size": "h2",
-        "description": "<p>Our most popular nail sets, chosen by over 100,000 customers. Proven styles that deliver salon-quality results—every time.</p>",
-        "show_description": false,
+        "heading_size": "h3",
+        "description": "<p>Our most popular nail sets, chosen by over 100,000 customers. Proven styles that deliver salon-quality results?every time.</p>",
+        "show_description": true,
         "description_style": "body",
-        "collection": "best-sellers",
+        "collection": "best-seller",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "island_glow_club": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Island Glow Club",
+        "heading_size": "h3",
+        "description": "<p>A little thank-you for our glow girls. Enjoy up to 30% off new summer nails.✨</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "island-glow-club",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
         "enable_desktop_slider": true,
         "swipe_on_mobile": true,
         "image_ratio": "portrait",
@@ -84,119 +131,90 @@
       }
     },
     "browse_shape": {
-      "type": "browse-collections",
-      "disabled": false,
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "title": "Browse by shape",
-        "heading_size": "h2",
-        "text": "<p>Group shape-led collections so shoppers can head straight to their preferred silhouette.</p>",
-        "image_ratio": "portrait",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "browse_length": {
-      "type": "browse-collections",
-      "disabled": false,
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "title": "Browse by length",
-        "heading_size": "h2",
-        "text": "<p>Use length-based collections to guide quick browsing for shorter, everyday, or longer looks.</p>",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "education": {
-      "type": "multicolumn",
+      "type": "ersa-collection-grid",
       "blocks": {
-        "size_guidance": {
-          "type": "column",
+        "s1": {
+          "type": "collection_card",
           "settings": {
-            "title": "Choose with more confidence",
-            "text": "<p>Compare shape, finish, and length details directly on the product page before you commit.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Almond",
+            "image_filename": "Almond_1.webp",
+            "collection": "almond"
           }
         },
-        "application_help": {
-          "type": "column",
+        "s2": {
+          "type": "collection_card",
           "settings": {
-            "title": "Keep the path simple",
-            "text": "<p>Browse the full catalog first, then narrow down with filters when you already know the look you want.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Coffin",
+            "image_filename": "coffin_01.webp",
+            "collection": "coffin"
           }
         },
-        "care_support": {
-          "type": "column",
+        "s3": {
+          "type": "collection_card",
           "settings": {
-            "title": "Support stays close",
-            "text": "<p>Size guidance, application help, and aftercare content can surface next to the products that need it.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Oval",
+            "image_filename": "oval_01.webp",
+            "collection": "oval"
+          }
+        },
+        "s4": {
+          "type": "collection_card",
+          "settings": {
+            "title": "Squoval",
+            "image_filename": "squoval_02.webp",
+            "collection": "squoval"
+          }
+        },
+        "s5": {
+          "type": "collection_card",
+          "settings": {
+            "title": "Square",
+            "image_filename": "sqaure_01.webp",
+            "collection": "square"
           }
         }
       },
       "block_order": [
-        "size_guidance",
-        "application_help",
-        "care_support"
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
       ],
       "settings": {
-        "title": "Built to feel easier to shop",
+        "heading": "Shop By Shape",
         "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
+        "subheading": "Find your perfect silhouette.",
+        "columns_desktop": 5,
+        "show_product_count": false,
+        "show_view_all": false,
+        "image_fit": "contain",
+        "remove_image_background": true,
+        "section_bg_color": "#f7f4f1",
         "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "featured_accessories": {
-      "type": "featured-collection",
-      "disabled": false,
+      "type": "ersa-must-have-essentials",
       "settings": {
-        "title": "Accessories and curated bundles",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "",
+        "eyebrow": "Tools & Accessories",
+        "heading": "Must-Have Nail Essentials",
+        "heading_size": "h1",
+        "text": "<p>Get the essential tools for perfect nails.</p>",
+        "image_filename": "Sangria_-_ErsaNails_PressOnNails_007.webp",
+        "collection": "tools-accessories",
         "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "outline",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "button_label": "SHOP ALL TOOLS",
+        "button_link": "shopify://collections/tools-accessories",
         "image_ratio": "portrait",
-        "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 24,
-        "padding_bottom": 24
+        "show_rating": true,
+        "quick_add": "standard",
+        "color_scheme": "scheme-1",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "newsletter": {
@@ -240,7 +258,7 @@
           "settings": {
             "icon": "heart",
             "title": "Handmade",
-            "text": "<p>Detailed press-on nail sets finished with a studio-inspired look.</p>"
+            "text": "<p>Handcrafted with salon-quality gel</p>"
           }
         },
         "reusable": {
@@ -248,7 +266,7 @@
           "settings": {
             "icon": "recycle",
             "title": "Reusable",
-            "text": "<p>Designed for careful removal, storage and repeat wear.</p>"
+            "text": "<p>Made for multiple uses ensuring lasting beauty</p>"
           }
         },
         "loved": {
@@ -256,7 +274,7 @@
           "settings": {
             "icon": "star",
             "title": "Last 4 weeks",
-            "text": "<p>Showcase recent demand, launches or best-selling styles.</p>"
+            "text": "<p>Stay flawless for up to 4 weeks with solid glue</p>"
           }
         },
         "shipping": {
@@ -264,7 +282,7 @@
           "settings": {
             "icon": "truck",
             "title": "Free Shipping",
-            "text": "<p>Promote your current free shipping threshold and delivery promise.</p>"
+            "text": "<p>Enjoy free shipping on orders over $79 USD</p>"
           }
         }
       },
@@ -283,78 +301,39 @@
         "padding_bottom": 28
       }
     },
-    "testimonials": {
-      "type": "ersa-testimonials",
-      "blocks": {
-        "one": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "The nails looked polished, photographed beautifully and felt easy to wear.",
-            "author": "Verified customer"
-          }
-        },
-        "two": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Application was simple and the finished look felt like a salon appointment.",
-            "author": "Verified customer"
-          }
-        },
-        "three": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "A statement set that still felt lightweight enough for everyday plans.",
-            "author": "Verified customer"
-          }
-        }
-      },
-      "block_order": [
-        "one",
-        "two",
-        "three"
-      ],
-      "settings": {
-        "eyebrow": "Customer love",
-        "heading": "Let customers speak for us",
-        "heading_size": "h1",
-        "text": "<p>Use this editable section for reviews, social proof or press highlights.</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": 56,
-        "padding_bottom": 56
-      }
-    },
     "social_gallery": {
       "type": "ersa-social-gallery",
       "blocks": {
         "look_1": {
           "type": "image",
           "settings": {
-            "caption": "@studio",
-            "link": ""
+            "caption": "@SHANIAKUFNER",
+            "link": "shopify://collections/all",
+            "image_filename": "Summer2026_ErsaNails_PressOnNails_19.webp"
           }
         },
         "look_2": {
           "type": "image",
           "settings": {
-            "caption": "@nails",
-            "link": ""
+            "caption": "@KITINAILS",
+            "link": "shopify://collections/all",
+            "image_filename": "Summer2026_ErsaNails_PressOnNails_15.webp"
           }
         },
         "look_3": {
           "type": "image",
           "settings": {
-            "caption": "@pressons",
-            "link": ""
+            "caption": "@NAILINSPO",
+            "link": "shopify://collections/all",
+            "image_filename": "Spring_ErsaNails_02.webp"
           }
         },
         "look_4": {
           "type": "image",
           "settings": {
-            "caption": "@inspo",
-            "link": ""
+            "caption": "@SOFTGLAM",
+            "link": "shopify://collections/all",
+            "image_filename": "forest_elf_ersanails_press_on_nails_04.webp"
           }
         }
       },
@@ -365,12 +344,13 @@
         "look_4"
       ],
       "settings": {
+        "subtitle": "SPOTTED ON @KITINAILS",
         "heading": "Get Inspired by Every Look",
         "heading_size": "h1",
-        "text": "<p>Add campaign shots, creator content or customer nail looks from the Theme Customizer.</p>",
+        "text": "",
         "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "seo_h1": {
@@ -382,94 +362,48 @@
         "padding_bottom": 0
       }
     },
-    "faq": {
-      "type": "collapsible-content",
+    "collection_grid": {
+      "type": "ersa-collection-grid",
       "blocks": {
-        "sizing": {
-          "type": "collapsible_row",
+        "col_1": {
+          "type": "collection_card",
           "settings": {
-            "heading": "How do I find my size?",
-            "icon": "ruler",
-            "row_content": "<p>Use this editable FAQ row to explain sizing, measuring and fit guidance for your nail sets.</p>",
-            "page": ""
+            "title": "Island Glow Club",
+            "image_filename": "Summer2026_ErsaNails_PressOnNails_19.webp",
+            "collection": "island-glow-club"
           }
         },
-        "lasting": {
-          "type": "collapsible_row",
+        "col_2": {
+          "type": "collection_card",
           "settings": {
-            "heading": "How long do press-on nails last?",
-            "icon": "heart",
-            "row_content": "<p>Explain expected wear time, application prep and care tips based on your products.</p>",
-            "page": ""
+            "title": "Bloom For Yourself",
+            "image_filename": "Summer2026_ErsaNails_PressOnNails_15.webp",
+            "collection": "bloom-for-yourself"
           }
         },
-        "reusable": {
-          "type": "collapsible_row",
+        "col_3": {
+          "type": "collection_card",
           "settings": {
-            "heading": "Are the nails reusable?",
-            "icon": "recycle",
-            "row_content": "<p>Describe removal, cleaning and storage recommendations here.</p>",
-            "page": ""
+            "title": "Flower Nails",
+            "image_filename": "forest_elf_ersanails_press_on_nails_04.webp",
+            "collection": "flower-nails"
           }
         },
-        "shipping": {
-          "type": "collapsible_row",
+        "col_4": {
+          "type": "collection_card",
           "settings": {
-            "heading": "Where do you ship?",
-            "icon": "truck",
-            "row_content": "<p>Summarize shipping regions, thresholds and processing times, or link to a policy page.</p>",
-            "page": ""
+            "title": "Kiti Essence",
+            "image_filename": "Ersa_Essence_1_Cat_Eye.webp",
+            "collection": "ersa-essence"
           }
         }
       },
       "block_order": [
-        "sizing",
-        "lasting",
-        "reusable",
-        "shipping"
+        "col_1",
+        "col_2",
+        "col_3",
+        "col_4"
       ],
-      "settings": {
-        "caption": "Need help?",
-        "heading": "FAQs",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "scheme-1",
-        "container_color_scheme": "scheme-1",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
-    "as_seen_in": {
-      "type": "ersa-as-seen-in",
-      "blocks": {
-        "logo_1": { "type": "logo" },
-        "logo_2": { "type": "logo" },
-        "logo_3": { "type": "logo" },
-        "logo_4": { "type": "logo" },
-        "logo_5": { "type": "logo" }
-      },
-      "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5"],
-      "settings": {
-        "heading": "As Seen In",
-        "heading_size": "h2",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "collection_grid": {
-      "type": "ersa-collection-grid",
-      "blocks": {
-        "col_1": { "type": "collection_card", "settings": { "title": "Best Sellers" } },
-        "col_2": { "type": "collection_card", "settings": { "title": "New Arrivals" } },
-        "col_3": { "type": "collection_card", "settings": { "title": "Floral Beauty" } },
-        "col_4": { "type": "collection_card", "settings": { "title": "Summer Collection" } }
-      },
-      "block_order": ["col_1", "col_2", "col_3", "col_4"],
       "settings": {
         "heading": "Curated for Your Style",
         "heading_size": "h2",
@@ -531,13 +465,18 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3", "review_4"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
       "settings": {
-        "eyebrow": "CUSTOMER REVIEWS",
+        "eyebrow": "Loved by Thousands of Customers",
         "heading": "Loved by Thousands",
         "heading_size": "h1",
-        "rating_text": "4.9 from 5000+ Reviews",
-        "subheading": "See what our customers are saying",
+        "rating_text": "Rated 4.8 by 4,000+ customers",
+        "subheading": "Real reviews from those who trust KITI for effortless, salon-quality nails at home.",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -547,18 +486,14 @@
   "order": [
     "seo_h1",
     "hero",
-    "trust_row",
     "featured_products",
+    "island_glow_club",
     "collection_grid",
     "browse_shape",
-    "browse_length",
-    "as_seen_in",
+    "trust_row",
     "featured_accessories",
-    "education",
     "reviews_carousel",
-    "testimonials",
     "social_gallery",
-    "faq",
     "newsletter"
   ]
 }

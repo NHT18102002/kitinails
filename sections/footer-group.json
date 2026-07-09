@@ -9,7 +9,7 @@
           "type": "text",
           "settings": {
             "heading": "Shop",
-            "subtext": "<p><a href=\"/collections/best-sellers\">Best Sellers</a><br><a href=\"/collections/new-arrivals\">New Arrivals</a><br><a href=\"/collections/sale\">Sales</a><br><a href=\"/collections/all\">Shop by Collections</a><br><a href=\"/collections/almond\">Shop by Shape</a><br><a href=\"/collections/long\">Shop by Length</a><br><a href=\"/collections/tools-accessories\">Tools & Accessories</a></p>"
+            "subtext": "<p><a href=\"/collections/best-seller\">Best Sellers</a><br><a href=\"/collections/new-arrival\">New Arrivals</a><br><a href=\"/collections/clearance\">Sales</a><br><a href=\"/collections/all\">Shop by Collections</a><br><a href=\"/collections/almond\">Shop by Shape</a><br><a href=\"/collections/long\">Shop by Length</a><br><a href=\"/collections/tools-accessories\">Tools & Accessories</a></p>"
           }
         },
         "brand_menu": {
@@ -23,7 +23,7 @@
           "type": "text",
           "settings": {
             "heading": "Customer Service",
-            "subtext": "<p><a href=\"/pages/rewards\">Ersa Rewards</a><br><a href=\"/pages/size-guide\">Size Guide</a><br><a href=\"/pages/contact\">Help Center</a><br><a href=\"/pages/customization-service\">Customization Service</a><br><a href=\"/policies/shipping-policy\">Shipping Policy</a><br><a href=\"/policies/refund-policy\">Return & Exchange Policy</a><br><a href=\"/pages/worry-free-delivery-service\">Worry-Free Delivery Service</a><br><a href=\"/policies/refund-policy\">EU Withdrawal Policy</a><br><a href=\"/pages/eu-withdrawal-request\">EU Withdrawal Request</a></p>"
+            "subtext": "<p><a href=\"/pages/rewards\">Kiti Rewards</a><br><a href=\"/pages/size-guide\">Size Guide</a><br><a href=\"/pages/contact\">Help Center</a><br><a href=\"/pages/customization-service\">Customization Service</a><br><a href=\"/policies/shipping-policy\">Shipping Policy</a><br><a href=\"/policies/refund-policy\">Return & Exchange Policy</a><br><a href=\"/pages/worry-free-delivery-service\">Worry-Free Delivery Service</a><br><a href=\"/policies/refund-policy\">EU Withdrawal Policy</a><br><a href=\"/pages/eu-withdrawal-request\">EU Withdrawal Request</a></p>"
           }
         }
       },

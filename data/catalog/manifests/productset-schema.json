@@ -1,0 +1,709 @@
+{
+  "generatedAt": "2026-07-05T09:53:08.514Z",
+  "apiVersion": "2026-07",
+  "types": [
+    {
+      "name": "ProductSetIdentifiers",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "customId",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "UniqueMetafieldValueInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "handle",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "ProductSetInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "category",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "claimOwnership",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "ProductClaimOwnershipInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "collections",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "combinedListingRole",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "ENUM",
+            "baseName": "CombinedListingsRole",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "descriptionHtml",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "files",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "FileSetInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "giftCard",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "giftCardTemplateSuffix",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "handle",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "metafields",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "MetafieldInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "productOptions",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "OptionSetInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "productType",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "redirectNewHandle",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "requiresSellingPlan",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "seo",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "SEOInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "status",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "ENUM",
+            "baseName": "ProductStatus",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "tags",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "templateSuffix",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "title",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "variants",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "ProductVariantSetInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "vendor",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "ProductVariantSetInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "barcode",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "compareAtPrice",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Money",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "file",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "FileSetInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "inventoryItem",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "InventoryItemInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "inventoryPolicy",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "ENUM",
+            "baseName": "ProductVariantInventoryPolicy",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "inventoryQuantities",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "ProductSetInventoryInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "metafields",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "MetafieldInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "optionValues",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "VariantOptionValueInput",
+            "wrappers": [
+              "NON_NULL",
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "position",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Int",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "price",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Money",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "published",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "requiresComponents",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "showUnitPrice",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "sku",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "taxable",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Boolean",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "taxCode",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "unitPriceMeasurement",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "UnitPriceMeasurementInput",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "ProductSetInventoryInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "locationId",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": [
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": [
+              "NON_NULL"
+            ]
+          }
+        },
+        {
+          "name": "quantity",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Int",
+            "wrappers": [
+              "NON_NULL"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FileSetInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "alt",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "contentType",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "ENUM",
+            "baseName": "FileContentType",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "duplicateResolutionMode",
+          "defaultValue": "APPEND_UUID",
+          "type": {
+            "baseKind": "ENUM",
+            "baseName": "FileCreateInputDuplicateResolutionMode",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "filename",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "originalSource",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "VariantOptionValueInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "linkedMetafieldValue",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "name",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "optionId",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "optionName",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "OptionSetInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "linkedMetafield",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "LinkedMetafieldCreateInput",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "name",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "position",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "Int",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "values",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "INPUT_OBJECT",
+            "baseName": "OptionValueSetInput",
+            "wrappers": [
+              "LIST",
+              "NON_NULL"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "OptionValueSetInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "name",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "MetafieldInput",
+      "kind": "INPUT_OBJECT",
+      "fields": [
+        {
+          "name": "id",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "ID",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "key",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "namespace",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "type",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        },
+        {
+          "name": "value",
+          "defaultValue": null,
+          "type": {
+            "baseKind": "SCALAR",
+            "baseName": "String",
+            "wrappers": []
+          }
+        }
+      ]
+    }
+  ]
+}

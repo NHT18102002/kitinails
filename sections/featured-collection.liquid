@@ -44,8 +44,17 @@
     assign has_collection = true
   endif
   assign is_homepage_best_sellers = false
-  if request.page_type == 'index' and has_collection and section.settings.collection.handle == 'best-sellers'
+  assign is_homepage_product_rail = false
+  if request.page_type == 'index' and has_collection and section.settings.collection.handle == 'best-seller'
     assign is_homepage_best_sellers = true
+    assign is_homepage_product_rail = true
+  elsif request.page_type == 'index' and has_collection and section.settings.collection.handle == 'island-glow-club'
+    assign is_homepage_product_rail = true
+  elsif request.page_type == 'product' and has_collection and section.settings.collection.handle == 'best-seller'
+    assign is_homepage_best_sellers = true
+    assign is_homepage_product_rail = true
+  elsif request.page_type == 'product' and has_collection and section.settings.collection.handle == 'island-glow-club'
+    assign is_homepage_product_rail = true
   endif
 
   assign has_products = false
@@ -88,7 +97,7 @@
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
   <div
-    class="collection featured-collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}{% if is_homepage_best_sellers %} featured-collection--homepage-best-sellers{% endif %}"
+    class="collection featured-collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}{% if is_homepage_product_rail %} featured-collection--homepage-best-sellers{% endif %}"
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
@@ -104,30 +113,34 @@
           and section.settings.collection.description != empty
         -%}
           <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-            {%- if section.settings.show_description -%}
-              {{ section.settings.collection.description }}
-            {%- else -%}
+            {%- if section.settings.description != blank -%}
               {{ section.settings.description -}}
+            {%- elsif section.settings.show_description -%}
+              {{ section.settings.collection.description }}
             {%- endif %}
           </div>
         {%- endif -%}
       </div>
 
-      {%- if is_homepage_best_sellers and section.settings.show_view_all -%}
+      {%- if is_homepage_product_rail and section.settings.show_view_all -%}
+        {%- assign homepage_rail_link_label = 'Shop summer' -%}
+        {%- if is_homepage_best_sellers -%}
+          {%- assign homepage_rail_link_label = 'Shop best sellers' -%}
+        {%- endif -%}
         <a
           href="{{ section.settings.collection.url }}"
           class="button featured-collection__header-link"
-          aria-label="Shop best sellers"
+          aria-label="{{ homepage_rail_link_label | escape }}"
         >
-          Shop best sellers
+          {{ homepage_rail_link_label }}
         </a>
       {%- endif -%}
     </div>
 
     {%- if has_products -%}
       <slider-component
-        class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if is_homepage_best_sellers %} featured-collection__slider featured-collection__slider--homepage-best-sellers{% endif %}"
-        {% if is_homepage_best_sellers %}
+        class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if is_homepage_product_rail %} featured-collection__slider featured-collection__slider--homepage-best-sellers{% endif %}"
+        {% if is_homepage_product_rail %}
           data-drag-scroll="homepage-best-sellers"
         {% endif %}
       >
@@ -140,7 +153,7 @@
       >
         {% assign skip_card_product_styles = false %}
         {% assign card_layout_context = '' %}
-        {% if is_homepage_best_sellers %}
+        {% if is_homepage_product_rail %}
           {% assign card_layout_context = 'homepage-best-sellers' %}
         {% endif %}
 
@@ -180,16 +193,17 @@
         {%- endif -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons{% if is_homepage_best_sellers %} featured-collection__slider-buttons featured-collection__slider-buttons--homepage-best-sellers{% endif %}">
+        <div class="slider-buttons{% if is_homepage_product_rail %} featured-collection__slider-buttons featured-collection__slider-buttons--homepage-best-sellers{% endif %}">
           <button
             type="button"
             class="slider-button slider-button--prev"
             name="previous"
+            {% if is_homepage_product_rail %}data-step="4"{% endif %}
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {%- if is_homepage_best_sellers -%}
+              {%- if is_homepage_product_rail -%}
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               {%- else -%}
                 {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -206,11 +220,12 @@
             type="button"
             class="slider-button slider-button--next"
             name="next"
+            {% if is_homepage_product_rail %}data-step="4"{% endif %}
             aria-label="{{ 'general.slider.next_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
             <span class="svg-wrapper">
-              {%- if is_homepage_best_sellers -%}
+              {%- if is_homepage_product_rail -%}
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               {%- else -%}
                 {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -232,7 +247,7 @@
       </div>
     {%- endif -%}
 
-    {%- if has_products and section.settings.show_view_all and more_in_collection and is_homepage_best_sellers == false -%}
+    {%- if has_products and section.settings.show_view_all and more_in_collection and is_homepage_product_rail == false -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
           href="{{ section.settings.collection.url }}"

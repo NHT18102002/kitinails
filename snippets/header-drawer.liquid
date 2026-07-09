@@ -22,6 +22,9 @@
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+                {%- capture link_url -%}
+                  {%- render 'header-normalized-url', title: link.title, handle: link.handle, url: link.url -%}
+                {%- endcapture -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -49,9 +52,9 @@
                             </span>
                             {{ link.title | escape }}
                           </button>
-                          {%- if link.url != blank -%}
+                          {%- if link_url != blank -%}
                             <a
-                              href="{{ link.url }}"
+                              href="{{ link_url }}"
                               class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
                               {% if link.current %}
                                 aria-current="page"
@@ -62,11 +65,14 @@
                           {%- endif -%}
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
+                              {%- capture childlink_url -%}
+                                {%- render 'header-normalized-url', title: childlink.title, handle: childlink.handle, url: childlink.url -%}
+                              {%- endcapture -%}
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                    href="{{ childlink.url }}"
+                                    href="{{ childlink_url }}"
                                     class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                     {% if childlink.current %}
                                       aria-current="page"
@@ -101,9 +107,9 @@
                                         </span>
                                         {{ childlink.title | escape }}
                                       </button>
-                                      {%- if childlink.url != blank -%}
+                                      {%- if childlink_url != blank -%}
                                         <a
-                                          href="{{ childlink.url }}"
+                                          href="{{ childlink_url }}"
                                           class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                           {% if childlink.current %}
                                             aria-current="page"
@@ -118,10 +124,13 @@
                                         tabindex="-1"
                                       >
                                         {%- for grandchildlink in childlink.links -%}
+                                          {%- capture grandchildlink_url -%}
+                                            {%- render 'header-normalized-url', title: grandchildlink.title, handle: grandchildlink.handle, url: grandchildlink.url -%}
+                                          {%- endcapture -%}
                                           <li>
                                             <a
                                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                              href="{{ grandchildlink.url }}"
+                                              href="{{ grandchildlink_url }}"
                                               class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
                                               {% if grandchildlink.current %}
                                                 aria-current="page"
@@ -144,7 +153,7 @@
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
+                      href="{{ link_url }}"
                       class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
                       {% if link.current %}
                         aria-current="page"
@@ -158,7 +167,7 @@
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">
-            {%- if shop.customer_accounts_enabled -%}
+            {%- if true -%}
               <div class="menu-drawer__utility-menu">
                 <a href="{{ routes.search_url }}" class="menu-drawer__utility-link link focus-inset">
                   {{ 'general.search.search' | t }}

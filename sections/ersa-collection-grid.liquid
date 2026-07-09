@@ -12,10 +12,41 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  {% if section.settings.remove_image_background %}
+  #shopify-section-{{ section.id }} .ersa-collection-grid__image-wrapper {
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  #shopify-section-{{ section.id }} .ersa-collection-grid__card {
+    border-radius: 0;
+    overflow: visible;
+  }
+  #shopify-section-{{ section.id }} .ersa-collection-grid__card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  #shopify-section-{{ section.id }} .ersa-collection-grid__card:hover .ersa-collection-grid__image {
+    transform: scale(1.08);
+  }
+  #shopify-section-{{ section.id }} .ersa-collection-grid__title {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+  }
+  {% endif %}
+  #shopify-section-{{ section.id }} .ersa-collection-grid__image--contain {
+    object-fit: contain !important;
+  }
+  {% if section.settings.section_bg_color != blank %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.section_bg_color }};
+  }
+  {% endif %}
 {%- endstyle -%}
 
 <div
-  class="ersa-collection-grid color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  class="ersa-collection-grid ersa-collection-grid--{{ section.settings.heading | handleize }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
 >
   <div class="ersa-collection-grid__inner page-width">
     {%- if section.settings.heading != blank -%}
@@ -40,6 +71,15 @@
         {%- for block in section.blocks -%}
           {%- liquid
             assign card_collection = block.settings.collection
+            assign card_title = block.settings.title | default: card_collection.title | default: ''
+            assign card_href = card_collection.url
+            if card_href == blank and card_title != blank
+              assign card_handle = card_title | handleize
+              assign card_href = routes.collections_url | append: '/' | append: card_handle
+            endif
+            if card_href == blank
+              assign card_href = routes.all_products_collection_url
+            endif
           -%}
           <div
             class="ersa-collection-grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -49,19 +89,28 @@
             {% endif %}
           >
             <a
-              href="{{ card_collection.url | default: '#' }}"
+              href="{{ card_href }}"
               class="ersa-collection-grid__card"
               {% if card_collection == blank %}aria-label="Collection placeholder"{% endif %}
             >
               <div class="ersa-collection-grid__image-wrapper">
-                {%- if block.settings.image != blank -%}
+                {%- if block.settings.image_filename != blank -%}
+                  <img
+                    src="{{ block.settings.image_filename | asset_url }}"
+                    alt="{{ block.settings.title | escape }}"
+                    class="ersa-collection-grid__image ersa-collection-grid__image--{{ section.settings.image_fit }}{% if section.settings.remove_image_background %} ersa-collection-grid__image--no-bg{% endif %}"
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                  >
+                {%- elsif block.settings.image != blank -%}
                   {{
                     block.settings.image
                     | image_url: width: 800
                     | image_tag:
                       widths: '300, 450, 600, 800',
                       sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw',
-                      class: 'ersa-collection-grid__image',
+                      class: 'ersa-collection-grid__image ersa-collection-grid__image--custom',
                       loading: 'lazy',
                       alt: block.settings.image.alt | default: card_collection.title | escape
                   }}
@@ -72,7 +121,7 @@
                     | image_tag:
                       widths: '300, 450, 600, 800',
                       sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw',
-                      class: 'ersa-collection-grid__image',
+                      class: 'ersa-collection-grid__image ersa-collection-grid__image--collection',
                       loading: 'lazy',
                       alt: card_collection.title | escape
                   }}
@@ -171,6 +220,27 @@
       "label": "'View all' button label"
     },
     {
+      "type": "select",
+      "id": "image_fit",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ],
+      "default": "cover",
+      "label": "Image fit"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_image_background",
+      "default": false,
+      "label": "Remove image background"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color"
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
@@ -216,6 +286,12 @@
         },
         {
           "type": "text",
+          "id": "image_filename",
+          "label": "Local Image Filename",
+          "info": "E.g., 'image.webp'. Overrides the custom image above."
+        },
+        {
+          "type": "text",
           "id": "title",
           "label": "Custom title",
           "info": "Overrides the collection title."
@@ -236,3 +312,4 @@
   ]
 }
 {% endschema %}
+

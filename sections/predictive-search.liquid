@@ -223,8 +223,15 @@
 
     {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
 
+    {%- assign encoded_predictive_terms = predictive_search.terms | url_encode -%}
+    {%- assign search_results_url = routes.search_url
+      | append: '?q='
+      | append: encoded_predictive_terms
+      | append: '&type=product&options%5Bprefix%5D=last&options%5Bunavailable_products%5D=last'
+    -%}
     <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
-      <button
+      <a
+        href="{{ search_results_url }}"
         class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow"
         tabindex="-1"
         role="option"
@@ -236,7 +243,7 @@
         <span class="svg-wrapper">
           {{- 'icon-arrow.svg' | inline_asset_content -}}
         </span>
-      </button>
+      </a>
     </div>
 
     <span

@@ -150,9 +150,12 @@
               }}
             {%- endif -%}
           {%- else -%}
-            {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
-            {%- if placeholder_slide == 1 -%}
-              {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- if forloop.index == 1 -%}
+              <img src="{{ 'homepage-hero-studio.png' | asset_url }}" alt="Hero" loading="eager" width="1920" height="1080" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            {%- elsif forloop.index == 2 -%}
+              <img src="{{ 'homepage-hero-slide-2.webp' | asset_url }}" alt="Hero" loading="lazy" width="1920" height="1080" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            {%- elsif forloop.index == 3 -%}
+              <img src="{{ 'homepage-hero-slide-3.webp' | asset_url }}" alt="Hero" loading="lazy" width="1920" height="1080" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
             {%- else -%}
               {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
@@ -160,6 +163,11 @@
         </div>
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
+            {%- if block.settings.review_badge_text != blank -%}
+              <div class="banner__review-badge">
+                <span class="review-badge-star">★</span> {{ block.settings.review_badge_text }}
+              </div>
+            {%- endif -%}
             {%- if block.settings.heading != blank -%}
               <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
                 {{ block.settings.heading }}
@@ -170,18 +178,32 @@
                 <p>{{ block.settings.subheading }}</p>
               </div>
             {%- endif -%}
-            {%- if block.settings.button_label != blank -%}
+            {%- if block.settings.button_label != blank or block.settings.button_label_2 != blank -%}
               <div class="banner__buttons">
-                <a
-                  {% if block.settings.link %}
-                    href="{{ block.settings.link }}"
-                  {% else %}
-                    role="link" aria-disabled="true"
-                  {% endif %}
-                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
-                >
-                  {{- block.settings.button_label | escape -}}
-                </a>
+                {%- if block.settings.button_label != blank -%}
+                  <a
+                    {% if block.settings.link %}
+                      href="{{ block.settings.link }}"
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                    class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %} slide__btn btn--advanced btn--advanced-width-height"
+                  >
+                    {{- block.settings.button_label | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a
+                    {% if block.settings.link_2 %}
+                      href="{{ block.settings.link_2 }}"
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                    class="button {% if block.settings.button_style_secondary_2 %}button--secondary{% else %}button--primary{% endif %} slide__btn btn--advanced btn--advanced-width-height"
+                  >
+                    {{- block.settings.button_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
               </div>
             {%- endif -%}
           </div>
@@ -406,6 +428,12 @@
           "default": 0
         },
         {
+          "type": "text",
+          "id": "review_badge_text",
+          "label": "Review badge text",
+          "default": "4.9 from 5000+ Reviews"
+        },
+        {
           "type": "header",
           "content": "t:sections.slideshow.blocks.slide.settings.header_text.content"
         },
@@ -457,7 +485,7 @@
           "type": "text",
           "id": "button_label",
           "default": "t:sections.slideshow.blocks.slide.settings.button_label.default",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label", 
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
           "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
         },
         {
@@ -468,8 +496,25 @@
         {
           "type": "checkbox",
           "id": "button_style_secondary",
-          "label": "t:sections.slideshow.blocks.slide.settings.secondary_style.label",
+          "label": "Use outline button style",
           "default": false
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "label": "Second button label",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Second button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "label": "Use outline button style",
+          "default": true
         },
         {
           "type": "header",

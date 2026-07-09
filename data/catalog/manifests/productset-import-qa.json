@@ -1,0 +1,2962 @@
+{
+  "generatedAt": "2026-07-05T13:48:14.654Z",
+  "apiVersion": "2026-07",
+  "summary": {
+    "total": 590,
+    "matched": 590,
+    "mismatched": 0,
+    "missing": 0
+  },
+  "records": [
+    {
+      "handle": "3m-sticky-tabs-pack-5-sheets",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "24k",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "a-touch-of-gold",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "a-kiss-to-remember",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "acrylic-stand",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "adorable",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "adore-me",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "after-the-rain",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "afterdark",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "all-the-best",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "aloha-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "amber-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "amber-whisper",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "amethyst-glow",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "aquamarine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "aqua-berry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "armageddon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "as-you-wished",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "attractive",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "aurora-s-touch",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "auspicious",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "auspicious-bracelet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "azure-haze-mini",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bad-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bahamas",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bamboo-bracelet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bare-berry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bare-essence",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "be-mine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beachside-fizz",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beach-its-time",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beachy-babe",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beat-the-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beautifical",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beautified",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beloved",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "berry-cherry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "berry-cream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "berry-frappe",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "berry-milk",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beryl-enchantress",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "best-wishes",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "better-me",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beyond-the-celestial",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "beyond-the-sea",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "big-blossom-lightweight-earrings-work-piece",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "birthday-greeting-card",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blaze-dragon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blazing-flora",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blessed-harmony",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blissful-radiance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bloom-grace",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bloom-like-roses",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bloom-whimsy-1",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blooming-day",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bloomwave-medium-almond",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blossom-beaded-necklace-work-piece",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blue-crush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blue-daisy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blue-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blue-riviera",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bluebelle",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bluish-tide",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blush-peony",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "blushed-lily",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "born-to-roam",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "breakfast-at-tiffanys",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "brush-on-nail-glue",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "bubbly-splash",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "burgundy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "burgundy-enchantress",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "burnt-honey",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "butterfly-hair-clip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "candy-blossom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "candy-cane-crush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "candy-canvas",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "candy-curse",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "candy-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "caramel",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "carefree",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "celestial-star",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "celestial-waltz",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "charming-petals",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "chasing-sunshine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherished-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherished-moments",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherry-blossom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherry-bullet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherry-juice",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherry-pop",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cherry-wine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "chilly-mornings",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cinnamon-mocha",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "citrus-crush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "classic",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "classy-chaos",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "clean-pure",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "close-to-you",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "coffee-break",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "coraline",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cosmic-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cosmic-love",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "crimson-chronicles",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "crimson-plaid",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "crimson-veil",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "crisp-soda",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "cupids-gift",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "custom-design",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "custom-ring-design",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "customization-request",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dahlia",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dancing-blossoms",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dark-blood",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dark-desire",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "darling-rose",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dearest-love",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "death-of-mermaids",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "deep-cranberry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "deep-woods",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "desert-flower",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "devils-eye",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "divine-stardust",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dopamine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dragon-roar",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dreamscape",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dreamy-blossom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dune-glimmer",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "dynamite",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "eclat-nude",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "eldorado",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "elegance-trio",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "emerald-cosmos",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "emerald-memory",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "enamel-glam",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "endless-blue",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "enchanted-florals",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "endless-summer",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "enigma",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-advent-calendar-i",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-bubble-binder",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-bunny-pouch",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c01-icy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c02-rosy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c03-peachy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c08-black-diamond",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c04-peridot",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c09-pink-garnet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-c10-ocean-eyes",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cat-eye-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cat-eye-series-gemstone-edition",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cat-eye-seriesⅱ",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-clear-typing-stickers",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-collector-book",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-collector-box",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-collector-case",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cuticle-oil",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cuticle-oil-pen",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-cuticle-oil-pusher",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-f01-pure",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-f04-red-velvet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-french-tip-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-f05-black-swan",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-gift-packaging",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-holiday-bag",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-manicure-kit",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-n01-porcelain",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-n09-honey",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nail-charms-kit",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nail-clipper",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nail-file-set",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nail-stamp",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nails-cuticle-tool-kit",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nails-gift-card",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nails-protouch-kit",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nails-starter-pack",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-nude-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-o02-cloud-fade",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-ombre-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-pink-cat-eye-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-removal-pen",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-t-shirt",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ersa-tote-bag",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "eternal-eve",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ethereality",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "evergleam",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "everlasting-honor",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "everything-renews",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "express-yourself",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fairy-garden",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fairy-song",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fallen-angel",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fallen-muse",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "falling-for-you",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "famille-rose",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fatal-attraction",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "feelin-winter",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "femme-fatale",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fever-dream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fervent",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flame-of-passion",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flawless",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fleur-amor",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fleur-d-or",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fleur-hair-clip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flicker-bow",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "floral-dreamland",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "floral-euphoria",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "floral-ring",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flourish",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flourishing",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flower-hairclip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "flowerbomb",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "for-her",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "for-the-night",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "forest-elf-1",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "forever-framed",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "forever-in-love",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "fortune-favored",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "freaky-funtime",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "from-the-garden",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "frost-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "frosted-porcelain",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "frosted-ruby",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "frosty-delights",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "frosty-petal",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "full-of-vitality",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "garden-soiree",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "garnet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gem-bracelet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "genuine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gilded-garden",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gilded-jade",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gilded-tartan",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gildenfire-dragon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "glam-queen",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "glitzy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "glorious",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "glow-hour",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "glow-muse",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "going-wild",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gold-digger",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gold-rush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "golden-dreams",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "golden-safari",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "golden-shoreline",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "good-news",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "gothic-radiance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "grace-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "graceful-waltz",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "green-forest",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "green-gem-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "green-muse",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "greeting-card",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hailey",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hailey-02-cinderella",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hailey-03-barbie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "handheld-uv-lamp",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "heartfelt",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hearts-aflutter",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hearts-desire",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "heartstrings",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "heartthrob",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "heavenly-embrace",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ho-ho-holiday",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "holly-bliss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "holly-jolly",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "holy-serenade",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hoppy-spring",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "honolulu",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hot-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "hot-sexy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "icy-spruce",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "icy-wishes",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "im-iconic",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "im-the-best",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "indigo-aristocracy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "infatuation",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "inflorescence",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "insane",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "interstellar",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "into-the-warmth",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "into-the-winter",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "iridescent-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "irresistible-affection",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "island-escape",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "island-gal",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "island-glow-gift-package",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jade-fleur",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jades-embrace",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jasmines-whisper",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jetset-babe",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jewels-of-light",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "jingle-spark",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "juicy-jelly",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "juicie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "just-peachy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "just-sunshine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "kaleidoscope-1",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "kinda-sexy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "kung-hei-fat-choi",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "la-luna",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "la-perle",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "la-reine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ladybug",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "last-forever",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "latte-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lemon-drop",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "letters-from-the-garden",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "like-a-dream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "like-a-star",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lilac-dreams",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lilac-elfland",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lily-of-the-valley",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "limited-mystery-box",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "limited-mystery-box-3-sets",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "limited-mystery-box-5-sets",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "limoncello",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "little-garden",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "little-glow-gift",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "little-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "little-luxury",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "live-my-life",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lny-gift-packaging",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lost-in-paradise",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lots-of-love",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lover",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lotus-fairy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lovin-you",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lucid-dream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lucky-cloud-hair-clip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lucky-running-horse-fortune-bundle",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lunaflora",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "lush-green",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "magic-glue-kit",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "make-a-wish-1",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "make-waves",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "maldives-sunset",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "malibu-beach",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mamianqun",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "medusa",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "meet-at-midnight",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "melody-of-summer",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "metal-mesh",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "metallic-mirage",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "miaojiang-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midnight-dance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midnight-dream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midnight-madness",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midnight-muse",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midnight-serenade",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "midwinter-melody",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "milk-berries",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mint-to-be",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "miss-charming",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "miss-cherry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mistletoe-glam",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mistletoe-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mocha-chestnut",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mocha-dot",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mocha-latte",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mocha-mist",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "moonlight-sonata",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "moonlit-bamboo",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "moonlit-night",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "moonlit-romance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "morning-dew",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "my-happy-hour",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "my-only-wish",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "mystic-nacre",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "nail-glue-remover",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "nails-refill-services",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "neon-blush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "neon-dream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "neon-twist",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "never-ending-summer",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "night-angel",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "obsidian",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ocean-breeze",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ocean-therapy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ocean-whisper",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "oceanic-odyssey",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "olive-s",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "on-my-way",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "on-vacay",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "one-more-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "opulence",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "opulence-bracelet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "opulent-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "orchid-splendor",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "oriental-beauty",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "paradisoo",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pastal-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "peach-essence",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "peach-fizz",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "peach-sugar",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pearl-hair-clip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pearl-of-the-orient",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "persian-gulf",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "petal-by-petal",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "petal-dance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "petals-of-eternity",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "petals-of-grace",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "phoenix-nirvana",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "phoenix-tail-hair-clip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pillow-talk",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-feline",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-champagne",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-fever",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-ice",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-reverie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-riot",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pink-sorbet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pinkladies",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pixie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "play-date",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "polka-pearl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "polka-pop",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pop-star",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "porcelain-dragon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "precious-love",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "professional-tool-set",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "prologue",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "promising",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "prosperity",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "protouch-kit-max",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pure-crush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pure-romance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "pure-serenity",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "qinghuaci",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "qipao",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "queen-of-hearts",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "queendom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "radiant",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rebel-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "red-face-gem",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "red-queen",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "reunion",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "red-velvet-bow",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rich-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rococo",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rose-divinity",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rosy-daydream",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "rosy-shimmer",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ruby-venom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "running-horse-necklace",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ruyi-bliss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "ruyi-bracelet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "safari",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "saint-glow",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sangria",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "santa-baby",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "scarlette",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "savage",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sea-siren",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sea-vivid",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sea-you-soon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "seafoam",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "seas-the-day",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "seaspray-medium-almond",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sensational",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "she-walks-in-beauty",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "shimmering-sea",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "shining",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "shui-mo",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "silent-majesty",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "silent-night",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "silken-waves",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "silver-frost",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "silver-venom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sippin-sunshine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "siren",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "small-blessings",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "snow-angel",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "snowy-melody",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "snowy-memories",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "so-far-away",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-days",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-diamonds",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-girl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-romance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-spot",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "soft-temptation",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "solid-glue-tabs",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "solid-nail-glue-gel",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "solid-nail-glue-gel-max",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "spellbound",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "spiced-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starlet",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starlight",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starlit-blossom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starlit-fairytale",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starlit-pearl",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starry-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starry-kiss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starry-olive",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "starry-soda",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "stay-in-bloom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sticky-tabs-pack-10-sheets",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "still-the-one",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "stranger-things",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "stress-off",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugar-baddie",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugar-pop",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugar-rush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugar-spice",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugar-trip",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sugarplum",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "summer-bay",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "summer-breeze",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "summer-loving",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sumptuous",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sun-drunk",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sun-soaked",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunday-picnic",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunkissed-waves",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunlit-shores",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunny-capri",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunny-side-up",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunny-soul",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunset-fizz",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunset-flame",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sunshine-obsessed",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "supernova",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "superstar",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-cherry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-confetti",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-crush",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-delights",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-escape",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-n-cool",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-nothing",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-overload",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweet-sin",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweetest-gift",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "sweetheart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "teddys-caress",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tender-haven",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-abyss",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-gift",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-good-days",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-green-hour",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-harmony",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-heat",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-iconic",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-magic",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "the-thriving-day",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "thetis",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "thorned-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "thriving-1",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tick-tack",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tidings-of-joy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "time-to-shine",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "too-sweet-to-resist",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tropic-mood",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tropical-cocktail",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "tulip-fairy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "twilight-zone",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "twinkle-wreaths",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "twinkling-lights",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "undefined",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "under-the-bow",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "under-the-mistletoe",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "velvet-rouge",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "venus",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "verdant-series",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "vibrance",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "virgencita",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "vitality",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "vitamin-sea",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "warm-colorful",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "warm-n-cozy",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wealth-honor",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wednesday",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "when-the-rain-stops",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "whispering-tide",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "white-ribbon",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wild-blossom",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wild-flame",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wild-free",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wild-heart",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wild-honey",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wildberry",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wildest-dreams",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wildflowers",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "wildly-pretty",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "winters-gift",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "worry-free-purchase",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "yinyang",
+      "missing": false,
+      "mismatches": []
+    },
+    {
+      "handle": "your-lips-1",
+      "missing": false,
+      "mismatches": []
+    }
+  ]
+}

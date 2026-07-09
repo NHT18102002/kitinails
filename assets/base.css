@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
 product-component,
 collection-component {
   display: block;
 }
 
 :root {
+  --font-body-family: 'Nunito', sans-serif !important;
+  --font-heading-family: 'Playfair Display', serif !important;
+  --font-body-weight: 400 !important;
+  --font-body-weight-bold: 700 !important;
+  --font-heading-weight: 600 !important;
   --alpha-button-background: 1;
   --alpha-button-border: 1;
   --alpha-link: 0.85;
@@ -3609,4 +3616,15 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+.header__menu-item--hot {
+  background-color: #ee2a5b !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+  padding: 0.2rem 0.8rem !important;
+  margin: 0 0.5rem;
+}
+.header__menu-item--hot span {
+  color: #ffffff !important;
 }

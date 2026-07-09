@@ -1,0 +1,117 @@
+{%- liquid
+  assign feature_image = section.settings.image
+  assign fallback_filename = section.settings.image_filename | strip
+  assign secondary_image = section.settings.secondary_image
+  assign secondary_fallback_filename = section.settings.secondary_image_filename | strip
+  assign linked_collection = section.settings.collection
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ersa-product-island-glow color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="ersa-product-island-glow__inner page-width">
+    <div class="ersa-product-island-glow__media-stack">
+      <a
+        class="ersa-product-island-glow__media-card ersa-product-island-glow__media-card--primary"
+        href="{{ linked_collection.url | default: section.settings.button_link | default: '#' }}"
+        aria-label="{{ section.settings.heading | escape }}"
+      >
+        {%- if feature_image != blank -%}
+          {{ feature_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 28vw, 82vw', class: 'ersa-product-island-glow__image' }}
+        {%- elsif fallback_filename != blank -%}
+          <img
+            src="{{ fallback_filename | asset_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            class="ersa-product-island-glow__image"
+            width="900"
+            height="760"
+            loading="lazy"
+          >
+        {%- elsif linked_collection.featured_image != blank -%}
+          {{ linked_collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 28vw, 82vw', class: 'ersa-product-island-glow__image' }}
+        {%- else -%}
+          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg ersa-product-island-glow__placeholder' }}
+        {%- endif -%}
+      </a>
+
+      <a
+        class="ersa-product-island-glow__media-card ersa-product-island-glow__media-card--secondary"
+        href="{{ linked_collection.url | default: section.settings.button_link | default: '#' }}"
+        aria-label="{{ section.settings.heading | escape }}"
+      >
+        {%- if secondary_image != blank -%}
+          {{ secondary_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 28vw, 82vw', class: 'ersa-product-island-glow__image' }}
+        {%- elsif secondary_fallback_filename != blank -%}
+          <img
+            src="{{ secondary_fallback_filename | asset_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            class="ersa-product-island-glow__image"
+            width="900"
+            height="760"
+            loading="lazy"
+          >
+        {%- elsif linked_collection.featured_image != blank -%}
+          {{ linked_collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 990px) 28vw, 82vw', class: 'ersa-product-island-glow__image' }}
+        {%- else -%}
+          {{ 'product-apparel-3' | placeholder_svg_tag: 'placeholder-svg ersa-product-island-glow__placeholder' }}
+        {%- endif -%}
+      </a>
+    </div>
+
+    <div class="ersa-product-island-glow__panel">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ersa-product-island-glow__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ersa-product-island-glow__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="ersa-product-island-glow__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a class="ersa-product-island-glow__button button" href="{{ linked_collection.url | default: section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kiti product island glow",
+  "tag": "section",
+  "class": "section section-ersa-product-island-glow",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SUMMER EDIT" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Island Glow Club" },
+    { "type": "select", "id": "heading_size", "label": "Heading size", "default": "h1", "options": [ { "value": "h2", "label": "Small" }, { "value": "h1", "label": "Medium" }, { "value": "h0", "label": "Large" } ] },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Meet your summer nail wardrobe. Island Glow Club by Kiti Nails is our most glowy drop yet, featuring three summer moods made for every trip, beach day, and rooftop party.</p>" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_filename", "label": "Theme asset filename fallback", "default": "Summer2026_ErsaNails_PressOnNails_19.webp" },
+    { "type": "image_picker", "id": "secondary_image", "label": "Secondary image" },
+    { "type": "text", "id": "secondary_image_filename", "label": "Secondary theme asset filename fallback", "default": "Summer2026_ErsaNails_PressOnNails_15.webp" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP SUMMER" },
+    { "type": "url", "id": "button_link", "label": "Fallback button link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 72 }
+  ],
+  "presets": [
+    { "name": "Kiti product island glow" }
+  ]
+}
+{% endschema %}

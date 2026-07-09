@@ -1,4 +1,4 @@
-{%- liquid
+﻿{%- liquid
   assign social_icons = true
   if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
     assign social_icons = false
@@ -15,38 +15,29 @@
 {% if social_icons %}
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
+{{ 'component-ticker-bar.css' | asset_url | stylesheet_tag }}
 
-<div
-  class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
->
-  <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
-    {%- if section.settings.show_social and social_icons -%}
+<div class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% endif %}">
+  {%- if section.settings.show_social and social_icons -%}
+    <div class="page-width utility-bar__grid utility-bar__grid--2-col">
       {%- render 'social-icons' -%}
-    {%- endif -%}
-    {%- if announcement_bar -%}
-      <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
-        role="region"
-        aria-label="{{ 'sections.header.announcement' | t }}"
-        {{ announcement_block.shopify_attributes }}
-      >
-        {%- if announcement_block.settings.text != blank -%}
-          {%- if announcement_block.settings.link != blank -%}
-            <a
-              href="{{ announcement_block.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ announcement_block.settings.text | escape }}</span>
-            {%- if announcement_block.settings.link != blank -%}
-              {{- 'icon-arrow.svg' | inline_asset_content -}}
-            {%- endif -%}
-          </p>
-          {%- if announcement_block.settings.link != blank -%}
-            </a>
-          {%- endif -%}
-        {%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if announcement_bar -%}
+    <div class="announcement-bar-ticker" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ announcement_block.shopify_attributes }}>
+        <div class="announcement-bar-ticker__inner">
+          {%- for i in (1..10) -%}
+            <span class="announcement-bar-ticker__message">
+              {%- if announcement_block.settings.link != blank -%}
+                <a href="{{ announcement_block.settings.link }}" class="link link--text focus-inset" style="text-decoration: none; color: inherit;">
+              {%- endif -%}
+              {{ announcement_block.settings.text | escape }}
+              {%- if announcement_block.settings.link != blank -%}
+                </a>
+              {%- endif -%}
+            </span>
+          {%- endfor -%}
+        </div>
       </div>
     {%- endif -%}
     <div class="localization-wrapper">
@@ -73,7 +64,6 @@
       {%- endif -%}
     </div>
   </div>
-</div>
 
 {% schema %}
 {

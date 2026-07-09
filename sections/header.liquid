@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-{%- if section.settings.menu_type_desktop == 'mega' -%}
+{%- if section.settings.menu_type_desktop != 'drawer' -%}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
@@ -108,7 +108,7 @@
       assign has_app_block = true
     endif
   endfor
-  assign header_fallback_name = 'Ersa Nails'
+  assign header_fallback_name = 'Kiti Nails'
 -%}
 
 {% liquid
@@ -152,29 +152,26 @@
       {%- if request.page_type == 'index' -%}
         <div class="header__heading">
       {%- endif -%}
-      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-        {%- if settings.logo != blank -%}
-          <div class="header__heading-logo-wrapper">
-            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-            {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-            {{
-              settings.logo
-              | image_url: width: 600
-              | image_tag:
-                class: 'header__heading-logo motion-reduce',
-                widths: widths,
-                height: logo_height,
-                width: settings.logo_width,
-                alt: logo_alt,
-                sizes: sizes,
-                preload: true
-            }}
-          </div>
-        {%- else -%}
-          <span class="h2">{{ header_fallback_name }}</span>
-        {%- endif -%}
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" aria-label="{{ header_fallback_name | escape }}">
+        <div class="header__heading-logo-wrapper">
+          <img
+            src="{{ 'kiti-nails-logo-transparent.png' | asset_url }}"
+            alt="{{ header_fallback_name | escape }}"
+            class="header__heading-logo header__heading-logo--fallback header__heading-logo--light motion-reduce"
+            width="217"
+            height="72"
+            loading="eager"
+          >
+          <img
+            src="{{ 'kiti-nails-logo-transparent-black.png' | asset_url }}"
+            alt=""
+            class="header__heading-logo header__heading-logo--fallback header__heading-logo--dark motion-reduce"
+            aria-hidden="true"
+            width="217"
+            height="72"
+            loading="eager"
+          >
+        </div>
       </a>
       {%- if request.page_type == 'index' -%}
         </div>
@@ -197,29 +194,26 @@
       {%- if request.page_type == 'index' -%}
         <div class="header__heading">
       {%- endif -%}
-      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-        {%- if settings.logo != blank -%}
-          <div class="header__heading-logo-wrapper">
-            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-            {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-            {{
-              settings.logo
-              | image_url: width: 600
-              | image_tag:
-                class: 'header__heading-logo',
-                widths: widths,
-                height: logo_height,
-                width: settings.logo_width,
-                alt: logo_alt,
-                sizes: sizes,
-                preload: true
-            }}
-          </div>
-        {%- else -%}
-          <span class="h2">{{ header_fallback_name }}</span>
-        {%- endif -%}
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset" aria-label="{{ header_fallback_name | escape }}">
+        <div class="header__heading-logo-wrapper">
+          <img
+            src="{{ 'kiti-nails-logo-transparent.png' | asset_url }}"
+            alt="{{ header_fallback_name | escape }}"
+            class="header__heading-logo header__heading-logo--fallback header__heading-logo--light motion-reduce"
+            width="217"
+            height="72"
+            loading="eager"
+          >
+          <img
+            src="{{ 'kiti-nails-logo-transparent-black.png' | asset_url }}"
+            alt=""
+            class="header__heading-logo header__heading-logo--fallback header__heading-logo--dark motion-reduce"
+            aria-hidden="true"
+            width="217"
+            height="72"
+            loading="eager"
+          >
+        </div>
       </a>
       {%- if request.page_type == 'index' -%}
         </div>
@@ -323,7 +317,7 @@
     }
 
     connectedCallback() {
-      this.header = document.querySelector('.section-header');
+      this.header = this.closest('.shopify-section') || document.querySelector('.section-header');
       this.headerIsAlwaysSticky =
         this.getAttribute('data-sticky-type') === 'always' ||
         this.getAttribute('data-sticky-type') === 'reduce-logo-size';
@@ -434,10 +428,8 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": {{ shop.name | json }},
-    {% if settings.logo %}
-      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
-    {% endif %}
+    "name": {{ header_fallback_name | json }},
+    "logo": {{ 'kiti-nails-logo-transparent-black.png' | asset_url | prepend: "https:" | json }},
     "sameAs": [
       {{ settings.social_twitter_link | json }},
       {{ settings.social_facebook_link | json }},
@@ -459,7 +451,7 @@
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      "name": {{ shop.name | json }},
+      "name": {{ header_fallback_name | json }},
       "potentialAction": {
         "@type": "SearchAction",
         "target": {{ potential_action_target | json }},
@@ -540,7 +532,7 @@
           "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
         }
       ],
-      "default": "dropdown",
+      "default": "mega",
       "label": "t:sections.header.settings.menu_type_desktop.label"
     },
     {

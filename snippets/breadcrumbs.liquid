@@ -1,0 +1,20 @@
+<nav class="breadcrumbs" aria-label="Breadcrumbs">
+  <ol class="breadcrumbs__list" role="list">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="{{ routes.root_url }}">Home</a>
+    </li>
+
+    {%- if template contains 'collection' -%}
+      <li class="breadcrumbs__separator" aria-hidden="true">›</li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ routes.collections_url }}">Collections</a>
+      </li>
+      <li class="breadcrumbs__separator" aria-hidden="true">›</li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link is-current" href="{{ collection.url }}" aria-current="page">
+          {{ collection.title }}
+        </a>
+      </li>
+    {%- endif -%}
+  </ol>
+</nav>

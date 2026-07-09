@@ -1,0 +1,144 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- unless section.settings.quick_add == 'none' -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign feature_image = section.settings.image
+  assign feature_asset = section.settings.image_filename
+  assign selected_collection = section.settings.collection
+  assign products_to_show = section.settings.products_to_show
+-%}
+
+<section class="ersa-must-have color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="ersa-must-have__inner page-width">
+    <div class="ersa-must-have__media">
+      {%- if feature_image != blank -%}
+        {{
+          feature_image
+          | image_url: width: 1400
+          | image_tag:
+            widths: '480, 720, 960, 1200, 1400',
+            sizes: '(min-width: 990px) 45vw, 100vw',
+            class: 'ersa-must-have__image',
+            loading: 'lazy',
+            alt: feature_image.alt | default: section.settings.heading | escape
+        }}
+      {%- elsif feature_asset != blank -%}
+        <img
+          src="{{ feature_asset | asset_url }}"
+          alt="{{ section.settings.heading | escape }}"
+          class="ersa-must-have__image"
+          width="900"
+          height="1300"
+          loading="lazy"
+        >
+      {%- else -%}
+        {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg ersa-must-have__placeholder' }}
+      {%- endif -%}
+
+      <div class="ersa-must-have__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ersa-must-have__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ersa-must-have__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="ersa-must-have__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a class="button button--primary ersa-must-have__button" href="{{ section.settings.button_link | default: selected_collection.url | default: routes.all_products_collection_url }}">
+            {{ section.settings.button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="ersa-must-have__content">
+      <div class="ersa-must-have__products featured-collection--homepage-best-sellers" role="list">
+        {%- if selected_collection != blank and selected_collection.all_products_count > 0 -%}
+          {%- for product in selected_collection.products limit: products_to_show -%}
+            <div class="ersa-must-have__product" role="listitem">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: 'default',
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: false,
+                show_rating: section.settings.show_rating,
+                lazy_load: true,
+                skip_styles: false,
+                quick_add: section.settings.quick_add,
+                section_id: section.id,
+                card_layout_context: 'homepage-best-sellers',
+                product_view_context: 'collection'
+              %}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for index in (1..4) -%}
+            <div class="ersa-must-have__product ersa-must-have__product--placeholder" role="listitem">
+              <div class="ersa-must-have__placeholder-card">
+                {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                <p>{{ 'onboarding.product_title' | t }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kiti must-have essentials",
+  "tag": "section",
+  "class": "section section-ersa-must-have",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Tools & Accessories" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Must-Have Nail Essentials" },
+    { "type": "select", "id": "heading_size", "label": "Heading size", "default": "h1", "options": [ { "value": "h2", "label": "Small" }, { "value": "h1", "label": "Medium" }, { "value": "h0", "label": "Large" } ] },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Get the essential tools for perfect nails.</p>" },
+    { "type": "image_picker", "id": "image", "label": "Feature image" },
+    { "type": "text", "id": "image_filename", "label": "Theme asset filename fallback", "default": "Sangria_-_ErsaNails_PressOnNails_007.webp" },
+    { "type": "collection", "id": "collection", "label": "Product collection" },
+    { "type": "range", "id": "products_to_show", "min": 2, "max": 6, "step": 1, "default": 4, "label": "Products to show" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP ALL TOOLS" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "select", "id": "image_ratio", "label": "Product image ratio", "default": "portrait", "options": [ { "value": "adapt", "label": "Adapt" }, { "value": "portrait", "label": "Portrait" }, { "value": "square", "label": "Square" } ] },
+    { "type": "checkbox", "id": "show_secondary_image", "default": true, "label": "Show second image on hover" },
+    { "type": "checkbox", "id": "show_rating", "default": true, "label": "Show product rating" },
+    { "type": "select", "id": "quick_add", "default": "standard", "label": "Quick add", "options": [ { "value": "none", "label": "None" }, { "value": "standard", "label": "Standard" } ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 72 }
+  ],
+  "presets": [
+    { "name": "Kiti must-have essentials" }
+  ]
+}
+{% endschema %}
+

@@ -75,9 +75,22 @@
       assign is_homepage_best_sellers_card = true
     endif
 
-    assign render_quick_add_in_media = false
+    assign render_quick_add_in_media = true
+    if horizontal_quick_add
+      assign render_quick_add_in_media = false
+    endif
     if is_homepage_best_sellers_card and quick_add == 'standard'
       assign render_quick_add_in_media = true
+    endif
+
+    assign is_collection_style_card = false
+    if product_view_context == 'collection' or product_view_context == 'search'
+      assign is_collection_style_card = true
+    endif
+
+    assign render_collection_media_link = false
+    if is_collection_style_card and card_product.url != blank
+      assign render_collection_media_link = true
     endif
 
     assign quick_add_container_classes = 'quick-add no-js-hidden'
@@ -94,7 +107,13 @@
   {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
   {%- capture homepage_quick_buy_visual -%}
     <span class="quick-add__icon quick-add__icon--homepage-best-sellers" aria-hidden="true">
-      {{- 'icon-cart-empty.svg' | inline_asset_content -}}
+      <img
+        class="icon icon-cart-outline"
+        src="{{ 'icon-cart.svg' | asset_url }}"
+        alt=""
+        width="21"
+        height="21"
+      >
     </span>
     <span class="quick-add__label quick-add__label--homepage-best-sellers" aria-hidden="true">
       {{- 'products.product.add_to_cart' | t -}}
@@ -102,10 +121,27 @@
   {%- endcapture -%}
   {%- capture homepage_sold_out_visual -%}
     <span class="quick-add__icon quick-add__icon--homepage-best-sellers" aria-hidden="true">
-      {{- 'icon-cart-empty.svg' | inline_asset_content -}}
+      <img
+        class="icon icon-cart-outline"
+        src="{{ 'icon-cart.svg' | asset_url }}"
+        alt=""
+        width="21"
+        height="21"
+      >
     </span>
     <span class="quick-add__label quick-add__label--homepage-best-sellers" aria-hidden="true">
       {{- 'products.product.sold_out' | t -}}
+    </span>
+  {%- endcapture -%}
+  {%- capture collection_quick_buy_visual -%}
+    <span class="quick-add__icon quick-add__icon--collection" aria-hidden="true">
+      <img
+        class="icon icon-cart-outline"
+        src="{{ 'icon-cart.svg' | asset_url }}"
+        alt=""
+        width="21"
+        height="21"
+      >
     </span>
   {%- endcapture -%}
   {%- capture standard_quick_add_markup -%}
@@ -121,12 +157,19 @@
           <a
             href="{{ card_product.url }}"
             class="{{ quick_add_submit_base_classes }}{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %}"
+            aria-label="{{ 'products.product.choose_options' | t }} {{ card_product.title | escape }}"
           >
             {%- if is_homepage_best_sellers_card -%}
               <span class="visually-hidden">{{ 'products.product.choose_options' | t }}</span>
               {{ homepage_quick_buy_visual }}
+            {%- elsif is_collection_style_card and horizontal_quick_add != true -%}
+              {{ collection_quick_buy_visual }}
             {%- else -%}
-              {{ 'products.product.choose_options' | t }}
+              {%- if horizontal_quick_add -%}
+                QUICK BUY
+              {%- else -%}
+                {{ 'products.product.choose_options' | t }}
+              {%- endif -%}
               {%- if horizontal_quick_add -%}
                 <span class="icon-wrap">
                   {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -142,14 +185,21 @@
               name="add"
               class="{{ quick_add_submit_base_classes }}{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %}"
               aria-haspopup="dialog"
+              aria-label="{{ 'products.product.choose_options' | t }} {{ card_product.title | escape }}"
               aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
               data-product-url="{{ card_product.url }}"
             >
               {%- if is_homepage_best_sellers_card -%}
                 <span class="visually-hidden">{{ 'products.product.choose_options' | t }}</span>
                 {{ homepage_quick_buy_visual }}
+              {%- elsif is_collection_style_card and horizontal_quick_add != true -%}
+                {{ collection_quick_buy_visual }}
               {%- else -%}
-                {{ 'products.product.choose_options' | t }}
+                {%- if horizontal_quick_add -%}
+                  QUICK BUY
+                {%- else -%}
+                  {{ 'products.product.choose_options' | t }}
+                {%- endif -%}
                 {%- if horizontal_quick_add -%}
                   <span class="icon-wrap">
                     {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -202,6 +252,7 @@
                 name="add"
                 class="{{ quick_add_submit_base_classes }}{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                 aria-haspopup="dialog"
+                aria-label="{%- if card_product.selected_or_first_available_variant.available -%}{{ 'products.product.add_to_cart' | t }} {{ card_product.title | escape }}{%- else -%}{{ 'products.product.sold_out' | t }} {{ card_product.title | escape }}{%- endif -%}"
                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                 aria-live="polite"
                 data-sold-out-message="true"
@@ -222,10 +273,16 @@
                   {%- else -%}
                     {{ homepage_sold_out_visual }}
                   {%- endif -%}
+                {%- elsif is_collection_style_card and horizontal_quick_add != true -%}
+                  {{ collection_quick_buy_visual }}
                 {%- else -%}
                   <span>
                     {%- if card_product.selected_or_first_available_variant.available -%}
-                      {{ 'products.product.add_to_cart' | t }}
+                      {%- if horizontal_quick_add -%}
+                        QUICK BUY
+                      {%- else -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- endif -%}
                     {%- else -%}
                       {{ 'products.product.sold_out' | t }}
                     {%- endif -%}
@@ -268,6 +325,13 @@
         >
           {%- if card_product.featured_media -%}
             <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+              {%- if render_collection_media_link -%}
+                <a
+                  class="collection-card-media-link"
+                  href="{{ card_product.url }}"
+                  aria-label="{{ card_product.title | escape }}"
+                >
+              {%- endif -%}
               <div class="media media--transparent media--hover-effect">
                 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
                 <img
@@ -313,6 +377,9 @@
                   >
                 {%- endif -%}
               </div>
+              {%- if render_collection_media_link -%}
+                </a>
+              {%- endif -%}
             </div>
           {%- endif -%}
           {%- if render_quick_add_in_media -%}
@@ -336,6 +403,17 @@
                 </a>
               </h3>
             </div>
+            {%- if is_homepage_best_sellers_card or request.page_type == 'collection' or request.page_type == 'search' -%}
+              <button
+                type="button"
+                class="product-card__wishlist"
+                aria-label="Add {{ card_product.title | escape }} to wishlist"
+              >
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                  <path d="M12 20.25s-7.25-4.43-9.35-9.08C1.08 7.68 3.11 4 6.83 4c2.05 0 3.48 1.12 4.17 2.12C11.69 5.12 13.12 4 15.17 4c3.72 0 5.75 3.68 4.18 7.17C17.25 15.82 12 20.25 12 20.25Z" />
+                </svg>
+              </button>
+            {%- endif -%}
             <div class="card__badge {{ settings.badge_position }}">
               {%- if card_product.available == false -%}
                 <span
@@ -349,7 +427,7 @@
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
                 >
-                  {{- 'products.product.on_sale' | t -}}
+                  {% assign savings = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round %}-{{ savings }}%
                 </span>
               {%- endif -%}
             </div>
@@ -358,35 +436,41 @@
         <div class="card__content{% if is_homepage_best_sellers_card %} card__content--homepage-best-sellers{% endif %}">
           <div class="card__information{% if is_homepage_best_sellers_card %} card__information--homepage-best-sellers{% endif %}">
             {%- if is_homepage_best_sellers_card -%}
-              {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+              {%- if show_rating -%}
                 {% liquid
+                  assign rating_value = 5
+                  assign rating_max = 5
                   assign rating_decimal = 0
-                  assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-                  if decimal >= 0.3 and decimal <= 0.7
-                    assign rating_decimal = 0.5
-                  elsif decimal > 0.7
-                    assign rating_decimal = 1
+                  assign review_count = card_product.metafields.reviews.rating_count | default: 0
+                  if card_product.metafields.reviews.rating.value != blank
+                    assign rating_value = card_product.metafields.reviews.rating.value.rating
+                    assign rating_max = card_product.metafields.reviews.rating.value.scale_max
+                    assign decimal = rating_value | modulo: 1
+                    if decimal >= 0.3 and decimal <= 0.7
+                      assign rating_decimal = 0.5
+                    elsif decimal > 0.7
+                      assign rating_decimal = 1
+                    endif
                   endif
                 %}
                 <div class="product-card__review-row">
                   <div
                     class="rating"
                     role="img"
-                    aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
+                    aria-label="{{ rating_value }} out of {{ rating_max }} stars"
                   >
                     <span
                       aria-hidden="true"
                       class="rating-star"
-                      style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                      style="--rating: {{ rating_value | floor }}; --rating-max: {{ rating_max }}; --rating-decimal: {{ rating_decimal }};"
                     ></span>
                   </div>
                   <p class="rating-count caption">
                     <span aria-hidden="true">
-                      {{- card_product.metafields.reviews.rating_count }} reviews
+                      {{- review_count }} reviews
                     </span>
                     <span class="visually-hidden">
-                      {{- card_product.metafields.reviews.rating_count }}
-                      {{ 'accessibility.total_reviews' | t -}}
+                      {{- review_count }} reviews
                     </span>
                   </p>
                 </div>
@@ -739,7 +823,7 @@
                 id="Badge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
-                {{- 'products.product.on_sale' | t -}}
+                {% assign savings = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round %}-{{ savings }}%
               </span>
             {%- endif -%}
           </div>

@@ -1,0 +1,149 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ersa-product-benefits color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="ersa-product-benefits__inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="ersa-product-benefits__heading-wrap">
+        <h2 class="ersa-product-benefits__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class="ersa-product-benefits__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign fallback_filename = block.settings.image_filename | strip
+        -%}
+        <article class="ersa-product-benefits__item" {{ block.shopify_attributes }}>
+          <div class="ersa-product-benefits__media">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 900
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '360, 540, 720, 900',
+                  sizes: '(min-width: 990px) 23vw, 45vw',
+                  alt: block.settings.title,
+                  class: 'ersa-product-benefits__image'
+              }}
+            {%- elsif fallback_filename != blank -%}
+              <img
+                src="{{ fallback_filename | asset_url }}"
+                alt="{{ block.settings.title | escape }}"
+                class="ersa-product-benefits__image"
+                width="720"
+                height="480"
+                loading="lazy"
+              >
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg ersa-product-benefits__placeholder' }}
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.title != blank -%}
+            <h3 class="ersa-product-benefits__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="ersa-product-benefits__text rte">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kiti product benefits",
+  "tag": "section",
+  "class": "section section-ersa-product-benefits",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "4 Reasons Why Millions are Switching to Handmade Press-ons"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h1",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ]
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Top padding", "default": 76 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Bottom padding", "default": 112 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_filename", "label": "Theme asset filename fallback" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Stays On, Not Off" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Flimsy drugstore nails pop off fast - ours are built to last for weeks.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kiti product benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-stays-on-v2.jpg",
+            "title": "Stays On, Not Off",
+            "text": "<p>Flimsy drugstore nails pop off fast - ours are built to last for weeks.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-turn-heads-v2.webp",
+            "title": "Looks That Turn Heads",
+            "text": "<p>Each set is a mini masterpiece - handcrafted for bold, beautiful impact.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-wears-again-v2.jpg",
+            "title": "Wears Again (and Again)",
+            "text": "<p>Easy to remove, even easier to reuse. One set, multiple wears.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-zero-effort-v2.jpg",
+            "title": "Salon-Quality, Zero Effort",
+            "text": "<p>No appointments, no damage - just press on and glow.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

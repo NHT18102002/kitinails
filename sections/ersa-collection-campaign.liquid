@@ -1,0 +1,480 @@
+{%- liquid
+  assign hero_image = section.settings.hero_image
+  assign hero_fallback = section.settings.hero_image_filename | strip
+  assign mobile_hero_image = section.settings.mobile_hero_image
+  assign mobile_hero_fallback = section.settings.mobile_hero_image_filename | strip
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background: #fff;
+  }
+
+  .ersa-collection-campaign {
+    background: #fff;
+    color: #111;
+  }
+
+  .ersa-collection-campaign__hero {
+    position: relative;
+    min-height: 45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+  }
+
+  .ersa-collection-campaign__hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    pointer-events: none;
+  }
+
+  .ersa-collection-campaign__hero picture,
+  .ersa-collection-campaign__hero img,
+  .ersa-collection-campaign__placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ersa-collection-campaign__hero picture,
+  .ersa-collection-campaign__hero img {
+    display: block;
+  }
+
+  .ersa-collection-campaign__hero img,
+  .ersa-collection-campaign__placeholder {
+    object-fit: cover;
+    object-position: {{ section.settings.image_position }};
+  }
+
+  .ersa-collection-campaign__content {
+    position: relative;
+    z-index: 2;
+    width: min(72rem, calc(100% - 4rem));
+    margin: 0 auto;
+    padding-top: 2.4rem;
+  }
+
+  .ersa-collection-campaign__eyebrow {
+    margin: 0 0 0.8rem;
+    color: #fff;
+    font-family: var(--ersa-body-font, Nunito, sans-serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .ersa-collection-campaign__heading {
+    margin: 0;
+    color: #fff;
+    font-family: var(--ersa-heading-font, "Iowan Old Style", Baskerville, "Times New Roman", serif);
+    font-size: clamp(4.2rem, 4vw, 5.8rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: 0;
+  }
+
+  .ersa-collection-campaign__timer {
+    display: flex;
+    justify-content: center;
+    gap: clamp(3.2rem, 6vw, 8rem);
+    margin: 3rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ersa-collection-campaign__timer strong {
+    display: block;
+    color: #fff;
+    font-family: var(--ersa-heading-font, "Iowan Old Style", Baskerville, "Times New Roman", serif);
+    font-size: clamp(4rem, 4vw, 5.4rem);
+    font-weight: 700;
+    line-height: 0.9;
+  }
+
+  .ersa-collection-campaign__timer span {
+    display: block;
+    margin-top: 0.8rem;
+    color: #fff;
+    font-family: var(--ersa-body-font, Nunito, sans-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .ersa-collection-campaign__marquee {
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #050505;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .ersa-collection-campaign__marquee-track {
+    display: flex;
+    width: max-content;
+    animation: ersa-collection-marquee {{ section.settings.marquee_speed }}s linear infinite;
+  }
+
+  .ersa-collection-campaign__marquee-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .ersa-collection-campaign__marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 4rem;
+    color: #fff;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .ersa-collection-campaign__marquee-link {
+    color: #fff;
+    text-underline-offset: 0.3rem;
+  }
+
+  .ersa-collection-campaign__marquee-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: currentColor;
+  }
+
+  .ersa-collection-campaign__deal-wrap {
+    padding: 4rem 6rem 0;
+  }
+
+  .ersa-collection-campaign__deal {
+    width: min(63.3rem, 100%);
+    margin: 0;
+    border-radius: 0.7rem;
+    background: #fafafa;
+  }
+
+  .ersa-collection-campaign__deal summary {
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 0 2rem;
+    color: #111;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .ersa-collection-campaign__deal summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ersa-collection-campaign__deal-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    flex: 0 0 3.6rem;
+    color: #111;
+  }
+
+  .ersa-collection-campaign__deal-title {
+    flex: 1 1 auto;
+    color: #111;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .ersa-collection-campaign__deal summary::after {
+    content: "+";
+    color: #111;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .ersa-collection-campaign__deal[open] summary::after {
+    content: "-";
+  }
+
+  .ersa-collection-campaign__deal-content {
+    padding: 0 2rem 2rem 7.4rem;
+    color: #111;
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  .ersa-collection-campaign__deal-content p {
+    margin: 0;
+  }
+
+  @keyframes ersa-collection-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .ersa-collection-campaign__hero {
+      min-height: 45rem;
+    }
+
+    .ersa-collection-campaign__deal-wrap {
+      padding-inline: 6rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ersa-collection-campaign__hero {
+      min-height: 27.9rem;
+      align-items: center;
+    }
+
+    .ersa-collection-campaign__hero img,
+    .ersa-collection-campaign__placeholder {
+      object-position: {{ section.settings.mobile_image_position }};
+    }
+
+    .ersa-collection-campaign__content {
+      width: min(35rem, calc(100% - 4rem));
+      padding-top: 1rem;
+    }
+
+    .ersa-collection-campaign__eyebrow {
+      margin-bottom: 0.4rem;
+      font-size: 1.45rem;
+    }
+
+    .ersa-collection-campaign__heading {
+      font-size: 3.7rem;
+    }
+
+    .ersa-collection-campaign__timer {
+      gap: 1.7rem;
+      margin-top: 2.5rem;
+    }
+
+    .ersa-collection-campaign__timer strong {
+      font-size: 3rem;
+    }
+
+    .ersa-collection-campaign__timer span {
+      margin-top: 0.9rem;
+      font-size: 1rem;
+    }
+
+    .ersa-collection-campaign__marquee {
+      min-height: 4.5rem;
+    }
+
+    .ersa-collection-campaign__marquee-item {
+      margin-right: 3rem;
+      font-size: 1.35rem;
+    }
+
+    .ersa-collection-campaign__deal-wrap {
+      padding: 2.4rem 2rem 0;
+    }
+
+    .ersa-collection-campaign__deal {
+      width: 100%;
+    }
+
+    .ersa-collection-campaign__deal summary {
+      min-height: 5.8rem;
+      gap: 1.3rem;
+      padding-inline: 1.6rem;
+    }
+
+    .ersa-collection-campaign__deal-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ersa-collection-campaign__marquee-track {
+      animation: none;
+    }
+  }
+{%- endstyle -%}
+
+<section class="ersa-collection-campaign" aria-label="{{ section.settings.heading | escape }}">
+  <div class="ersa-collection-campaign__hero">
+    {%- if hero_image != blank or hero_fallback != blank -%}
+      <picture>
+        {%- if mobile_hero_image != blank -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="
+              {{ mobile_hero_image | image_url: width: 390 }} 390w,
+              {{ mobile_hero_image | image_url: width: 750 }} 750w,
+              {{ mobile_hero_image | image_url: width: 1100 }} 1100w
+            "
+            sizes="100vw"
+          >
+        {%- elsif mobile_hero_fallback != blank -%}
+          <source media="(max-width: 749px)" srcset="{{ mobile_hero_fallback | asset_url }}">
+        {%- endif -%}
+
+        {%- if hero_image != blank -%}
+          {{ hero_image | image_url: width: 2400 | image_tag: loading: 'eager', widths: '390, 750, 1024, 1440, 1920, 2400', sizes: '100vw', alt: section.settings.hero_alt }}
+        {%- else -%}
+          <img
+            src="{{ hero_fallback | asset_url }}"
+            alt="{{ section.settings.hero_alt | escape }}"
+            width="1950"
+            height="1100"
+            loading="eager"
+          >
+        {%- endif -%}
+      </picture>
+    {%- else -%}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg ersa-collection-campaign__placeholder' }}
+    {%- endif -%}
+
+    <div class="ersa-collection-campaign__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ersa-collection-campaign__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ersa-collection-campaign__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      <ul class="ersa-collection-campaign__timer" aria-label="{{ section.settings.heading | escape }} countdown">
+        <li><strong>{{ section.settings.countdown_days }}</strong><span>{{ section.settings.days_label }}</span></li>
+        <li><strong>{{ section.settings.countdown_hours }}</strong><span>{{ section.settings.hours_label }}</span></li>
+        <li><strong>{{ section.settings.countdown_minutes }}</strong><span>{{ section.settings.minutes_label }}</span></li>
+        <li><strong>{{ section.settings.countdown_seconds }}</strong><span>{{ section.settings.seconds_label }}</span></li>
+      </ul>
+    </div>
+  </div>
+
+  {%- if section.settings.show_marquee and section.blocks.size > 0 -%}
+    <div class="ersa-collection-campaign__marquee" role="region" aria-label="Collection highlights">
+      <div class="ersa-collection-campaign__marquee-track">
+        {%- for repeat_index in (1..3) -%}
+          <div class="ersa-collection-campaign__marquee-group"{% unless repeat_index == 1 %} aria-hidden="true"{% endunless %}>
+            {%- for block in section.blocks -%}
+              <span class="ersa-collection-campaign__marquee-item" {{ block.shopify_attributes }}>
+                {%- case block.settings.icon -%}
+                  {%- when 'heart' -%}
+                    <svg class="ersa-collection-campaign__marquee-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20.8 5.7a5.1 5.1 0 0 0-7.2 0L12 7.3l-1.6-1.6a5.1 5.1 0 1 0-7.2 7.2L12 21l8.8-8.1a5.1 5.1 0 0 0 0-7.2Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                  {%- when 'clock' -%}
+                    <svg class="ersa-collection-campaign__marquee-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3.4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  {%- when 'diamond' -%}
+                    <svg class="ersa-collection-campaign__marquee-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 8h16l-8 12L4 8Zm3-4h10l3 4H4l3-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  {%- when 'smile' -%}
+                    <svg class="ersa-collection-campaign__marquee-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 14.2c1.6 1.8 5.4 1.8 7 0M9 9.5h.01M15 9.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  {%- else -%}
+                    <svg class="ersa-collection-campaign__marquee-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m4 12 8-8 8 8-8 8-8-8Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                {%- endcase -%}
+                {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+                  {{ block.settings.text }}
+                  <a class="ersa-collection-campaign__marquee-link" href="{{ block.settings.link }}">{{ block.settings.link_label }}</a>
+                {%- else -%}
+                  {{ block.settings.text }}
+                {%- endif -%}
+              </span>
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.deal_heading != blank -%}
+    <div class="ersa-collection-campaign__deal-wrap">
+      <details class="ersa-collection-campaign__deal">
+        <summary>
+          <svg class="ersa-collection-campaign__deal-icon" aria-hidden="true" viewBox="0 0 40 40" fill="none">
+            <path d="m8 20 13-13h8l3 3v8L19 31 8 20Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="26" cy="12" r="1.8" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M17 18h7M18.5 22h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="ersa-collection-campaign__deal-title">{{ section.settings.deal_heading }}</span>
+        </summary>
+        {%- if section.settings.deal_content != blank -%}
+          <div class="ersa-collection-campaign__deal-content rte">
+            {{ section.settings.deal_content }}
+          </div>
+        {%- endif -%}
+      </details>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Kiti collection campaign",
+  "tag": "section",
+  "class": "section section-ersa-collection-campaign",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "text", "id": "hero_image_filename", "label": "Theme asset filename fallback", "default": "collection-july-hero.webp" },
+    { "type": "image_picker", "id": "mobile_hero_image", "label": "Mobile hero image" },
+    { "type": "text", "id": "mobile_hero_image_filename", "label": "Mobile theme asset filename fallback", "default": "collection-july-hero-mobile.jpg" },
+    { "type": "text", "id": "hero_alt", "label": "Hero image alt text", "default": "Island Glow Club beach campaign" },
+    { "type": "text", "id": "image_position", "label": "Desktop image position", "default": "center center" },
+    { "type": "text", "id": "mobile_image_position", "label": "Mobile image position", "default": "0% center" },
+    { "type": "range", "id": "overlay_opacity", "min": 0, "max": 60, "step": 5, "unit": "%", "label": "Overlay opacity", "default": 10 },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SITEWIDE 10% OFF" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "July 4th Sale" },
+    { "type": "text", "id": "countdown_days", "label": "Days", "default": "02" },
+    { "type": "text", "id": "countdown_hours", "label": "Hours", "default": "15" },
+    { "type": "text", "id": "countdown_minutes", "label": "Minutes", "default": "33" },
+    { "type": "text", "id": "countdown_seconds", "label": "Seconds", "default": "21" },
+    { "type": "text", "id": "days_label", "label": "Days label", "default": "DAYS" },
+    { "type": "text", "id": "hours_label", "label": "Hours label", "default": "HOURS" },
+    { "type": "text", "id": "minutes_label", "label": "Minutes label", "default": "MINUTES" },
+    { "type": "text", "id": "seconds_label", "label": "Seconds label", "default": "SECONDS" },
+    { "type": "checkbox", "id": "show_marquee", "label": "Show marquee", "default": true },
+    { "type": "range", "id": "marquee_speed", "min": 12, "max": 60, "step": 2, "unit": "s", "label": "Marquee speed", "default": 28 },
+    { "type": "text", "id": "deal_heading", "label": "Deal heading", "default": "BUY MORE SAVE MORE" },
+    { "type": "richtext", "id": "deal_content", "label": "Deal content", "default": "<p>Spend more and save more during the current campaign.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "marquee_item",
+      "name": "Marquee item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "heart", "options": [
+          { "value": "tag", "label": "Tag" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "clock", "label": "Clock" },
+          { "value": "diamond", "label": "Diamond" },
+          { "value": "smile", "label": "Smile" }
+        ] },
+        { "type": "text", "id": "text", "label": "Text", "default": "Handmade with love using gel" },
+        { "type": "text", "id": "link_label", "label": "Inline link label" },
+        { "type": "url", "id": "link", "label": "Inline link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kiti collection campaign",
+      "blocks": [
+        { "type": "marquee_item", "settings": { "icon": "tag", "text": "New collections just released -", "link_label": "Shop Now", "link": "/collections/all" } },
+        { "type": "marquee_item", "settings": { "icon": "heart", "text": "Handmade with love using gel" } },
+        { "type": "marquee_item", "settings": { "icon": "clock", "text": "Salon-quality nails in 10 min" } },
+        { "type": "marquee_item", "settings": { "icon": "diamond", "text": "Last up to 4 weeks with solid glue" } },
+        { "type": "marquee_item", "settings": { "icon": "smile", "text": "No damage to your natural nails" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -14,7 +14,7 @@
       {%- for block in section.blocks -%}
         <figure class="ersa-testimonials__card" {{ block.shopify_attributes }}>
           <div class="ersa-testimonials__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
-            {%- for i in (1..5) -%}<span aria-hidden="true">¡ï</span>{%- endfor -%}
+            {%- for i in (1..5) -%}<span aria-hidden="true">ï¿½ï¿½</span>{%- endfor -%}
           </div>
           {%- if block.settings.quote != blank -%}<blockquote>{{ block.settings.quote }}</blockquote>{%- endif -%}
           <figcaption>
@@ -31,7 +31,7 @@
 
 {% schema %}
 {
-  "name": "Ersa testimonials",
+  "name": "Kiti testimonials",
   "tag": "section",
   "class": "section section-ersa-testimonials",
   "max_blocks": 6,
@@ -53,7 +53,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Ersa testimonials", "blocks": [ { "type": "testimonial" }, { "type": "testimonial" }, { "type": "testimonial" } ] }
+    { "name": "Kiti testimonials", "blocks": [ { "type": "testimonial" }, { "type": "testimonial" }, { "type": "testimonial" } ] }
   ]
 }
 {% endschema %}

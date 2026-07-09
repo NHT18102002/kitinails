@@ -29,6 +29,11 @@
   assign money_price = price | money
   assign money_price_min = price_min | money
   assign money_price_max = price_max | money
+  assign sale_savings_percent = 0
+  if compare_at_price > price
+    assign sale_savings = compare_at_price | minus: price
+    assign sale_savings_percent = sale_savings | times: 100 | divided_by: compare_at_price | round
+  endif
   if settings.currency_code_enabled
     assign money_price = price | money_with_currency
     assign money_price_min = price_min | money_with_currency
@@ -114,7 +119,11 @@
     </div>
     {%- if show_badges -%}
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-        {{ 'products.product.on_sale' | t }}
+        {%- if sale_savings_percent > 0 -%}
+          Save {{ sale_savings_percent }}%
+        {%- else -%}
+          {{ 'products.product.on_sale' | t }}
+        {%- endif -%}
       </span>
 
       <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">

@@ -1,6 +1,8 @@
 {%- assign size_guide = product.metafields.custom.size_guide_group.value -%}
-{%- if size_guide != blank -%}
-  {%- assign size_guide_title = size_guide.title.value | default: size_guide.title | default: '' -%}
+{%- assign fallback_size_guide_page = size_guide_page -%}
+{%- assign fallback_size_guide_text = size_guide_fallback_text -%}
+{%- if size_guide != blank or fallback_size_guide_page != blank or fallback_size_guide_text != blank -%}
+  {%- assign size_guide_title = size_guide.title.value | default: size_guide.title | default: fallback_size_guide_page.title | default: '' -%}
   {%- assign measurement_unit = size_guide.measurement_unit.value | default: size_guide.measurement_unit -%}
   <div class="product-size-guide quick-add-hidden">
     <modal-opener
@@ -12,6 +14,9 @@
         class="product-popup-modal__button link"
         aria-haspopup="dialog"
       >
+        <span class="product-size-guide__icon" aria-hidden="true">
+          {{- 'icon-ruler.svg' | inline_asset_content -}}
+        </span>
         {{ 'products.product.size_guide' | t }}
       </button>
     </modal-opener>
@@ -26,7 +31,7 @@
       tabindex="-1"
     >
       <button
-        id="ProductSizeGuideClose-{{ section_id }}"
+        id="ModalClose-ProductSizeGuide-{{ section_id }}"
         type="button"
         class="product-popup-modal__toggle"
         aria-label="{{ 'accessibility.close' | t }}"
@@ -43,6 +48,11 @@
         {%- endif -%}
         {%- if size_guide.measuring_instructions != blank -%}
           {{ size_guide.measuring_instructions | metafield_tag }}
+        {%- endif -%}
+        {%- if size_guide == blank and fallback_size_guide_page != blank -%}
+          {{ fallback_size_guide_page.content }}
+        {%- elsif size_guide == blank and fallback_size_guide_text != blank -%}
+          {{ fallback_size_guide_text }}
         {%- endif -%}
       </div>
     </div>

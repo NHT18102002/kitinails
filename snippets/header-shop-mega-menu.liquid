@@ -1,0 +1,111 @@
+{% comment %}
+  Renders the Kiti-style desktop Shop mega menu.
+
+  Accepts:
+  - index: parent menu loop index
+  - menu_color_scheme: header menu color scheme
+{% endcomment %}
+
+{%- liquid
+  assign shop_all_url = '/collections/all'
+  assign best_seller_url = '/collections/best-seller'
+  assign new_arrival_url = '/collections/new-arrival'
+  assign sale_url = '/collections/sales/Sale'
+  assign summer_url = '/collections/island-glow-club'
+  assign floral_url = '/collections/bloom-for-yourself'
+  assign music_festival_url = '/collections/music-festival'
+  assign ersa_essence_url = '/collections/ersa-essence'
+  assign lny_url = '/collections/lny-2026'
+  assign love_edit_url = '/collections/valentine'
+  assign renaissance_url = '/collections/golden-glamour'
+  assign toenails_url = '/collections/press-on-toenails'
+  assign shape_url = '/collections/shape/Shape'
+  assign almond_url = '/collections/almond/Almond'
+  assign coffin_url = '/collections/coffin/Coffin'
+  assign oval_url = '/collections/oval/Oval'
+  assign squoval_url = '/collections/squoval'
+  assign square_url = '/collections/square'
+  assign length_url = '/collections/length/Length'
+  assign long_url = '/collections/long/Long'
+  assign medium_url = '/collections/medium/Medium'
+  assign short_url = '/collections/short'
+  assign tools_url = '/collections/tools-accessories/TOOLS-%26-ACCESSORIES'
+  assign bundle_url = '/collections/bundle/BUNDLES'
+-%}
+
+<div
+  id="MegaMenu-Content-{{ index }}"
+  class="mega-menu__content ersa-shop-mega color-{{ menu_color_scheme }} gradient motion-reduce global-settings-popup"
+  tabindex="-1"
+>
+  <div class="ersa-shop-mega__inner page-width">
+    <div class="ersa-shop-mega__columns">
+      <div class="ersa-shop-mega__column">
+        <a href="{{ shop_all_url }}" class="ersa-shop-mega__heading link focus-inset">
+          Shop all
+        </a>
+        <ul class="ersa-shop-mega__links list-unstyled" role="list">
+          <li><a href="{{ best_seller_url }}">Best sellers</a></li>
+          <li><a href="{{ new_arrival_url }}">New arrivals</a></li>
+          <li><a href="{{ sale_url }}">Sales</a></li>
+        </ul>
+      </div>
+
+      <div class="ersa-shop-mega__column">
+        <a href="{{ summer_url }}" class="ersa-shop-mega__heading link focus-inset">
+          Shop by collections
+        </a>
+        <ul class="ersa-shop-mega__links list-unstyled" role="list">
+          <li>
+            <a href="{{ summer_url }}" class="ersa-shop-mega__link--accent">
+              <span>Summer Hot</span>
+              <span class="ersa-shop-mega__hot" aria-label="Hot">Hot</span>
+            </a>
+          </li>
+          <li><a href="{{ floral_url }}">Floral beauty</a></li>
+          <li><a href="{{ music_festival_url }}">Music festival</a></li>
+          <li><a href="{{ ersa_essence_url }}">Kiti essence</a></li>
+          <li><a href="{{ lny_url }}">LNY 2026</a></li>
+          <li><a href="{{ love_edit_url }}">Love edit</a></li>
+          <li><a href="{{ renaissance_url }}">Renaissance</a></li>
+          <li><a href="{{ toenails_url }}">Press on toenails</a></li>
+        </ul>
+      </div>
+
+      <div class="ersa-shop-mega__column">
+        <a href="{{ shape_url }}" class="ersa-shop-mega__heading link focus-inset">
+          Shop by shape
+        </a>
+        <ul class="ersa-shop-mega__links list-unstyled" role="list">
+          <li><a href="{{ almond_url }}">Almond</a></li>
+          <li><a href="{{ coffin_url }}">Coffin</a></li>
+          <li><a href="{{ oval_url }}">Oval</a></li>
+          <li><a href="{{ squoval_url }}">Squoval</a></li>
+          <li><a href="{{ square_url }}">Square</a></li>
+        </ul>
+      </div>
+
+      <div class="ersa-shop-mega__column">
+        <a href="{{ length_url }}" class="ersa-shop-mega__heading link focus-inset">
+          Shop by length
+        </a>
+        <ul class="ersa-shop-mega__links list-unstyled" role="list">
+          <li><a href="{{ long_url }}">Long</a></li>
+          <li><a href="{{ medium_url }}">Medium</a></li>
+          <li><a href="{{ short_url }}">Short</a></li>
+        </ul>
+      </div>
+
+      <div class="ersa-shop-mega__column">
+        <a href="{{ tools_url }}" class="ersa-shop-mega__heading link focus-inset">
+          Tools & accessories
+        </a>
+      </div>
+    </div>
+
+    <a href="{{ bundle_url }}" class="ersa-shop-mega__bundle link focus-inset">
+      Bundles: save up to<br>
+      40%
+    </a>
+  </div>
+</div>

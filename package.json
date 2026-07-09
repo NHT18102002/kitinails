@@ -1,0 +1,16 @@
+{
+  "name": "ersanails",
+  "version": "1.0.0",
+  "description": "Đây là repository cho việc nghiên cứu và xây dựng một theme Shopify Online Store 2.0 nguyên bản cho thương hiệu press-on nails. Dự án có thể học các pattern UX công khai từ các website cùng ngành, nhưng không được sao chép source code, hình ảnh, video, nội dung sản phẩm, review, font, logo, nhận diện thương hiệu hoặc bố cục pixel-perfect của đối thủ.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

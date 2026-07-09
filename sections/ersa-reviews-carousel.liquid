@@ -1,4 +1,4 @@
-{{ 'custom-theme.css' | asset_url | stylesheet_tag }}
+﻿{{ 'custom-theme.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -30,7 +30,7 @@
         {%- endif -%}
         {%- if section.settings.rating_text != blank -%}
           <div class="ersa-reviews-carousel__rating-summary">
-            <span class="ersa-reviews-carousel__stars-display" aria-hidden="true">★★★★★</span>
+            <span class="ersa-reviews-carousel__stars-display" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="ersa-reviews-carousel__rating-text">{{ section.settings.rating_text | escape }}</span>
           </div>
         {%- endif -%}
@@ -272,3 +272,8 @@
   ]
 }
 {% endschema %}
+
+
+
+
+

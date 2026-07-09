@@ -3,37 +3,75 @@
   @media screen and (min-width: 750px) { .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; } }
 {%- endstyle -%}
 
+{%- liquid
+  assign gallery_image_loading = 'lazy'
+  if request.page_type == 'product'
+    assign gallery_image_loading = 'eager'
+  endif
+-%}
+
 <section class="ersa-social-gallery color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <div class="ersa-social-gallery__inner page-width">
     <div class="ersa-social-gallery__header">
-      {%- if section.settings.heading != blank -%}<h2 class="ersa-social-gallery__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>{%- endif -%}
-      {%- if section.settings.text != blank -%}<div class="ersa-social-gallery__text rte">{{ section.settings.text }}</div>{%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="ersa-social-gallery__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ersa-social-gallery__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="ersa-social-gallery__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
     </div>
     <div class="ersa-social-gallery__track">
       {%- for block in section.blocks -%}
-        <a class="ersa-social-gallery__item" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
-          {%- if block.settings.image != blank -%}
-            {{ block.settings.image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240, 360, 480, 720', sizes: '(min-width: 990px) 22vw, 70vw', class: 'ersa-social-gallery__image' }}
-          {%- else -%}
-            {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg ersa-social-gallery__placeholder' }}
-          {%- endif -%}
-          {%- if block.settings.caption != blank -%}<span class="ersa-social-gallery__caption">{{ block.settings.caption }}</span>{%- endif -%}
-        </a>
+        <div class="ersa-social-gallery__item" {{ block.shopify_attributes }}>
+          <div class="ersa-social-gallery__item-header">
+            <p><a href="{{ block.settings.link | default: '#' }}"><strong>@{{ block.settings.caption | remove: '@' | downcase }}</strong></a></p>
+          </div>
+          <a class="ersa-social-gallery__image-link hover-scale" href="{{ block.settings.link | default: '#' }}">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 720 | image_tag: loading: gallery_image_loading, widths: '240, 360, 480, 720', sizes: '(min-width: 990px) 22vw, 70vw', class: 'ersa-social-gallery__image' }}
+            {%- elsif block.settings.image_filename != blank -%}
+              <img
+                src="{{ block.settings.image_filename | asset_url }}"
+                alt="{{ block.settings.caption | escape }}"
+                class="ersa-social-gallery__image"
+                width="720"
+                height="920"
+                loading="{{ gallery_image_loading }}"
+              >
+            {%- else -%}
+              {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg ersa-social-gallery__placeholder' }}
+            {%- endif -%}
+          </a>
+          <div class="ersa-social-gallery__item-footer">
+            <a href="{{ block.settings.link | default: '#' }}" class="ersa-social-gallery__button link link--text">Shop the Look</a>
+          </div>
+        </div>
       {%- endfor -%}
     </div>
+    {%- if section.blocks.size > 1 -%}
+      <div class="ersa-social-gallery__dots" aria-hidden="true">
+        {%- for block in section.blocks -%}
+          <span class="ersa-social-gallery__dot{% if forloop.first %} is-active{% endif %}"></span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Ersa social gallery",
+  "name": "Kiti social gallery",
   "tag": "section",
   "class": "section section-ersa-social-gallery",
   "max_blocks": 12,
   "settings": [
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "SPOTTED ON @KITINAILS" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Get Inspired by Every Look" },
     { "type": "select", "id": "heading_size", "label": "Heading size", "default": "h1", "options": [ { "value": "h2", "label": "Small" }, { "value": "h1", "label": "Medium" }, { "value": "h0", "label": "Large" } ] },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Feature customer photos, campaign shots, or your latest nail looks.</p>" },
+    { "type": "richtext", "id": "text", "label": "Text" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 48 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 48 }
@@ -41,12 +79,13 @@
   "blocks": [
     { "type": "image", "name": "Image", "settings": [
       { "type": "image_picker", "id": "image", "label": "Image" },
-      { "type": "text", "id": "caption", "label": "Caption", "default": "@studio" },
+      { "type": "text", "id": "image_filename", "label": "Theme asset filename fallback" },
+      { "type": "text", "id": "caption", "label": "Caption", "default": "KITINAILS" },
       { "type": "url", "id": "link", "label": "Link" }
     ] }
   ],
   "presets": [
-    { "name": "Ersa social gallery", "blocks": [ { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" } ] }
+    { "name": "Kiti social gallery", "blocks": [ { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" } ] }
   ]
 }
 {% endschema %}

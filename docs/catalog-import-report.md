@@ -1,0 +1,102 @@
+# Catalog Import Audit Report
+
+- Valid products: 591
+- Total variants: 2700
+- Total assets: 5076
+- Duplicate assets: 1412
+- Failed assets: 0
+- Failed product crawls: 0
+- Conflict scan: skipped (missing_admin_api_credentials)
+- Product class counts: press_on_nails=477, tool_accessory=54, service_or_custom=4, gift_card=1, bundle=54, other=1
+
+## Taxonomy Coverage
+- color: 496/591 (83.93%)
+- shape: 521/591 (88.16%)
+- length: 522/591 (88.32%)
+- style: 502/591 (84.94%)
+
+## Filter-Relevant Coverage (Press On Nails)
+- color: 463/477 (97.06%)
+- shape: 476/477 (99.79%)
+- length: 476/477 (99.79%)
+- style: 465/477 (97.48%)
+
+## Merchant Input Required
+- celestial-star: color
+- sticky-tabs-pack-10-sheets: color, shape, length, style
+- handheld-uv-lamp: color, shape, length, style
+- solid-nail-glue-gel: color, shape, length, style
+- ersa-nails-starter-pack: color, shape, length, style
+- ersa-nails-protouch-kit: color, shape, length, style
+- ersa-cuticle-oil: color, shape, length, style
+- customization-request: color, shape, length, style
+- ersa-nails-gift-card: color, shape, length, style
+- qipao: style
+- porcelain-dragon: style
+- lotus-fairy: color
+- blaze-dragon: color
+- mamianqun: style
+- dragon-roar: color, shape, length, style
+- oriental-beauty: color, shape, length, style
+- the-harmony: color, shape, length, style
+- ersa-nails-cuticle-tool-kit: color, shape, length, style
+- pillow-talk: color, shape, length, style
+- custom-design: color, shape, length, style
+- nails-refill-services: color, shape, length, style
+- ersa-collector-box: color, shape, length, style
+- elegance-trio: color, shape, length, style
+- ersa-removal-pen: color, shape, length, style
+- neon-dream: shape, length, style
+- custom-ring-design: color, shape, length, style
+- acrylic-stand: color, shape, length, style
+- starlit-fairytale: style
+- ersa-tote-bag: color, shape, length, style
+- ersa-t-shirt: color, shape, length, style
+- ersa-bunny-pouch: color, shape, length, style
+- ersa-holiday-bag: color, shape, length, style
+- genuine: style
+- solid-glue-tabs: color, shape, length, style
+- reunion: color, style
+- the-thriving-day: style
+- ersa-collector-book: color, shape, length, style
+- brush-on-nail-glue: color, shape, length
+- ersa-cuticle-oil-pen: color, shape, length, style
+- nail-glue-remover: color, shape, length, style
+- flower-hairclip: color, shape, length, style
+- ersa-bubble-binder: color, shape, length, style
+- blossom-beaded-necklace-work-piece: color, shape, length, style
+- big-blossom-lightweight-earrings-work-piece: color, shape, length, style
+- ersa-nail-stamp: color, shape, length, style
+- ersa-gift-packaging: color, shape, length, style
+- ersa-nude-series: style
+- ersa-c03-peachy: color
+- ersa-n01-porcelain: style
+- ersa-n09-honey: style
+
+## Filter-Relevant Missing Taxonomy
+- celestial-star: color
+- qipao: style
+- porcelain-dragon: style
+- lotus-fairy: color
+- blaze-dragon: color
+- mamianqun: style
+- neon-dream: shape, length, style
+- starlit-fairytale: style
+- ersa-nude-series: style
+- ersa-c03-peachy: color
+- ersa-n01-porcelain: style
+- ersa-n09-honey: style
+- emerald-memory: color
+- burgundy: style
+- deep-cranberry: style
+- cherry-pop: style
+- verdant-series: style
+- midwinter-melody: color
+- the-gift: color
+- miss-cherry: color
+- like-a-dream: color
+- soft-romance: color
+- citrus-crush: color
+- ersa-c01-icy: color
+- just-peachy: color
+- tropic-mood: color

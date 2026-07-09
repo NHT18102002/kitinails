@@ -1,16 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {}
         },
         "rating": {
-          "type": "rating"
+          "type": "rating",
+          "settings": {}
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
+        },
+        "short_intro": {
+          "type": "text",
+          "settings": {
+            "text": "No salon needed - just peel, press, and shine!\n- 5 Minute application\n- Handcrafted with gel\n- Last up to 4 weeks\n- Reusable",
+            "text_style": "body"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -20,7 +39,8 @@
           }
         },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -30,7 +50,8 @@
           }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {}
         },
         "share": {
           "type": "share",
@@ -50,7 +71,7 @@
         "how_to_use": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How to Use",
+            "heading": "How to Use (< 5 mins)",
             "icon": "clipboard",
             "content": "<p>Clean, size, apply adhesive, press firmly, and avoid water immediately after application.</p>",
             "page": ""
@@ -77,7 +98,7 @@
         "returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Returns & Exchanges",
+            "heading": "Returns & Exchanges Faulty Items",
             "icon": "return",
             "content": "<p>Explain your return policy, faulty item process and exchange rules here.</p>",
             "page": ""
@@ -86,14 +107,39 @@
         "complementary": {
           "type": "complementary",
           "settings": {
-            "block_heading": "Buy It With",
+            "block_heading": "Add the Tools for Best Results",
             "make_collapsible_row": false,
             "icon": "none",
+            "fallback_collection": "all",
             "product_list_limit": 4,
-            "products_per_page": 4,
-            "pagination_style": "counter",
+            "products_per_page": 1,
+            "pagination_style": "dots",
             "image_ratio": "portrait",
             "enable_quick_add": true
+          }
+        },
+        "trust_badges": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "heading_1": "Free Shipping Over $79 USD",
+            "icon_2": "lock",
+            "heading_2": "Secure Payment Method",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
+        "custom_shape_cta": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"ersa-product-custom-cta\"><p>Prefer a custom nail shape or length?</p><a href=\"/pages/custom\" class=\"ersa-product-custom-cta__link\">CUSTOM NOW</a></div>"
+          }
+        },
+        "worry_free_delivery": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"ersa-product-seel-note\" aria-label=\"Worry-Free Delivery available with seel\"><span class=\"ersa-product-seel-note__icon\">&#10003;</span><strong>Worry-Free Delivery&reg; available with</strong> <span class=\"ersa-product-seel-note__brand\">seel</span> <span class=\"ersa-product-seel-note__help\">?</span></div>"
           }
         }
       },
@@ -101,63 +147,394 @@
         "title",
         "rating",
         "price",
+        "short_intro",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "worry_free_delivery",
+        "trust_badges",
         "complementary",
+        "custom_shape_cta",
         "description",
         "toolkit",
         "how_to_use",
         "ingredients",
         "shipping",
-        "returns",
-        "share"
+        "returns"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_position": "left",
-        "gallery_layout": "stacked",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
-        "image_zoom": "lightbox",
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "show",
-        "hide_variants": true,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "size_guide_page": "",
+        "size_guide_fallback_text": "<p>Measure your natural nails and compare them with XS, S, M, and L before choosing your set.</p>",
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 36
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "product_benefits": {
+      "type": "ersa-product-benefits",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-stays-on-v2.jpg",
+            "title": "Stays On, Not Off",
+            "text": "<p>Flimsy drugstore nails pop off fast - ours are built to last for weeks.</p>"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-turn-heads-v2.webp",
+            "title": "Looks That Turn Heads",
+            "text": "<p>Each set is a mini masterpiece - handcrafted for bold, beautiful impact.</p>"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-wears-again-v2.jpg",
+            "title": "Wears Again (and Again)",
+            "text": "<p>Easy to remove, even easier to reuse. One set, multiple wears.</p>"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "image_filename": "product-benefit-zero-effort-v2.jpg",
+            "title": "Salon-Quality, Zero Effort",
+            "text": "<p>No appointments, no damage - just press on and glow.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ],
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
+        "heading": "4 Reasons Why Millions are Switching to Handmade Press-ons",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 76,
+        "padding_bottom": 112
+      }
+    },
+    "product_island_glow": {
+      "type": "ersa-product-island-glow",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "",
+        "heading": "Island Glow Club",
+        "heading_size": "h1",
+        "text": "<p>Meet your summer nail wardrobe. Island Glow Club by Kiti Nails is our most glowy drop yet, featuring three summer moods: Tropical Bloom, Mermaid Glow, and Island Sparkle. From tropical flowers to ocean blues and sunset sparkle, these handmade press on nails are made for every Hot Girl who doesn't do a quiet summer. Slip them on before the flight, the beach day, the girls trip, or the rooftop party. You're not just getting a manicure - you're getting your summer entry pass.</p>",
+        "collection": "island-glow-club",
+        "image_filename": "Summer2026_ErsaNails_PressOnNails_19.webp",
+        "secondary_image_filename": "Summer2026_ErsaNails_PressOnNails_15.webp",
+        "button_label": "DISCOVER THE COLLECTION",
+        "button_link": "/collections/island-glow-club",
+        "color_scheme": "scheme-1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "product_reviews": {
+      "type": "ersa-reviews-carousel",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "Be the first to write a review",
+            "review_text": "<p>Share your Kiti Nails look and help other glow girls find their perfect set.</p>",
+            "author_name": "From Our Kiti Girls",
+            "verified": true
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_title": "Salon look in minutes",
+            "review_text": "<p>Handmade press-ons with glossy details, easy application, and reusable wear.</p>",
+            "author_name": "Kiti Nails",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "From Our Kiti Girls",
+        "heading_size": "h1",
+        "rating_text": "",
+        "subheading": "Be the first to write a review",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 44
+      }
+    },
+    "product_ugc_videos": {
+      "type": "ersa-product-ugc-videos",
+      "blocks": {
+        "ugc_1": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-01.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/ffad70cb075b4280b202b8017fc77046/ffad70cb075b4280b202b8017fc77046.SD-480p-0.9Mbps-46722405.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        },
+        "ugc_2": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-02.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/72d0e81390514b558517c2b9f6e4dc37/72d0e81390514b558517c2b9f6e4dc37.SD-480p-0.9Mbps-56694745.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        },
+        "ugc_3": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-03.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/3948df98b10642b68de7e16177110daa/3948df98b10642b68de7e16177110daa.SD-480p-0.9Mbps-56694890.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        },
+        "ugc_4": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-04.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/99e1d755336c4391805397849e81faac/99e1d755336c4391805397849e81faac.SD-480p-1.2Mbps-56694817.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        },
+        "ugc_5": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-05.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/d719551e087e4472b28833c090fa4416/d719551e087e4472b28833c090fa4416.SD-480p-0.9Mbps-44563617.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        },
+        "ugc_6": {
+          "type": "video",
+          "settings": {
+            "poster_filename": "product-ugc-video-06.jpg",
+            "video_src": "https://cdn.shopify.com/videos/c/vp/7a9017931da3481c86aef62dfddaad48/7a9017931da3481c86aef62dfddaad48.SD-480p-0.9Mbps-48437694.mp4",
+            "title": "Kiti Nails customer video"
+          }
+        }
+      },
+      "block_order": [
+        "ugc_1",
+        "ugc_2",
+        "ugc_3",
+        "ugc_4",
+        "ugc_5",
+        "ugc_6"
+      ],
+      "settings": {
+        "heading": "Kiti Babes in Action",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 60
+      }
+    },
+    "product_social_gallery": {
+      "type": "ersa-social-gallery",
+      "blocks": {
+        "social_1": {
+          "type": "image",
+          "settings": {
+            "image_filename": "product-social-shania.jpg",
+            "caption": "SHANIAKUFNER",
+            "link": ""
+          }
+        },
+        "social_2": {
+          "type": "image",
+          "settings": {
+            "image_filename": "product-social-elizajhall.jpg",
+            "caption": "ELIZAJHALL",
+            "link": ""
+          }
+        },
+        "social_3": {
+          "type": "image",
+          "settings": {
+            "image_filename": "product-social-thearielmermaid.jpg",
+            "caption": "THEARIELMERMAID",
+            "link": ""
+          }
+        },
+        "social_4": {
+          "type": "image",
+          "settings": {
+            "image_filename": "product-social-miimiimisaa.jpg",
+            "caption": "MIIMIIMISAA",
+            "link": ""
+          }
+        },
+        "social_5": {
+          "type": "image",
+          "settings": {
+            "image_filename": "product-social-elisaisaqt.jpg",
+            "caption": "ELISAISAQT",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "social_1",
+        "social_2",
+        "social_3",
+        "social_4",
+        "social_5"
+      ],
+      "settings": {
+        "subtitle": "SPOTTED ON @KITINAILS",
+        "heading": "Get Inspired by Every Look",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "product_you_may_like": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "best-seller",
         "products_to_show": 8,
+        "title": "YOU MAY ALSO LIKE",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "link",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": true,
+        "show_rating": false,
+        "quick_add": "standard",
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 48,
-        "padding_bottom": 56
+        "padding_bottom": 48
+      }
+    },
+    "product_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How to find my size?",
+            "icon": "none",
+            "row_content": "<p>Use the size chart near the size selector and measure your natural nails before choosing XS, S, M, or L.</p>",
+            "page": ""
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How are the different shapes and lengths looks like?",
+            "icon": "none",
+            "row_content": "<p>Each product and collection image shows the nail shape and length. Choose the style that best matches your everyday wear.</p>",
+            "page": ""
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where do you ship to?",
+            "icon": "none",
+            "row_content": "<p>Shipping options and delivery times are shown at checkout based on your address.</p>",
+            "page": ""
+          }
+        },
+        "faq_4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long do the nails last for?",
+            "icon": "none",
+            "row_content": "<p>With proper prep and care, Kiti press-on nails can last up to 4 weeks and can be reused.</p>",
+            "page": ""
+          }
+        },
+        "faq_5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What comes with my purchase?",
+            "icon": "none",
+            "row_content": "<p>Each set includes handcrafted press-on nails and the application essentials configured by the merchant.</p>",
+            "page": ""
+          }
+        },
+        "faq_6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are our press-on nails reusable?",
+            "icon": "none",
+            "row_content": "<p>Yes. Remove gently, store carefully, and reuse when the nails are in good condition.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image": "",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
     "main",
-    "disclosures",
-    "related-products"
+    "product_benefits",
+    "product_island_glow",
+    "product_you_may_like",
+    "product_reviews",
+    "product_ugc_videos",
+    "product_faq",
+    "product_social_gallery"
   ]
 }

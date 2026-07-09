@@ -1,0 +1,1171 @@
+{
+  "generatedAt": "2026-07-05T04:40:21.158Z",
+  "include": [
+    {
+      "handle": "all",
+      "title": "All",
+      "productsCount": 1320,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "almond",
+      "title": "almond",
+      "productsCount": 903,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "best-seller",
+      "title": "Best Sellers",
+      "productsCount": 1194,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "bridal",
+      "title": "Bridal Collection",
+      "productsCount": 57,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "cat-eye",
+      "title": "Cat Eye",
+      "productsCount": 393,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "chrome",
+      "title": "Chrome",
+      "productsCount": 507,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "clearance",
+      "title": "Clearance",
+      "productsCount": 477,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "coffin",
+      "title": "Coffin",
+      "productsCount": 193,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "ersa-essence",
+      "title": "Ersa Essence",
+      "productsCount": 86,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "ersa-nails-tools",
+      "title": "Ersa nails Tools",
+      "productsCount": 1218,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "ersas-accessories",
+      "title": "Ersa's Accessories",
+      "productsCount": 40,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "flower-nails",
+      "title": "Flower Nails",
+      "productsCount": 132,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "french-tip",
+      "title": "French Tip",
+      "productsCount": 613,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "long",
+      "title": "Long",
+      "productsCount": 161,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "medium",
+      "title": "Medium",
+      "productsCount": 670,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "mermaid",
+      "title": "Mermaid",
+      "productsCount": 369,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "metallic",
+      "title": "Metallic",
+      "productsCount": 501,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "nails-under-30",
+      "title": "Nails Under $30",
+      "productsCount": 517,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "new-arrival",
+      "title": "New Arrivals",
+      "productsCount": 1204,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "ombre",
+      "title": "Ombré",
+      "productsCount": 307,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "oval",
+      "title": "Oval",
+      "productsCount": 80,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "short",
+      "title": "Short",
+      "productsCount": 441,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "square",
+      "title": "Square",
+      "productsCount": 31,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    },
+    {
+      "handle": "squoval",
+      "title": "Squoval",
+      "productsCount": 22,
+      "decision": "include",
+      "reason": "core_storefront_collection"
+    }
+  ],
+  "review": [
+    {
+      "handle": "manicure-3-nails-for-99",
+      "title": "3 Nails for $99",
+      "productsCount": 95,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "aug_best",
+      "title": "Aug_Best",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "aura",
+      "title": "Aura",
+      "productsCount": 267,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "back-to-school",
+      "title": "Back To School",
+      "productsCount": 93,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "back-to-school-picks",
+      "title": "Back to School Picks",
+      "productsCount": 79,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "baroque",
+      "title": "Baroque",
+      "productsCount": 29,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "best-of-the-best",
+      "title": "Best of the Best",
+      "productsCount": 40,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "best-sellers-collab",
+      "title": "Best Sellers Collab",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "bloom-for-yourself",
+      "title": "Bloom For Yourself",
+      "productsCount": 183,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "bundle",
+      "title": "BUNDLES",
+      "productsCount": 154,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "classy-nails",
+      "title": "Classy Nails",
+      "productsCount": 156,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "coachella-nails-best",
+      "title": "Coachella Nails/Best",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "coachella-nails-desert-boho",
+      "title": "Coachella Nails/Desert Boho",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "coachella-nails-new",
+      "title": "Coachella Nails/New",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "coachella-nails-vibrant-fiesta",
+      "title": "Coachella Nails/Vibrant Fiesta",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "coffee-day",
+      "title": "Coffee Day",
+      "productsCount": 53,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "creepy-carnival",
+      "title": "Creepy Carnival",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "dark-nails",
+      "title": "Dark Nails Sale",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "discover-fashion-essentials",
+      "title": "Discover Fashion Essentials",
+      "productsCount": 438,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "year-of-the-dragon-collection",
+      "title": "Dragon Collection",
+      "productsCount": 20,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "ersa-birthday",
+      "title": "Ersa Birthday",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "ersa-festival-faves-collab",
+      "title": "Ersa Festival Faves Collab",
+      "productsCount": 23,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "ersa-valentine-sale",
+      "title": "Ersa Valentine Sale",
+      "productsCount": 109,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "ersa-x-work-piece",
+      "title": "Ersa x Work Piece",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "fairy",
+      "title": "fairy",
+      "productsCount": 125,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "gift-card",
+      "title": "Gift Card",
+      "productsCount": 1,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "glow-duo-bundle",
+      "title": "Glow Duo Bundle",
+      "productsCount": 7,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "golden-glamour",
+      "title": "Golden Glamour",
+      "productsCount": 40,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "gothic",
+      "title": "Gothic",
+      "productsCount": 35,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "gothic-halloween",
+      "title": "Gothic Halloween",
+      "productsCount": 1387,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "halloween",
+      "title": "Halloween",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "halloween-sale-2025",
+      "title": "halloween sale 2025",
+      "productsCount": 145,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "holiday",
+      "title": "Holiday",
+      "productsCount": 142,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "holiday-collection2023",
+      "title": "Holiday Collection2023",
+      "productsCount": 21,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "holiday-nail-trends",
+      "title": "Holiday Nail Trends",
+      "productsCount": 97,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "holiday-nails",
+      "title": "Holiday Nails",
+      "productsCount": 201,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "holiday-nails-2025",
+      "title": "Holiday Nails 2025",
+      "productsCount": 188,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "hot-girl-summer-nails",
+      "title": "Hot Girl Summer-nails",
+      "productsCount": 153,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "hot-sale",
+      "title": "Hot Sale",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club",
+      "title": "Island Glow Club",
+      "productsCount": 210,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club-except-sale",
+      "title": "Island Glow Club - except sale",
+      "productsCount": 156,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club-island-spark",
+      "title": "Island Glow Club - Island Spark",
+      "productsCount": 22,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club-mermaid-glow",
+      "title": "Island Glow Club - Mermaid Glow",
+      "productsCount": 27,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club-tropical-bloom",
+      "title": "Island Glow Club - Tropical Bloom",
+      "productsCount": 49,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "island-glow-club-bundle",
+      "title": "Island Glow Club Bundle",
+      "productsCount": 5,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "jul_best",
+      "title": "Jul_Best",
+      "productsCount": 1399,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "length",
+      "title": "Length",
+      "productsCount": 1216,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lny-2026",
+      "title": "LNY 2026",
+      "productsCount": 81,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lost-atlantis",
+      "title": "Lost Atlantis",
+      "productsCount": 32,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "love-bundles",
+      "title": "Love Bundles",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lunar-new-year",
+      "title": "Lunar New Year",
+      "productsCount": 39,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lunar-new-year-1",
+      "title": "Lunar New Year 1",
+      "productsCount": 37,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lunar-new-year-collab",
+      "title": "Lunar New Year Collab",
+      "productsCount": 17,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "lunar-new-year-collection",
+      "title": "Lunar New Year Collection",
+      "productsCount": 37,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mini",
+      "title": "Mini",
+      "productsCount": 6,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day",
+      "title": "Mother's Day",
+      "productsCount": 131,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-bundle",
+      "title": "Mother's Day Bundle",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-best-sellers",
+      "title": "Mother's Day-Best Sellers",
+      "productsCount": 30,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-cool-bold",
+      "title": "Mother's Day-Cool & Bold",
+      "productsCount": 24,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-floral-vibes",
+      "title": "Mother's Day-Floral Vibes",
+      "productsCount": 48,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-short-sweet",
+      "title": "Mother's Day-Short & Sweet",
+      "productsCount": 34,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "mothers-day-simple-chic",
+      "title": "Mother's Day-Simple Chic",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "music-festival",
+      "title": "Music Festival",
+      "productsCount": 103,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "new-nails",
+      "title": "New Nails",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "new-year-new-nails",
+      "title": "New Year New Nails",
+      "productsCount": 259,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "non-clearance",
+      "title": "Non-clearance",
+      "productsCount": 823,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "pearl",
+      "title": "Pearl",
+      "productsCount": 176,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "petite-nails",
+      "title": "Petite Nails",
+      "productsCount": 447,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "press-on-nails",
+      "title": "Press On Nails",
+      "productsCount": 1115,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "press-on-toenails",
+      "title": "Press-on Toenails",
+      "productsCount": 22,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "pride-collection",
+      "title": "Pride Collection",
+      "productsCount": 6,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "religions",
+      "title": "Religions",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "renaissance-nail",
+      "title": "renaissance nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "retrowave",
+      "title": "Retrowave",
+      "productsCount": 13,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "sales",
+      "title": "Sales",
+      "productsCount": 776,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "shape",
+      "title": "Shape",
+      "productsCount": 1253,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "shape_cat-claw",
+      "title": "Shape_Cat Claw",
+      "productsCount": 0,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "show-me",
+      "title": "SHOW ME",
+      "productsCount": 43,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "show-you",
+      "title": "SHOW YOU",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "simple",
+      "title": "Simple",
+      "productsCount": 80,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "simple-nail",
+      "title": "simple nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "simple-nails",
+      "title": "Simple Nails",
+      "productsCount": 48,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "soft-glam",
+      "title": "Soft Glam",
+      "productsCount": 592,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "spring-bogo-sale",
+      "title": "Spring BOGO Sale",
+      "productsCount": 12,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "spring-collection",
+      "title": "Spring Collection",
+      "productsCount": 74,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "spring-nail",
+      "title": "spring nail",
+      "productsCount": 1398,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "spring-summer-sale",
+      "title": "Spring-Summer Sale",
+      "productsCount": 120,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "springtime",
+      "title": "springtime",
+      "productsCount": 130,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "st-patrick-s-day-nails",
+      "title": "St. Patrick’s Day Nails",
+      "productsCount": 67,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-10-off",
+      "title": "Summer 10% off",
+      "productsCount": 207,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection",
+      "title": "Summer Collection",
+      "productsCount": 216,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-best-sellers",
+      "title": "Summer Collection - Best Sellers",
+      "productsCount": 19,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-bundles",
+      "title": "Summer Collection - Bundles",
+      "productsCount": 9,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-glowing-flowers",
+      "title": "Summer Collection - Glowing Flowers",
+      "productsCount": 45,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-new-arrivals",
+      "title": "Summer Collection - New Arrivals",
+      "productsCount": 19,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-poolside-pop",
+      "title": "Summer Collection - Poolside Pop",
+      "productsCount": 16,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-shimmer-glow",
+      "title": "Summer Collection - Shimmer & Glow",
+      "productsCount": 25,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-collection-tropical-fruity",
+      "title": "Summer Collection - Tropical Fruity",
+      "productsCount": 10,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-glow-sale",
+      "title": "Summer Glow Sale",
+      "productsCount": 301,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-glow-sale-under-25",
+      "title": "Summer Glow Sale Under $25",
+      "productsCount": 245,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-glow-sale-under-35",
+      "title": "Summer Glow Sale Under $35",
+      "productsCount": 275,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-glow-sale-up-to-40-off",
+      "title": "Summer Glow Sale Up To 40% Off",
+      "productsCount": 50,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-glow-sale-up-to-70-off",
+      "title": "Summer Glow Sale Up To 70% Off",
+      "productsCount": 239,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-nails",
+      "title": "Summer Nails",
+      "productsCount": 59,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer-party",
+      "title": "Summer Party",
+      "productsCount": 92,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "summer2026_except-sale",
+      "title": "summer2026_except sale",
+      "productsCount": 138,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "sweater-weather",
+      "title": "Sweater Weather",
+      "productsCount": 232,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "tools-accessories",
+      "title": "Tools & Accessories",
+      "productsCount": 92,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "trending-nails",
+      "title": "Trending Nails",
+      "productsCount": 85,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "upsell-best-sellers",
+      "title": "upsell best sellers",
+      "productsCount": 58,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "v-day-sale",
+      "title": "V-Day Sale",
+      "productsCount": 115,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "valentine",
+      "title": "Valentine's Collection",
+      "productsCount": 163,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "valentine-s-nails-collection",
+      "title": "Valentine’s Nails Collection",
+      "productsCount": 163,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "wonderfall",
+      "title": "Wonderfall",
+      "productsCount": 196,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "worry-free",
+      "title": "worry-free",
+      "productsCount": 5,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "the-year-of-the-snake-collection",
+      "title": "Year of the Snake",
+      "productsCount": 21,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    },
+    {
+      "handle": "zodiac",
+      "title": "Zodiac",
+      "productsCount": 8,
+      "decision": "review",
+      "reason": "needs_allowlist_review"
+    }
+  ],
+  "exclude": [
+    {
+      "handle": "bloom-for-yourself-copy",
+      "title": "Bloom For Yourself (copy)",
+      "productsCount": 136,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "best-selling-30-feb20",
+      "title": "Catalog-Best selling 30-Feb20",
+      "productsCount": 84,
+      "decision": "exclude",
+      "reason": "dated_campaign_handle"
+    },
+    {
+      "handle": "collab-gift",
+      "title": "collab gift",
+      "productsCount": 972,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "cyber-week",
+      "title": "Cyber Week",
+      "productsCount": 982,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "cyber-week-flashsale",
+      "title": "cyber week flashsale",
+      "productsCount": 20,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "ersa-cyber-week",
+      "title": "Ersa Cyber Week",
+      "productsCount": 144,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "except-flashsale",
+      "title": "except flashsale",
+      "productsCount": 813,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "except-mday",
+      "title": "except mday",
+      "productsCount": 1268,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "festival-giveaway",
+      "title": "festival giveaway",
+      "productsCount": 23,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "flash-sale",
+      "title": "flash sale",
+      "productsCount": 108,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "flash-sale-products",
+      "title": "flashsale products",
+      "productsCount": 99,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "giveaway",
+      "title": "Giveaway",
+      "productsCount": 1023,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "giveaway-winner",
+      "title": "giveaway winner",
+      "productsCount": 63,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "halloween-collab-gifts",
+      "title": "Halloween Collab Gifts",
+      "productsCount": 17,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "heirloom-reverie-副本",
+      "title": "Heirloom Reverie copy",
+      "productsCount": 51,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "holiday-collab-gift",
+      "title": "Holiday Collab Gift",
+      "productsCount": 13,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "holiday-collection-copy",
+      "title": "Holiday Collection (Copy)",
+      "productsCount": 259,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "black-friday",
+      "title": "Holiday Sale",
+      "productsCount": 109,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "lost-atlantis_ads",
+      "title": "lost atlantis_ads",
+      "productsCount": 1398,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "mothers-day-copy",
+      "title": "Mother's Day-copy",
+      "productsCount": 121,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "music-festival-copy",
+      "title": "Music Festival (Copy)",
+      "productsCount": 93,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "renaissance_ads",
+      "title": "Renaissance_ads",
+      "productsCount": 1398,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "fly-eagles-flashsale",
+      "title": "Super Bowl Flashsale",
+      "productsCount": 20,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    },
+    {
+      "handle": "valentines-collection-副本",
+      "title": "Valentine's Collection (copy)",
+      "productsCount": 48,
+      "decision": "exclude",
+      "reason": "copy_handle"
+    },
+    {
+      "handle": "year-of-the-snake-ads",
+      "title": "Year of the Snake ads",
+      "productsCount": 39,
+      "decision": "exclude",
+      "reason": "campaign_collection"
+    }
+  ]
+}

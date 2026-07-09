@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-07-05T00:00:00.000Z",
+  "conflicts": [
+    {
+      "handle": "seafoam",
+      "existingProductId": "gid://shopify/Product/9650366644375",
+      "sourceUrl": "https://ersanails.com/products/seafoam",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "my-happy-hour",
+      "existingProductId": "gid://shopify/Product/9650359107735",
+      "sourceUrl": "https://ersanails.com/products/my-happy-hour",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "fairy-garden",
+      "existingProductId": "gid://shopify/Product/9650357305495",
+      "sourceUrl": "https://ersanails.com/products/fairy-garden",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "green-muse",
+      "existingProductId": "gid://shopify/Product/9650359009431",
+      "sourceUrl": "https://ersanails.com/products/green-muse",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "hoppy-spring",
+      "existingProductId": "gid://shopify/Product/9650354520215",
+      "sourceUrl": "https://ersanails.com/products/hoppy-spring",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "sweet-nothing",
+      "existingProductId": "gid://shopify/Product/9650347409559",
+      "sourceUrl": "https://ersanails.com/products/sweet-nothing",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "safari",
+      "existingProductId": "gid://shopify/Product/9650248253591",
+      "sourceUrl": "https://ersanails.com/products/safari",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "maldives-sunset",
+      "existingProductId": "gid://shopify/Product/9650366742679",
+      "sourceUrl": "https://ersanails.com/products/maldives-sunset",
+      "action": "adopt_existing"
+    },
+    {
+      "handle": "lost-in-paradise",
+      "existingProductId": "gid://shopify/Product/9650366808215",
+      "sourceUrl": "https://ersanails.com/products/lost-in-paradise",
+      "action": "adopt_existing"
+    }
+  ]
+}

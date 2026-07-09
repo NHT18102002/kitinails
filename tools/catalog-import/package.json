@@ -1,0 +1,29 @@
+{
+  "name": "catalog-import-tooling",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Audit-first Ersa Nails catalog crawl and Shopify import tooling",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test",
+    "audit": "node src/run-pipeline.cjs --phase audit",
+    "import:dry-run": "node src/run-import.cjs --phase dry-run",
+    "import:prepare-admin": "node src/run-import.cjs --phase prepare-admin",
+    "import:preflight": "node src/run-import.cjs --phase preflight",
+    "import:verify-admin-prep": "node src/run-import.cjs --phase verify-admin-prep",
+    "import:assets": "node src/run-import.cjs --phase assets",
+    "import:collection-membership": "node src/run-import.cjs --phase collection-membership",
+    "import:productset-schema": "node src/run-import.cjs --phase productset-schema",
+    "import:productset-dry-run": "node src/run-import.cjs --phase productset-dry-run",
+    "import:taxonomy-sync": "node src/run-import.cjs --phase taxonomy-sync",
+    "import:verify-product-prep": "node src/run-import.cjs --phase verify-product-prep",
+    "import:products": "node src/run-import.cjs --phase productset-import",
+    "import:products:qa": "node src/run-import.cjs --phase productset-import-qa",
+    "import:publish:plan": "node src/run-import.cjs --phase publish-plan",
+    "import:publish:products": "node src/run-import.cjs --phase publish-products",
+    "import:staging:qa": "node src/run-import.cjs --phase staging-qa"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.0"
+  }
+}

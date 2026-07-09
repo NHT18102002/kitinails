@@ -8,8 +8,40 @@
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
-      <li class="header__menu-list-item{% if link.links != blank %} header__menu-list-item--has-children{% endif %}">
-        {%- if link.links != blank -%}
+      {%- capture link_url -%}
+        {%- render 'header-normalized-url', title: link.title, handle: link.handle, url: link.url -%}
+      {%- endcapture -%}
+      {%- liquid
+        assign link_title_downcase = link.title | strip | downcase
+        assign is_shop_menu = false
+        if link.handle == 'shop' or link_title_downcase == 'shop'
+          assign is_shop_menu = true
+        endif
+      -%}
+      <li class="header__menu-list-item{% if link.links != blank or is_shop_menu %} header__menu-list-item--has-children{% endif %}">
+        {%- if is_shop_menu -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu mega-menu--ersa-shop">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              {% render 'header-shop-mega-menu',
+                index: forloop.index,
+                menu_color_scheme: section.settings.menu_color_scheme
+              %}
+            </details>
+          </header-menu>
+        {%- elsif link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}">
               <summary
@@ -31,10 +63,10 @@
                 role="list"
                 tabindex="-1"
               >
-                {%- if link.url != blank -%}
+                {%- if link_url != blank -%}
                   <li class="header__submenu-item header__submenu-item--parent">
                     <a
-                      href="{{ link.url }}"
+                      href="{{ link_url }}"
                       class="header__menu-item header__submenu-parent-link list-menu__item link link--text focus-inset caption-large{% if link.current %} list-menu__item--active{% endif %}"
                       {% if link.current %}
                         aria-current="page"
@@ -45,11 +77,14 @@
                   </li>
                 {%- endif -%}
                 {%- for childlink in link.links -%}
+                  {%- capture childlink_url -%}
+                    {%- render 'header-normalized-url', title: childlink.title, handle: childlink.handle, url: childlink.url -%}
+                  {%- endcapture -%}
                   <li class="header__submenu-item{% if childlink.links != blank %} header__submenu-item--has-children{% endif %}">
                     {%- if childlink.links == blank -%}
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
+                        href="{{ childlink_url }}"
                         class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
                         {% if childlink.current %}
                           aria-current="page"
@@ -70,10 +105,10 @@
                           id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                           class="header__submenu list-menu motion-reduce"
                         >
-                          {%- if childlink.url != blank -%}
+                          {%- if childlink_url != blank -%}
                             <li class="header__submenu-item header__submenu-item--parent">
                               <a
-                                href="{{ childlink.url }}"
+                                href="{{ childlink_url }}"
                                 class="header__menu-item header__submenu-parent-link list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
                                 {% if childlink.current %}
                                   aria-current="page"
@@ -84,10 +119,13 @@
                             </li>
                           {%- endif -%}
                           {%- for grandchildlink in childlink.links -%}
+                            {%- capture grandchildlink_url -%}
+                              {%- render 'header-normalized-url', title: grandchildlink.title, handle: grandchildlink.handle, url: grandchildlink.url -%}
+                            {%- endcapture -%}
                             <li>
                               <a
                                 id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
+                                href="{{ grandchildlink_url }}"
                                 class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
                                 {% if grandchildlink.current %}
                                   aria-current="page"
@@ -108,7 +146,7 @@
         {%- else -%}
           <a
             id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
+            href="{{ link_url }}"
             class="header__menu-item list-menu__item link link--text focus-inset"
             {% if link.current %}
               aria-current="page"

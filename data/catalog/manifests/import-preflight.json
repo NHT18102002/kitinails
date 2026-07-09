@@ -1,0 +1,4673 @@
+{
+  "generatedAt": "2026-07-05T13:02:31.563Z",
+  "apiVersion": "2026-07",
+  "shop": {
+    "name": "develop store",
+    "myshopifyDomain": "develop-store-5y6bipog.myshopify.com",
+    "currencyCode": "USD"
+  },
+  "approvalRequired": true,
+  "mode": {
+    "productMutations": false,
+    "collectionMutations": false,
+    "metafieldDefinitionMutations": false,
+    "stagedUploadMutations": false
+  },
+  "scopes": {
+    "required": [
+      "read_products",
+      "write_products",
+      "read_files",
+      "write_files",
+      "read_inventory",
+      "write_inventory",
+      "read_locations"
+    ],
+    "granted": [
+      "read_products",
+      "write_products",
+      "read_files",
+      "write_files",
+      "read_inventory",
+      "write_inventory",
+      "read_locations",
+      "read_metaobjects",
+      "write_metaobjects"
+    ],
+    "missing": []
+  },
+  "locations": {
+    "available": [
+      {
+        "id": "gid://shopify/Location/82299289751",
+        "name": "My Custom Location",
+        "isActive": true
+      },
+      {
+        "id": "gid://shopify/Location/82299256983",
+        "name": "Shop location",
+        "isActive": true
+      }
+    ],
+    "selected": {
+      "id": "gid://shopify/Location/82299256983",
+      "name": "Shop location",
+      "isActive": true
+    },
+    "selectedFromEnv": true
+  },
+  "collections": {
+    "approvedCount": 49,
+    "resolvedCount": 48,
+    "virtualSkipCount": 1,
+    "pendingCount": 0,
+    "missingCount": 0,
+    "collectionIds": [
+      "gid://shopify/Collection/323906437271",
+      "gid://shopify/Collection/323908108439",
+      "gid://shopify/Collection/323906470039",
+      "gid://shopify/Collection/323906502807",
+      "gid://shopify/Collection/323906535575",
+      "gid://shopify/Collection/323906568343",
+      "gid://shopify/Collection/323906601111",
+      "gid://shopify/Collection/323906633879",
+      "gid://shopify/Collection/323906666647",
+      "gid://shopify/Collection/323908141207",
+      "gid://shopify/Collection/323908173975",
+      "gid://shopify/Collection/323906699415",
+      "gid://shopify/Collection/323906732183",
+      "gid://shopify/Collection/323906764951",
+      "gid://shopify/Collection/323906797719",
+      "gid://shopify/Collection/323906830487",
+      "gid://shopify/Collection/323906863255",
+      "gid://shopify/Collection/323908206743",
+      "gid://shopify/Collection/323906896023",
+      "gid://shopify/Collection/323906928791",
+      "gid://shopify/Collection/323906961559",
+      "gid://shopify/Collection/323906994327",
+      "gid://shopify/Collection/323907027095",
+      "gid://shopify/Collection/323908239511",
+      "gid://shopify/Collection/323908272279",
+      "gid://shopify/Collection/323908305047",
+      "gid://shopify/Collection/323908337815",
+      "gid://shopify/Collection/323908370583",
+      "gid://shopify/Collection/323908403351",
+      "gid://shopify/Collection/323908436119",
+      "gid://shopify/Collection/323908468887",
+      "gid://shopify/Collection/323908501655",
+      "gid://shopify/Collection/323908534423",
+      "gid://shopify/Collection/323908567191",
+      "gid://shopify/Collection/323908599959",
+      "gid://shopify/Collection/323908632727",
+      "gid://shopify/Collection/323908665495",
+      "gid://shopify/Collection/323908698263",
+      "gid://shopify/Collection/323908731031",
+      "gid://shopify/Collection/323908763799",
+      "gid://shopify/Collection/323908796567",
+      "gid://shopify/Collection/323908829335",
+      "gid://shopify/Collection/323908862103",
+      "gid://shopify/Collection/323908894871",
+      "gid://shopify/Collection/323908927639",
+      "gid://shopify/Collection/323908960407",
+      "gid://shopify/Collection/323908993175",
+      "gid://shopify/Collection/323909025943"
+    ],
+    "missingHandles": [],
+    "resolved": [
+      {
+        "approvedHandle": "almond",
+        "id": "gid://shopify/Collection/323906437271",
+        "handle": "almond",
+        "title": "almond"
+      },
+      {
+        "approvedHandle": "best-seller",
+        "id": "gid://shopify/Collection/323908108439",
+        "handle": "best-seller",
+        "title": "Best Sellers"
+      },
+      {
+        "approvedHandle": "bridal",
+        "id": "gid://shopify/Collection/323906470039",
+        "handle": "bridal",
+        "title": "Bridal Collection"
+      },
+      {
+        "approvedHandle": "cat-eye",
+        "id": "gid://shopify/Collection/323906502807",
+        "handle": "cat-eye",
+        "title": "Cat Eye"
+      },
+      {
+        "approvedHandle": "chrome",
+        "id": "gid://shopify/Collection/323906535575",
+        "handle": "chrome",
+        "title": "Chrome"
+      },
+      {
+        "approvedHandle": "clearance",
+        "id": "gid://shopify/Collection/323906568343",
+        "handle": "clearance",
+        "title": "Clearance"
+      },
+      {
+        "approvedHandle": "coffin",
+        "id": "gid://shopify/Collection/323906601111",
+        "handle": "coffin",
+        "title": "Coffin"
+      },
+      {
+        "approvedHandle": "ersa-essence",
+        "id": "gid://shopify/Collection/323906633879",
+        "handle": "ersa-essence",
+        "title": "Ersa Essence"
+      },
+      {
+        "approvedHandle": "ersa-nails-tools",
+        "id": "gid://shopify/Collection/323906666647",
+        "handle": "ersa-nails-tools",
+        "title": "Ersa nails Tools"
+      },
+      {
+        "approvedHandle": "ersas-accessories",
+        "id": "gid://shopify/Collection/323908141207",
+        "handle": "ersas-accessories",
+        "title": "Ersa's Accessories"
+      },
+      {
+        "approvedHandle": "flower-nails",
+        "id": "gid://shopify/Collection/323908173975",
+        "handle": "flower-nails",
+        "title": "Flower Nails"
+      },
+      {
+        "approvedHandle": "french-tip",
+        "id": "gid://shopify/Collection/323906699415",
+        "handle": "french-tip",
+        "title": "French Tip"
+      },
+      {
+        "approvedHandle": "long",
+        "id": "gid://shopify/Collection/323906732183",
+        "handle": "long",
+        "title": "Long"
+      },
+      {
+        "approvedHandle": "medium",
+        "id": "gid://shopify/Collection/323906764951",
+        "handle": "medium",
+        "title": "Medium"
+      },
+      {
+        "approvedHandle": "mermaid",
+        "id": "gid://shopify/Collection/323906797719",
+        "handle": "mermaid",
+        "title": "Mermaid"
+      },
+      {
+        "approvedHandle": "metallic",
+        "id": "gid://shopify/Collection/323906830487",
+        "handle": "metallic",
+        "title": "Metallic"
+      },
+      {
+        "approvedHandle": "nails-under-30",
+        "id": "gid://shopify/Collection/323906863255",
+        "handle": "nails-under-30",
+        "title": "Nails Under $30"
+      },
+      {
+        "approvedHandle": "new-arrival",
+        "id": "gid://shopify/Collection/323908206743",
+        "handle": "new-arrival",
+        "title": "New Arrivals"
+      },
+      {
+        "approvedHandle": "ombre",
+        "id": "gid://shopify/Collection/323906896023",
+        "handle": "ombre",
+        "title": "Ombre"
+      },
+      {
+        "approvedHandle": "oval",
+        "id": "gid://shopify/Collection/323906928791",
+        "handle": "oval",
+        "title": "Oval"
+      },
+      {
+        "approvedHandle": "short",
+        "id": "gid://shopify/Collection/323906961559",
+        "handle": "short",
+        "title": "Short"
+      },
+      {
+        "approvedHandle": "square",
+        "id": "gid://shopify/Collection/323906994327",
+        "handle": "square",
+        "title": "Square"
+      },
+      {
+        "approvedHandle": "squoval",
+        "id": "gid://shopify/Collection/323907027095",
+        "handle": "squoval",
+        "title": "Squoval"
+      },
+      {
+        "approvedHandle": "aura",
+        "id": "gid://shopify/Collection/323908239511",
+        "handle": "aura",
+        "title": "Aura"
+      },
+      {
+        "approvedHandle": "baroque",
+        "id": "gid://shopify/Collection/323908272279",
+        "handle": "baroque",
+        "title": "Baroque"
+      },
+      {
+        "approvedHandle": "best-of-the-best",
+        "id": "gid://shopify/Collection/323908305047",
+        "handle": "best-of-the-best",
+        "title": "Best of the Best"
+      },
+      {
+        "approvedHandle": "bloom-for-yourself",
+        "id": "gid://shopify/Collection/323908337815",
+        "handle": "bloom-for-yourself",
+        "title": "Bloom For Yourself"
+      },
+      {
+        "approvedHandle": "bundle",
+        "id": "gid://shopify/Collection/323908370583",
+        "handle": "bundle",
+        "title": "BUNDLES"
+      },
+      {
+        "approvedHandle": "classy-nails",
+        "id": "gid://shopify/Collection/323908403351",
+        "handle": "classy-nails",
+        "title": "Classy Nails"
+      },
+      {
+        "approvedHandle": "fairy",
+        "id": "gid://shopify/Collection/323908436119",
+        "handle": "fairy",
+        "title": "fairy"
+      },
+      {
+        "approvedHandle": "gift-card",
+        "id": "gid://shopify/Collection/323908468887",
+        "handle": "gift-card",
+        "title": "Gift Card"
+      },
+      {
+        "approvedHandle": "golden-glamour",
+        "id": "gid://shopify/Collection/323908501655",
+        "handle": "golden-glamour",
+        "title": "Golden Glamour"
+      },
+      {
+        "approvedHandle": "gothic",
+        "id": "gid://shopify/Collection/323908534423",
+        "handle": "gothic",
+        "title": "Gothic"
+      },
+      {
+        "approvedHandle": "island-glow-club",
+        "id": "gid://shopify/Collection/323908567191",
+        "handle": "island-glow-club",
+        "title": "Island Glow Club"
+      },
+      {
+        "approvedHandle": "mini",
+        "id": "gid://shopify/Collection/323908599959",
+        "handle": "mini",
+        "title": "Mini"
+      },
+      {
+        "approvedHandle": "new-nails",
+        "id": "gid://shopify/Collection/323908632727",
+        "handle": "new-nails",
+        "title": "New Nails"
+      },
+      {
+        "approvedHandle": "pearl",
+        "id": "gid://shopify/Collection/323908665495",
+        "handle": "pearl",
+        "title": "Pearl"
+      },
+      {
+        "approvedHandle": "petite-nails",
+        "id": "gid://shopify/Collection/323908698263",
+        "handle": "petite-nails",
+        "title": "Petite Nails"
+      },
+      {
+        "approvedHandle": "press-on-nails",
+        "id": "gid://shopify/Collection/323908731031",
+        "handle": "press-on-nails",
+        "title": "Press On Nails"
+      },
+      {
+        "approvedHandle": "press-on-toenails",
+        "id": "gid://shopify/Collection/323908763799",
+        "handle": "press-on-toenails",
+        "title": "Press-on Toenails"
+      },
+      {
+        "approvedHandle": "religions",
+        "id": "gid://shopify/Collection/323908796567",
+        "handle": "religions",
+        "title": "Religions"
+      },
+      {
+        "approvedHandle": "retrowave",
+        "id": "gid://shopify/Collection/323908829335",
+        "handle": "retrowave",
+        "title": "Retrowave"
+      },
+      {
+        "approvedHandle": "simple",
+        "id": "gid://shopify/Collection/323908862103",
+        "handle": "simple",
+        "title": "Simple"
+      },
+      {
+        "approvedHandle": "simple-nails",
+        "id": "gid://shopify/Collection/323908894871",
+        "handle": "simple-nails",
+        "title": "Simple Nails"
+      },
+      {
+        "approvedHandle": "soft-glam",
+        "id": "gid://shopify/Collection/323908927639",
+        "handle": "soft-glam",
+        "title": "Soft Glam"
+      },
+      {
+        "approvedHandle": "tools-accessories",
+        "id": "gid://shopify/Collection/323908960407",
+        "handle": "tools-accessories",
+        "title": "Tools & Accessories"
+      },
+      {
+        "approvedHandle": "trending-nails",
+        "id": "gid://shopify/Collection/323908993175",
+        "handle": "trending-nails",
+        "title": "Trending Nails"
+      },
+      {
+        "approvedHandle": "zodiac",
+        "id": "gid://shopify/Collection/323909025943",
+        "handle": "zodiac",
+        "title": "Zodiac"
+      }
+    ],
+    "virtualSkips": [
+      {
+        "handle": "all",
+        "title": "All",
+        "strategy": "virtual_skip",
+        "ruleSet": null
+      }
+    ],
+    "pending": [],
+    "missing": []
+  },
+  "metafieldDefinitions": {
+    "existingCount": 15,
+    "required": [
+      {
+        "namespace": "custom",
+        "key": "source_url",
+        "name": "Source URL",
+        "type": "url",
+        "purpose": "import_identity",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500489879",
+        "existingType": "url"
+      },
+      {
+        "namespace": "custom",
+        "key": "source_product_id",
+        "name": "Source Product ID",
+        "type": "single_line_text_field",
+        "purpose": "import_identity",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500522647",
+        "existingType": "single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "demo_inventory",
+        "name": "Demo Inventory",
+        "type": "boolean",
+        "purpose": "demo_inventory_marker",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500555415",
+        "existingType": "boolean"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_shape",
+        "name": "Nail shape",
+        "type": "single_line_text_field",
+        "purpose": "legacy_search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187008663",
+        "existingType": "single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_length",
+        "name": "Nail length",
+        "type": "single_line_text_field",
+        "purpose": "legacy_search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187041431",
+        "existingType": "single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "finish_style",
+        "name": "Finish style",
+        "type": "list.single_line_text_field",
+        "purpose": "search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/185187631255",
+        "existingType": "list.single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_color_values",
+        "name": "Nail color values",
+        "type": "list.single_line_text_field",
+        "purpose": "search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500588183",
+        "existingType": "list.single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_shape_values",
+        "name": "Nail shape values",
+        "type": "list.single_line_text_field",
+        "purpose": "search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500620951",
+        "existingType": "list.single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_length_values",
+        "name": "Nail length values",
+        "type": "list.single_line_text_field",
+        "purpose": "search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500653719",
+        "existingType": "list.single_line_text_field"
+      },
+      {
+        "namespace": "custom",
+        "key": "nail_style_values",
+        "name": "Nail style values",
+        "type": "list.single_line_text_field",
+        "purpose": "search_and_discovery_filter",
+        "status": "present",
+        "existingDefinitionId": "gid://shopify/MetafieldDefinition/189500686487",
+        "existingType": "list.single_line_text_field"
+      }
+    ],
+    "missing": [],
+    "typeMismatches": []
+  },
+  "products": {
+    "normalizedCount": 591,
+    "createCandidateCount": 591,
+    "updateCandidateCount": 0,
+    "adoptCandidateCount": 0,
+    "conflictCount": 0,
+    "approvedAdoptPolicyCount": 9,
+    "allowlistedAdoptMatchCount": 0,
+    "flaggedAdoptCount": 0,
+    "checks": [
+      {
+        "handle": "metallic-mirage",
+        "sourceUrl": "https://ersanails.com/products/metallic-mirage",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gothic-radiance",
+        "sourceUrl": "https://ersanails.com/products/gothic-radiance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "crimson-veil",
+        "sourceUrl": "https://ersanails.com/products/crimson-veil",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "celestial-star",
+        "sourceUrl": "https://ersanails.com/products/celestial-star",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sticky-tabs-pack-10-sheets",
+        "sourceUrl": "https://ersanails.com/products/sticky-tabs-pack-10-sheets",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "handheld-uv-lamp",
+        "sourceUrl": "https://ersanails.com/products/handheld-uv-lamp",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "solid-nail-glue-gel",
+        "sourceUrl": "https://ersanails.com/products/solid-nail-glue-gel",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nails-starter-pack",
+        "sourceUrl": "https://ersanails.com/products/ersa-nails-starter-pack",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nails-protouch-kit",
+        "sourceUrl": "https://ersanails.com/products/ersa-nails-protouch-kit",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "crimson-chronicles",
+        "sourceUrl": "https://ersanails.com/products/crimson-chronicles",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cuticle-oil",
+        "sourceUrl": "https://ersanails.com/products/ersa-cuticle-oil",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "neon-twist",
+        "sourceUrl": "https://ersanails.com/products/neon-twist",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "customization-request",
+        "sourceUrl": "https://ersanails.com/products/customization-request",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweetheart",
+        "sourceUrl": "https://ersanails.com/products/sweetheart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cosmic-girl",
+        "sourceUrl": "https://ersanails.com/products/cosmic-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "burgundy-enchantress",
+        "sourceUrl": "https://ersanails.com/products/burgundy-enchantress",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nails-gift-card",
+        "sourceUrl": "https://ersanails.com/products/ersa-nails-gift-card",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "qipao",
+        "sourceUrl": "https://ersanails.com/products/qipao",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "qinghuaci",
+        "sourceUrl": "https://ersanails.com/products/qinghuaci",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "olive-s",
+        "sourceUrl": "https://ersanails.com/products/olive-s",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "porcelain-dragon",
+        "sourceUrl": "https://ersanails.com/products/porcelain-dragon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lotus-fairy",
+        "sourceUrl": "https://ersanails.com/products/lotus-fairy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blaze-dragon",
+        "sourceUrl": "https://ersanails.com/products/blaze-dragon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mamianqun",
+        "sourceUrl": "https://ersanails.com/products/mamianqun",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gildenfire-dragon",
+        "sourceUrl": "https://ersanails.com/products/gildenfire-dragon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dragon-roar",
+        "sourceUrl": "https://ersanails.com/products/dragon-roar",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "oriental-beauty",
+        "sourceUrl": "https://ersanails.com/products/oriental-beauty",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-harmony",
+        "sourceUrl": "https://ersanails.com/products/the-harmony",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nails-cuticle-tool-kit",
+        "sourceUrl": "https://ersanails.com/products/ersa-nails-cuticle-tool-kit",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pillow-talk",
+        "sourceUrl": "https://ersanails.com/products/pillow-talk",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "custom-design",
+        "sourceUrl": "https://ersanails.com/products/custom-design",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "indigo-aristocracy",
+        "sourceUrl": "https://ersanails.com/products/indigo-aristocracy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "nails-refill-services",
+        "sourceUrl": "https://ersanails.com/products/nails-refill-services",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "virgencita",
+        "sourceUrl": "https://ersanails.com/products/virgencita",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "medusa",
+        "sourceUrl": "https://ersanails.com/products/medusa",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "night-angel",
+        "sourceUrl": "https://ersanails.com/products/night-angel",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "la-reine",
+        "sourceUrl": "https://ersanails.com/products/la-reine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-collector-box",
+        "sourceUrl": "https://ersanails.com/products/ersa-collector-box",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "berry-frappe",
+        "sourceUrl": "https://ersanails.com/products/berry-frappe",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "white-ribbon",
+        "sourceUrl": "https://ersanails.com/products/white-ribbon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "elegance-trio",
+        "sourceUrl": "https://ersanails.com/products/elegance-trio",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "neon-blush",
+        "sourceUrl": "https://ersanails.com/products/neon-blush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blue-heart",
+        "sourceUrl": "https://ersanails.com/products/blue-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "azure-haze-mini",
+        "sourceUrl": "https://ersanails.com/products/azure-haze-mini",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rosy-shimmer",
+        "sourceUrl": "https://ersanails.com/products/rosy-shimmer",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "la-luna",
+        "sourceUrl": "https://ersanails.com/products/la-luna",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "forever-in-love",
+        "sourceUrl": "https://ersanails.com/products/forever-in-love",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "breakfast-at-tiffanys",
+        "sourceUrl": "https://ersanails.com/products/breakfast-at-tiffanys",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-removal-pen",
+        "sourceUrl": "https://ersanails.com/products/ersa-removal-pen",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beyond-the-celestial",
+        "sourceUrl": "https://ersanails.com/products/beyond-the-celestial",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dreamy-blossom",
+        "sourceUrl": "https://ersanails.com/products/dreamy-blossom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "oceanic-odyssey",
+        "sourceUrl": "https://ersanails.com/products/oceanic-odyssey",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "aquamarine",
+        "sourceUrl": "https://ersanails.com/products/aquamarine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "thetis",
+        "sourceUrl": "https://ersanails.com/products/thetis",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "24k",
+        "sourceUrl": "https://ersanails.com/products/24k",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "whispering-tide",
+        "sourceUrl": "https://ersanails.com/products/whispering-tide",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bahamas",
+        "sourceUrl": "https://ersanails.com/products/bahamas",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "neon-dream",
+        "sourceUrl": "https://ersanails.com/products/neon-dream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "custom-ring-design",
+        "sourceUrl": "https://ersanails.com/products/custom-ring-design",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "floral-dreamland",
+        "sourceUrl": "https://ersanails.com/products/floral-dreamland",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "malibu-beach",
+        "sourceUrl": "https://ersanails.com/products/malibu-beach",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beachside-fizz",
+        "sourceUrl": "https://ersanails.com/products/beachside-fizz",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "acrylic-stand",
+        "sourceUrl": "https://ersanails.com/products/acrylic-stand",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lilac-elfland",
+        "sourceUrl": "https://ersanails.com/products/lilac-elfland",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "caramel",
+        "sourceUrl": "https://ersanails.com/products/caramel",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "frosty-petal",
+        "sourceUrl": "https://ersanails.com/products/frosty-petal",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "venus",
+        "sourceUrl": "https://ersanails.com/products/venus",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "small-blessings",
+        "sourceUrl": "https://ersanails.com/products/small-blessings",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lemon-drop",
+        "sourceUrl": "https://ersanails.com/products/lemon-drop",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starlit-fairytale",
+        "sourceUrl": "https://ersanails.com/products/starlit-fairytale",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "amber-whisper",
+        "sourceUrl": "https://ersanails.com/products/amber-whisper",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mocha-mist",
+        "sourceUrl": "https://ersanails.com/products/mocha-mist",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "devils-eye",
+        "sourceUrl": "https://ersanails.com/products/devils-eye",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "thorned-heart",
+        "sourceUrl": "https://ersanails.com/products/thorned-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midnight-madness",
+        "sourceUrl": "https://ersanails.com/products/midnight-madness",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "death-of-mermaids",
+        "sourceUrl": "https://ersanails.com/products/death-of-mermaids",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-sin",
+        "sourceUrl": "https://ersanails.com/products/sweet-sin",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "stranger-things",
+        "sourceUrl": "https://ersanails.com/products/stranger-things",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-tote-bag",
+        "sourceUrl": "https://ersanails.com/products/ersa-tote-bag",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-t-shirt",
+        "sourceUrl": "https://ersanails.com/products/ersa-t-shirt",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "spiced-bloom",
+        "sourceUrl": "https://ersanails.com/products/spiced-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midnight-muse",
+        "sourceUrl": "https://ersanails.com/products/midnight-muse",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "celestial-waltz",
+        "sourceUrl": "https://ersanails.com/products/celestial-waltz",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "aurora-s-touch",
+        "sourceUrl": "https://ersanails.com/products/aurora-s-touch",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "amber-bloom",
+        "sourceUrl": "https://ersanails.com/products/amber-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "emerald-cosmos",
+        "sourceUrl": "https://ersanails.com/products/emerald-cosmos",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "eternal-eve",
+        "sourceUrl": "https://ersanails.com/products/eternal-eve",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "enchanted-florals",
+        "sourceUrl": "https://ersanails.com/products/enchanted-florals",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "holly-jolly",
+        "sourceUrl": "https://ersanails.com/products/holly-jolly",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "winters-gift",
+        "sourceUrl": "https://ersanails.com/products/winters-gift",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "teddys-caress",
+        "sourceUrl": "https://ersanails.com/products/teddys-caress",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "a-touch-of-gold",
+        "sourceUrl": "https://ersanails.com/products/a-touch-of-gold",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tidings-of-joy",
+        "sourceUrl": "https://ersanails.com/products/tidings-of-joy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "candy-cane-crush",
+        "sourceUrl": "https://ersanails.com/products/candy-cane-crush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beryl-enchantress",
+        "sourceUrl": "https://ersanails.com/products/beryl-enchantress",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "under-the-mistletoe",
+        "sourceUrl": "https://ersanails.com/products/under-the-mistletoe",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-bunny-pouch",
+        "sourceUrl": "https://ersanails.com/products/ersa-bunny-pouch",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fallen-angel",
+        "sourceUrl": "https://ersanails.com/products/fallen-angel",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starry-olive",
+        "sourceUrl": "https://ersanails.com/products/starry-olive",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "silent-night",
+        "sourceUrl": "https://ersanails.com/products/silent-night",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midnight-serenade",
+        "sourceUrl": "https://ersanails.com/products/midnight-serenade",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "heavenly-embrace",
+        "sourceUrl": "https://ersanails.com/products/heavenly-embrace",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rose-divinity",
+        "sourceUrl": "https://ersanails.com/products/rose-divinity",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-holiday-bag",
+        "sourceUrl": "https://ersanails.com/products/ersa-holiday-bag",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "genuine",
+        "sourceUrl": "https://ersanails.com/products/genuine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "eldorado",
+        "sourceUrl": "https://ersanails.com/products/eldorado",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "solid-glue-tabs",
+        "sourceUrl": "https://ersanails.com/products/solid-glue-tabs",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dancing-blossoms",
+        "sourceUrl": "https://ersanails.com/products/dancing-blossoms",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "petals-of-eternity",
+        "sourceUrl": "https://ersanails.com/products/petals-of-eternity",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pearl-of-the-orient",
+        "sourceUrl": "https://ersanails.com/products/pearl-of-the-orient",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "miaojiang-girl",
+        "sourceUrl": "https://ersanails.com/products/miaojiang-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-good-days",
+        "sourceUrl": "https://ersanails.com/products/the-good-days",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-reverie",
+        "sourceUrl": "https://ersanails.com/products/pink-reverie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "opulence",
+        "sourceUrl": "https://ersanails.com/products/opulence",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "as-you-wished",
+        "sourceUrl": "https://ersanails.com/products/as-you-wished",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ruby-venom",
+        "sourceUrl": "https://ersanails.com/products/ruby-venom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "phoenix-nirvana",
+        "sourceUrl": "https://ersanails.com/products/phoenix-nirvana",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "moonlit-bamboo",
+        "sourceUrl": "https://ersanails.com/products/moonlit-bamboo",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "silent-majesty",
+        "sourceUrl": "https://ersanails.com/products/silent-majesty",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jades-embrace",
+        "sourceUrl": "https://ersanails.com/products/jades-embrace",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "reunion",
+        "sourceUrl": "https://ersanails.com/products/reunion",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "she-walks-in-beauty",
+        "sourceUrl": "https://ersanails.com/products/she-walks-in-beauty",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-thriving-day",
+        "sourceUrl": "https://ersanails.com/products/the-thriving-day",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "femme-fatale",
+        "sourceUrl": "https://ersanails.com/products/femme-fatale",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "graceful-waltz",
+        "sourceUrl": "https://ersanails.com/products/graceful-waltz",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherished-heart",
+        "sourceUrl": "https://ersanails.com/products/cherished-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "adorable",
+        "sourceUrl": "https://ersanails.com/products/adorable",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherished-moments",
+        "sourceUrl": "https://ersanails.com/products/cherished-moments",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "little-heart",
+        "sourceUrl": "https://ersanails.com/products/little-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "heartstrings",
+        "sourceUrl": "https://ersanails.com/products/heartstrings",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "a-kiss-to-remember",
+        "sourceUrl": "https://ersanails.com/products/a-kiss-to-remember",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "moonlit-romance",
+        "sourceUrl": "https://ersanails.com/products/moonlit-romance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "red-queen",
+        "sourceUrl": "https://ersanails.com/products/red-queen",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "petal-dance",
+        "sourceUrl": "https://ersanails.com/products/petal-dance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-collector-book",
+        "sourceUrl": "https://ersanails.com/products/ersa-collector-book",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "morning-dew",
+        "sourceUrl": "https://ersanails.com/products/morning-dew",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lush-green",
+        "sourceUrl": "https://ersanails.com/products/lush-green",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "charming-petals",
+        "sourceUrl": "https://ersanails.com/products/charming-petals",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wildest-dreams",
+        "sourceUrl": "https://ersanails.com/products/wildest-dreams",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gilded-garden",
+        "sourceUrl": "https://ersanails.com/products/gilded-garden",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tulip-fairy",
+        "sourceUrl": "https://ersanails.com/products/tulip-fairy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bloom-like-roses",
+        "sourceUrl": "https://ersanails.com/products/bloom-like-roses",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "kaleidoscope-1",
+        "sourceUrl": "https://ersanails.com/products/kaleidoscope-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "green-forest",
+        "sourceUrl": "https://ersanails.com/products/green-forest",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "brush-on-nail-glue",
+        "sourceUrl": "https://ersanails.com/products/brush-on-nail-glue",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cuticle-oil-pen",
+        "sourceUrl": "https://ersanails.com/products/ersa-cuticle-oil-pen",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "nail-glue-remover",
+        "sourceUrl": "https://ersanails.com/products/nail-glue-remover",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lily-of-the-valley",
+        "sourceUrl": "https://ersanails.com/products/lily-of-the-valley",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wild-blossom",
+        "sourceUrl": "https://ersanails.com/products/wild-blossom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "forest-elf-1",
+        "sourceUrl": "https://ersanails.com/products/forest-elf-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flower-hairclip",
+        "sourceUrl": "https://ersanails.com/products/flower-hairclip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "letters-from-the-garden",
+        "sourceUrl": "https://ersanails.com/products/letters-from-the-garden",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "petal-by-petal",
+        "sourceUrl": "https://ersanails.com/products/petal-by-petal",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "when-the-rain-stops",
+        "sourceUrl": "https://ersanails.com/products/when-the-rain-stops",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "from-the-garden",
+        "sourceUrl": "https://ersanails.com/products/from-the-garden",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "golden-dreams",
+        "sourceUrl": "https://ersanails.com/products/golden-dreams",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "inflorescence",
+        "sourceUrl": "https://ersanails.com/products/inflorescence",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "silken-waves",
+        "sourceUrl": "https://ersanails.com/products/silken-waves",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "velvet-rouge",
+        "sourceUrl": "https://ersanails.com/products/velvet-rouge",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "into-the-warmth",
+        "sourceUrl": "https://ersanails.com/products/into-the-warmth",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "honolulu",
+        "sourceUrl": "https://ersanails.com/products/honolulu",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "summer-bay",
+        "sourceUrl": "https://ersanails.com/products/summer-bay",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beyond-the-sea",
+        "sourceUrl": "https://ersanails.com/products/beyond-the-sea",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bubbly-splash",
+        "sourceUrl": "https://ersanails.com/products/bubbly-splash",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-bubble-binder",
+        "sourceUrl": "https://ersanails.com/products/ersa-bubble-binder",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "golden-shoreline",
+        "sourceUrl": "https://ersanails.com/products/golden-shoreline",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "amethyst-glow",
+        "sourceUrl": "https://ersanails.com/products/amethyst-glow",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blossom-beaded-necklace-work-piece",
+        "sourceUrl": "https://ersanails.com/products/blossom-beaded-necklace-work-piece",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "big-blossom-lightweight-earrings-work-piece",
+        "sourceUrl": "https://ersanails.com/products/big-blossom-lightweight-earrings-work-piece",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "deep-woods",
+        "sourceUrl": "https://ersanails.com/products/deep-woods",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nail-stamp",
+        "sourceUrl": "https://ersanails.com/products/ersa-nail-stamp",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flowerbomb",
+        "sourceUrl": "https://ersanails.com/products/flowerbomb",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sumptuous",
+        "sourceUrl": "https://ersanails.com/products/sumptuous",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-gift-packaging",
+        "sourceUrl": "https://ersanails.com/products/ersa-gift-packaging",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "miss-charming",
+        "sourceUrl": "https://ersanails.com/products/miss-charming",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "for-her",
+        "sourceUrl": "https://ersanails.com/products/for-her",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nude-series",
+        "sourceUrl": "https://ersanails.com/products/ersa-nude-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-ombre-series",
+        "sourceUrl": "https://ersanails.com/products/ersa-ombre-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-french-tip-series",
+        "sourceUrl": "https://ersanails.com/products/ersa-french-tip-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cat-eye-series",
+        "sourceUrl": "https://ersanails.com/products/ersa-cat-eye-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "yinyang",
+        "sourceUrl": "https://ersanails.com/products/yinyang",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blush-peony",
+        "sourceUrl": "https://ersanails.com/products/blush-peony",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lunaflora",
+        "sourceUrl": "https://ersanails.com/products/lunaflora",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hailey",
+        "sourceUrl": "https://ersanails.com/products/hailey",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-f04-red-velvet",
+        "sourceUrl": "https://ersanails.com/products/ersa-f04-red-velvet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-f05-black-swan",
+        "sourceUrl": "https://ersanails.com/products/ersa-f05-black-swan",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cat-eye-series-gemstone-edition",
+        "sourceUrl": "https://ersanails.com/products/ersa-cat-eye-series-gemstone-edition",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c03-peachy",
+        "sourceUrl": "https://ersanails.com/products/ersa-c03-peachy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c02-rosy",
+        "sourceUrl": "https://ersanails.com/products/ersa-c02-rosy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-n01-porcelain",
+        "sourceUrl": "https://ersanails.com/products/ersa-n01-porcelain",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-n09-honey",
+        "sourceUrl": "https://ersanails.com/products/ersa-n09-honey",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "seafoam",
+        "sourceUrl": "https://ersanails.com/products/seafoam",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "on-my-way",
+        "sourceUrl": "https://ersanails.com/products/on-my-way",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c09-pink-garnet",
+        "sourceUrl": "https://ersanails.com/products/ersa-c09-pink-garnet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c10-ocean-eyes",
+        "sourceUrl": "https://ersanails.com/products/ersa-c10-ocean-eyes",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hailey-02-cinderella",
+        "sourceUrl": "https://ersanails.com/products/hailey-02-cinderella",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hailey-03-barbie",
+        "sourceUrl": "https://ersanails.com/products/hailey-03-barbie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "never-ending-summer",
+        "sourceUrl": "https://ersanails.com/products/never-ending-summer",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beach-its-time",
+        "sourceUrl": "https://ersanails.com/products/beach-its-time",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "my-happy-hour",
+        "sourceUrl": "https://ersanails.com/products/my-happy-hour",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "shining",
+        "sourceUrl": "https://ersanails.com/products/shining",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-abyss",
+        "sourceUrl": "https://ersanails.com/products/the-abyss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "desert-flower",
+        "sourceUrl": "https://ersanails.com/products/desert-flower",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dune-glimmer",
+        "sourceUrl": "https://ersanails.com/products/dune-glimmer",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "express-yourself",
+        "sourceUrl": "https://ersanails.com/products/express-yourself",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wild-flame",
+        "sourceUrl": "https://ersanails.com/products/wild-flame",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rebel-bloom",
+        "sourceUrl": "https://ersanails.com/products/rebel-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "like-a-star",
+        "sourceUrl": "https://ersanails.com/products/like-a-star",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wild-heart",
+        "sourceUrl": "https://ersanails.com/products/wild-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "for-the-night",
+        "sourceUrl": "https://ersanails.com/products/for-the-night",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "silver-venom",
+        "sourceUrl": "https://ersanails.com/products/silver-venom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "spellbound",
+        "sourceUrl": "https://ersanails.com/products/spellbound",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "enigma",
+        "sourceUrl": "https://ersanails.com/products/enigma",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "glitzy",
+        "sourceUrl": "https://ersanails.com/products/glitzy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dynamite",
+        "sourceUrl": "https://ersanails.com/products/dynamite",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "metal-mesh",
+        "sourceUrl": "https://ersanails.com/products/metal-mesh",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "live-my-life",
+        "sourceUrl": "https://ersanails.com/products/live-my-life",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bad-girl",
+        "sourceUrl": "https://ersanails.com/products/bad-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pop-star",
+        "sourceUrl": "https://ersanails.com/products/pop-star",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "interstellar",
+        "sourceUrl": "https://ersanails.com/products/interstellar",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "im-the-best",
+        "sourceUrl": "https://ersanails.com/products/im-the-best",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dreamscape",
+        "sourceUrl": "https://ersanails.com/products/dreamscape",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pixie",
+        "sourceUrl": "https://ersanails.com/products/pixie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "armageddon",
+        "sourceUrl": "https://ersanails.com/products/armageddon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "siren",
+        "sourceUrl": "https://ersanails.com/products/siren",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "insane",
+        "sourceUrl": "https://ersanails.com/products/insane",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "supernova",
+        "sourceUrl": "https://ersanails.com/products/supernova",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sea-vivid",
+        "sourceUrl": "https://ersanails.com/products/sea-vivid",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "polka-pop",
+        "sourceUrl": "https://ersanails.com/products/polka-pop",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "latte-kiss",
+        "sourceUrl": "https://ersanails.com/products/latte-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bloom-whimsy-1",
+        "sourceUrl": "https://ersanails.com/products/bloom-whimsy-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cat-eye-seriesⅱ",
+        "sourceUrl": "https://ersanails.com/products/ersa-cat-eye-seriesⅱ",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "polka-pearl",
+        "sourceUrl": "https://ersanails.com/products/polka-pearl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ladybug",
+        "sourceUrl": "https://ersanails.com/products/ladybug",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rococo",
+        "sourceUrl": "https://ersanails.com/products/rococo",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "queendom",
+        "sourceUrl": "https://ersanails.com/products/queendom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dahlia",
+        "sourceUrl": "https://ersanails.com/products/dahlia",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lucid-dream",
+        "sourceUrl": "https://ersanails.com/products/lucid-dream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "prologue",
+        "sourceUrl": "https://ersanails.com/products/prologue",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fallen-muse",
+        "sourceUrl": "https://ersanails.com/products/fallen-muse",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "so-far-away",
+        "sourceUrl": "https://ersanails.com/products/so-far-away",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherry-bullet",
+        "sourceUrl": "https://ersanails.com/products/cherry-bullet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midnight-dream",
+        "sourceUrl": "https://ersanails.com/products/midnight-dream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tick-tack",
+        "sourceUrl": "https://ersanails.com/products/tick-tack",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "last-forever",
+        "sourceUrl": "https://ersanails.com/products/last-forever",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "twilight-zone",
+        "sourceUrl": "https://ersanails.com/products/twilight-zone",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gold-rush",
+        "sourceUrl": "https://ersanails.com/products/gold-rush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cinnamon-mocha",
+        "sourceUrl": "https://ersanails.com/products/cinnamon-mocha",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "burnt-honey",
+        "sourceUrl": "https://ersanails.com/products/burnt-honey",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "better-me",
+        "sourceUrl": "https://ersanails.com/products/better-me",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-spot",
+        "sourceUrl": "https://ersanails.com/products/soft-spot",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sensational",
+        "sourceUrl": "https://ersanails.com/products/sensational",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "meet-at-midnight",
+        "sourceUrl": "https://ersanails.com/products/meet-at-midnight",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dark-blood",
+        "sourceUrl": "https://ersanails.com/products/dark-blood",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "garnet",
+        "sourceUrl": "https://ersanails.com/products/garnet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starry-bloom",
+        "sourceUrl": "https://ersanails.com/products/starry-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cosmic-love",
+        "sourceUrl": "https://ersanails.com/products/cosmic-love",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "play-date",
+        "sourceUrl": "https://ersanails.com/products/play-date",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "freaky-funtime",
+        "sourceUrl": "https://ersanails.com/products/freaky-funtime",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "coraline",
+        "sourceUrl": "https://ersanails.com/products/coraline",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wednesday",
+        "sourceUrl": "https://ersanails.com/products/wednesday",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "red-face-gem",
+        "sourceUrl": "https://ersanails.com/products/red-face-gem",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "candy-curse",
+        "sourceUrl": "https://ersanails.com/products/candy-curse",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "emerald-memory",
+        "sourceUrl": "https://ersanails.com/products/emerald-memory",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pure-crush",
+        "sourceUrl": "https://ersanails.com/products/pure-crush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mocha-chestnut",
+        "sourceUrl": "https://ersanails.com/products/mocha-chestnut",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-collector-case",
+        "sourceUrl": "https://ersanails.com/products/ersa-collector-case",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherry-juice",
+        "sourceUrl": "https://ersanails.com/products/cherry-juice",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "solid-nail-glue-gel-max",
+        "sourceUrl": "https://ersanails.com/products/solid-nail-glue-gel-max",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "protouch-kit-max",
+        "sourceUrl": "https://ersanails.com/products/protouch-kit-max",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "coffee-break",
+        "sourceUrl": "https://ersanails.com/products/coffee-break",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "chilly-mornings",
+        "sourceUrl": "https://ersanails.com/products/chilly-mornings",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-cherry",
+        "sourceUrl": "https://ersanails.com/products/sweet-cherry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "3m-sticky-tabs-pack-5-sheets",
+        "sourceUrl": "https://ersanails.com/products/3m-sticky-tabs-pack-5-sheets",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "under-the-bow",
+        "sourceUrl": "https://ersanails.com/products/under-the-bow",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "golden-safari",
+        "sourceUrl": "https://ersanails.com/products/golden-safari",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-clear-typing-stickers",
+        "sourceUrl": "https://ersanails.com/products/ersa-clear-typing-stickers",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "burgundy",
+        "sourceUrl": "https://ersanails.com/products/burgundy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "deep-cranberry",
+        "sourceUrl": "https://ersanails.com/products/deep-cranberry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherry-pop",
+        "sourceUrl": "https://ersanails.com/products/cherry-pop",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "kinda-sexy",
+        "sourceUrl": "https://ersanails.com/products/kinda-sexy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "peach-fizz",
+        "sourceUrl": "https://ersanails.com/products/peach-fizz",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-ice",
+        "sourceUrl": "https://ersanails.com/products/pink-ice",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "crimson-plaid",
+        "sourceUrl": "https://ersanails.com/products/crimson-plaid",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bare-berry",
+        "sourceUrl": "https://ersanails.com/products/bare-berry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "frosted-ruby",
+        "sourceUrl": "https://ersanails.com/products/frosted-ruby",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-f01-pure",
+        "sourceUrl": "https://ersanails.com/products/ersa-f01-pure",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-o02-cloud-fade",
+        "sourceUrl": "https://ersanails.com/products/ersa-o02-cloud-fade",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-manicure-kit",
+        "sourceUrl": "https://ersanails.com/products/ersa-manicure-kit",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cuticle-oil-pusher",
+        "sourceUrl": "https://ersanails.com/products/ersa-cuticle-oil-pusher",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nail-charms-kit",
+        "sourceUrl": "https://ersanails.com/products/ersa-nail-charms-kit",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nail-file-set",
+        "sourceUrl": "https://ersanails.com/products/ersa-nail-file-set",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "green-gem-series",
+        "sourceUrl": "https://ersanails.com/products/green-gem-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bare-essence",
+        "sourceUrl": "https://ersanails.com/products/bare-essence",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "verdant-series",
+        "sourceUrl": "https://ersanails.com/products/verdant-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "make-a-wish-1",
+        "sourceUrl": "https://ersanails.com/products/make-a-wish-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "twinkling-lights",
+        "sourceUrl": "https://ersanails.com/products/twinkling-lights",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "red-velvet-bow",
+        "sourceUrl": "https://ersanails.com/products/red-velvet-bow",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "santa-baby",
+        "sourceUrl": "https://ersanails.com/products/santa-baby",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugarplum",
+        "sourceUrl": "https://ersanails.com/products/sugarplum",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "frost-kiss",
+        "sourceUrl": "https://ersanails.com/products/frost-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "evergleam",
+        "sourceUrl": "https://ersanails.com/products/evergleam",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "holly-bliss",
+        "sourceUrl": "https://ersanails.com/products/holly-bliss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gilded-tartan",
+        "sourceUrl": "https://ersanails.com/products/gilded-tartan",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-magic",
+        "sourceUrl": "https://ersanails.com/products/the-magic",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "holy-serenade",
+        "sourceUrl": "https://ersanails.com/products/holy-serenade",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "twinkle-wreaths",
+        "sourceUrl": "https://ersanails.com/products/twinkle-wreaths",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midwinter-melody",
+        "sourceUrl": "https://ersanails.com/products/midwinter-melody",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "scarlette",
+        "sourceUrl": "https://ersanails.com/products/scarlette",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "icy-wishes",
+        "sourceUrl": "https://ersanails.com/products/icy-wishes",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "icy-spruce",
+        "sourceUrl": "https://ersanails.com/products/icy-spruce",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "snowy-melody",
+        "sourceUrl": "https://ersanails.com/products/snowy-melody",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "warm-n-cozy",
+        "sourceUrl": "https://ersanails.com/products/warm-n-cozy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jingle-spark",
+        "sourceUrl": "https://ersanails.com/products/jingle-spark",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "snowy-memories",
+        "sourceUrl": "https://ersanails.com/products/snowy-memories",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mistletoe-glam",
+        "sourceUrl": "https://ersanails.com/products/mistletoe-glam",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "feelin-winter",
+        "sourceUrl": "https://ersanails.com/products/feelin-winter",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-advent-calendar-i",
+        "sourceUrl": "https://ersanails.com/products/ersa-advent-calendar-i",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mistletoe-kiss",
+        "sourceUrl": "https://ersanails.com/products/mistletoe-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flicker-bow",
+        "sourceUrl": "https://ersanails.com/products/flicker-bow",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "professional-tool-set",
+        "sourceUrl": "https://ersanails.com/products/professional-tool-set",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "snow-angel",
+        "sourceUrl": "https://ersanails.com/products/snow-angel",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "midnight-dance",
+        "sourceUrl": "https://ersanails.com/products/midnight-dance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "frosty-delights",
+        "sourceUrl": "https://ersanails.com/products/frosty-delights",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ho-ho-holiday",
+        "sourceUrl": "https://ersanails.com/products/ho-ho-holiday",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "best-wishes",
+        "sourceUrl": "https://ersanails.com/products/best-wishes",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hearts-aflutter",
+        "sourceUrl": "https://ersanails.com/products/hearts-aflutter",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "good-news",
+        "sourceUrl": "https://ersanails.com/products/good-news",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-iconic",
+        "sourceUrl": "https://ersanails.com/products/the-iconic",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "one-more-kiss",
+        "sourceUrl": "https://ersanails.com/products/one-more-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "into-the-winter",
+        "sourceUrl": "https://ersanails.com/products/into-the-winter",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-n-cool",
+        "sourceUrl": "https://ersanails.com/products/sweet-n-cool",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-nail-clipper",
+        "sourceUrl": "https://ersanails.com/products/ersa-nail-clipper",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "my-only-wish",
+        "sourceUrl": "https://ersanails.com/products/my-only-wish",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "moonlit-night",
+        "sourceUrl": "https://ersanails.com/products/moonlit-night",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-gift",
+        "sourceUrl": "https://ersanails.com/products/the-gift",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blissful-radiance",
+        "sourceUrl": "https://ersanails.com/products/blissful-radiance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "miss-cherry",
+        "sourceUrl": "https://ersanails.com/products/miss-cherry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starlight",
+        "sourceUrl": "https://ersanails.com/products/starlight",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "silver-frost",
+        "sourceUrl": "https://ersanails.com/products/silver-frost",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lover",
+        "sourceUrl": "https://ersanails.com/products/lover",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cupids-gift",
+        "sourceUrl": "https://ersanails.com/products/cupids-gift",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jewels-of-light",
+        "sourceUrl": "https://ersanails.com/products/jewels-of-light",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lilac-dreams",
+        "sourceUrl": "https://ersanails.com/products/lilac-dreams",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "falling-for-you",
+        "sourceUrl": "https://ersanails.com/products/falling-for-you",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "still-the-one",
+        "sourceUrl": "https://ersanails.com/products/still-the-one",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fervent",
+        "sourceUrl": "https://ersanails.com/products/fervent",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "be-mine",
+        "sourceUrl": "https://ersanails.com/products/be-mine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dearest-love",
+        "sourceUrl": "https://ersanails.com/products/dearest-love",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweetest-gift",
+        "sourceUrl": "https://ersanails.com/products/sweetest-gift",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "glow-muse",
+        "sourceUrl": "https://ersanails.com/products/glow-muse",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-pink-cat-eye-series",
+        "sourceUrl": "https://ersanails.com/products/ersa-pink-cat-eye-series",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "iridescent-bloom",
+        "sourceUrl": "https://ersanails.com/products/iridescent-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-delights",
+        "sourceUrl": "https://ersanails.com/products/sweet-delights",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "persian-gulf",
+        "sourceUrl": "https://ersanails.com/products/persian-gulf",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blushed-lily",
+        "sourceUrl": "https://ersanails.com/products/blushed-lily",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "peach-essence",
+        "sourceUrl": "https://ersanails.com/products/peach-essence",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flourishing",
+        "sourceUrl": "https://ersanails.com/products/flourishing",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starlit-blossom",
+        "sourceUrl": "https://ersanails.com/products/starlit-blossom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jade-fleur",
+        "sourceUrl": "https://ersanails.com/products/jade-fleur",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mystic-nacre",
+        "sourceUrl": "https://ersanails.com/products/mystic-nacre",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "enamel-glam",
+        "sourceUrl": "https://ersanails.com/products/enamel-glam",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "shui-mo",
+        "sourceUrl": "https://ersanails.com/products/shui-mo",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "prosperity",
+        "sourceUrl": "https://ersanails.com/products/prosperity",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "auspicious",
+        "sourceUrl": "https://ersanails.com/products/auspicious",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "orchid-splendor",
+        "sourceUrl": "https://ersanails.com/products/orchid-splendor",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "frosted-porcelain",
+        "sourceUrl": "https://ersanails.com/products/frosted-porcelain",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "vibrance",
+        "sourceUrl": "https://ersanails.com/products/vibrance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ruyi-bliss",
+        "sourceUrl": "https://ersanails.com/products/ruyi-bliss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "famille-rose",
+        "sourceUrl": "https://ersanails.com/products/famille-rose",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "opulent-bloom",
+        "sourceUrl": "https://ersanails.com/products/opulent-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wealth-honor",
+        "sourceUrl": "https://ersanails.com/products/wealth-honor",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beautified",
+        "sourceUrl": "https://ersanails.com/products/beautified",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gilded-jade",
+        "sourceUrl": "https://ersanails.com/products/gilded-jade",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "all-the-best",
+        "sourceUrl": "https://ersanails.com/products/all-the-best",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fortune-favored",
+        "sourceUrl": "https://ersanails.com/products/fortune-favored",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "everything-renews",
+        "sourceUrl": "https://ersanails.com/products/everything-renews",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "glorious",
+        "sourceUrl": "https://ersanails.com/products/glorious",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lny-gift-packaging",
+        "sourceUrl": "https://ersanails.com/products/lny-gift-packaging",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "full-of-vitality",
+        "sourceUrl": "https://ersanails.com/products/full-of-vitality",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "clean-pure",
+        "sourceUrl": "https://ersanails.com/products/clean-pure",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "thriving-1",
+        "sourceUrl": "https://ersanails.com/products/thriving-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "classic",
+        "sourceUrl": "https://ersanails.com/products/classic",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "close-to-you",
+        "sourceUrl": "https://ersanails.com/products/close-to-you",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fatal-attraction",
+        "sourceUrl": "https://ersanails.com/products/fatal-attraction",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hearts-desire",
+        "sourceUrl": "https://ersanails.com/products/hearts-desire",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lovin-you",
+        "sourceUrl": "https://ersanails.com/products/lovin-you",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "precious-love",
+        "sourceUrl": "https://ersanails.com/products/precious-love",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pure-romance",
+        "sourceUrl": "https://ersanails.com/products/pure-romance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fleur-hair-clip",
+        "sourceUrl": "https://ersanails.com/products/fleur-hair-clip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "butterfly-hair-clip",
+        "sourceUrl": "https://ersanails.com/products/butterfly-hair-clip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lucky-cloud-hair-clip",
+        "sourceUrl": "https://ersanails.com/products/lucky-cloud-hair-clip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "phoenix-tail-hair-clip",
+        "sourceUrl": "https://ersanails.com/products/phoenix-tail-hair-clip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pearl-hair-clip",
+        "sourceUrl": "https://ersanails.com/products/pearl-hair-clip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bamboo-bracelet",
+        "sourceUrl": "https://ersanails.com/products/bamboo-bracelet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "opulence-bracelet",
+        "sourceUrl": "https://ersanails.com/products/opulence-bracelet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "auspicious-bracelet",
+        "sourceUrl": "https://ersanails.com/products/auspicious-bracelet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ruyi-bracelet",
+        "sourceUrl": "https://ersanails.com/products/ruyi-bracelet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gem-bracelet",
+        "sourceUrl": "https://ersanails.com/products/gem-bracelet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bloom-grace",
+        "sourceUrl": "https://ersanails.com/products/bloom-grace",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pure-serenity",
+        "sourceUrl": "https://ersanails.com/products/pure-serenity",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blessed-harmony",
+        "sourceUrl": "https://ersanails.com/products/blessed-harmony",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "everlasting-honor",
+        "sourceUrl": "https://ersanails.com/products/everlasting-honor",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fleur-amor",
+        "sourceUrl": "https://ersanails.com/products/fleur-amor",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pinkladies",
+        "sourceUrl": "https://ersanails.com/products/pinkladies",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beautifical",
+        "sourceUrl": "https://ersanails.com/products/beautifical",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jasmines-whisper",
+        "sourceUrl": "https://ersanails.com/products/jasmines-whisper",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beat-the-heart",
+        "sourceUrl": "https://ersanails.com/products/beat-the-heart",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "birthday-greeting-card",
+        "sourceUrl": "https://ersanails.com/products/birthday-greeting-card",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "greeting-card",
+        "sourceUrl": "https://ersanails.com/products/greeting-card",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lots-of-love",
+        "sourceUrl": "https://ersanails.com/products/lots-of-love",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "infatuation",
+        "sourceUrl": "https://ersanails.com/products/infatuation",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "your-lips-1",
+        "sourceUrl": "https://ersanails.com/products/your-lips-1",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beloved",
+        "sourceUrl": "https://ersanails.com/products/beloved",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "petals-of-grace",
+        "sourceUrl": "https://ersanails.com/products/petals-of-grace",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flawless",
+        "sourceUrl": "https://ersanails.com/products/flawless",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "promising",
+        "sourceUrl": "https://ersanails.com/products/promising",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "kung-hei-fat-choi",
+        "sourceUrl": "https://ersanails.com/products/kung-hei-fat-choi",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ethereality",
+        "sourceUrl": "https://ersanails.com/products/ethereality",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "heartthrob",
+        "sourceUrl": "https://ersanails.com/products/heartthrob",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "queen-of-hearts",
+        "sourceUrl": "https://ersanails.com/products/queen-of-hearts",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugar-spice",
+        "sourceUrl": "https://ersanails.com/products/sugar-spice",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "heartfelt",
+        "sourceUrl": "https://ersanails.com/products/heartfelt",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "adore-me",
+        "sourceUrl": "https://ersanails.com/products/adore-me",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-green-hour",
+        "sourceUrl": "https://ersanails.com/products/the-green-hour",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wildflowers",
+        "sourceUrl": "https://ersanails.com/products/wildflowers",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "candy-blossom",
+        "sourceUrl": "https://ersanails.com/products/candy-blossom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-champagne",
+        "sourceUrl": "https://ersanails.com/products/pink-champagne",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "floral-euphoria",
+        "sourceUrl": "https://ersanails.com/products/floral-euphoria",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lucky-running-horse-fortune-bundle",
+        "sourceUrl": "https://ersanails.com/products/lucky-running-horse-fortune-bundle",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "running-horse-necklace",
+        "sourceUrl": "https://ersanails.com/products/running-horse-necklace",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-diamonds",
+        "sourceUrl": "https://ersanails.com/products/soft-diamonds",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "garden-soiree",
+        "sourceUrl": "https://ersanails.com/products/garden-soiree",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bluebelle",
+        "sourceUrl": "https://ersanails.com/products/bluebelle",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rich-girl",
+        "sourceUrl": "https://ersanails.com/products/rich-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wildly-pretty",
+        "sourceUrl": "https://ersanails.com/products/wildly-pretty",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blue-crush",
+        "sourceUrl": "https://ersanails.com/products/blue-crush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "magic-glue-kit",
+        "sourceUrl": "https://ersanails.com/products/magic-glue-kit",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ocean-breeze",
+        "sourceUrl": "https://ersanails.com/products/ocean-breeze",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wildberry",
+        "sourceUrl": "https://ersanails.com/products/wildberry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fleur-d-or",
+        "sourceUrl": "https://ersanails.com/products/fleur-d-or",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blooming-day",
+        "sourceUrl": "https://ersanails.com/products/blooming-day",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "like-a-dream",
+        "sourceUrl": "https://ersanails.com/products/like-a-dream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blue-daisy",
+        "sourceUrl": "https://ersanails.com/products/blue-daisy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "vitality",
+        "sourceUrl": "https://ersanails.com/products/vitality",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherry-blossom",
+        "sourceUrl": "https://ersanails.com/products/cherry-blossom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "after-the-rain",
+        "sourceUrl": "https://ersanails.com/products/after-the-rain",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fairy-song",
+        "sourceUrl": "https://ersanails.com/products/fairy-song",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flourish",
+        "sourceUrl": "https://ersanails.com/products/flourish",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bloomwave-medium-almond",
+        "sourceUrl": "https://ersanails.com/products/bloomwave-medium-almond",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "seaspray-medium-almond",
+        "sourceUrl": "https://ersanails.com/products/seaspray-medium-almond",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starlit-pearl",
+        "sourceUrl": "https://ersanails.com/products/starlit-pearl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "flame-of-passion",
+        "sourceUrl": "https://ersanails.com/products/flame-of-passion",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "superstar",
+        "sourceUrl": "https://ersanails.com/products/superstar",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunkissed-waves",
+        "sourceUrl": "https://ersanails.com/products/sunkissed-waves",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blazing-flora",
+        "sourceUrl": "https://ersanails.com/products/blazing-flora",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fairy-garden",
+        "sourceUrl": "https://ersanails.com/products/fairy-garden",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "green-muse",
+        "sourceUrl": "https://ersanails.com/products/green-muse",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "floral-ring",
+        "sourceUrl": "https://ersanails.com/products/floral-ring",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-girl",
+        "sourceUrl": "https://ersanails.com/products/soft-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "milk-berries",
+        "sourceUrl": "https://ersanails.com/products/milk-berries",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "berry-cherry",
+        "sourceUrl": "https://ersanails.com/products/berry-cherry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-days",
+        "sourceUrl": "https://ersanails.com/products/soft-days",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wild-honey",
+        "sourceUrl": "https://ersanails.com/products/wild-honey",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "rosy-daydream",
+        "sourceUrl": "https://ersanails.com/products/rosy-daydream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-romance",
+        "sourceUrl": "https://ersanails.com/products/soft-romance",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dark-desire",
+        "sourceUrl": "https://ersanails.com/products/dark-desire",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunlit-shores",
+        "sourceUrl": "https://ersanails.com/products/sunlit-shores",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hoppy-spring",
+        "sourceUrl": "https://ersanails.com/products/hoppy-spring",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-confetti",
+        "sourceUrl": "https://ersanails.com/products/sweet-confetti",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "divine-stardust",
+        "sourceUrl": "https://ersanails.com/products/divine-stardust",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherie",
+        "sourceUrl": "https://ersanails.com/products/cherie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "little-garden",
+        "sourceUrl": "https://ersanails.com/products/little-garden",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sun-drunk",
+        "sourceUrl": "https://ersanails.com/products/sun-drunk",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "citrus-crush",
+        "sourceUrl": "https://ersanails.com/products/citrus-crush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "attractive",
+        "sourceUrl": "https://ersanails.com/products/attractive",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugar-rush",
+        "sourceUrl": "https://ersanails.com/products/sugar-rush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "soft-temptation",
+        "sourceUrl": "https://ersanails.com/products/soft-temptation",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "classy-chaos",
+        "sourceUrl": "https://ersanails.com/products/classy-chaos",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "darling-rose",
+        "sourceUrl": "https://ersanails.com/products/darling-rose",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "too-sweet-to-resist",
+        "sourceUrl": "https://ersanails.com/products/too-sweet-to-resist",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "blue-riviera",
+        "sourceUrl": "https://ersanails.com/products/blue-riviera",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "eclat-nude",
+        "sourceUrl": "https://ersanails.com/products/eclat-nude",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-sorbet",
+        "sourceUrl": "https://ersanails.com/products/pink-sorbet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "gold-digger",
+        "sourceUrl": "https://ersanails.com/products/gold-digger",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "chasing-sunshine",
+        "sourceUrl": "https://ersanails.com/products/chasing-sunshine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pastal-bloom",
+        "sourceUrl": "https://ersanails.com/products/pastal-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "glam-queen",
+        "sourceUrl": "https://ersanails.com/products/glam-queen",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "obsidian",
+        "sourceUrl": "https://ersanails.com/products/obsidian",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starry-kiss",
+        "sourceUrl": "https://ersanails.com/products/starry-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "dopamine",
+        "sourceUrl": "https://ersanails.com/products/dopamine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-overload",
+        "sourceUrl": "https://ersanails.com/products/sweet-overload",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "crisp-soda",
+        "sourceUrl": "https://ersanails.com/products/crisp-soda",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "irresistible-affection",
+        "sourceUrl": "https://ersanails.com/products/irresistible-affection",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "moonlight-sonata",
+        "sourceUrl": "https://ersanails.com/products/moonlight-sonata",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "savage",
+        "sourceUrl": "https://ersanails.com/products/savage",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "little-luxury",
+        "sourceUrl": "https://ersanails.com/products/little-luxury",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "aqua-berry",
+        "sourceUrl": "https://ersanails.com/products/aqua-berry",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "candy-kiss",
+        "sourceUrl": "https://ersanails.com/products/candy-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunny-capri",
+        "sourceUrl": "https://ersanails.com/products/sunny-capri",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "la-perle",
+        "sourceUrl": "https://ersanails.com/products/la-perle",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunday-picnic",
+        "sourceUrl": "https://ersanails.com/products/sunday-picnic",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "grace-kiss",
+        "sourceUrl": "https://ersanails.com/products/grace-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-nothing",
+        "sourceUrl": "https://ersanails.com/products/sweet-nothing",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "worry-free-purchase",
+        "sourceUrl": "https://ersanails.com/products/worry-free-purchase",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "bluish-tide",
+        "sourceUrl": "https://ersanails.com/products/bluish-tide",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starry-soda",
+        "sourceUrl": "https://ersanails.com/products/starry-soda",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunset-flame",
+        "sourceUrl": "https://ersanails.com/products/sunset-flame",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "aloha-kiss",
+        "sourceUrl": "https://ersanails.com/products/aloha-kiss",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "safari",
+        "sourceUrl": "https://ersanails.com/products/safari",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hot-sexy",
+        "sourceUrl": "https://ersanails.com/products/hot-sexy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugar-trip",
+        "sourceUrl": "https://ersanails.com/products/sugar-trip",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tender-haven",
+        "sourceUrl": "https://ersanails.com/products/tender-haven",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c01-icy",
+        "sourceUrl": "https://ersanails.com/products/ersa-c01-icy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c08-black-diamond",
+        "sourceUrl": "https://ersanails.com/products/ersa-c08-black-diamond",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-c04-peridot",
+        "sourceUrl": "https://ersanails.com/products/ersa-c04-peridot",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "limited-mystery-box",
+        "sourceUrl": "https://ersanails.com/products/limited-mystery-box",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "berry-milk",
+        "sourceUrl": "https://ersanails.com/products/berry-milk",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "peach-sugar",
+        "sourceUrl": "https://ersanails.com/products/peach-sugar",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "berry-cream",
+        "sourceUrl": "https://ersanails.com/products/berry-cream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mocha-dot",
+        "sourceUrl": "https://ersanails.com/products/mocha-dot",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-fever",
+        "sourceUrl": "https://ersanails.com/products/pink-fever",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "candy-canvas",
+        "sourceUrl": "https://ersanails.com/products/candy-canvas",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-crush",
+        "sourceUrl": "https://ersanails.com/products/sweet-crush",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "limited-mystery-box-5-sets",
+        "sourceUrl": "https://ersanails.com/products/limited-mystery-box-5-sets",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "limited-mystery-box-3-sets",
+        "sourceUrl": "https://ersanails.com/products/limited-mystery-box-3-sets",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "hot-girl",
+        "sourceUrl": "https://ersanails.com/products/hot-girl",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "the-heat",
+        "sourceUrl": "https://ersanails.com/products/the-heat",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "afterdark",
+        "sourceUrl": "https://ersanails.com/products/afterdark",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "starlet",
+        "sourceUrl": "https://ersanails.com/products/starlet",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tropical-cocktail",
+        "sourceUrl": "https://ersanails.com/products/tropical-cocktail",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "radiant",
+        "sourceUrl": "https://ersanails.com/products/radiant",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "summer-breeze",
+        "sourceUrl": "https://ersanails.com/products/summer-breeze",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "island-gal",
+        "sourceUrl": "https://ersanails.com/products/island-gal",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "juicie",
+        "sourceUrl": "https://ersanails.com/products/juicie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "vitamin-sea",
+        "sourceUrl": "https://ersanails.com/products/vitamin-sea",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "fever-dream",
+        "sourceUrl": "https://ersanails.com/products/fever-dream",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunny-soul",
+        "sourceUrl": "https://ersanails.com/products/sunny-soul",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sangria",
+        "sourceUrl": "https://ersanails.com/products/sangria",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "maldives-sunset",
+        "sourceUrl": "https://ersanails.com/products/maldives-sunset",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "forever-framed",
+        "sourceUrl": "https://ersanails.com/products/forever-framed",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "just-peachy",
+        "sourceUrl": "https://ersanails.com/products/just-peachy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "born-to-roam",
+        "sourceUrl": "https://ersanails.com/products/born-to-roam",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "lost-in-paradise",
+        "sourceUrl": "https://ersanails.com/products/lost-in-paradise",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mocha-latte",
+        "sourceUrl": "https://ersanails.com/products/mocha-latte",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "undefined",
+        "sourceUrl": "https://ersanails.com/products/undefined",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "juicy-jelly",
+        "sourceUrl": "https://ersanails.com/products/juicy-jelly",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "saint-glow",
+        "sourceUrl": "https://ersanails.com/products/saint-glow",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-feline",
+        "sourceUrl": "https://ersanails.com/products/pink-feline",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "island-escape",
+        "sourceUrl": "https://ersanails.com/products/island-escape",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "little-glow-gift",
+        "sourceUrl": "https://ersanails.com/products/little-glow-gift",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "island-glow-gift-package",
+        "sourceUrl": "https://ersanails.com/products/island-glow-gift-package",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "stress-off",
+        "sourceUrl": "https://ersanails.com/products/stress-off",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "paradisoo",
+        "sourceUrl": "https://ersanails.com/products/paradisoo",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sea-you-soon",
+        "sourceUrl": "https://ersanails.com/products/sea-you-soon",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sun-soaked",
+        "sourceUrl": "https://ersanails.com/products/sun-soaked",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "endless-summer",
+        "sourceUrl": "https://ersanails.com/products/endless-summer",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "seas-the-day",
+        "sourceUrl": "https://ersanails.com/products/seas-the-day",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "on-vacay",
+        "sourceUrl": "https://ersanails.com/products/on-vacay",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugar-baddie",
+        "sourceUrl": "https://ersanails.com/products/sugar-baddie",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunny-side-up",
+        "sourceUrl": "https://ersanails.com/products/sunny-side-up",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "melody-of-summer",
+        "sourceUrl": "https://ersanails.com/products/melody-of-summer",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "glow-hour",
+        "sourceUrl": "https://ersanails.com/products/glow-hour",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sweet-escape",
+        "sourceUrl": "https://ersanails.com/products/sweet-escape",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "im-iconic",
+        "sourceUrl": "https://ersanails.com/products/im-iconic",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "endless-blue",
+        "sourceUrl": "https://ersanails.com/products/endless-blue",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "wild-free",
+        "sourceUrl": "https://ersanails.com/products/wild-free",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunshine-obsessed",
+        "sourceUrl": "https://ersanails.com/products/sunshine-obsessed",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "warm-colorful",
+        "sourceUrl": "https://ersanails.com/products/warm-colorful",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "pink-riot",
+        "sourceUrl": "https://ersanails.com/products/pink-riot",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "cherry-wine",
+        "sourceUrl": "https://ersanails.com/products/cherry-wine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "summer-loving",
+        "sourceUrl": "https://ersanails.com/products/summer-loving",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ocean-therapy",
+        "sourceUrl": "https://ersanails.com/products/ocean-therapy",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "jetset-babe",
+        "sourceUrl": "https://ersanails.com/products/jetset-babe",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sippin-sunshine",
+        "sourceUrl": "https://ersanails.com/products/sippin-sunshine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "carefree",
+        "sourceUrl": "https://ersanails.com/products/carefree",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "mint-to-be",
+        "sourceUrl": "https://ersanails.com/products/mint-to-be",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "limoncello",
+        "sourceUrl": "https://ersanails.com/products/limoncello",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sunset-fizz",
+        "sourceUrl": "https://ersanails.com/products/sunset-fizz",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "beachy-babe",
+        "sourceUrl": "https://ersanails.com/products/beachy-babe",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "shimmering-sea",
+        "sourceUrl": "https://ersanails.com/products/shimmering-sea",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ocean-whisper",
+        "sourceUrl": "https://ersanails.com/products/ocean-whisper",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sugar-pop",
+        "sourceUrl": "https://ersanails.com/products/sugar-pop",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "sea-siren",
+        "sourceUrl": "https://ersanails.com/products/sea-siren",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "going-wild",
+        "sourceUrl": "https://ersanails.com/products/going-wild",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "stay-in-bloom",
+        "sourceUrl": "https://ersanails.com/products/stay-in-bloom",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "make-waves",
+        "sourceUrl": "https://ersanails.com/products/make-waves",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "tropic-mood",
+        "sourceUrl": "https://ersanails.com/products/tropic-mood",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "time-to-shine",
+        "sourceUrl": "https://ersanails.com/products/time-to-shine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "just-sunshine",
+        "sourceUrl": "https://ersanails.com/products/just-sunshine",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      },
+      {
+        "handle": "ersa-cat-eye-seriesⅱ",
+        "sourceUrl": "https://ersanails.com/products/ersa-cat-eye-seriesⅱ",
+        "decision": "create",
+        "decisionReason": "not_found",
+        "existing": null
+      }
+    ]
+  }
+}
