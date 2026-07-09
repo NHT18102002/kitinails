@@ -4722,12 +4722,70 @@ main[data-template='collection'] .breadcrumbs__separator::marker {
 
 /* Header shop mega menu: desktop Kiti reference layout */
 @media screen and (min-width: 990px) {
+  .header__desktop-nav header-menu {
+    display: block !important;
+  }
+
+  .header__desktop-nav header-menu > details {
+    position: static !important;
+  }
+
+  .header__desktop-nav header-menu > details > summary.header__menu-item {
+    position: relative !important;
+  }
+
+  .header__desktop-nav header-menu > details > summary.header__menu-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: -3.6rem !important;
+    left: -3.6rem !important;
+    z-index: 51 !important;
+    height: 7.2rem !important;
+    background: transparent !important;
+  }
+
+  .header__desktop-nav header-menu > details.mega-menu .mega-menu__content {
+    top: 100% !important;
+    margin-top: 0 !important;
+    transform: translateY(0) !important;
+  }
+
+  .header__desktop-nav header-menu > details[open] > .mega-menu__content,
+  .header__desktop-nav header-menu > details:hover > .mega-menu__content,
+  .header__desktop-nav header-menu > details:focus-within > .mega-menu__content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .header__desktop-nav header-menu > details > .header__submenu {
+    margin-top: 0 !important;
+  }
+
   .header__menu-list-item:has(.mega-menu--ersa-shop) {
+    position: static !important;
+  }
+
+  .mega-menu--ersa-shop {
     position: static !important;
   }
 
   .mega-menu--ersa-shop > summary.header__menu-item {
     position: relative !important;
+  }
+
+  .mega-menu--ersa-shop > summary.header__menu-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: -3.2rem !important;
+    left: -3.2rem !important;
+    z-index: 51 !important;
+    height: 5.6rem !important;
+    background: transparent !important;
   }
 
   .mega-menu--ersa-shop > summary.header__menu-item::after {
@@ -4763,9 +4821,16 @@ main[data-template='collection'] .breadcrumbs__separator::marker {
     box-shadow: 0 1.8rem 3.4rem rgba(17, 17, 17, 0.08) !important;
     color: #222 !important;
     overflow: visible !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(0) !important;
+    transition: opacity 160ms ease, visibility 160ms ease !important;
   }
 
   .mega-menu--ersa-shop[open] .ersa-shop-mega,
+  .mega-menu--ersa-shop:focus-within .ersa-shop-mega,
+  header-menu:hover details.mega-menu--ersa-shop .ersa-shop-mega,
   header-menu details.mega-menu--ersa-shop:hover .ersa-shop-mega {
     display: block !important;
     opacity: 1 !important;
