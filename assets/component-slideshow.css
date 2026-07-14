@@ -55,12 +55,11 @@ slideshow-component .slideshow.banner {
   }
 
   .banner--mobile-bottom .slideshow__text-wrapper {
-    flex-grow: 0;
-    height: auto;
+    flex-grow: 1;
   }
 
   .banner--mobile-bottom .slideshow__text.banner__box {
-    height: auto;
+    height: 100%;
   }
 
   .banner--mobile-bottom .slideshow__text .button {

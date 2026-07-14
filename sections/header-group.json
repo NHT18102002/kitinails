@@ -35,6 +35,10 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        "/* Nền mega menu mờ 60% khi mở Shop All */.mega-menu__content {background: rgba(0, 0, 0, 0.5) !important;}",
+        "/* Gạch chân khi hover vào menu */.header__menu-item:hover,.header__menu-item a:hover,.list-menu__item:hover,.list-menu__item a:hover,nav a:hover,.site-nav a:hover,.menu__item a:hover {text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important;}"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "mobile_logo_position": "left",
@@ -42,8 +46,8 @@
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
         "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
+        "menu_color_scheme": "scheme-dropdown-dark",
         "enable_country_selector": false,
         "enable_language_selector": false,
         "enable_customer_avatar": true,

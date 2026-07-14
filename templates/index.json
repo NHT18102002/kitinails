@@ -15,12 +15,13 @@
         "slide_1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/banner_1.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
-            "heading": "Bundles & Save",
+            "heading": "Island Glow Bundles",
             "heading_size": "h1",
-            "subheading": "More to wear, more to love, all shaped by handcrafted detail.",
-            "button_label": "SHOP BUNDLES",
+            "subheading": "Effortless beauty at your fingertips. Stunning, hand-painted pop-art nails       for your next getaway.",
+            "button_label": "GET YOUR GLOW",
             "link": "shopify://collections/all",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -36,12 +37,13 @@
         "slide_2": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/BANNER_2.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
-            "heading": "Soft Season",
+            "heading": "The Art of Subtlety",
             "heading_size": "h1",
-            "subheading": "A refined take on floral beauty through handcrafted detail and timeless design.",
-            "button_label": "SHOP FLORAL NAILS",
+            "subheading": "Timeless, wearable art created for the modern muse.",
+            "button_label": "DISCOVER KITI NAILS",
             "link": "shopify://collections/all",
             "button_style_secondary": false,
             "button_label_2": "SHOP ALL",
@@ -54,15 +56,38 @@
             "color_scheme": "scheme-1"
           }
         },
+        "slide_YUrzWq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_3_2eb9535c-b492-472b-addb-4c30ee7827f3.jpg",
+            "image_overlay_opacity": 0,
+            "review_badge_text": "4.9 from 5000+ Reviews",
+            "heading": "Flawless for Every Tone",
+            "heading_size": "h1",
+            "subheading": "Handcrafted press-on nails designed to beautifully complement every skin tone and personal style.",
+            "button_label": "UPGRADE YOUR NAILS",
+            "link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "link_2": "",
+            "button_style_secondary_2": true,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_3": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/BANNER_4.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
-            "heading": "New Arrivals",
+            "heading": "YOUR STYLE, YOUR WAY",
             "heading_size": "h1",
-            "subheading": "Discover our latest premium handmade sets.",
-            "button_label": "SHOP NEW",
+            "subheading": "Find your new signature look today",
+            "button_label": "EXPLORE STYLES",
             "link": "shopify://collections/all",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -79,6 +104,7 @@
       "block_order": [
         "slide_1",
         "slide_2",
+        "slide_YUrzWq",
         "slide_3"
       ],
       "settings": {
@@ -94,6 +120,7 @@
     },
     "featured_products": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "best-seller",
         "products_to_show": 8,
@@ -122,6 +149,7 @@
     },
     "island_glow_club": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "island-glow-club",
         "products_to_show": 8,
@@ -155,7 +183,8 @@
           "type": "collection_card",
           "settings": {
             "collection": "island-glow-club",
-            "image_filename": "Summer2026_ErsaNails_PressOnNails_19.webp",
+            "image": "shopify://shop_images/35mm_negative_photograph_style_202607102304.jpg",
+            "image_filename": "",
             "title": "Island Glow Club"
           }
         },
@@ -163,23 +192,26 @@
           "type": "collection_card",
           "settings": {
             "collection": "bloom-for-yourself",
-            "image_filename": "Summer2026_ErsaNails_PressOnNails_15.webp",
-            "title": "Bloom For Yourself"
+            "image": "shopify://shop_images/Girl_s_nails_changed_to_artificial_202607102331.jpg",
+            "image_filename": "",
+            "title": "Choose Yourself"
           }
         },
         "col_3": {
           "type": "collection_card",
           "settings": {
             "collection": "flower-nails",
-            "image_filename": "forest_elf_ersanails_press_on_nails_04.webp",
-            "title": "Flower Nails"
+            "image": "shopify://shop_images/Girl_looking_into_distance_202607102327.jpg",
+            "image_filename": "",
+            "title": "Soft Season"
           }
         },
         "col_4": {
           "type": "collection_card",
           "settings": {
             "collection": "ersa-essence",
-            "image_filename": "Ersa_Essence_1_Cat_Eye.webp",
+            "image": "shopify://shop_images/Girls_posing_with_nail_art_202607102357.jpg",
+            "image_filename": "",
             "title": "Kiti Essence"
           }
         }
@@ -235,6 +267,7 @@
         },
         "s4": {
           "type": "collection_card",
+          "disabled": true,
           "settings": {
             "collection": "squoval",
             "image_filename": "squoval_02.webp",
@@ -261,14 +294,14 @@
         "heading": "Shop By Shape",
         "heading_size": "h2",
         "subheading": "Find your perfect silhouette.",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "show_product_count": false,
         "show_view_all": false,
         "view_all_label": "View All Collections",
         "image_fit": "contain",
         "remove_image_background": true,
         "section_bg_color": "#f7f4f1",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -328,9 +361,10 @@
       "type": "ersa-must-have-essentials",
       "settings": {
         "eyebrow": "Tools & Accessories",
-        "heading": "Must-Have Nail Essentials",
+        "heading": "Flawless Finish Essentials",
         "heading_size": "h1",
-        "text": "<p>Get the essential tools for perfect nails.</p>",
+        "text": "<p>Everything you need for a flawless, long-lasting application.<br/><br/></p>",
+        "image": "shopify://shop_images/Girl_with_elaborate_nails_202607102145.jpg",
         "image_filename": "Sangria_-_ErsaNails_PressOnNails_007.webp",
         "collection": "tools-accessories",
         "products_to_show": 4,
@@ -457,7 +491,7 @@
         "heading": "Get Inspired by Every Look",
         "heading_size": "h1",
         "text": "",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-social-gallery-dark-text",
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -494,6 +528,10 @@
         "padding_top": 28,
         "padding_bottom": 40
       }
+    },
+    "17835360079185e0bb": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -506,6 +544,7 @@
     "featured_accessories",
     "reviews_carousel",
     "social_gallery",
-    "newsletter"
+    "newsletter",
+    "17835360079185e0bb"
   ]
 }
