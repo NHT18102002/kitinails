@@ -4380,15 +4380,40 @@ body:has(.collection-hero--with-image) .facets-wrapper {
 }
 
 @media screen and (max-width: 749px) {
+  .ersa-reviews-carousel {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  .ersa-reviews-carousel__inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
   .ersa-reviews-carousel__track-wrapper {
-    margin-left: -1.8rem;
-    margin-right: -1.8rem;
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
   }
 
   .ersa-reviews-carousel__track {
-    grid-auto-columns: minmax(26rem, 32rem);
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-auto-columns: min(32rem, calc(100vw - 5.6rem));
+    justify-content: start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-x: contain;
+    scroll-padding-left: 0;
+    box-sizing: border-box;
   }
 
   .ersa-reviews-carousel__card {
@@ -4650,6 +4675,9 @@ header-menu details.mega-menu:hover .mega-menu__content {
     top: 100%;
     left: 0;
     width: 100%;
+    margin-top: 0 !important;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.6rem !important;
     pointer-events: none;
   }
 .card-wrapper .quick-add {
@@ -4941,6 +4969,19 @@ header-menu details.mega-menu:hover .mega-menu__content {
   .mega-menu__child-list li a:hover {
     color: #121212;
     text-decoration: underline;
+  }
+
+  .mega-menu__list--condensed {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mega-menu__list--condensed .mega-menu__link--level-2 {
+    font-family: var(--ersa-body-font, var(--font-body-family)) !important;
+    font-size: 1.48rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.015em !important;
+    text-transform: uppercase !important;
   }
 }
 
@@ -6782,9 +6823,12 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collecti
 main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
 .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
   display: grid !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 1fr)) !important;
   gap: 2rem !important;
   align-items: start !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collection-grid__grid,
@@ -6931,7 +6975,7 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collecti
 
   main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
   .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 1fr)) !important;
     gap: 1.2rem !important;
   }
 
@@ -6989,7 +7033,7 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collecti
 
   main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
   .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 1fr)) !important;
     gap: 0.6rem !important;
   }
 
@@ -7133,10 +7177,11 @@ main[data-template='index'] #shopify-section-template--20456552071319__browse_le
 @media screen and (min-width: 990px) {
   main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
   .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    width: min(100%, 112rem) !important;
+    width: fit-content !important;
+    max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    grid-template-columns: repeat(5, minmax(0, 20.8rem)) !important;
+    grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 20.8rem)) !important;
     justify-content: center !important;
   }
 
@@ -7153,7 +7198,8 @@ main[data-template='index'] #shopify-section-template--20456552071319__browse_le
 @media screen and (min-width: 1441px) {
   main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
   .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    width: 112rem !important;
+    width: fit-content !important;
+    max-width: 100% !important;
   }
 
   main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collection-grid__grid,
@@ -7445,25 +7491,27 @@ main[data-template='index'] #shopify-section-template--20456552071319__browse_sh
 
 /* Shop By Shape large desktop sizing */
 @media screen and (min-width: 1600px) {
-  main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__grid,
-  .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__grid {
-    grid-template-columns: repeat(5, 28rem) !important;
+  main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
+  .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
+    grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), 28rem) !important;
+    width: fit-content !important;
+    max-width: 100% !important;
     justify-content: center !important;
     gap: 2.8rem !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__card,
-  .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__card,
-  main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image-wrapper,
-  .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image-wrapper {
+  main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__card,
+  .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__card,
+  main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image-wrapper,
+  .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image-wrapper {
     width: 28rem !important;
     max-width: 28rem !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image-wrapper,
-  .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image-wrapper,
-  main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image,
-  .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__image {
+  main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image-wrapper,
+  .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image-wrapper,
+  main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image,
+  .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image {
     width: 28rem !important;
     height: 28rem !important;
     max-width: 28rem !important;
@@ -8886,16 +8934,16 @@ main[data-template='index'] .section-ersa-must-have .quick-add--homepage-best-se
   z-index: 5 !important;
 }
 
-/* Force center alignment for Loved by Thousands reviews section */
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel,
-.template-index #shopify-section-template--20456552071319__reviews_carousel {
+/* Center homepage reviews without relying on a store-specific section ID */
+main[data-template='index'] .ersa-reviews-carousel,
+.template-index .ersa-reviews-carousel {
   text-align: center !important;
 }
 
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__inner,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__inner,
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__header,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__header {
+main[data-template='index'] .ersa-reviews-carousel__inner,
+.template-index .ersa-reviews-carousel__inner,
+main[data-template='index'] .ersa-reviews-carousel__header,
+.template-index .ersa-reviews-carousel__header {
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
@@ -8903,42 +8951,17 @@ main[data-template='index'] #shopify-section-template--20456552071319__reviews_c
   align-items: center !important;
 }
 
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__eyebrow,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__eyebrow,
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__heading,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__heading,
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__rating-summary,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__rating-summary,
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__subheading,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__subheading {
+main[data-template='index'] .ersa-reviews-carousel__eyebrow,
+.template-index .ersa-reviews-carousel__eyebrow,
+main[data-template='index'] .ersa-reviews-carousel__heading,
+.template-index .ersa-reviews-carousel__heading,
+main[data-template='index'] .ersa-reviews-carousel__rating-summary,
+.template-index .ersa-reviews-carousel__rating-summary,
+main[data-template='index'] .ersa-reviews-carousel__subheading,
+.template-index .ersa-reviews-carousel__subheading {
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
-}
-
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Keep review carousel track aligned after centering header */
-main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper,
-.template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper {
-  width: auto !important;
-  max-width: none !important;
-  margin-left: calc(-1 * var(--foundation-page-gutter-desktop, 4.8rem)) !important;
-  margin-right: calc(-1 * var(--foundation-page-gutter-desktop, 4.8rem)) !important;
-}
-
-@media screen and (max-width: 749px) {
-  main[data-template='index'] #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper,
-  .template-index #shopify-section-template--20456552071319__reviews_carousel .ersa-reviews-carousel__track-wrapper {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-    overflow: hidden !important;
-  }
 }
 
 /* Must-Have hero image subtle hover zoom */
@@ -10741,6 +10764,8 @@ body main[data-template='index'] .quick-add--homepage-best-sellers:focus-within 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
     display: flex !important;
     flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
     gap: 1.2rem !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
