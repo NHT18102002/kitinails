@@ -10993,7 +10993,7 @@ body main[data-template='index'] .quick-add--homepage-best-sellers:focus-within 
   min-height: 0 !important;
   max-height: none !important;
   padding-top: 3rem !important;
-  padding-bottom: 2.4rem !important;
+  padding-bottom: 0 !important;
 }
 
 #MainContent [id$='__trust_row'] .ersa-icon-row__inner,
@@ -11014,11 +11014,21 @@ body main[data-template='index'] .quick-add--homepage-best-sellers:focus-within 
   color: #fff !important;
 }
 
+#MainContent [id$='__trust_row'] .ersa-icon-row__title {
+  margin-bottom: 0 !important;
+}
+
 #MainContent [id$='__trust_row'] .ersa-icon-row__icon svg,
 #MainContent [id$='__trust_row'] .ersa-icon-row__icon svg path,
 #MainContent [id$='__trust_row'] .ersa-icon-row__icon svg circle,
 #MainContent [id$='__trust_row'] .ersa-icon-row__icon svg rect {
   stroke: currentColor !important;
+}
+
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon,
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon svg {
+  width: 2.8rem !important;
+  height: 2.8rem !important;
 }
 
 #MainContent [id$='__trust_row'] .ersa-icon-row__text,
