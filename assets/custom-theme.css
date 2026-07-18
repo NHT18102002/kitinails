@@ -10977,30 +10977,53 @@ body main[data-template='index'] .quick-add--homepage-best-sellers:focus-within 
 }
 
 /* Homepage trust row: dark treatment with comfortable space below the labels. */
-#shopify-section-template--20456552071319__trust_row,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row {
+#MainContent [id$='__trust_row'],
+#MainContent [id$='__trust_row'] .ersa-icon-row {
   background: #000 !important;
 }
 
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row {
-  padding-bottom: 5.2rem !important;
+#MainContent [id$='__trust_row'] {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
 }
 
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__title {
+#MainContent [id$='__trust_row'] .ersa-icon-row {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding-top: 3rem !important;
+  padding-bottom: 2.4rem !important;
+}
+
+#MainContent [id$='__trust_row'] .ersa-icon-row__inner,
+#MainContent [id$='__trust_row'] .ersa-icon-row__grid,
+#MainContent [id$='__trust_row'] .ersa-icon-row__item {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+#MainContent [id$='__trust_row'] .ersa-icon-row__grid,
+#MainContent [id$='__trust_row'] .ersa-icon-row__item {
+  border: 0 !important;
+}
+
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon,
+#MainContent [id$='__trust_row'] .ersa-icon-row__title {
   color: #fff !important;
 }
 
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg path,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg circle,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg rect {
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon svg,
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon svg path,
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon svg circle,
+#MainContent [id$='__trust_row'] .ersa-icon-row__icon svg rect {
   stroke: currentColor !important;
 }
 
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__text,
-#shopify-section-template--20456552071319__trust_row .ersa-icon-row__text p {
-  color: rgba(255, 255, 255, 0.72) !important;
+#MainContent [id$='__trust_row'] .ersa-icon-row__text,
+#MainContent [id$='__trust_row'] .ersa-icon-row__text p {
+  display: none !important;
 }
 
 /* Mobile social gallery: one full-screen card per swipe */
