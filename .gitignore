@@ -77,3 +77,5 @@ data/catalog/tmp/
 tools/catalog-import/.env
 tools/catalog-import/.env.*
 tools/catalog-import/config/import-approval.json
+
+products/*

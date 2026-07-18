@@ -10976,6 +10976,33 @@ body main[data-template='index'] .quick-add--homepage-best-sellers:focus-within 
   }
 }
 
+/* Homepage trust row: dark treatment with comfortable space below the labels. */
+#shopify-section-template--20456552071319__trust_row,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row {
+  background: #000 !important;
+}
+
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row {
+  padding-bottom: 5.2rem !important;
+}
+
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__title {
+  color: #fff !important;
+}
+
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg path,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg circle,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__icon svg rect {
+  stroke: currentColor !important;
+}
+
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__text,
+#shopify-section-template--20456552071319__trust_row .ersa-icon-row__text p {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
 /* Mobile social gallery: one full-screen card per swipe */
 @media screen and (max-width: 749px) {
   #MainContent .ersa-social-gallery,
