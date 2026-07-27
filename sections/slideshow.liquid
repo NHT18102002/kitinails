@@ -120,8 +120,41 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
       >
-        <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
-          {%- if block.settings.image -%}
+        {%- liquid
+          assign theme_banner_asset = blank
+          if template.name == 'index' and section.id contains '__hero'
+            case forloop.index
+              when 1
+                assign theme_banner_asset = 'banner_1.jpg'
+              when 2
+                assign theme_banner_asset = 'BANNER_2.jpg'
+              when 3
+                assign theme_banner_asset = 'BANNER_3.jpg'
+              when 4
+                assign theme_banner_asset = 'BANNER_4.jpg'
+            endcase
+          endif
+
+          assign theme_banner_loading = 'lazy'
+          assign theme_banner_fetch_priority = 'auto'
+          if forloop.first
+            assign theme_banner_loading = 'eager'
+            assign theme_banner_fetch_priority = 'high'
+          endif
+        -%}
+        <div class="slideshow__media banner__media media{% if block.settings.image == blank and theme_banner_asset == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
+          {%- if theme_banner_asset != blank -%}
+            <img
+              src="{{ theme_banner_asset | asset_url }}"
+              alt="{{ block.settings.image.alt | default: block.settings.heading | escape }}"
+              width="2400"
+              height="1792"
+              loading="{{ theme_banner_loading }}"
+              fetchpriority="{{ theme_banner_fetch_priority }}"
+              decoding="async"
+              sizes="100vw"
+            >
+          {%- elsif block.settings.image -%}
             {%- liquid
               assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
               if section.settings.image_behavior == 'ambient'

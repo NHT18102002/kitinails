@@ -1,0 +1,18 @@
+{
+  "name": "@ersa/product-publisher-db",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@ersa/product-publisher-contracts": "0.1.0",
+    "@ersa/product-publisher-domain": "0.1.0",
+    "pg": "^8.16.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.25",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.0"
+  }
+}

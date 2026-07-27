@@ -1,0 +1,22 @@
+{
+  "name": "@ersa/product-publisher-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4311",
+    "build": "tsc -b && vite build"
+  },
+  "dependencies": {
+    "@ersa/product-publisher-contracts": "0.1.0",
+    "@tanstack/react-query": "^5.81.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "vite": "^7.0.0"
+  }
+}

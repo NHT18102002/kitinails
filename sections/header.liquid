@@ -140,7 +140,7 @@
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
-        render 'header-drawer'
+        render 'header-primary-drawer'
       endif
 
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
@@ -180,13 +180,11 @@
 
     {%- if section.settings.menu != blank and section.settings.menu_type_desktop != 'drawer' -%}
       <div class="header__desktop-nav">
-        {%- liquid
-          if section.settings.menu_type_desktop == 'dropdown'
-            render 'header-dropdown-menu'
-          else
-            render 'header-mega-menu'
-          endif
-        -%}
+        <nav class="header__inline-menu" aria-label="Primary navigation">
+          <ul class="list-menu list-menu--inline" role="list">
+            {%- render 'header-primary-links', menu_context: 'desktop' -%}
+          </ul>
+        </nav>
       </div>
     {%- endif -%}
 
@@ -318,6 +316,7 @@
 
     connectedCallback() {
       this.header = this.closest('.shopify-section') || document.querySelector('.section-header');
+      this.updateScrollState();
       this.headerIsAlwaysSticky =
         this.getAttribute('data-sticky-type') === 'always' ||
         this.getAttribute('data-sticky-type') === 'reduce-logo-size';
@@ -353,6 +352,10 @@
       window.removeEventListener('scroll', this.onScrollHandler);
     }
 
+    updateScrollState(scrollTop = window.pageYOffset || document.documentElement.scrollTop) {
+      this.header.classList.toggle('header-is-scrolled', scrollTop > 1);
+    }
+
     createObserver() {
       let observer = new IntersectionObserver((entries, observer) => {
         this.headerBounds = entries[0].intersectionRect;
@@ -364,6 +367,7 @@
 
     onScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      this.updateScrollState(scrollTop);
 
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
 

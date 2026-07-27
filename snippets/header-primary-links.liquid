@@ -1,0 +1,109 @@
+{% comment %}
+  Renders the canonical primary navigation links shared by desktop and mobile.
+
+  Accepts:
+  - menu_context: {String} "desktop" or "mobile".
+{% endcomment %}
+
+{%- liquid
+  assign primary_menu_items = 'Shop All::/collections/all||Best Seller::/collections/all?sort_by=best-selling||Accessories::/collections/all||Custom Orders::/collections||About Us::/pages/about-us'
+  assign primary_menu_items = primary_menu_items | split: '||'
+-%}
+
+{%- for primary_menu_item in primary_menu_items -%}
+  {%- liquid
+    assign primary_menu_parts = primary_menu_item | split: '::'
+    assign primary_menu_label = primary_menu_parts.first
+    assign primary_menu_url = primary_menu_parts.last
+    assign primary_menu_handle = primary_menu_label | handleize
+    assign is_shop_all = false
+    assign is_current_link = false
+
+    if primary_menu_handle == 'shop-all'
+      assign is_shop_all = true
+    endif
+
+    unless primary_menu_url contains '?'
+      if request.path == primary_menu_url
+        assign is_current_link = true
+      endif
+    endunless
+  -%}
+
+  {%- if menu_context == 'mobile' -%}
+    {%- if is_shop_all -%}
+      <li>
+        <details id="Details-menu-drawer-{{ primary_menu_handle }}">
+          <summary
+            id="HeaderDrawer-{{ primary_menu_handle }}"
+            class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if is_current_link %} menu-drawer__menu-item--active{% endif %}"
+          >
+            {{- primary_menu_label | escape -}}
+            <span class="svg-wrapper">
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
+            </span>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </summary>
+          {%- render 'header-collection-menu',
+            index: forloop.index,
+            menu_color_scheme: section.settings.menu_color_scheme,
+            menu_context: 'mobile'
+          -%}
+        </details>
+      </li>
+    {%- else -%}
+      <li>
+        <a
+          id="HeaderDrawer-{{ primary_menu_handle }}"
+          href="{{ primary_menu_url }}"
+          class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if is_current_link %} menu-drawer__menu-item--active{% endif %}"
+          {% if is_current_link %}
+            aria-current="page"
+          {% endif %}
+        >
+          {{- primary_menu_label | escape -}}
+        </a>
+      </li>
+    {%- endif -%}
+  {%- else -%}
+    {%- if is_shop_all -%}
+      <li class="header__menu-list-item header__menu-list-item--has-children">
+        <header-menu>
+          <details id="Details-HeaderMenu-{{ primary_menu_handle }}" class="header-collection-dropdown">
+            <summary
+              id="HeaderMenu-{{ primary_menu_handle }}"
+              class="header__menu-item list-menu__item link focus-inset"
+            >
+              <span{% if is_current_link %} class="header__active-menu-item"{% endif %}>
+                {{- primary_menu_label | escape -}}
+              </span>
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </summary>
+            {%- render 'header-collection-menu',
+              index: forloop.index,
+              menu_color_scheme: section.settings.menu_color_scheme,
+              menu_context: 'desktop'
+            -%}
+          </details>
+        </header-menu>
+      </li>
+    {%- else -%}
+      <li class="header__menu-list-item">
+        <a
+          id="HeaderMenu-{{ primary_menu_handle }}"
+          href="{{ primary_menu_url }}"
+          class="header__menu-item list-menu__item link link--text focus-inset"
+          {% if is_current_link %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span{% if is_current_link %} class="header__active-menu-item"{% endif %}>
+            {{- primary_menu_label | escape -}}
+          </span>
+        </a>
+      </li>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "folder-collection-map-approved-v1",
+  "approvedAt": "2026-07-22T12:58:15.314Z",
+  "approvalMode": "explicit-confirmation",
+  "proposalSha256": "180e7a1a7b5d0dca7894237493eb2a540587a246493c71d2caf5cdb5ab04da20",
+  "sourceManifestSha256": "7730d7b1e3abf0d3ddf6c8a45ed39ff02373fb97a1c8110f165ac5adda2b1676",
+  "shop": {
+    "name": "My Store",
+    "myshopifyDomain": "gmsqgg-bk.myshopify.com"
+  },
+  "mappings": {
+    "3d": {
+      "gid": "gid://shopify/Collection/524887949587",
+      "handle": "3d",
+      "title": "3D"
+    },
+    "cute": {
+      "gid": "gid://shopify/Collection/524887982355",
+      "handle": "cute",
+      "title": "Cute"
+    },
+    "nail art": {
+      "gid": "gid://shopify/Collection/524888015123",
+      "handle": "nail-art",
+      "title": "Nail Art"
+    },
+    "y2k": {
+      "gid": "gid://shopify/Collection/524888047891",
+      "handle": "y2k",
+      "title": "Y2K"
+    }
+  }
+}

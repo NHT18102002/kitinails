@@ -5,7 +5,9 @@ const {
   buildAdminGraphqlEndpoint,
   loadDotEnvText,
   normalizeStoreDomain,
+  parseRetryAfterMs,
   requireAdminEnv,
+  isRetryableGraphqlError,
 } = require('../src/shopify-admin.cjs');
 
 test('normalizeStoreDomain accepts a myshopify domain or admin URL', () => {
@@ -17,6 +19,13 @@ test('normalizeStoreDomain accepts a myshopify domain or admin URL', () => {
     normalizeStoreDomain('develop-store-5y6bipog.myshopify.com'),
     'develop-store-5y6bipog.myshopify.com'
   );
+});
+
+test('Shopify retry helpers recognize throttling and Retry-After seconds', () => {
+  assert.equal(isRetryableGraphqlError({ extensions: { code: 'THROTTLED' } }), true);
+  assert.equal(isRetryableGraphqlError({ extensions: { code: 'GRAPHQL_VALIDATION_FAILED' } }), false);
+  assert.equal(parseRetryAfterMs('2'), 2000);
+  assert.equal(parseRetryAfterMs('invalid'), 0);
 });
 
 test('buildAdminGraphqlEndpoint pins API version 2026-07', () => {
@@ -35,10 +44,10 @@ test('requireAdminEnv rejects missing access token', () => {
 
 test('loadDotEnvText parses dotenv content without exposing comments', () => {
   assert.deepEqual(
-    loadDotEnvText('# nope\nSHOPIFY_STORE_DOMAIN=example.myshopify.com\nSHOPIFY_ADMIN_ACCESS_TOKEN=shpat_test\n'),
+    loadDotEnvText('# nope\nSHOPIFY_STORE_DOMAIN=example.myshopify.com\nSHOPIFY_ADMIN_ACCESS_TOKEN=<test-token-placeholder>\n'),
     {
       SHOPIFY_STORE_DOMAIN: 'example.myshopify.com',
-      SHOPIFY_ADMIN_ACCESS_TOKEN: 'shpat_test',
+      SHOPIFY_ADMIN_ACCESS_TOKEN: '<test-token-placeholder>',
     }
   );
 });

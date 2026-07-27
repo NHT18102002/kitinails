@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "folder-collection-map-proposal-v1",
+  "generatedAt": "2026-07-22T12:58:14.237Z",
+  "mode": {
+    "shopifyReadOnly": true,
+    "productMutations": false,
+    "collectionMutations": false,
+    "publicationMutations": false
+  },
+  "sourceManifestSha256": "7730d7b1e3abf0d3ddf6c8a45ed39ff02373fb97a1c8110f165ac5adda2b1676",
+  "shop": {
+    "name": "My Store",
+    "myshopifyDomain": "gmsqgg-bk.myshopify.com"
+  },
+  "summary": {
+    "folderCount": 4,
+    "liveCollectionCount": 10,
+    "passCount": 4,
+    "missingCount": 0,
+    "ambiguousCount": 0,
+    "blockedNonManualCount": 0,
+    "gate": "PASS"
+  },
+  "mappings": [
+    {
+      "folder": "3d",
+      "folderSlug": "3d",
+      "status": "PASS",
+      "reason": "unique_exact_manual_collection_match",
+      "proposed": {
+        "gid": "gid://shopify/Collection/524887949587",
+        "handle": "3d",
+        "title": "3D"
+      },
+      "exactCandidates": [
+        {
+          "gid": "gid://shopify/Collection/524887949587",
+          "handle": "3d",
+          "title": "3D",
+          "updatedAt": "2026-07-22T12:58:04Z",
+          "membershipType": "MANUAL",
+          "manualAssignable": true,
+          "reason": "no_automatic_sources"
+        }
+      ]
+    },
+    {
+      "folder": "cute",
+      "folderSlug": "cute",
+      "status": "PASS",
+      "reason": "unique_exact_manual_collection_match",
+      "proposed": {
+        "gid": "gid://shopify/Collection/524887982355",
+        "handle": "cute",
+        "title": "Cute"
+      },
+      "exactCandidates": [
+        {
+          "gid": "gid://shopify/Collection/524887982355",
+          "handle": "cute",
+          "title": "Cute",
+          "updatedAt": "2026-07-22T12:58:05Z",
+          "membershipType": "MANUAL",
+          "manualAssignable": true,
+          "reason": "no_automatic_sources"
+        }
+      ]
+    },
+    {
+      "folder": "nail art",
+      "folderSlug": "nail-art",
+      "status": "PASS",
+      "reason": "unique_exact_manual_collection_match",
+      "proposed": {
+        "gid": "gid://shopify/Collection/524888015123",
+        "handle": "nail-art",
+        "title": "Nail Art"
+      },
+      "exactCandidates": [
+        {
+          "gid": "gid://shopify/Collection/524888015123",
+          "handle": "nail-art",
+          "title": "Nail Art",
+          "updatedAt": "2026-07-22T12:58:05Z",
+          "membershipType": "MANUAL",
+          "manualAssignable": true,
+          "reason": "no_automatic_sources"
+        }
+      ]
+    },
+    {
+      "folder": "y2k",
+      "folderSlug": "y2k",
+      "status": "PASS",
+      "reason": "unique_exact_manual_collection_match",
+      "proposed": {
+        "gid": "gid://shopify/Collection/524888047891",
+        "handle": "y2k",
+        "title": "Y2K"
+      },
+      "exactCandidates": [
+        {
+          "gid": "gid://shopify/Collection/524888047891",
+          "handle": "y2k",
+          "title": "Y2K",
+          "updatedAt": "2026-07-22T12:58:06Z",
+          "membershipType": "MANUAL",
+          "manualAssignable": true,
+          "reason": "no_automatic_sources"
+        }
+      ]
+    }
+  ],
+  "discoveredCollections": [
+    {
+      "gid": "gid://shopify/Collection/524887949587",
+      "handle": "3d",
+      "title": "3D",
+      "updatedAt": "2026-07-22T12:58:04Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524301861139",
+      "handle": "3d-nails",
+      "title": "3D Nails",
+      "updatedAt": "2026-07-08T16:34:46Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524738953491",
+      "handle": "accessories",
+      "title": "Accessories",
+      "updatedAt": "2026-07-21T18:49:00Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "manual_product_selections_only"
+    },
+    {
+      "gid": "gid://shopify/Collection/524887982355",
+      "handle": "cute",
+      "title": "Cute",
+      "updatedAt": "2026-07-22T12:58:05Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524301926675",
+      "handle": "cute-nails",
+      "title": "Cute Nails",
+      "updatedAt": "2026-07-08T16:36:22Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524255854867",
+      "handle": "frontpage",
+      "title": "Home page",
+      "updatedAt": "2026-07-18T19:00:54Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "manual_product_selections_only"
+    },
+    {
+      "gid": "gid://shopify/Collection/524888015123",
+      "handle": "nail-art",
+      "title": "Nail Art",
+      "updatedAt": "2026-07-22T12:58:05Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524302123283",
+      "handle": "nails-art",
+      "title": "Nails Art",
+      "updatedAt": "2026-07-08T16:37:40Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524888047891",
+      "handle": "y2k",
+      "title": "Y2K",
+      "updatedAt": "2026-07-22T12:58:06Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    },
+    {
+      "gid": "gid://shopify/Collection/524301697299",
+      "handle": "y2k-nails",
+      "title": "Y2K Nails",
+      "updatedAt": "2026-07-08T16:31:21Z",
+      "membershipType": "MANUAL",
+      "manualAssignable": true,
+      "reason": "no_automatic_sources"
+    }
+  ]
+}

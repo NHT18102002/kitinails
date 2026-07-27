@@ -1,8 +1,321 @@
-# Kế hoạch phát triển Product Publisher
+# Kế hoạch phát triển Folder Product Importer
 
-> Trạng thái: Kế hoạch phát triển chính thức  
-> Cập nhật: 2026-07-18  
-> Phạm vi: Công cụ nội bộ tự động tạo và đăng sản phẩm press-on nails lên Shopify
+> Trạng thái: **Kế hoạch đang có hiệu lực**
+>
+> Cập nhật: 2026-07-22
+>
+> Phạm vi: Quét `products/`, ghép hai ảnh thành một sản phẩm và tạo product DRAFT trong đúng Shopify collection
+>
+> Thay thế: Kế hoạch Product Publisher AI/full-pipeline ngày 2026-07-18
+
+## 1. Quyết định phạm vi mới
+
+Công cụ mới là một CLI import thư mục đơn giản. Công cụ không cần React, PostgreSQL, TypeORM, worker queue, OpenAI, sinh thêm ảnh, tạo nội dung marketing, SEO, variants phức tạp, auto-publish hoặc rollback publication.
+
+Luồng vận hành cuối cùng:
+
+1. Người vận hành đặt ảnh trong `products/<collection>/...`.
+2. Mỗi cặp `N.jpg` và `N.1.jpg` là một sản phẩm.
+3. Chạy scan/dry-run để xem manifest và collection đích.
+4. Chạy import có cờ xác nhận.
+5. Tool upload hai ảnh, tạo product DRAFT và gán product vào đúng manual collection đã duyệt.
+6. Chạy verify để đối chiếu product, media và collection membership trên Shopify.
+
+## 2. Kết quả audit dữ liệu hiện tại
+
+Scanner phải coi folder cấp một là collection logic; folder lặp lại bên trong, ví dụ `products/3d/3d/`, chỉ là chi tiết lưu trữ và không tạo collection thứ hai.
+
+| Folder collection | Ảnh hợp lệ | Sản phẩm | Cặp lỗi | File bỏ qua |
+|---|---:|---:|---:|---:|
+| `3d` | 46 | 23 | 0 | 0 |
+| `cute` | 40 | 20 | 0 | 2 PSD |
+| `nail art` | 48 | 24 | 0 | 0 |
+| `y2k` | 42 | 21 | 0 | 2 PSD |
+| **Tổng** | **176** | **88** | **0** | **4 PSD** |
+
+Toàn bộ 88 product hiện ghép cặp được chính xác. PSD không phải media import và phải được bỏ qua.
+
+## 3. Business rules
+
+### 3.1 Xác định collection
+
+- Chỉ folder cấp một ngay dưới `products/` đại diện cho collection.
+- Mỗi folder phải map tới một Shopify collection GID cụ thể trong file approved config.
+- Mapping phải lưu cả `gid`, `handle` và `title`; preflight phải đối chiếu cả ba với live store.
+- Chỉ chấp nhận manual/custom collection. Smart collection không thể nhận membership thủ công và phải bị chặn.
+- Folder không có mapping, GID không tồn tại, handle/title bị drift hoặc mapping trùng đều là lỗi blocking trước mutation.
+- Tool chỉ explicit-assign một collection đích. Shopify vẫn có thể tự động đưa product vào smart collection do rule của store; tool không sửa các rule đó.
+
+Approved config dự kiến:
+
+```json
+{
+  "3d": { "gid": "gid://shopify/Collection/...", "handle": "...", "title": "..." },
+  "cute": { "gid": "gid://shopify/Collection/...", "handle": "...", "title": "..." },
+  "nail art": { "gid": "gid://shopify/Collection/...", "handle": "...", "title": "..." },
+  "y2k": { "gid": "gid://shopify/Collection/...", "handle": "...", "title": "..." }
+}
+```
+
+Collection map hiện có trong `tools/catalog-import/config/collection-map.approved.json` chưa chứa bốn collection này. Phase preflight phải query live store và sinh proposed map; không được tự đoán GID.
+
+### 3.2 Ghép cặp ảnh
+
+- Hỗ trợ `.jpg`, `.jpeg`, `.png`, `.webp`, không phân biệt hoa/thường.
+- `N.ext` là media thứ nhất; `N.1.ext` là media thứ hai.
+- Pair key là phần `N`; sắp xếp theo số, không theo chuỗi.
+- Mỗi pair key phải có đúng hai file. Thiếu, thừa hoặc trùng role là lỗi blocking.
+- File khác định dạng, bao gồm PSD, được bỏ qua nhưng phải xuất hiện trong report.
+- Tool không resize, sinh lại hoặc chỉnh sửa ảnh trong v1.
+
+### 3.3 Product identity, title và ownership
+
+- `sourceKey = folder-import:<folder-slug>:<pair-key>` là danh tính bất biến.
+- Tool tạo SHA-256 cho từng file và combined pair hash cho manifest.
+- Custom-ID metafield `ersa_automation.external_id` lưu `sourceKey` trên Shopify product.
+- Title xác định theo mẫu `<Collection title> <NN>`, ví dụ `Y2K 01` và `Nail Art 12`.
+- Handle tạo theo mẫu `folder-import-<folder-slug>-<NN>`; handle không được dùng làm ownership key.
+- Product mới luôn ở `DRAFT`. Tool không publish và không tạo giá/nội dung bị suy đoán.
+- Shopify có thể tạo default variant; product vẫn DRAFT cho tới khi merchant bổ sung giá và thông tin bán hàng.
+
+### 3.4 Chống duplicate và update an toàn
+
+- Dedupe theo `sourceKey`, combined pair hash và Shopify custom ID.
+- Reconcile Shopify Files theo content hash trước khi upload.
+- Rerun chỉ update product DRAFT có cùng custom ID và ownership marker của tool.
+- Product ACTIVE, product không có ownership marker hoặc handle collision với product khác phải bị skip/block; không overwrite.
+- Tool không xóa product, collection, Shopify File hay media cũ. Orphan file chỉ được báo cáo.
+
+## 4. Kiến trúc tối giản
+
+```text
+products/
+   ├── 3d/**/1.jpg + 1.1.jpg
+   ├── cute/**/1.jpg + 1.1.jpg
+   ├── nail art/**/1.jpg + 1.1.jpg
+   └── y2k/**/1.jpg + 1.1.jpg
+          │
+          ▼
+Folder scanner + pair validator
+          │
+          ▼
+Immutable import manifest + approved collection map
+          │
+          ▼
+Shopify staged upload / Files reconcile
+          │
+          ▼
+productSet DRAFT + exact manual collection GID
+          │
+          ▼
+Read-back verification + JSON/CSV report
+```
+
+Kiến trúc không có web app, API server hay database riêng. State resume là JSON append-only theo từng product, lưu dưới `data/catalog/folder-import/` và bị Git ignore.
+
+## 5. Hướng tái sử dụng code
+
+Không mở rộng `tools/product-publisher` cho phạm vi mới. Tạo entrypoint mỏng trong `tools/catalog-import` và tái sử dụng các helper đã được kiểm thử:
+
+- Shopify Admin GraphQL authentication và API version.
+- Scope/store preflight.
+- `stagedUploadsCreate`, upload media, `fileCreate` và READY polling.
+- `productSet` DRAFT.
+- Collection ID validation.
+- Request hash, retry và resume record.
+- Read-back QA và summary report.
+
+Code folder-import phải là module riêng, không làm thay đổi hành vi pipeline catalog cũ.
+
+## 6. CLI contract
+
+```powershell
+npm run folder-import:scan
+npm run folder-import:discover-collections
+npm run folder-import:dry-run
+npm run folder-import:run -- --confirm-import
+npm run folder-import:verify
+```
+
+- `scan`: chỉ đọc filesystem, sinh manifest và report pair lỗi.
+- `discover-collections`: chỉ đọc Shopify, sinh proposed mapping; không mutation.
+- `dry-run`: khóa manifest hash, xác nhận mapping, scopes, duplicate và kế hoạch create/update/skip.
+- `run -- --confirm-import`: chỉ mutation khi manifest hash và approved map khớp dry-run.
+- `verify`: đọc lại Shopify, kiểm tra DRAFT status, hai media và exact explicit collection GID.
+
+## 7. State và resume
+
+Mỗi product có record:
+
+```json
+{
+  "sourceKey": "folder-import:y2k:1",
+  "requestHash": "...",
+  "collectionGid": "gid://shopify/Collection/...",
+  "media": [
+    { "path": "products/y2k/y2k/1.jpg", "sha256": "...", "fileGid": "..." },
+    { "path": "products/y2k/y2k/1.1.jpg", "sha256": "...", "fileGid": "..." }
+  ],
+  "productGid": "gid://shopify/Product/...",
+  "state": "VERIFIED"
+}
+```
+
+State progression:
+
+```text
+SCANNED -> PREFLIGHT_OK -> FILES_READY -> DRAFT_CREATED -> COLLECTION_ASSIGNED -> VERIFIED
+```
+
+- Mỗi stage ghi checkpoint sau khi Shopify xác nhận.
+- Rerun tiếp tục từ stage chưa hoàn tất.
+- Request hash thay đổi khi file, mapping hoặc import policy thay đổi; tool không tái sử dụng checkpoint cũ sai hash.
+- Retry chỉ áp dụng cho network, rate limit và Shopify 5xx. User error, collection drift và ownership conflict không retry tự động.
+
+## 8. Các phase triển khai
+
+### Phase 0 — Inventory và collection contract — implemented 2026-07-22
+
+**Nghiệp vụ:** biến filesystem thành danh sách 88 product xác định và map bốn folder với bốn collection thật.
+
+**Công việc:**
+
+- [x] Implement scanner/pair validator.
+- [x] Sinh manifest với sourceKey, file path, hash và title dự kiến.
+- [x] Query live collections read-only, phân loại manual/automatic và sinh proposed folder map.
+- [x] Duyệt map thành config immutable, khóa theo manifest hash hiện tại.
+
+**Gate:** 88 product, 176 image, 0 pair error, 4 mapping đều PASS.
+
+**Kết quả triển khai:** filesystem gate PASS với 88 product, 176 image, 0 pair error và 4 PSD ignored. Theo xác nhận rõ ràng của merchant ngày 2026-07-22, bốn manual collection rỗng `3d`, `cute`, `nail-art`, `y2k` đã được tạo trên đúng store. Read-back discovery xác nhận `4/4 PASS`, không có condition tự động, và approved map đã được khóa theo manifest hash `7730d7b1e3abf0d3ddf6c8a45ed39ff02373fb97a1c8110f165ac5adda2b1676`. Không có product, publication, theme, checkout, payment hay customer mutation.
+
+### Phase 1 — Dry-run và safety — implemented 2026-07-22
+
+**Nghiệp vụ:** cho merchant biết chính xác product nào sẽ create/update/skip trước khi ghi Shopify.
+
+**Công việc:**
+
+- [x] Preflight store domain, scopes và custom-ID definition.
+- [x] Tính manifest hash và request hash theo product.
+- [x] Reconcile custom ID, handle và media hash trên toàn bộ live product inventory.
+- [x] Xuất JSON/CSV dry-run report.
+- [x] Chứng minh toàn bộ GraphQL document của dry-run là query-only.
+- [x] Provision unique custom-ID definition bằng bước `prepare-store` có mutation guard riêng, không ẩn trong dry-run.
+- [x] Yêu cầu cờ `--confirm-canary`, source key tường minh và approved dry-run hash cho mutation canary ở Phase 2.
+
+**Gate:** không có unresolved conflict; số create/update/skip được xác định.
+
+**Kết quả dry-run live mới nhất:** store đích `gmsqgg-bk.myshopify.com` đã được xác minh và chuẩn bị tối thiểu bằng bước riêng: tạo đúng bốn manual collection `3d`, `cute`, `nail-art`, `y2k` cùng unique PRODUCT metafield definition `ersa_automation.external_id`. Discovery/approved mapping đạt `4/4 PASS`. Dry-run đọc 2 product live và xác định `88 CREATE`, `0 UPDATE`, `0 SKIP_UNCHANGED`, `0 product conflict`; 176 media reference tương ứng 176 SHA-256 duy nhất. Gate tổng `PASS`. Dry-run vẫn query-only, không upload file và không mutation product/publication.
+
+### Phase 2 — Media và DRAFT import — canary implemented 2026-07-22
+
+**Nghiệp vụ:** upload hai ảnh và tạo product DRAFT đúng collection, không publish.
+
+**Công việc:**
+
+- [x] Upload/reuse Shopify Files theo SHA-256 cho canary.
+- [x] Tạo/upsert DRAFT qua `productSet` với title, handle, ownership metafield và hai media.
+- [x] Assign duy nhất manual collection GID từ approved map.
+- [x] Ghi checkpoint sau upload, product mutation và QA.
+- [x] Giới hạn canary bằng source key tường minh, approved dry-run hash và cờ xác nhận riêng.
+- [ ] Mở rộng executor đã kiểm chứng sang 87 item còn lại theo từng collection.
+
+**Gate:** canary mỗi collection một product, tất cả ở DRAFT và đúng collection.
+
+**Kết quả canary live:** `folder-import:3d:1` đã tạo đúng một product `3D 01` (`gid://shopify/Product/10475347837203`) ở trạng thái `DRAFT`, thuộc duy nhất collection `3d`, có đúng hai image media `READY` và đúng một exact handle match. Custom ID definition đã được sửa từ legacy `single_line_text_field` rỗng sang type `id` theo contract Shopify 2026-07; definition cũ có `metafieldsCount=0` nên không xóa dữ liệu product. Dry-run hậu canary đạt `87 CREATE`, `1 SKIP_UNCHANGED`, `0 UPDATE`, `0 BLOCKED`; bulk rollout chưa chạy.
+
+### Phase 3 — Verify, resume và bulk rollout — implemented 2026-07-22
+
+**Nghiệp vụ:** import đủ 88 product, có thể tiếp tục sau lỗi mà không tạo duplicate.
+
+**Công việc:**
+
+- [x] Read-back product status, media count/status, custom ID và collection membership.
+- [x] Resume từ state JSON, bỏ qua item đã `VERIFIED` và nhận lại product bằng custom ID sau gián đoạn.
+- [x] Chạy tuần tự theo collection với concurrency 1; canary được hoàn tất trước bulk.
+- [x] Xuất bulk checkpoint, post-run dry-run và final verification report.
+
+**Gate:** 88/88 item VERIFIED hoặc mỗi item chưa verified có error code rõ ràng; không có product foreign bị sửa.
+
+**Kết quả rollout live:** bulk executor đã tạo và read-back thành công 87 DRAFT còn lại. Kết hợp canary, final verifier đạt `88/88 VERIFIED`, `88 DRAFT`, `0 FAILED`; membership chính xác `3d=23`, `cute=20`, `nail art=24`, `y2k=21`, và `176/176` media checkpoint được reuse ở trạng thái READY. Post-bulk dry-run hội tụ về `0 CREATE`, `0 UPDATE`, `88 SKIP_UNCHANGED`, `0 BLOCKED`. Store có tổng cộng 90 product Admin, gồm 88 item thuộc batch và 2 product có sẵn; executor không có publication mutation.
+
+## 9. File impact map
+
+### File tạo mới
+
+- `tools/catalog-import/src/folder-import/scan.cjs`
+- `tools/catalog-import/src/folder-import/collection-map.cjs`
+- `tools/catalog-import/src/folder-import/manifest.cjs`
+- `tools/catalog-import/src/folder-import/shopify-sync.cjs`
+- `tools/catalog-import/src/folder-import/state.cjs`
+- `tools/catalog-import/src/folder-import/report.cjs`
+- `tools/catalog-import/src/run-folder-import.cjs`
+- `tools/catalog-import/config/folder-collection-map.proposed.json`
+- `tools/catalog-import/config/folder-collection-map.approved.json`
+- `tools/catalog-import/test/folder-import/*.test.cjs`
+- `docs/folder-product-import-runbook.md`
+
+### File chỉnh sửa
+
+- `tools/catalog-import/package.json`: thêm năm CLI scripts.
+- `.gitignore`: ignore manifest/state/report runtime có Shopify GID.
+- `docs/product-publisher-development-plan.md`: plan đang có hiệu lực này.
+
+### File không sửa
+
+- `products/**`: chỉ đọc.
+- `tools/product-publisher/**`: giữ nguyên, không còn là delivery path của phạm vi mới.
+- Theme, checkout, payment, customer data và collection rules.
+
+## 10. API, credential và scope
+
+Chỉ cần Shopify Admin GraphQL API:
+
+- `read_products`
+- `write_products`
+- `read_files`
+- `write_files`
+
+Không cần OpenAI API, PostgreSQL, S3, `write_publications` hoặc customer/order scopes.
+
+Credential chỉ ở `tools/catalog-import/.env` hoặc runtime secret manager; không commit token. Collection GID không phải secret nhưng approved map vẫn phải được review vì nó quyết định write target.
+
+## 11. Definition of Done
+
+- Scanner luôn nhận ra 88 product từ dataset hiện tại.
+- PSD bị bỏ qua và được report.
+- Bốn folder được map tới bốn manual collection GID đã duyệt.
+- Dry-run không có Shopify mutation.
+- Mutation không chạy nếu thiếu `--confirm-import`, manifest drift hoặc collection drift.
+- Mỗi product có đúng hai media theo đúng thứ tự.
+- Mỗi product DRAFT có external ID duy nhất và explicit target collection chính xác.
+- Rerun không tạo duplicate và không sửa foreign/ACTIVE product.
+- Interrupted run resume được từ checkpoint.
+- Final verify report có create/update/skip/fail, product GID, Admin URL và collection GID.
+- Toàn bộ test mới và 84 legacy importer tests đều pass.
+
+## 12. Thứ tự implement tối ưu
+
+1. Scanner + tests cho 88 pair hiện tại.
+2. Live collection discovery read-only + proposed map.
+3. Approved mapping và preflight drift check.
+4. Immutable manifest, request hash, dry-run report.
+5. Shopify Files reconcile/upload.
+6. DRAFT productSet + exact collection assignment.
+7. Read-back verify + JSON state resume.
+8. Canary một product mỗi collection.
+9. Rollout từng collection: `3d`, `cute`, `nail art`, `y2k`.
+10. Final 88-product verification report.
+
+---
+
+# Phụ lục A — Kế hoạch Product Publisher full-pipeline đã được thay thế
+
+> Trạng thái: Không còn là delivery scope
+>
+> Phiên bản: 2026-07-18
+>
+> Lý do lưu lại: Bảo toàn các quyết định kiến trúc cũ để tham khảo; không triển khai thêm nếu không có yêu cầu mới.
 
 ## 1. Mục tiêu sản phẩm
 

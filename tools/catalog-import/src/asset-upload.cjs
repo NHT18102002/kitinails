@@ -73,7 +73,7 @@ function classifyAssetUploadResource(asset) {
 function buildStagedUploadInput(asset) {
   const classification = classifyAssetUploadResource(asset);
   const input = {
-    filename: path.basename(asset.localPath),
+    filename: asset.filename || path.basename(asset.localPath),
     mimeType: asset.mimeType || inferMimeType(asset.localPath),
     httpMethod: 'POST',
     resource: classification.resource,
@@ -385,7 +385,11 @@ async function uploadToStagedTarget(target, asset) {
     form.append(parameter.name, parameter.value);
   }
 
-  form.append('file', new Blob([buffer], { type: asset.mimeType || inferMimeType(asset.localPath) }), path.basename(asset.localPath));
+  form.append(
+    'file',
+    new Blob([buffer], { type: asset.mimeType || inferMimeType(asset.localPath) }),
+    asset.filename || path.basename(asset.localPath)
+  );
 
   const response = await fetch(target.url, {
     method: 'POST',
@@ -405,8 +409,8 @@ function buildFileCreateInput(item) {
     originalSource: item.target.resourceUrl,
     contentType: resource === 'VIDEO' ? 'VIDEO' : 'IMAGE',
     alt: item.asset.alt || defaultAlt(item.asset),
-    filename: path.basename(item.asset.localPath),
-    duplicateResolutionMode: 'APPEND_UUID',
+    filename: item.asset.filename || path.basename(item.asset.localPath),
+    duplicateResolutionMode: item.asset.duplicateResolutionMode || 'APPEND_UUID',
   };
 }
 
@@ -448,6 +452,7 @@ function buildShopifyFileRecord({ asset, file, previousRecord = {}, stagedResour
     warning: classification.warning || '',
     cdnUrl: normalizedFile.url || previousRecord.cdnUrl || '',
     stagedResourceUrl: stagedResourceUrl || previousRecord.stagedResourceUrl || '',
+    filename: asset.filename || previousRecord.filename || path.basename(asset.localPath || ''),
     sourceUrl: asset.sourceUrl,
     localPath: asset.localPath,
     alt: asset.alt || defaultAlt(asset),
@@ -548,4 +553,5 @@ module.exports = {
   mapReadyFileBySha,
   pollFilesReady,
   runAssetUpload,
+  uploadAssetChunk,
 };

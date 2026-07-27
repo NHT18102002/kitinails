@@ -1,0 +1,10 @@
+{
+  "name": "@ersa/product-publisher-domain",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@ersa/product-publisher-contracts": "0.1.0"
+  }
+}

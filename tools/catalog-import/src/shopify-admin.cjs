@@ -84,39 +84,67 @@ function createAdminClient(env = readAdminEnv()) {
   const adminEnv = requireAdminEnv(env);
 
   async function graphql(query, variables = {}) {
-    const response = await fetch(adminEnv.endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Access-Token': adminEnv.accessToken,
-      },
-      body: JSON.stringify({ query, variables }),
-    });
-
-    const text = await response.text();
-    let payload;
-
-    try {
-      payload = text ? JSON.parse(text) : {};
-    } catch (error) {
-      throw new Error(`Shopify Admin GraphQL returned non-JSON response: HTTP ${response.status}`);
+    let lastError;
+    for (let attempt = 0; attempt <= constants.maxRetries; attempt += 1) {
+      try {
+        const response = await fetch(adminEnv.endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Access-Token': adminEnv.accessToken,
+          },
+          body: JSON.stringify({ query, variables }),
+        });
+        const text = await response.text();
+        let payload;
+        try {
+          payload = text ? JSON.parse(text) : {};
+        } catch (error) {
+          const parseError = new Error(`Shopify Admin GraphQL returned non-JSON response: HTTP ${response.status}`);
+          parseError.retryable = response.status >= 500;
+          throw parseError;
+        }
+        if (!response.ok) {
+          const httpError = new Error(`Shopify Admin GraphQL HTTP ${response.status}: ${safeGraphqlMessage(payload)}`);
+          httpError.retryable = response.status === 429 || response.status >= 500;
+          httpError.retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
+          throw httpError;
+        }
+        if (Array.isArray(payload.errors) && payload.errors.length) {
+          const graphqlError = new Error(`Shopify Admin GraphQL errors: ${safeGraphqlMessage(payload)}`);
+          graphqlError.retryable = payload.errors.some(isRetryableGraphqlError);
+          throw graphqlError;
+        }
+        return payload.data;
+      } catch (error) {
+        lastError = error;
+        const retryable = error?.retryable === true || error?.name === 'TypeError';
+        if (!retryable || attempt >= constants.maxRetries) throw error;
+        const waitMs = error.retryAfterMs || constants.delayMs * (2 ** attempt);
+        await delay(waitMs);
+      }
     }
-
-    if (!response.ok) {
-      throw new Error(`Shopify Admin GraphQL HTTP ${response.status}: ${safeGraphqlMessage(payload)}`);
-    }
-
-    if (Array.isArray(payload.errors) && payload.errors.length) {
-      throw new Error(`Shopify Admin GraphQL errors: ${safeGraphqlMessage(payload)}`);
-    }
-
-    return payload.data;
+    throw lastError;
   }
 
   return {
     ...adminEnv,
     graphql,
   };
+}
+
+function isRetryableGraphqlError(error) {
+  const code = String(error?.extensions?.code || '').toUpperCase();
+  return ['THROTTLED', 'INTERNAL_SERVER_ERROR', 'SERVICE_UNAVAILABLE'].includes(code);
+}
+
+function parseRetryAfterMs(value) {
+  const seconds = Number(value);
+  return Number.isFinite(seconds) && seconds > 0 ? seconds * 1000 : 0;
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function safeGraphqlMessage(payload) {
@@ -133,6 +161,8 @@ module.exports = {
   loadDotEnvText,
   loadToolingEnv,
   normalizeStoreDomain,
+  parseRetryAfterMs,
   readAdminEnv,
   requireAdminEnv,
+  isRetryableGraphqlError,
 };

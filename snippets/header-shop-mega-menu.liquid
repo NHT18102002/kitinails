@@ -4,6 +4,7 @@
   Accepts:
   - index: parent menu loop index
   - menu_color_scheme: header menu color scheme
+  - menu_context: "desktop" or "mobile"
 {% endcomment %}
 
 {%- liquid
@@ -33,6 +34,63 @@
   assign bundle_url = '/collections/bundle/BUNDLES'
 -%}
 
+{%- if menu_context == 'mobile' -%}
+  <div
+    id="link-shop-all"
+    class="menu-drawer__submenu menu-drawer__submenu--shop-all has-submenu gradient motion-reduce"
+    tabindex="-1"
+  >
+    <div class="menu-drawer__inner-submenu">
+      <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+        <span class="svg-wrapper">
+          {{- 'icon-arrow.svg' | inline_asset_content -}}
+        </span>
+        Shop all
+      </button>
+
+      <nav aria-label="Shop collections">
+        <ul class="menu-drawer__menu menu-drawer__shop-menu list-menu" role="list" tabindex="-1">
+          <li>
+            <a href="{{ shop_all_url }}" class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset">
+              Shop all products
+            </a>
+          </li>
+
+          <li class="menu-drawer__shop-group-heading">Featured</li>
+          <li><a href="{{ best_seller_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Best sellers</a></li>
+          <li><a href="{{ new_arrival_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">New arrivals</a></li>
+          <li><a href="{{ sale_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Sales</a></li>
+
+          <li class="menu-drawer__shop-group-heading">Shop by collection</li>
+          <li><a href="{{ summer_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Island Glow Club</a></li>
+          <li><a href="{{ floral_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Bloom for Yourself</a></li>
+          <li><a href="{{ music_festival_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Music Festival</a></li>
+          <li><a href="{{ ersa_essence_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Kiti Essence</a></li>
+          <li><a href="{{ lny_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">LNY 2026</a></li>
+          <li><a href="{{ love_edit_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Love Edit</a></li>
+          <li><a href="{{ renaissance_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Renaissance</a></li>
+          <li><a href="{{ toenails_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Press-on Toenails</a></li>
+
+          <li class="menu-drawer__shop-group-heading">Shop by shape</li>
+          <li><a href="{{ almond_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Almond</a></li>
+          <li><a href="{{ coffin_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Coffin</a></li>
+          <li><a href="{{ oval_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Oval</a></li>
+          <li><a href="{{ squoval_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Squoval</a></li>
+          <li><a href="{{ square_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Square</a></li>
+
+          <li class="menu-drawer__shop-group-heading">Shop by length</li>
+          <li><a href="{{ long_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Long</a></li>
+          <li><a href="{{ medium_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Medium</a></li>
+          <li><a href="{{ short_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Short</a></li>
+
+          <li class="menu-drawer__shop-group-heading">More</li>
+          <li><a href="{{ tools_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Tools &amp; Accessories</a></li>
+          <li><a href="{{ bundle_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Bundles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+{%- else -%}
 <div
   id="MegaMenu-Content-{{ index }}"
   class="mega-menu__content ersa-shop-mega color-{{ menu_color_scheme }} gradient motion-reduce global-settings-popup"
@@ -109,3 +167,4 @@
     </a>
   </div>
 </div>
+{%- endif -%}

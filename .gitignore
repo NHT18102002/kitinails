@@ -74,8 +74,21 @@ public/image-website/
 data/catalog/raw/
 data/catalog/assets/
 data/catalog/tmp/
+data/catalog/folder-import/
 tools/catalog-import/.env
 tools/catalog-import/.env.*
 tools/catalog-import/config/import-approval.json
 
 products/*
+
+# Product Publisher runtime state
+var/product-publisher/
+tools/product-publisher/.storage/
+tools/product-publisher/.env
+tools/product-publisher/.env.*
+!tools/product-publisher/.env.example
+tools/product-publisher/dist/
+tools/product-publisher/apps/web/dist/
+tools/product-publisher/coverage/
+tools/product-publisher/**/*.tsbuildinfo
+tools/product-publisher/.vercel/

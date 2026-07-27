@@ -1,0 +1,13 @@
+{
+  "name": "@ersa/product-publisher-ai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@ersa/product-publisher-contracts": "0.1.0",
+    "@ersa/product-publisher-domain": "0.1.0",
+    "openai": "^6.48.0",
+    "zod": "^3.25.0"
+  }
+}

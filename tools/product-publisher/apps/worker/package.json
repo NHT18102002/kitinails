@@ -1,0 +1,16 @@
+{
+  "name": "@ersa/product-publisher-worker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@ersa/product-publisher-ai": "0.1.0",
+    "@ersa/product-publisher-contracts": "0.1.0",
+    "@ersa/product-publisher-db": "0.1.0",
+    "@ersa/product-publisher-domain": "0.1.0",
+    "@ersa/product-publisher-media": "0.1.0",
+    "@ersa/product-publisher-shopify": "0.1.0",
+    "pino": "^9.7.0",
+    "zod": "^3.25.0"
+  }
+}

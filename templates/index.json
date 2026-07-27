@@ -184,7 +184,7 @@
           "settings": {
             "collection": "island-glow-club",
             "image": "shopify://shop_images/35mm_negative_photograph_style_202607102304.jpg",
-            "image_filename": "",
+            "image_filename": "35mm_negative_photograph_style_202607102304.jpg",
             "title": "Island Glow Club"
           }
         },
@@ -193,7 +193,7 @@
           "settings": {
             "collection": "bloom-for-yourself",
             "image": "shopify://shop_images/Girl_s_nails_changed_to_artificial_202607102331.jpg",
-            "image_filename": "",
+            "image_filename": "Girl_s_nails_changed_to_artificial_202607102331.jpg",
             "title": "Choose Yourself"
           }
         },
@@ -202,7 +202,7 @@
           "settings": {
             "collection": "flower-nails",
             "image": "shopify://shop_images/Girl_looking_into_distance_202607102327.jpg",
-            "image_filename": "",
+            "image_filename": "Girl_looking_into_distance_202607102327.jpg",
             "title": "Soft Season"
           }
         },
@@ -211,7 +211,7 @@
           "settings": {
             "collection": "ersa-essence",
             "image": "shopify://shop_images/Girls_posing_with_nail_art_202607102357.jpg",
-            "image_filename": "",
+            "image_filename": "Girls_posing_with_nail_art_202607102357.jpg",
             "title": "Kiti Essence"
           }
         }
@@ -365,7 +365,7 @@
         "heading_size": "h1",
         "text": "<p>Everything you need for a flawless, long-lasting application.<br/><br/></p>",
         "image": "shopify://shop_images/Girl_with_elaborate_nails_202607102145.jpg",
-        "image_filename": "Sangria_-_ErsaNails_PressOnNails_007.webp",
+        "image_filename": "Girl_with_elaborate_nails_202607102145.jpg",
         "collection": "tools-accessories",
         "products_to_show": 4,
         "button_label": "SHOP ALL TOOLS",

@@ -1,0 +1,40 @@
+{
+  "name": "ersa-product-publisher",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace @ersa/product-publisher-web",
+    "dev:api": "node --env-file-if-exists=.env --watch --import tsx apps/api/src/server.ts",
+    "dev:worker": "node --env-file-if-exists=.env --watch --import tsx apps/worker/src/worker.ts",
+    "start:api": "node --env-file-if-exists=.env dist/api/src/server.js",
+    "start:worker": "node --env-file-if-exists=.env dist/worker/src/worker.js",
+    "build:web": "npm run build --workspace @ersa/product-publisher-web",
+    "preview:web": "npm run preview --workspace @ersa/product-publisher-web",
+    "build": "npm run build --workspace @ersa/product-publisher-web && tsup apps/api/src/server.ts apps/worker/src/worker.ts --format esm --out-dir dist --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:migrate": "node --env-file-if-exists=.env --import tsx packages/db/src/cli.ts migration:run",
+    "db:revert": "node --env-file-if-exists=.env --import tsx packages/db/src/cli.ts migration:revert",
+    "shopify:bootstrap": "node --env-file-if-exists=.env --import tsx packages/shopify/src/bootstrap.ts"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.15.43",
+    "@types/node": "^24.0.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  }
+}

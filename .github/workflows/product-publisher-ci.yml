@@ -1,0 +1,51 @@
+name: Product Publisher CI
+
+on:
+  pull_request:
+    paths:
+      - 'tools/product-publisher/**'
+      - '.github/workflows/product-publisher-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/product-publisher/**'
+      - '.github/workflows/product-publisher-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: product_publisher
+          POSTGRES_PASSWORD: product_publisher_test
+          POSTGRES_DB: product_publisher_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U product_publisher -d product_publisher_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    defaults:
+      run:
+        working-directory: tools/product-publisher
+    env:
+      TEST_DATABASE_URL: postgresql://product_publisher:product_publisher_test@127.0.0.1:5432/product_publisher_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: tools/product-publisher/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm audit --audit-level=high

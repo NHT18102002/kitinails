@@ -1,0 +1,91 @@
+{% comment %}
+  Renders collections published to the Online Store directly from Shopify.
+
+  Accepts:
+  - index: parent menu loop index
+  - menu_color_scheme: header menu color scheme
+  - menu_context: "desktop" or "mobile"
+{% endcomment %}
+
+{%- assign store_collections = collections | sort: 'title' -%}
+
+{%- if menu_context == 'mobile' -%}
+  <div
+    id="link-shop-all"
+    class="menu-drawer__submenu menu-drawer__submenu--shop-all has-submenu gradient motion-reduce"
+    tabindex="-1"
+  >
+    <div class="menu-drawer__inner-submenu">
+      <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+        <span class="svg-wrapper">
+          {{- 'icon-arrow.svg' | inline_asset_content -}}
+        </span>
+        Shop all
+      </button>
+
+      <a
+        href="{{ routes.all_products_collection_url }}"
+        class="menu-drawer__menu-item menu-drawer__menu-item--overview link link--text list-menu__item focus-inset"
+      >
+        All products
+      </a>
+
+      <p class="menu-drawer__shop-group-heading">Collections</p>
+      <ul class="menu-drawer__menu menu-drawer__shop-menu list-menu" role="list" tabindex="-1">
+        {%- for store_collection in store_collections -%}
+          {%- unless store_collection.handle == 'frontpage' -%}
+            <li>
+              <a
+                href="{{ store_collection.url }}"
+                class="menu-drawer__menu-item list-menu__item link link--text focus-inset"
+              >
+                {{- store_collection.title | escape -}}
+              </a>
+            </li>
+          {%- endunless -%}
+        {%- else -%}
+          <li>
+            <a href="{{ routes.collections_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+              View all collections
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- else -%}
+  <div
+    id="HeaderCollectionMenu-{{ index }}"
+    class="header-collection-dropdown__panel color-{{ menu_color_scheme }} gradient global-settings-popup"
+    tabindex="-1"
+  >
+    <div class="header-collection-dropdown__inner">
+      <span class="visually-hidden">Collections</span>
+      <ul class="header-collection-dropdown__grid list-unstyled" role="list">
+        {%- for store_collection in store_collections -%}
+          {%- unless store_collection.handle == 'frontpage' -%}
+            <li>
+              <a href="{{ store_collection.url }}" class="header-collection-dropdown__link link focus-inset">
+                {{- store_collection.title | escape -}}
+              </a>
+            </li>
+          {%- endunless -%}
+        {%- else -%}
+          <li>
+            <a href="{{ routes.collections_url }}" class="header-collection-dropdown__link link focus-inset">
+              View all collections
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <a
+        href="{{ routes.all_products_collection_url }}"
+        class="header-collection-dropdown__view-all link focus-inset"
+      >
+        View all
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+{%- endif -%}
