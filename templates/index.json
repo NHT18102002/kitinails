@@ -365,11 +365,16 @@
         "heading_size": "h1",
         "text": "<p>Everything you need for a flawless, long-lasting application.<br/><br/></p>",
         "image": "shopify://shop_images/Girl_with_elaborate_nails_202607102145.jpg",
+<<<<<<< HEAD
         "image_filename": "Girl_with_elaborate_nails_202607102145.jpg",
         "collection": "tools-accessories",
+=======
+        "image_filename": "Sangria_-_ErsaNails_PressOnNails_007.webp",
+        "collection": "accessories",
+>>>>>>> 77af0151a58114411b82937d2a0056de9ba483b5
         "products_to_show": 4,
         "button_label": "SHOP ALL TOOLS",
-        "button_link": "shopify://collections/tools-accessories",
+        "button_link": "shopify://collections/accessories",
         "image_ratio": "portrait",
         "show_secondary_image": true,
         "show_rating": true,
