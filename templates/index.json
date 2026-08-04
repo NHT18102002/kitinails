@@ -15,7 +15,6 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner_1.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
             "heading": "Island Glow Bundles",
@@ -37,7 +36,6 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER_2.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
             "heading": "The Art of Subtlety",
@@ -59,7 +57,6 @@
         "slide_YUrzWq": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER_3_2eb9535c-b492-472b-addb-4c30ee7827f3.jpg",
             "image_overlay_opacity": 0,
             "review_badge_text": "4.9 from 5000+ Reviews",
             "heading": "Flawless for Every Tone",
@@ -81,7 +78,6 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER_4.jpg",
             "image_overlay_opacity": 10,
             "review_badge_text": "4.9 from 5000+ Reviews",
             "heading": "YOUR STYLE, YOUR WAY",
@@ -183,7 +179,6 @@
           "type": "collection_card",
           "settings": {
             "collection": "island-glow-club",
-            "image": "shopify://shop_images/35mm_negative_photograph_style_202607102304.jpg",
             "image_filename": "35mm_negative_photograph_style_202607102304.jpg",
             "title": "Island Glow Club"
           }
@@ -192,7 +187,6 @@
           "type": "collection_card",
           "settings": {
             "collection": "bloom-for-yourself",
-            "image": "shopify://shop_images/Girl_s_nails_changed_to_artificial_202607102331.jpg",
             "image_filename": "Girl_s_nails_changed_to_artificial_202607102331.jpg",
             "title": "Choose Yourself"
           }
@@ -201,7 +195,6 @@
           "type": "collection_card",
           "settings": {
             "collection": "flower-nails",
-            "image": "shopify://shop_images/Girl_looking_into_distance_202607102327.jpg",
             "image_filename": "Girl_looking_into_distance_202607102327.jpg",
             "title": "Soft Season"
           }
@@ -210,7 +203,6 @@
           "type": "collection_card",
           "settings": {
             "collection": "ersa-essence",
-            "image": "shopify://shop_images/Girls_posing_with_nail_art_202607102357.jpg",
             "image_filename": "Girls_posing_with_nail_art_202607102357.jpg",
             "title": "Kiti Essence"
           }
@@ -364,7 +356,6 @@
         "heading": "Flawless Finish Essentials",
         "heading_size": "h1",
         "text": "<p>Everything you need for a flawless, long-lasting application.<br/><br/></p>",
-        "image": "shopify://shop_images/Girl_with_elaborate_nails_202607102145.jpg",
         "image_filename": "Girl_with_elaborate_nails_202607102145.jpg",
         "collection": "tools-accessories",
         "products_to_show": 4,
@@ -439,7 +430,7 @@
         "heading_size": "h1",
         "rating_text": "Rated 4.8 by 4,000+ customers",
         "subheading": "Real reviews from those who trust KITI for effortless, salon-quality nails at home.",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 52,
         "padding_bottom": 52
       }
