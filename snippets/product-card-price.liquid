@@ -1,0 +1,12 @@
+{% comment %}
+  Product-card boundary for the shared price component.
+
+  Arguments: product, price_class, show_compare_at_price, placeholder.
+{% endcomment %}
+
+{% render 'price',
+  product: product,
+  price_class: price_class,
+  show_compare_at_price: show_compare_at_price,
+  placeholder: placeholder
+%}

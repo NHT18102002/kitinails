@@ -46,3 +46,9 @@ The former `custom-theme-overrides.css` is now explicitly named `legacy-compat.c
 `facets.js` is now the single rendering engine for both templates. It publishes `ersa:facets:rendered` with `{ template, productCount }` and continues to publish `collection:facets-rendered` and `search:facets-rendered` during migration. Page controllers configure submit behavior through the cancelable `ersa:facets:before-submit` event; neither controller patches `FacetFiltersForm.prototype` or replaces its static methods.
 
 `facets.helpers.js` owns pure query merging. Repeated filter values are preserved, blank values are removed, and search singleton keys use the submitting form as the final authority. The latter prevents a hidden sort form from overwriting the visible selection in WebKit. Shared Dawn facet styling is now explicitly owned by `feature-facets.css`; collection and search visual rules remain scoped in `page-collection.css` and `page-search.css`.
+
+## Phase 3 — product-card primitives
+
+`card-product.liquid` remains the single public orchestrator used by homepage rails, collection, search, related products, cross-sells and complementary products. Primary/secondary media, sale/sold-out badges, price composition and standard quick-add now live in explicit `product-card-*` snippets. Arguments include product, section/form IDs, layout context, color schemes, image loading behavior and captured visual labels; the new snippets do not infer their owner from an ambient section or block.
+
+Bulk quick-add remains inside the orchestrator because its modal, quantity-price-break and section contracts differ from standard card quick-add. Existing URLs, image `srcset`/`sizes`, badge IDs, percentage calculation, price output, accessible labels and product-form IDs are unchanged.

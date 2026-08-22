@@ -9,7 +9,7 @@ This map records current runtime ownership and the intended consolidation bounda
 | Announcement | `sections/announcement-bar.liquid` | transitional custom rules | section inline behavior | Shell feature |
 | Footer | `sections/footer.liquid` | `section-footer.css`, transitional custom rules | section inline behavior | Shell feature; inline behavior will become idempotent asset |
 | Homepage/marketing | homepage JSON sections, `ersa-*`, slideshow, collection rails, newsletter | section assets plus transitional custom rules | section inline code and slider primitives | Consolidate only behaviorally equivalent sliders |
-| Product cards | `snippets/card-product.liquid`, `price.liquid` | `component-card.css`, `component-price.css`, quick-add assets, transitional overrides | `quick-add.js`, `product-form.js` | Shared by home, collection, search, recommendations and cross-sells |
+| Product cards | `card-product`, `product-card-media`, `product-card-badges`, `product-card-price`, `product-card-quick-add`, shared `price` | `component-card.css`, `component-price.css`, quick-add assets, transitional overrides | `quick-add.js`, `product-form.js` | One explicit Liquid contract shared by home, collection, search, recommendations and cross-sells; CSS overrides remain a later ownership migration |
 | Collection facets | `main-collection-product-grid`, `facets` | `feature-facets.css`, `page-collection.css` | `facets.js`, `facets.helpers.js`, `collection-filters.helpers.js`, `collection-filters.js` | Shared core/event contract; collection adapter owns reference layout and toolbar |
 | Search | `main-search`, `facets` | `feature-facets.css`, `page-search.css` | `facets.js`, `facets.helpers.js`, `search-page.js`, `main-search.js` | Shares facets core; search composition and canonical query remain page-owned |
 | Product detail | `main-product`, `featured-product`, product-domain snippets | `section-main-product.css`, component assets, transitional overrides | `product-info.js`, `product-form.js`, media and pickup modules | Public section schemas remain independent |
@@ -27,7 +27,7 @@ This map records current runtime ownership and the intended consolidation bounda
 | `legacy-compat.css` | 172,814-byte baseline | Temporary catch-all formerly named `custom-theme-overrides.css`; overlaps heavily with the preceding file |
 | `main-product.liquid` | 2,418 lines | Rendering, schema, structured data, media and commerce orchestration |
 | `featured-product.liquid` | 1,565 lines | Duplicates substantial PDP composition while maintaining a distinct schema |
-| `card-product.liquid` | 887 lines | Media, badges, pricing and quick-add responsibilities overlap |
+| `card-product.liquid` | 887-line baseline | Orchestrator now delegates media, badges, pricing and standard quick-add; bulk quick-add remains an explicit Dawn compatibility branch |
 | `facets.liquid` | 1,038 lines | Desktop/mobile controls, sorting, active filters and disclosures |
 
 ## Deprecated candidates

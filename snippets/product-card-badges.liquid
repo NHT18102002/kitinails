@@ -1,0 +1,24 @@
+{% comment %}
+  Renders a product-card sold-out or percentage-sale badge.
+
+  Required arguments: product, section_id, id_prefix, position,
+  sold_out_color_scheme, sale_color_scheme.
+{% endcomment %}
+
+<div class="card__badge {{ position }}">
+  {%- if product.available == false -%}
+    <span
+      id="{{ id_prefix }}-{{ section_id }}-{{ product.id }}"
+      class="badge badge--bottom-left color-{{ sold_out_color_scheme }}"
+    >
+      {{- 'products.product.sold_out' | t -}}
+    </span>
+  {%- elsif product.compare_at_price > product.price and product.available -%}
+    <span
+      id="{{ id_prefix }}-{{ section_id }}-{{ product.id }}"
+      class="badge badge--bottom-left color-{{ sale_color_scheme }}"
+    >
+      {% assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round %}-{{ savings }}%
+    </span>
+  {%- endif -%}
+</div>
