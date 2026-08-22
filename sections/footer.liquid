@@ -1,5 +1,5 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'shell-footer.css' | asset_url | stylesheet_tag }}
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
@@ -341,55 +341,7 @@
   </div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const initFooterAccordions = () => {
-      const headings = document.querySelectorAll('.footer-block__heading.footer-title__button');
-      headings.forEach(heading => {
-        // clone to avoid duplicate listeners
-        const newHeading = heading.cloneNode(true);
-        heading.parentNode.replaceChild(newHeading, heading);
-
-        newHeading.addEventListener('click', (e) => {
-          if (window.innerWidth < 750) {
-            e.preventDefault();
-            const expanded = newHeading.getAttribute('aria-expanded') === 'true';
-            newHeading.setAttribute('aria-expanded', !expanded);
-            const content = newHeading.nextElementSibling;
-            if (content) {
-              if (expanded) {
-                content.style.maxHeight = null;
-                newHeading.classList.remove('is-expanded');
-              } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                newHeading.classList.add('is-expanded');
-              }
-            }
-          }
-        });
-      });
-    };
-
-    initFooterAccordions();
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 750) {
-        document.querySelectorAll('.footer-block__mobile-accordion-content').forEach(el => {
-          el.style.maxHeight = null;
-        });
-        document.querySelectorAll('.footer-block__heading.footer-title__button').forEach(el => {
-          el.classList.remove('is-expanded');
-          el.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    document.addEventListener('shopify:section:load', (e) => {
-      if (e.target.querySelector('.footer')) {
-        initFooterAccordions();
-      }
-    });
-  });
-</script>
+<script src="{{ 'shell-footer.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
