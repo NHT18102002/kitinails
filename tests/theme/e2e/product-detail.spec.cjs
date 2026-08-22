@@ -96,3 +96,29 @@ test('featured product placeholder preserves its public section contract', async
   await expect(section.locator('.product__media-wrapper .placeholder-svg')).toBeVisible();
   await expect(section.locator('.product__view-details')).toHaveAttribute('aria-disabled', 'true');
 });
+
+test('product UGC rail stays idempotent after Theme Editor reloads', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.endsWith('1440'), 'Desktop UGC arrow interaction');
+  await page.goto(fixtures.productMultiVariant, { waitUntil: 'domcontentloaded' });
+
+  const section = page.locator('[data-ersa-product-ugc]').first();
+  test.skip((await section.count()) === 0, 'Product fixture has no UGC section');
+  await expect(section).toHaveAttribute('data-ersa-product-ugc-ready', 'true');
+  await section.evaluate((element) => {
+    document.dispatchEvent(new CustomEvent('shopify:section:load', { bubbles: true, detail: { sectionId: element.id } }));
+    document.dispatchEvent(new CustomEvent('shopify:section:load', { bubbles: true, detail: { sectionId: element.id } }));
+  });
+
+  const track = section.locator('.ersa-product-ugc-videos__track');
+  const next = section.locator('[data-ersa-product-ugc-next]');
+  const cardDistance = await track.evaluate((element) => {
+    const card = element.querySelector('.ersa-product-ugc-videos__item');
+    const styles = getComputedStyle(element);
+    return card.getBoundingClientRect().width + Number.parseFloat(styles.columnGap || styles.gap || 0);
+  });
+  await next.focus();
+  await expect(next).toBeFocused();
+  await next.click();
+  await expect.poll(() => track.evaluate((element) => element.scrollLeft)).toBeGreaterThan(cardDistance * 0.8);
+  expect(await track.evaluate((element) => element.scrollLeft)).toBeLessThan(cardDistance * 1.2);
+});

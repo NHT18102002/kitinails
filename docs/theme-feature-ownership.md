@@ -8,7 +8,7 @@ This map records current runtime ownership and the intended consolidation bounda
 | Header and navigation | `sections/header.liquid`, `header-primary-*`, `header-search` | `shell-header.css`, transitional custom rules | `global.js`, `shell-header.js` | `header-primary-*` is canonical; `sticky-header` has one registration owner with complete listener/observer teardown |
 | Announcement | `sections/announcement-bar.liquid` | transitional custom rules | section inline behavior | Shell feature |
 | Footer | `sections/footer.liquid` | `shell-footer.css`, transitional custom rules | `shell-footer.js` | Accordion binding is idempotent across initial load and Theme Editor section reloads |
-| Homepage/marketing | homepage JSON sections, `ersa-*`, slideshow, collection rails, newsletter | section assets plus transitional custom rules | section inline code and slider primitives | Consolidate only behaviorally equivalent sliders |
+| Homepage/marketing | homepage JSON sections, `ersa-*`, slideshow, collection rails, newsletter | section assets, `section-product-ugc-videos.css`, transitional custom rules | `section-product-ugc-videos.js`, Dawn slider primitives | UGC owns its static CSS/JS and idempotent reload lifecycle; consolidate only behaviorally equivalent sliders |
 | Product cards | `card-product`, `product-card-media`, `product-card-badges`, `product-card-price`, `product-card-quick-add`, shared `price` | `component-card.css`, `component-price.css`, quick-add assets, transitional overrides | `quick-add.js`, `product-form.js` | One explicit Liquid contract shared by home, collection, search, recommendations and cross-sells; CSS overrides remain a later ownership migration |
 | Collection facets | `main-collection-product-grid`, `facets` | `feature-facets.css`, `page-collection.css` | `facets.js`, `facets.helpers.js`, `collection-filters.helpers.js`, `collection-filters.js` | Shared core/event contract; collection adapter owns reference layout and toolbar |
 | Search | `main-search`, `facets` | `feature-facets.css`, `page-search.css` | `facets.js`, `facets.helpers.js`, `search-page.js`, `main-search.js` | Shares facets core; search composition and canonical query remain page-owned |
@@ -23,7 +23,7 @@ This map records current runtime ownership and the intended consolidation bounda
 
 | File | Baseline size | Risk |
 | --- | ---: | --- |
-| `custom-theme.css` | 497,253 bytes | Multiple features and successive overrides; globally loaded and redundantly referenced by three sections |
+| `custom-theme.css` | 497,253-byte baseline | Multiple features and successive overrides; two redundant section loads are removed, while one late homepage load remains a verified cascade compatibility boundary |
 | `legacy-compat.css` | 172,814-byte baseline | Temporary catch-all formerly named `custom-theme-overrides.css`; overlaps heavily with the preceding file |
 | `main-product.liquid` | 2,346 lines after Phase 4 | Public PDP orchestrator and independent schema; title, pricing and rating presentation now delegate to product-domain snippets |
 | `featured-product.liquid` | 1,499 lines after Phase 4 | Public featured-product orchestrator and independent schema; shared presentation delegates without schema generation |

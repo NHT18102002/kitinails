@@ -1,0 +1,152 @@
+.ersa-product-ugc-videos {
+  background: #fff;
+  overflow: hidden;
+}
+
+.ersa-product-ugc-videos__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+  text-align: center;
+}
+
+.ersa-product-ugc-videos__heading {
+  margin: 0;
+  color: #111;
+  font-family: 'Playfair Display', 'Iowan Old Style', Baskerville, 'Times New Roman', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.ersa-product-ugc-videos__shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 108.7rem) 3.6rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.ersa-product-ugc-videos__track {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.ersa-product-ugc-videos__track::-webkit-scrollbar {
+  display: none;
+}
+
+.ersa-product-ugc-videos__item {
+  flex: 0 0 23.4rem;
+  scroll-snap-align: start;
+}
+
+.ersa-product-ugc-videos__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #f4f0ef;
+}
+
+.ersa-product-ugc-videos__poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ersa-product-ugc-videos__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 6.4rem;
+  height: 6.4rem;
+  place-items: center;
+  border: 0.2rem solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0.68;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ersa-product-ugc-videos__play svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0.2rem;
+}
+
+.ersa-product-ugc-videos__arrow {
+  display: inline-grid;
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #090a0b;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.ersa-product-ugc-videos__arrow svg {
+  width: 1rem;
+  height: 1.8rem;
+}
+
+@media screen and (max-width: 989px) {
+  .ersa-product-ugc-videos__shell {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+  }
+
+  .ersa-product-ugc-videos__arrow {
+    display: none;
+  }
+
+  .ersa-product-ugc-videos__track {
+    padding-right: 2rem;
+  }
+
+  .ersa-product-ugc-videos__item {
+    flex-basis: 23rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ersa-product-ugc-videos__header {
+    margin-bottom: 2rem;
+  }
+
+  .ersa-product-ugc-videos__heading {
+    font-size: 3.4rem;
+    line-height: 1.12;
+  }
+
+  .ersa-product-ugc-videos__track {
+    gap: 0.8rem;
+    padding-left: 1.8rem;
+  }
+
+  .ersa-product-ugc-videos__item {
+    flex-basis: 23.4rem;
+  }
+
+  .ersa-product-ugc-videos__play {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+}
