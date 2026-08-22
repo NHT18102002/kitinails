@@ -1,0 +1,58 @@
+/* Header overlay correction after browser QA */
+.template-index .section-header {
+  position: fixed !important;
+  top: 5.5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+.template-index #MainContent {
+  padding-top: 0;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header-wrapper,
+.template-index .section-header:not(.scrolled-past-header) .header,
+.template-index .section-header:not(.scrolled-past-header) .header-wrapper.gradient {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header__heading-link .h2,
+.template-index .section-header:not(.scrolled-past-header) .header__menu-item,
+.template-index .section-header:not(.scrolled-past-header) .header__icon,
+.template-index .section-header:not(.scrolled-past-header) .header__icon span,
+.template-index .section-header:not(.scrolled-past-header) .desktop-localization-wrapper,
+.template-index .section-header:not(.scrolled-past-header) .desktop-localization-wrapper * {
+  color: #fff !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) #HeaderMenu-hot {
+  color: #fff !important;
+}
+
+.template-index .banner__buttons,
+.template-index .banner__buttons.banner__buttons--multiple {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+}
+
+.template-index .banner__buttons .button--primary {
+  --alpha-button-background: 1;
+  --color-button: 255,255,255;
+  --color-button-text: 18,18,18;
+  color: #111;
+}
+
+.template-index .banner__buttons .button--secondary {
+  background: transparent;
+}
+
+@media screen and (max-width: 749px) {
+  .template-index .section-header {
+    top: 4rem;
+  }
+}
+

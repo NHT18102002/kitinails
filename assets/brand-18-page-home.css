@@ -1,0 +1,13 @@
+/* Stabilize homepage hero to match the reference first slide during QA */
+main[data-template='index'] .banner__slideshow-image {
+  animation: none !important;
+}
+
+main[data-template='index'] .banner__slideshow-image--1 {
+  opacity: 1 !important;
+}
+
+main[data-template='index'] .banner__slideshow-image:not(.banner__slideshow-image--1) {
+  opacity: 0 !important;
+}
+

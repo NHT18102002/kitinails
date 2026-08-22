@@ -65,3 +65,21 @@ test('custom element names have a single definition owner', () => {
   const duplicates = [...owners.entries()].filter(([, entries]) => entries.length > 1);
   assert.deepEqual(duplicates, []);
 });
+
+test('brand cascade has ordered feature owners and no catch-all stylesheet', () => {
+  const entrypoint = fs.readFileSync(path.join(root, 'snippets', 'theme-brand-styles.liquid'), 'utf8');
+  const brandAssets = [...entrypoint.matchAll(/['"](brand-(\d{2})-[^'"]+\.css)['"]\s*\|\s*asset_url/g)].map(
+    (match) => ({ asset: match[1], order: Number(match[2]) })
+  );
+  const expectedOrder = Array.from({ length: 41 }, (_, index) => index + 1);
+
+  assert.deepEqual(brandAssets.map(({ order }) => order), expectedOrder);
+  assert.equal(new Set(brandAssets.map(({ asset }) => asset)).size, brandAssets.length);
+  assert.equal(fs.existsSync(path.join(root, 'assets', 'custom-theme.css')), false);
+  assert.equal(fs.existsSync(path.join(root, 'assets', 'legacy-compat.css')), false);
+
+  const layout = fs.readFileSync(path.join(root, 'layout', 'theme.liquid'), 'utf8');
+  const lateOwner = fs.readFileSync(path.join(root, 'sections', 'ersa-reviews-carousel.liquid'), 'utf8');
+  assert.match(layout, /content_for_layout contains 'theme-brand-styles-anchor'/);
+  assert.match(lateOwner, /theme-brand-styles-anchor.*render 'theme-brand-styles'/);
+});

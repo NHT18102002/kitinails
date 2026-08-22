@@ -1,0 +1,11 @@
+/* Serif fallback because late CSS @import is ignored by browsers */
+main[data-template='index'] .banner__heading,
+.collection-hero__title,
+.template-search .template-search__header h1,
+.template-search .h1,
+.product__title h1,
+.product__title .h1 {
+  font-family: 'Iowan Old Style', Baskerville, 'Times New Roman', serif !important;
+  font-weight: 400 !important;
+}
+

@@ -1,0 +1,20 @@
+/* Search page tighter hero after Chrome QA */
+main[data-template='search'] .template-search__header,
+body:has(.template-search__header) .template-search__header {
+  padding-top: 5.6rem !important;
+  padding-bottom: 4.2rem !important;
+}
+
+main[data-template='search'] .facets-wrapper,
+main[data-template='search'] .facets-container,
+body:has(.template-search__header) .facets-wrapper,
+body:has(.template-search__header) .facets-container {
+  padding-top: 1.6rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+main[data-template='search'] #ProductGridContainer,
+body:has(.template-search__header) #ProductGridContainer {
+  margin-top: 0 !important;
+}
+

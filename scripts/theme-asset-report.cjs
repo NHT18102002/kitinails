@@ -4,8 +4,11 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const assetsDirectory = path.join(root, 'assets');
 const layoutSource = fs.readFileSync(path.join(root, 'layout', 'theme.liquid'), 'utf8');
+const globalStyleEntrypointSource = fs.readFileSync(path.join(root, 'snippets', 'theme-brand-styles.liquid'), 'utf8');
 const globalAssets = new Set(
-  [...layoutSource.matchAll(/['"]([^'"]+\.(?:css|js))['"]\s*\|\s*asset_url/g)].map((match) => match[1])
+  [...`${layoutSource}\n${globalStyleEntrypointSource}`.matchAll(/['"]([^'"]+\.(?:css|js))['"]\s*\|\s*asset_url/g)].map(
+    (match) => match[1]
+  )
 );
 
 const rows = fs

@@ -1,0 +1,108 @@
+/* Hero Slideshow Controls Overlay */
+.slideshow__controls {
+  position: absolute !important;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  border: none !important;
+}
+
+.slider-counter__link--dots .dot {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.slider-counter__link--active.slider-counter__link--dots .dot {
+  background-color: #fff;
+}
+
+.slideshow__controls .slider-button {
+  display: none !important; /* Hide arrows on desktop */
+}
+
+/* Hero Buttons Side-by-Side */
+@media screen and (min-width: 750px) {
+  .slideshow__text .banner__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+
+
+
+/* Transparent Header on Homepage */
+.template-index .shopify-section-group-header-group {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent !important;
+  transition: background-color 0.3s ease;
+}
+
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky,
+.template-index .shopify-section-group-header-group.scrolled-past-header {
+  position: fixed !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.template-index .header-wrapper,
+.template-index .utility-bar {
+  background: transparent !important;
+  border: none !important;
+  transition: background-color 0.3s ease;
+}
+
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header-wrapper,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header-wrapper,
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .utility-bar,
+.template-index .shopify-section-group-header-group.scrolled-past-header .utility-bar {
+  background: #ffffff !important;
+}
+
+.template-index .header__menu-item,
+.template-index .header__icon,
+.template-index .header__heading-link {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header__menu-item,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header__menu-item,
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header__icon,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header__icon,
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header__heading-link,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header__heading-link {
+  color: #121212;
+}
+
+/* Kiti Nails specific hero styling */
+.slideshow__text.banner__box {
+  background: transparent !important;
+  align-items: center;
+  text-align: center;
+}
+.slideshow__text .banner__heading {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.slideshow__text .banner__text {
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+}
+.slideshow.banner--large {
+  min-height: 100vh;
+}
+@media screen and (max-width: 749px) {
+  .slideshow.banner--large {
+    min-height: 80vh;
+  }
+}
+

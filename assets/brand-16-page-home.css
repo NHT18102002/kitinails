@@ -1,0 +1,228 @@
+/* Homepage selectors for Dawn body without template class */
+body:has(main[data-template='index']) .section-header {
+  position: fixed !important;
+  top: 5.5rem !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 6;
+  margin-bottom: 0 !important;
+}
+
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header-wrapper.gradient {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-link .h2,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__menu-item,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__icon,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__icon span,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .desktop-localization-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .desktop-localization-wrapper * {
+  color: #fff !important;
+}
+
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) #HeaderMenu-hot {
+  color: #fff !important;
+}
+
+main[data-template='index'] .banner__buttons,
+main[data-template='index'] .banner__buttons.banner__buttons--multiple {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+}
+
+main[data-template='index'] .banner__buttons .button--primary {
+  --alpha-button-background: 1;
+  --color-button: 255,255,255;
+  --color-button-text: 18,18,18;
+  color: #111;
+}
+
+main[data-template='index'] .banner__buttons .button--secondary {
+  background: transparent;
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='index']) .section-header {
+    top: 4rem !important;
+  }
+}
+
+/* Browser QA spacing fixes */
+main[data-template='index'] #shopify-section-template--20456552071319__hero,
+main[data-template='index'] #shopify-section-template--20456552071319__trust_row {
+  margin-top: 0 !important;
+}
+
+main[data-template='index'] .section-ersa-icon-row {
+  margin-top: 0 !important;
+}
+
+main[data-template='index'] .ersa-icon-row {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 5.4rem;
+  display: flex;
+  align-items: center;
+}
+
+main[data-template='index'] .ersa-icon-row__inner {
+  width: 100%;
+}
+
+main[data-template='index'] .ersa-icon-row__grid {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  min-height: 5.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+main[data-template='index'] .ersa-icon-row__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: max-content;
+  padding: 0 1rem;
+}
+
+main[data-template='index'] .ersa-icon-row__icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  color: #fff;
+}
+
+main[data-template='index'] .ersa-icon-row__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+main[data-template='index'] .ersa-icon-row__title {
+  margin: 0;
+  color: #fff;
+  font-family: var(--ersa-body-font);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+main[data-template='index'] .ersa-icon-row__text {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .ersa-icon-row__grid {
+    justify-content: flex-start;
+    gap: 2.4rem;
+    overflow-x: auto;
+    padding: 0 1.6rem;
+    scrollbar-width: none;
+  }
+
+  main[data-template='index'] .ersa-icon-row__grid::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Main-template hero text and trust bar fixes */
+main[data-template='index'] .banner::after {
+  opacity: 0.26;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.18) 48%, rgba(0,0,0,0.04));
+}
+
+main[data-template='index'] .banner__content.page-width {
+  align-items: center;
+  max-width: none;
+  padding: 14rem 6rem 4.8rem;
+}
+
+main[data-template='index'] .banner__box {
+  max-width: 43rem;
+  padding: 0;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+main[data-template='index'] .banner__heading {
+  max-width: 52rem;
+  color: #fff !important;
+  font-family: var(--ersa-display-font);
+  font-size: clamp(4.6rem, 3.15vw, 6.4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+main[data-template='index'] .banner__text,
+main[data-template='index'] .banner__text p {
+  max-width: 38rem;
+  color: #fff !important;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+main[data-template='index'] .banner__buttons {
+  width: min(40rem, 100%);
+  gap: 1.6rem;
+  margin-top: 2.6rem;
+}
+
+main[data-template='index'] .banner__buttons .button {
+  min-height: 4.6rem;
+  width: 100%;
+  border-radius: 0.6rem;
+  font-family: var(--ersa-body-font);
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+main[data-template='index'] .section-ersa-icon-row,
+main[data-template='index'] .section-ersa-icon-row > .ersa-icon-row,
+main[data-template='index'] .ersa-icon-row,
+main[data-template='index'] .ersa-icon-row__inner,
+main[data-template='index'] .ersa-icon-row__grid {
+  height: 5.4rem !important;
+  min-height: 5.4rem !important;
+  max-height: 5.4rem !important;
+}
+
+main[data-template='index'] .ersa-icon-row__grid {
+  align-content: center;
+}
+
+main[data-template='index'] .ersa-icon-row__item {
+  height: 5.4rem;
+  margin: 0 !important;
+}
+
+main[data-template='index'] .ersa-icon-row__title {
+  color: #fff !important;
+}
+
+main[data-template='index'] .ersa-icon-row__icon,
+main[data-template='index'] .ersa-icon-row__icon svg,
+main[data-template='index'] .ersa-icon-row__icon path {
+  color: #fff !important;
+  fill: none;
+  stroke: currentColor;
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .banner__content.page-width {
+    align-items: end;
+    padding: 10.5rem 1.8rem 3rem;
+  }
+}
+

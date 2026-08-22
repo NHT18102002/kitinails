@@ -1,0 +1,42 @@
+/* Header logo color swap */
+.header__heading-logo--light {
+  display: none !important;
+}
+
+.header__heading-logo--dark {
+  display: block !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header__heading-logo--light,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-logo--light {
+  display: block !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header__heading-logo--dark,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-logo--dark {
+  display: none !important;
+}
+
+.section-header.scrolled-past-header .header__heading-logo--light,
+.shopify-section-header-sticky .header__heading-logo--light,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header__heading-logo--light,
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header__heading-logo--light {
+  display: none !important;
+}
+
+.section-header.scrolled-past-header .header__heading-logo--dark,
+.shopify-section-header-sticky .header__heading-logo--dark,
+.template-index .shopify-section-group-header-group.scrolled-past-header .header__heading-logo--dark,
+.template-index .shopify-section-group-header-group.shopify-section-header-sticky .header__heading-logo--dark {
+  display: block !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header__heading-logo--light,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-logo--light {
+  display: block !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header) .header__heading-logo--dark,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-logo--dark {
+  display: none !important;
+}

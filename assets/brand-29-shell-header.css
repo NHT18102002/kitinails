@@ -1,0 +1,68 @@
+/* Mega Menu Hover & Column Fix */
+@media screen and (min-width: 990px) {
+  header-menu details.mega-menu {
+    position: static;
+  }
+  header-menu details.mega-menu:hover .mega-menu__content {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  header-menu details.mega-menu .mega-menu__content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    transform: translateY(-10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .mega-menu__list {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .mega-menu__item {
+    flex: 1;
+    max-width: 200px;
+  }
+  .mega-menu__link--level-2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .mega-menu__child-list li a {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    padding-bottom: 0.8rem;
+    color: #555555;
+    text-transform: capitalize;
+  }
+  .mega-menu__child-list li a:hover {
+    color: #121212;
+    text-decoration: underline;
+  }
+
+  .mega-menu__list--condensed {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mega-menu__list--condensed .mega-menu__link--level-2 {
+    font-family: var(--ersa-body-font, var(--font-body-family)) !important;
+    font-size: 1.48rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.015em !important;
+    text-transform: uppercase !important;
+  }
+}
+

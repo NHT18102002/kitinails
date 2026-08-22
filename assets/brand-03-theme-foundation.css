@@ -1,0 +1,79 @@
+/* Foundation - Phase 7A parity pass */
+.utility-bar {
+  min-height: 3.4rem;
+  background: rgb(var(--color-foreground));
+  color: rgba(var(--color-background), 0.78);
+}
+
+.utility-bar__grid,
+.announcement-bar__link {
+  min-height: 3.4rem;
+}
+
+.announcement-bar__link {
+  padding: 0.4rem 0;
+}
+
+.announcement-bar__message {
+  font-size: 1.2rem;
+  color: rgba(var(--color-background), 0.82);
+}
+
+.announcement-bar__link {
+  color: rgba(var(--color-background), 0.82);
+}
+
+.announcement-bar__link:hover,
+.announcement-bar__link:focus-visible {
+  color: rgb(var(--color-background));
+}
+
+.header-wrapper {
+  border-bottom: 0.1rem solid var(--shell-border-subtle);
+}
+
+.header {
+  max-width: 148rem;
+  min-height: 6.4rem;
+  margin: 0 auto;
+}
+
+.header__heading-link .h2 {
+  font-size: clamp(2.2rem, 2vw, 3rem);
+  font-weight: 500;
+}
+
+.header__heading-logo {
+  width: auto;
+  max-height: 3.2rem;
+}
+
+.header__heading-logo--fallback {
+  display: block;
+  width: auto;
+  max-width: 14rem;
+  object-fit: contain;
+}
+
+.desktop-localization-wrapper .localization-form__select,
+.footer__localization .localization-form__select {
+  min-height: 4.2rem;
+  padding: 0 1.4rem;
+  border: 0.1rem solid var(--shell-border-subtle);
+  border-radius: var(--shell-pill-radius);
+  background-color: var(--foundation-surface-soft);
+}
+
+.desktop-localization-wrapper .disclosure__button,
+.footer__localization .disclosure__button {
+  min-width: 0;
+}
+
+.header__icon--search .header__icon-label {
+  display: none !important;
+}
+
+.header__icon--cart .header__icon-label {
+  display: none !important;
+}
+

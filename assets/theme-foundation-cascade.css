@@ -1,4 +1,4 @@
-/* Kiti visual QA overrides loaded after custom-theme.css */
+/* Visual QA cascade loaded after the ordered brand style entrypoint. */
 main[data-template='index'] .banner__slideshow-image { animation: none !important; }
 main[data-template='index'] .banner__slideshow-image--1 { opacity: 1 !important; }
 main[data-template='index'] .banner__slideshow-image:not(.banner__slideshow-image--1) { opacity: 0 !important; }

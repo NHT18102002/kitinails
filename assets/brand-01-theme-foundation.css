@@ -1,0 +1,299 @@
+/* Typography */
+body,
+.rte,
+.article-template__content,
+.product__description {
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4 {
+  letter-spacing: 0;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.title,
+.banner__heading,
+.rich-text__heading,
+.main-page-title,
+.collection-hero__title {
+  max-width: 18ch;
+}
+
+.rte p,
+.product__description p {
+  max-width: 66ch;
+}
+
+.rte p:not(:last-child),
+.rte ul:not(:last-child),
+.rte ol:not(:last-child),
+.product__description p:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.product-facts,
+.product-cross-sells,
+.product-support-accordions {
+  margin-top: 1.8rem;
+}
+
+.product-facts {
+  padding: 1.6rem;
+  border: 0.1rem solid var(--foundation-border-subtle);
+  border-radius: var(--foundation-radius-panel);
+  background-color: var(--foundation-surface-soft);
+}
+
+.product-facts__list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.product-facts__item {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.product-facts__label,
+.product-size-guide__opener .product-popup-modal__button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.product-facts__value {
+  margin: 0;
+}
+
+.product-size-guide {
+  margin-top: 1rem;
+}
+
+.product-size-guide__opener {
+  display: inline-flex;
+}
+
+.product-support-accordions {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-support-accordions__list {
+  margin: 0;
+  padding-left: 1.8rem;
+}
+
+.product-support-accordions__list li + li {
+  margin-top: 0.8rem;
+}
+
+.product-cross-sells__grid {
+  display: grid;
+  gap: 1.6rem;
+  margin: 1.2rem 0 0;
+}
+
+.cart-progress,
+.cart-cross-sells {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  border: 0.1rem solid var(--foundation-border-subtle);
+  border-radius: var(--foundation-radius-panel);
+  background-color: var(--foundation-surface-soft);
+}
+
+.cart-progress__message {
+  margin: 0 0 1rem;
+}
+
+.cart-progress__bar {
+  overflow: hidden;
+  height: 0.8rem;
+  border-radius: 999px;
+  background-color: rgba(var(--color-foreground), 0.08);
+}
+
+.cart-progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgba(var(--color-foreground), 0.7);
+}
+
+.cart-cross-sells__heading {
+  margin: 0 0 1.2rem;
+}
+
+.cart-cross-sells__list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.cart-cross-sells__link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 1.2rem;
+  text-decoration: none;
+}
+
+.cart-cross-sells__link:is(:hover, :focus-visible) {
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+.cart-cross-sells__media {
+  width: 7.2rem;
+  height: 7.2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+.cart-cross-sells__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-cross-sells__content {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.cart-cross-sells__title {
+  font-weight: 600;
+}
+
+.cart-cross-sells__price {
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+.caption-with-letter-spacing,
+.caption-large,
+.subtitle {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.announcement-bar__message,
+.header__menu-item,
+.header__icon,
+.footer-block__heading,
+.mega-menu__overview-link {
+  letter-spacing: 0;
+}
+
+/* Buttons and controls */
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
+  min-height: 4.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  transition:
+    box-shadow var(--duration-default) ease,
+    transform var(--duration-short) ease,
+    background-color var(--duration-default) ease,
+    color var(--duration-default) ease;
+}
+
+.button:after,
+.shopify-challenge__button:after,
+.customer button:after,
+button.shopify-payment-button__button--unbranded:after {
+  border-radius: max(var(--buttons-radius-outset, 0rem), var(--foundation-radius-control));
+}
+
+.button:not([disabled]):is(:hover, :focus-visible),
+.shopify-challenge__button:not([disabled]):is(:hover, :focus-visible),
+.customer button:not([disabled]):is(:hover, :focus-visible),
+button.shopify-payment-button__button--unbranded:not([disabled]):is(:hover, :focus-visible) {
+  box-shadow: var(--foundation-shadow-soft);
+  transform: translateY(-0.1rem);
+}
+
+.button--secondary:not([disabled]):is(:hover, :focus-visible),
+.button--tertiary:not([disabled]):is(:hover, :focus-visible) {
+  color: rgb(var(--color-foreground));
+}
+
+.field:after,
+.select:after,
+.customer .field:after,
+.localization-form__select:after {
+  border-radius: max(var(--inputs-radius, 0rem), 0.8rem);
+}
+
+.field__input,
+.select__select,
+.customer .field input,
+.customer select,
+.customer textarea,
+textarea {
+  min-height: 5rem;
+  background-color: var(--foundation-surface-soft);
+  transition:
+    box-shadow var(--duration-default) ease,
+    border-color var(--duration-default) ease,
+    background-color var(--duration-default) ease;
+}
+
+.field:hover:after,
+.select:hover:after,
+.customer .field:hover:after,
+.field:focus-within:after,
+.select:focus-within:after,
+.customer .field:focus-within:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) var(--foundation-border-medium);
+}
+
+.quantity {
+  border-color: var(--foundation-border-subtle);
+  border-radius: max(var(--inputs-radius, 0rem), 0.8rem);
+}
+
+.quantity__button:is(:hover, :focus-visible) {
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+/* Buttons and controls - Global shell */
+.header__icon,
+.menu-drawer__utility-link,
+.menu-drawer__account {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4.4rem;
+  border: 0.1rem solid var(--shell-border-subtle);
+  border-radius: var(--shell-pill-radius);
+  background-color: var(--foundation-surface-soft);
+  transition:
+    background-color var(--duration-default) ease,
+    border-color var(--duration-default) ease,
+    box-shadow var(--duration-default) ease,
+    transform var(--duration-short) ease;
+}
+
+.header__icon:is(:hover, :focus-visible),
+.menu-drawer__utility-link:is(:hover, :focus-visible),
+.menu-drawer__account:is(:hover, :focus-visible) {
+  border-color: var(--foundation-border-medium);
+  box-shadow: var(--foundation-shadow-soft);
+  transform: translateY(-0.1rem);
+}
+

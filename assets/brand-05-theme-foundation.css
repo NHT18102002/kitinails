@@ -1,0 +1,46 @@
+/* Typography - Phase 7A parity pass */
+.template-search__header h1,
+.collection-hero__title,
+.cart__warnings .cart__empty-text,
+.product__title h1 {
+  max-width: none;
+}
+
+.collection-hero .rte,
+.template-search__header p,
+.cart-item__details .product-option {
+  color: rgba(var(--color-foreground), 0.72);
+}
+
+.template-search__header .search__input,
+.template-search__header .field:after {
+  border-radius: 1.6rem;
+}
+
+/* Buttons and controls - Phase 7A parity pass */
+.quick-add__submit.button {
+  min-height: 4.4rem;
+}
+
+.product-form__buttons {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.product-form__buttons .button,
+.product-form__buttons .shopify-payment-button {
+  max-width: none;
+  width: 100%;
+}
+
+.shopify-payment-button__button--unbranded {
+  background: transparent !important;
+  color: rgb(var(--color-foreground)) !important;
+}
+
+.mobile-facets__open,
+.active-facets__button,
+.active-facets__button-remove {
+  border-radius: var(--shell-pill-radius);
+}
+

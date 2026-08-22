@@ -1,0 +1,70 @@
+/* Informational pages and footer */
+.main-page-title,
+.page-title,
+.contact .title,
+.contact__button,
+.footer-block__heading {
+  letter-spacing: -0.03em;
+}
+
+.main-page-title,
+.page-title,
+.contact .title {
+  font-family: var(--font-heading-family);
+  font-size: clamp(4rem, 7vw, 8.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-align: center;
+}
+
+.main-page-title + .rte,
+.page-width--narrow .rte {
+  max-width: 78rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(var(--color-foreground), 0.72);
+  font-size: 1.7rem;
+  line-height: 1.75;
+}
+
+.contact.page-width,
+.shopify-section .contact {
+  max-width: 92rem;
+}
+
+.contact .field__input,
+.contact textarea,
+.newsletter-form__field-wrapper .field__input {
+  border-radius: 1.4rem;
+}
+
+.contact .field::after,
+.newsletter-form__field-wrapper .field::after {
+  border-radius: 1.4rem;
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.22);
+}
+
+.contact__button .button {
+  min-width: 18rem;
+  min-height: 5.2rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 749px) {
+  .main-page-title,
+  .page-title,
+  .contact .title {
+    font-size: clamp(3.6rem, 12vw, 5.6rem);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .contact__button .button {
+    width: 100%;
+  }
+}
+

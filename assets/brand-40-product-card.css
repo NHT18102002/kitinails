@@ -1,0 +1,71 @@
+/* Product card cart button square override */
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:focus-within .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:focus-within .quick-add__submit--homepage-best-sellers {
+  border-radius: 0.6rem !important;
+}
+
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers {
+  aspect-ratio: 1 / 1 !important;
+}
+
+.card-wrapper .quick-add__submit .icon-cart-outline,
+#MainContent .featured-collection--homepage-best-sellers .quick-add__icon--homepage-best-sellers .icon-cart-outline,
+#MainContent .section-ersa-must-have .quick-add__icon--homepage-best-sellers .icon-cart-outline {
+  stroke-width: 1.05 !important;
+}
+
+/* Product card cart button compact size override */
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:focus-within .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:focus-within .quick-add__submit--homepage-best-sellers {
+  width: 3.4rem !important;
+  min-width: 3.4rem !important;
+  max-width: 3.4rem !important;
+  height: 3.4rem !important;
+  min-height: 3.4rem !important;
+  max-height: 3.4rem !important;
+}
+
+#MainContent .featured-collection--homepage-best-sellers .quick-add__icon--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add__icon--homepage-best-sellers,
+#MainContent .featured-collection--homepage-best-sellers .quick-add__icon--homepage-best-sellers img.icon-cart-outline,
+#MainContent .section-ersa-must-have .quick-add__icon--homepage-best-sellers img.icon-cart-outline {
+  width: 1.7rem !important;
+  height: 1.7rem !important;
+}
+
+/* Product card cart hover border suppression */
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers:hover,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers:hover,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers:hover::before,
+#MainContent .featured-collection--homepage-best-sellers .quick-add__submit--homepage-best-sellers:hover::after,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers::before,
+#MainContent .featured-collection--homepage-best-sellers .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers::after,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers:hover::before,
+#MainContent .section-ersa-must-have .quick-add__submit--homepage-best-sellers:hover::after,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers::before,
+#MainContent .section-ersa-must-have .quick-add--homepage-best-sellers:hover .quick-add__submit--homepage-best-sellers::after {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+

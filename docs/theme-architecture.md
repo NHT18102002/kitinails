@@ -27,7 +27,7 @@ A section reads Theme Editor settings, prepares Shopify objects, composes snippe
 
 ### CSS
 
-The target order is tokens, foundation, global shell, shared components, feature assets, and page assets. Only tokens and foundation may be globally loaded without a specific storefront feature owner. During migration, existing cascade order takes priority over cosmetic file organization. No `@layer`, new `!important`, or catch-all final override file may be introduced.
+The target order is tokens, foundation, global shell, shared components, feature assets, and page assets. Only tokens and foundation may be globally loaded without a specific storefront feature owner. The behavior-preserving brand migration uses ordered `brand-NN-*` slices: every slice has one domain owner, while its numeric prefix preserves the previously interleaved cascade. Reordering those slices requires the complete visual gate. No `@layer`, new `!important`, or catch-all final override file may be introduced.
 
 ### JavaScript
 
@@ -37,7 +37,8 @@ Pure helpers must be importable by Node tests without browser or Shopify globals
 
 ## Asset-loading rules
 
-- Global assets are declared only in `layout/theme.liquid`.
+- Global assets are declared by `layout/theme.liquid` or its `theme-brand-styles` entrypoint.
+- `theme-brand-styles` is applied once: at the established late-cascade marker when that section exists, otherwise through the layout fallback.
 - Page assets are loaded by their `main-*` owner section.
 - Section assets are loaded by the owning section, once per document where practical.
 - A new CSS or JavaScript asset requires an entry in [theme-feature-ownership.md](theme-feature-ownership.md).

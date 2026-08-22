@@ -1,0 +1,300 @@
+/* Kiti custom homepage sections */
+.ersa-icon-row,
+.ersa-testimonials,
+.ersa-social-gallery {
+  overflow: hidden;
+}
+
+.ersa-icon-row__inner,
+.ersa-testimonials__inner,
+.ersa-social-gallery__inner {
+  max-width: 144rem;
+}
+
+.ersa-icon-row__heading,
+.ersa-testimonials__heading,
+.ersa-social-gallery__heading {
+  margin: 0 auto 2.4rem;
+  max-width: 14ch;
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-heading-family);
+  text-align: center;
+  letter-spacing: -0.035em;
+}
+
+.ersa-icon-row__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--ersa-icon-row-columns, 4), minmax(0, 1fr));
+  gap: 0.1rem;
+  border-block: 0.1rem solid rgba(var(--color-foreground), 0.14);
+}
+
+.ersa-icon-row__item {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  min-height: 14rem;
+  padding: clamp(2rem, 3vw, 3.6rem) 1.6rem;
+  text-align: center;
+  border-inline-end: 0.1rem solid rgba(var(--color-foreground), 0.14);
+}
+
+.ersa-icon-row__item:last-child {
+  border-inline-end: 0;
+}
+
+.ersa-icon-row__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.ersa-icon-row__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.4;
+}
+
+.ersa-icon-row__title {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.2rem, 2.4vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.ersa-icon-row__text,
+.ersa-icon-row__text p {
+  margin: 0;
+  max-width: 24rem;
+  color: rgba(var(--color-foreground), 0.68);
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.ersa-testimonials__header,
+.ersa-social-gallery__header {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin: 0 auto clamp(2.8rem, 4vw, 5.2rem);
+  text-align: center;
+}
+
+.ersa-testimonials__eyebrow {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ersa-testimonials__text,
+.ersa-social-gallery__text {
+  max-width: 62rem;
+  color: rgba(var(--color-foreground), 0.68);
+}
+
+.ersa-testimonials__text p,
+.ersa-social-gallery__text p {
+  margin: 0;
+}
+
+.ersa-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 2vw, 2.4rem);
+}
+
+.ersa-testimonials__card {
+  display: grid;
+  align-content: space-between;
+  gap: 2rem;
+  min-height: 28rem;
+  margin: 0;
+  padding: clamp(2rem, 3vw, 3.2rem);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-radius: 2.4rem;
+  background:
+    linear-gradient(180deg, rgba(var(--color-foreground), 0.025), transparent),
+    rgb(var(--color-background));
+  box-shadow: 0 1.8rem 4.4rem rgba(var(--color-shadow), 0.07);
+}
+
+.ersa-testimonials__stars {
+  color: rgb(var(--color-foreground));
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+}
+
+.ersa-testimonials__card blockquote {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.2rem, 2vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.ersa-testimonials__card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(var(--color-foreground), 0.72);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ersa-testimonials__avatar {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ersa-social-gallery__subtitle {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+.ersa-social-gallery__track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.ersa-social-gallery__track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.ersa-social-gallery__track::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--color-foreground), 0.2);
+  border-radius: 4px;
+}
+
+.ersa-social-gallery__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(25% - 1.5rem);
+  scroll-snap-align: start;
+}
+
+.ersa-social-gallery__item-header {
+  margin-bottom: 1.2rem;
+}
+
+.ersa-social-gallery__item-header p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.ersa-social-gallery__item-header a {
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ersa-social-gallery__item-header a:hover {
+  text-decoration: none;
+}
+
+.ersa-social-gallery__image-link {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 1.6rem;
+}
+
+.ersa-social-gallery__image,
+.ersa-social-gallery__placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ersa-social-gallery__item-footer {
+  margin-top: auto;
+}
+
+.ersa-social-gallery__button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 0;
+}
+
+.ersa-social-gallery__button:hover {
+  text-decoration: none;
+}
+
+.ersa-social-gallery__image-link:hover .ersa-social-gallery__image,
+.ersa-social-gallery__image-link:focus-visible .ersa-social-gallery__image {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 989px) {
+  .ersa-icon-row__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ersa-icon-row__item:nth-child(2n) {
+    border-inline-end: 0;
+  }
+
+  .ersa-icon-row__item:nth-child(n + 3) {
+    border-block-start: 0.1rem solid rgba(var(--color-foreground), 0.14);
+  }
+
+  .ersa-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ersa-icon-row__inner,
+  .ersa-testimonials__inner,
+  .ersa-social-gallery__inner {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  .ersa-icon-row__item {
+    min-height: 13rem;
+    padding: 2rem 1rem;
+  }
+
+  .ersa-icon-row__title {
+    font-size: 2.4rem;
+  }
+
+  .ersa-testimonials__card {
+    min-height: auto;
+    border-radius: 1.8rem;
+  }
+
+  .ersa-social-gallery__track {
+    margin-left: -1.8rem;
+    margin-right: -1.8rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+}
+

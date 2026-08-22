@@ -1,0 +1,40 @@
+/* Header top alignment: hide announcement ticker and keep header stuck to top */
+.announcement-bar-section,
+.utility-bar,
+.announcement-bar-ticker {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.shopify-section-group-header-group,
+.section-header,
+body:has(main[data-template='index']) .section-header,
+main[data-template='index'] ~ .section-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.header-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header-wrapper.gradient {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='index']) .section-header {
+  margin-bottom: -6.8rem !important;
+}
+
+/* Header logo size refinement */
+.header__heading-link .h2,
+.template-index .header__heading-link .h2,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header) .header__heading-link .h2 {
+  font-size: clamp(2.2rem, 1.75vw, 3.2rem) !important;
+  line-height: 1 !important;
+}
+

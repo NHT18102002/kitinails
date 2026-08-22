@@ -1,0 +1,84 @@
+/* Mobile header logo: smaller and visually centered */
+@media screen and (max-width: 749px) {
+  .section-header .header,
+  .shopify-section-group-header-group .header {
+    position: relative !important;
+  }
+
+  .section-header .header .header__heading,
+  .shopify-section-group-header-group .header .header__heading {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    width: auto !important;
+    max-width: 46vw !important;
+    justify-self: center !important;
+    text-align: center !important;
+  }
+
+  .section-header .header .header__heading-link,
+  .shopify-section-group-header-group .header .header__heading-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.2rem 0.4rem !important;
+    min-height: auto !important;
+    width: auto !important;
+  }
+
+  .section-header .header .header__heading-logo-wrapper,
+  .shopify-section-group-header-group .header .header__heading-logo-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  .section-header .header .header__heading-logo,
+  .shopify-section-group-header-group .header .header__heading-logo {
+    width: auto !important;
+    max-width: min(13.2rem, 42vw) !important;
+    max-height: 2.8rem !important;
+    object-fit: contain !important;
+  }
+
+  .section-header .header .header__heading-logo--fallback,
+  .shopify-section-group-header-group .header .header__heading-logo--fallback {
+    max-width: min(13.2rem, 42vw) !important;
+    max-height: 2.8rem !important;
+  }
+
+  .section-header .header .header__heading-link .h2,
+  .shopify-section-group-header-group .header .header__heading-link .h2 {
+    font-size: clamp(2.2rem, 7vw, 2.8rem) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Final mobile logo centering override */
+@media screen and (max-width: 749px) {
+  body .shopify-section-group-header-group .header > .header__heading,
+  body .section-header .header > .header__heading,
+  body .header.header--mobile-center > .header__heading {
+    grid-area: auto !important;
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    translate: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+  }
+}
+

@@ -1,0 +1,33 @@
+/* Homepage FAQ */
+.section .collapsible-content__heading,
+.collapsible-content__heading {
+  font-family: var(--font-heading-family);
+  font-size: clamp(4rem, 6vw, 8rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+}
+
+.collapsible-content .caption-with-letter-spacing {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.collapsible-content summary,
+.collapsible-content .accordion__title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.collapsible-content .accordion {
+  border-color: rgba(var(--color-foreground), 0.12);
+}
+
+.collapsible-content .accordion__content {
+  color: rgba(var(--color-foreground), 0.72);
+  line-height: 1.7;
+}
+

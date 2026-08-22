@@ -1,0 +1,188 @@
+/* ==========================================================================
+   PRODUCT PAGE VISUAL QA OVERRIDES (Kiti Nails Reference)
+   ========================================================================== */
+
+/* 1. Layout & Grid adjustments */
+@media screen and (min-width: 990px) {
+  .product--large:not(.product--no-media) .product__media-wrapper {
+    max-width: 55%; width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .product--large:not(.product--no-media) .product__info-wrapper {
+    max-width: 45%;
+    width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
+    padding-left: 2rem;
+  }
+}
+
+/* Make product info sticky */
+.product__column-sticky {
+  position: sticky;
+  top: 3rem;
+  z-index: 2;
+}
+
+/* 2. Typography */
+.product__title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2.4rem, 4vw, 3.2rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 1.5rem !important;
+  text-transform: none !important;
+}
+.product__title h1 {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+}
+
+.product__info-container .price,
+.product__info-container .price-item {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  color: #0b0b0b !important;
+  letter-spacing: normal !important;
+}
+
+/* 3. Buy Buttons */
+.product-form__buttons {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.product-form__submit {
+  background-color: #0b0b0b !important;
+  color: #ffffff !important;
+  border-radius: 0.8rem !important;
+  padding: 1.2rem 1.9rem !important;
+  font-size: 1.44rem !important;
+  text-transform: uppercase !important;
+  height: 4.6rem !important;
+  min-height: 4.6rem !important;
+  width: 100% !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  border: none !important;
+  transition: opacity 0.3s ease !important;
+}
+.product-form__submit:hover {
+  opacity: 0.8 !important;
+}
+
+.product-form__submit::before,
+.product-form__submit::after {
+  display: none !important;
+}
+
+.shopify-payment-button__button {
+  border-radius: 0.8rem !important;
+}
+
+/* 4. Quantity Selector */
+.product-form__quantity .quantity {
+  height: 4.6rem !important;
+  min-height: 4.6rem !important;
+  border-radius: 0.8rem !important;
+  border: 1px solid rgba(11, 11, 11, 0.2) !important;
+}
+.product-form__quantity .quantity::after,
+.product-form__quantity .quantity::before {
+  display: none !important;
+}
+.quantity__input {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.4rem !important;
+}
+
+/* 5. Variant Picker */
+fieldset.product-form__input {
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+.form__label {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 1rem !important;
+}
+.product-form__input input[type=radio] + label {
+  border-radius: 0.4rem !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.3rem !important;
+  padding: 0.8rem 1.6rem !important;
+  border: 1px solid rgba(11, 11, 11, 0.2) !important;
+  background-color: transparent !important;
+  color: #0b0b0b !important;
+  transition: all 0.2s ease !important;
+}
+.product-form__input input[type=radio]:checked + label {
+  background-color: #0b0b0b !important;
+  color: #ffffff !important;
+  border-color: #0b0b0b !important;
+}
+.product-form__input input[type=radio] + label:hover {
+  border-color: #0b0b0b !important;
+}
+
+/* 6. Accordions */
+.accordion {
+  border-top: 1px solid rgba(11, 11, 11, 0.1) !important;
+  border-bottom: none !important;
+  margin-top: 0 !important;
+}
+.accordion + .accordion {
+  margin-top: 0 !important;
+}
+.accordion__title {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+.accordion summary {
+  padding: 1.5rem 0 !important;
+}
+.accordion__content {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 1.4rem !important;
+  color: rgba(11, 11, 11, 0.8) !important;
+  margin-bottom: 1.5rem !important;
+}
+.accordion .icon-caret {
+  right: 0 !important;
+}
+
+/* 7. Gallery Thumbnail adjustments */
+.thumbnail-list {
+  grid-gap: 1rem !important;
+}
+.thumbnail {
+  border-radius: 0.8rem !important;
+}
+.thumbnail[aria-current] {
+  border: 2px solid #0b0b0b !important;
+}
+
+/* Make page edge-to-edge like reference site */
+.page-width {
+  max-width: none !important;
+}
+
+/* Layout overrides for product info container */
+.product__info-wrapper .product__info-container {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+.product-form__submit {
+  max-width: 350px !important;
+  margin-left: 0 !important;
+}
+

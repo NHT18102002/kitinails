@@ -1,0 +1,480 @@
+/* ============================================================
+   As Seen In é”?press/media logos strip
+   ============================================================ */
+.ersa-as-seen-in {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.ersa-as-seen-in__inner {
+  max-width: 144rem;
+}
+
+.ersa-as-seen-in__heading {
+  margin: 0 0 2.4rem;
+  text-align: center;
+  font-family: var(--ersa-body-font);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.48);
+}
+
+.ersa-as-seen-in__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2.4rem, 4vw, 5.6rem);
+}
+
+.ersa-as-seen-in__logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ersa-as-seen-in__logo-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.ersa-as-seen-in__logo-img {
+  width: auto;
+  height: clamp(2rem, 2.6vw, 3.6rem);
+  max-width: 14rem;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.24s ease, filter 0.24s ease;
+}
+
+.ersa-as-seen-in__logo-item:hover .ersa-as-seen-in__logo-img {
+  opacity: 0.9;
+  filter: grayscale(0%);
+}
+
+.ersa-as-seen-in__logo-placeholder {
+  width: 10rem;
+  height: 3rem;
+  opacity: 0.24;
+}
+
+.ersa-as-seen-in__logo-placeholder .placeholder-svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 749px) {
+  .ersa-as-seen-in__logos {
+    gap: 2rem 2.8rem;
+  }
+
+  .ersa-as-seen-in__logo-img {
+    height: 2rem;
+    max-width: 10rem;
+  }
+}
+
+/* ============================================================
+   Collection Grid é”?curated collection cards
+   ============================================================ */
+.ersa-collection-grid__inner {
+  max-width: 144rem;
+}
+
+.ersa-collection-grid__header {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin: 0 auto clamp(2.8rem, 4vw, 4.8rem);
+  text-align: center;
+}
+
+.ersa-collection-grid__heading {
+  margin: 0;
+  font-family: var(--ersa-display-font);
+  font-size: clamp(3.4rem, 3.6vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.ersa-collection-grid__subheading {
+  margin: 0;
+  max-width: 48rem;
+  color: rgba(var(--color-foreground), 0.62);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.ersa-collection-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 1fr));
+  gap: clamp(1.4rem, 2vw, 2.4rem);
+}
+
+.ersa-collection-grid__card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 2.4rem;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ersa-collection-grid__card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1.6rem 4rem rgba(var(--color-shadow), 0.1);
+}
+
+.ersa-collection-grid__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: rgba(var(--color-foreground), 0.04);
+  border-radius: 2.4rem;
+}
+
+.ersa-collection-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ersa-collection-grid__card:hover .ersa-collection-grid__image {
+  transform: scale(1.05);
+}
+
+.ersa-collection-grid__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.ersa-collection-grid__placeholder .placeholder-svg {
+  width: 60%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.ersa-collection-grid__info {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.4rem 0.8rem 0.4rem;
+  text-align: center;
+}
+
+.ersa-collection-grid__title {
+  margin: 0;
+  font-family: var(--ersa-body-font);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ersa-collection-grid__count {
+  color: rgba(var(--color-foreground), 0.52);
+  font-size: 1.2rem;
+}
+
+.ersa-collection-grid__view-all {
+  margin-top: clamp(2.4rem, 3vw, 3.6rem);
+  text-align: center;
+}
+
+.ersa-collection-grid__view-all .button {
+  min-width: 20rem;
+}
+
+@media screen and (max-width: 989px) {
+  .ersa-collection-grid__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ersa-collection-grid__grid {
+    gap: 1.2rem;
+  }
+
+  .ersa-collection-grid__image-wrapper {
+    border-radius: 1.8rem;
+  }
+
+  .ersa-collection-grid__card {
+    border-radius: 1.8rem;
+  }
+
+  .ersa-collection-grid__heading {
+    font-size: clamp(3rem, 10vw, 4.6rem);
+  }
+}
+
+/* ============================================================
+   Reviews Carousel é”?customer review cards
+   ============================================================ */
+.ersa-reviews-carousel__inner {
+  max-width: 144rem;
+}
+
+.ersa-reviews-carousel__header {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin: 0 auto clamp(2.8rem, 4vw, 5.2rem);
+  text-align: center;
+}
+
+.ersa-reviews-carousel__eyebrow {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.56);
+}
+
+.ersa-reviews-carousel__heading {
+  margin: 0;
+  font-family: var(--ersa-display-font);
+  font-size: clamp(3.6rem, 3.8vw, 7.2rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.ersa-reviews-carousel__rating-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(var(--color-foreground), 0.06);
+}
+
+.ersa-reviews-carousel__stars-display {
+  color: #f5a623;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+}
+
+.ersa-reviews-carousel__rating-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+}
+
+.ersa-reviews-carousel__subheading {
+  margin: 0;
+  max-width: 48rem;
+  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.ersa-reviews-carousel__track-wrapper {
+  overflow: hidden;
+  margin-left: calc(-1 * var(--foundation-page-gutter-desktop, 4.8rem));
+  margin-right: calc(-1 * var(--foundation-page-gutter-desktop, 4.8rem));
+  padding-left: var(--foundation-page-gutter-desktop, 4.8rem);
+  padding-right: var(--foundation-page-gutter-desktop, 4.8rem);
+}
+
+.ersa-reviews-carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(30rem, 38rem);
+  gap: clamp(1.4rem, 2vw, 2.4rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--color-foreground), 0.16) transparent;
+  padding-bottom: 1.6rem;
+  cursor: grab;
+}
+
+.ersa-reviews-carousel__track:active {
+  cursor: grabbing;
+}
+
+.ersa-reviews-carousel__card {
+  display: grid;
+  align-content: space-between;
+  gap: 2rem;
+  min-height: 26rem;
+  margin: 0;
+  padding: clamp(2rem, 3vw, 3.2rem);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 2.4rem;
+  background:
+    linear-gradient(180deg, rgba(var(--color-foreground), 0.02), transparent),
+    rgb(var(--color-background));
+  box-shadow: 0 1.2rem 3.6rem rgba(var(--color-shadow), 0.06);
+  scroll-snap-align: start;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.ersa-reviews-carousel__card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 2rem 4.8rem rgba(var(--color-shadow), 0.1);
+}
+
+.ersa-reviews-carousel__card-stars {
+  color: #f5a623;
+  font-size: 1.4rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.6rem;
+}
+
+.ersa-reviews-carousel__card-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--ersa-body-font);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.ersa-reviews-carousel__card-quote {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.72);
+  font-size: 1.4rem;
+  line-height: 1.65;
+}
+
+.ersa-reviews-carousel__card-quote p {
+  margin: 0;
+}
+
+.ersa-reviews-carousel__card-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.2rem;
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.ersa-reviews-carousel__avatar {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ersa-reviews-carousel__avatar-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: rgba(var(--color-foreground), 0.08);
+  color: rgba(var(--color-foreground), 0.5);
+  font-size: 1.6rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ersa-reviews-carousel__author-info {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.ersa-reviews-carousel__author-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.ersa-reviews-carousel__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #2da44e;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ersa-reviews-carousel__verified svg {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .ersa-reviews-carousel {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  .ersa-reviews-carousel__inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .ersa-reviews-carousel__track-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .ersa-reviews-carousel__track {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-auto-columns: min(32rem, calc(100vw - 5.6rem));
+    justify-content: start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-x: contain;
+    scroll-padding-left: 0;
+    box-sizing: border-box;
+  }
+
+  .ersa-reviews-carousel__card {
+    min-height: auto;
+    border-radius: 1.8rem;
+    padding: 2rem;
+  }
+
+  .ersa-reviews-carousel__heading {
+    font-size: clamp(3.2rem, 10vw, 5rem);
+  }
+}
+
+/* ============================================================
+   Hero review badge
+   ============================================================ */
+.banner__review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(0.8rem);
+  border: 0.1rem solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.banner__review-badge-stars {
+  color: #f5a623;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+}

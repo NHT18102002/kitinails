@@ -1,0 +1,47 @@
+/* Custom Hero Styles */
+.banner__review-badge {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-badge-star {
+  font-size: 1.4rem;
+}
+
+.slideshow__text.banner__box {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.slideshow__text .banner__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.slide__btn {
+  border-radius: 4rem;
+  padding: 1.5rem 3rem;
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.button--secondary.slide__btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.button--secondary.slide__btn:hover {
+  background: #fff;
+  color: #000;
+}
+

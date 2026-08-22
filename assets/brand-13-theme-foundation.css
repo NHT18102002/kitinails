@@ -1,0 +1,34 @@
+/* Visual parity pass - Kiti reference alignment */
+body,
+button,
+input,
+select,
+textarea,
+.header__menu-item,
+.header__icon,
+.announcement-bar__message {
+  font-family: var(--ersa-body-font);
+}
+
+h1,
+h2,
+h3,
+.h0,
+.h1,
+.h2,
+.h3,
+.banner__heading,
+.title,
+.collection-hero__title,
+.main-page-title,
+.header__heading-link .h2 {
+  font-family: var(--ersa-display-font);
+}
+
+.announcement-bar__message {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+

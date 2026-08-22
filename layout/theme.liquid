@@ -317,7 +317,9 @@
 
     {{ 'theme-tokens.css' | asset_url | stylesheet_tag }}
     {{ 'theme-foundation.css' | asset_url | stylesheet_tag }}
-    {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
+    {%- unless content_for_layout contains 'theme-brand-styles-anchor' -%}
+      {% render 'theme-brand-styles' %}
+    {%- endunless -%}
     {{ 'theme-foundation-cascade.css' | asset_url | stylesheet_tag }}
     {{ 'page-product-cascade-01.css' | asset_url | stylesheet_tag }}
     {{ 'feature-cart-cascade-01.css' | asset_url | stylesheet_tag }}
@@ -420,5 +422,6 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
   </body>
 </html>

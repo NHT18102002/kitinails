@@ -1,0 +1,170 @@
+/* Collection hero parity with Kiti reference */
+body:has(.collection-hero--with-image) .collection-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 48rem;
+  background: #111;
+  color: #fff;
+}
+
+body:has(.collection-hero--with-image) .collection-hero__inner {
+  position: relative;
+  display: grid !important;
+  min-height: 48rem !important;
+  padding: 0 !important;
+  max-width: none !important;
+  width: 100%;
+  place-items: center;
+  isolation: isolate;
+}
+
+body:has(.collection-hero--with-image) .collection-hero__image-container {
+  position: absolute !important;
+  inset: 0;
+  z-index: -2;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 48rem !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+body:has(.collection-hero--with-image) .collection-hero__image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+body:has(.collection-hero--with-image) .collection-hero__inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+body:has(.collection-hero--with-image) .collection-hero__text-wrapper {
+  max-width: min(68rem, calc(100vw - 4rem));
+  padding: 0 2rem;
+  text-align: center;
+}
+
+body:has(.collection-hero--with-image) .collection-hero__title {
+  max-width: none;
+  color: #fff !important;
+  font-size: clamp(4.8rem, 4vw, 7.4rem);
+  line-height: 0.98;
+  text-shadow: 0 0.2rem 1.6rem rgba(0,0,0,0.2);
+}
+
+body:has(.collection-hero--with-image) .collection-hero__description,
+body:has(.collection-hero--with-image) .collection-hero__description p {
+  margin: 1rem auto 0;
+  max-width: 48rem;
+  color: #fff !important;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+body:has(.collection-hero--with-image) .collection-hero + .shopify-section,
+body:has(.collection-hero--with-image) #MainContent > .shopify-section + .shopify-section {
+  margin-top: 0 !important;
+}
+
+body:has(.collection-hero--with-image) .facets-wrapper {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  body:has(.collection-hero--with-image) .collection-hero,
+  body:has(.collection-hero--with-image) .collection-hero__inner,
+  body:has(.collection-hero--with-image) .collection-hero__image-container {
+    min-height: 34rem !important;
+  }
+
+  body:has(.collection-hero--with-image) .collection-hero__title {
+    font-size: clamp(4rem, 12vw, 5.6rem);
+  }
+}
+
+/* Direct collection hero selectors for browser compatibility */
+.collection-hero--with-image {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 48rem !important;
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.collection-hero--with-image .collection-hero__inner {
+  position: relative !important;
+  display: grid !important;
+  min-height: 48rem !important;
+  padding: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  place-items: center !important;
+  isolation: isolate;
+}
+
+.collection-hero--with-image .collection-hero__image-container {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 48rem !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.collection-hero--with-image .collection-hero__image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 42% !important;
+}
+
+.collection-hero--with-image .collection-hero__inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.collection-hero--with-image .collection-hero__text-wrapper {
+  max-width: min(68rem, calc(100vw - 4rem)) !important;
+  padding: 0 2rem !important;
+  text-align: center !important;
+}
+
+.collection-hero--with-image .collection-hero__title {
+  max-width: none !important;
+  color: #fff !important;
+  font-size: clamp(4.8rem, 4vw, 7.4rem) !important;
+  line-height: 0.98 !important;
+  text-shadow: 0 0.2rem 1.6rem rgba(0,0,0,0.2);
+}
+
+.collection-hero--with-image .collection-hero__description,
+.collection-hero--with-image .collection-hero__description p {
+  margin: 1rem auto 0 !important;
+  max-width: 48rem !important;
+  color: #fff !important;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+}
+
+@media screen and (max-width: 749px) {
+  .collection-hero--with-image,
+  .collection-hero--with-image .collection-hero__inner,
+  .collection-hero--with-image .collection-hero__image-container {
+    min-height: 34rem !important;
+  }
+}
+
