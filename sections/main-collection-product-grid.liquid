@@ -135,8 +135,9 @@
         class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}"
         data-collection-filters-root
       >
-        {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-        {{ 'collection-filters.css' | asset_url | stylesheet_tag }}
+        {{ 'feature-facets.css' | asset_url | stylesheet_tag }}
+        {{ 'page-collection.css' | asset_url | stylesheet_tag }}
+        <script src="{{ 'facets.helpers.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'collection-filters.helpers.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'collection-filters.js' | asset_url }}" defer="defer"></script>

@@ -40,3 +40,9 @@ The routes, console behavior, accessibility output, screenshots, Theme Check res
 The existing global token values moved unchanged into `theme-tokens.css`. The first document-wide layout and shell primitives moved unchanged into `theme-foundation.css`. Both assets remain in the exact cascade position previously occupied by the opening of `custom-theme.css`: after Dawn `base.css` and before the remaining compatibility rules. Brand font aliases were also centralized without changing their values.
 
 The former `custom-theme-overrides.css` is now explicitly named `legacy-compat.css`, at the same cascade position. This checkpoint deliberately leaves feature and page rules in the two transitional stylesheets. Moving those rules is gated by their vertical slices so that later selectors and existing `!important` declarations retain their original cascade behavior.
+
+## Phase 2 — collection/search facets
+
+`facets.js` is now the single rendering engine for both templates. It publishes `ersa:facets:rendered` with `{ template, productCount }` and continues to publish `collection:facets-rendered` and `search:facets-rendered` during migration. Page controllers configure submit behavior through the cancelable `ersa:facets:before-submit` event; neither controller patches `FacetFiltersForm.prototype` or replaces its static methods.
+
+`facets.helpers.js` owns pure query merging. Repeated filter values are preserved, blank values are removed, and search singleton keys use the submitting form as the final authority. The latter prevents a hidden sort form from overwriting the visible selection in WebKit. Shared Dawn facet styling is now explicitly owned by `feature-facets.css`; collection and search visual rules remain scoped in `page-collection.css` and `page-search.css`.

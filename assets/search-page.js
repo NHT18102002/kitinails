@@ -12,6 +12,23 @@
     if (typeof FacetFiltersForm === 'undefined') return null;
     return FacetFiltersForm;
   };
+  const buildSearchParams =
+    window.ErsaFacetsHelpers?.buildSearchParams ||
+    ((entryGroups, options = {}) => {
+      const params = new URLSearchParams();
+      const singletonKeys = new Set(options.singletonKeys || []);
+      Array.from(entryGroups || []).forEach((entries) => {
+        Array.from(entries || []).forEach(([key, value]) => {
+          if (!key || value == null || value === '') return;
+          if (singletonKeys.has(key)) {
+            params.set(key, value);
+          } else {
+            params.append(key, value);
+          }
+        });
+      });
+      return params.toString();
+    });
 
   const isExpandableQuery = (query) => {
     const SearchFormClass = getSearchFormClass();
@@ -208,18 +225,12 @@
     const FacetFiltersFormClass = getFacetFiltersFormClass();
     if (!form || !FacetFiltersFormClass) return;
 
-    const params = new URLSearchParams();
-    const formData = new FormData(form);
-
-    formData.forEach((value, key) => {
-      if (value === '') return;
-      params.append(key, value);
-    });
+    const searchParams = buildSearchParams([Array.from(new FormData(form).entries())]);
 
     state.mobileApplying = true;
     setMobileDirty(false);
     closeMobileDrawer();
-    FacetFiltersFormClass.renderPage(params.toString(), null, true);
+    FacetFiltersFormClass.renderPage(searchParams, null, true);
   };
 
   const resetMobileDraft = () => {
@@ -232,100 +243,40 @@
     });
   };
 
-  const patchFacetFilters = () => {
-    const FacetFiltersFormClass = getFacetFiltersFormClass();
-    if (window.__ersaSearchFacetsPatched || !FacetFiltersFormClass) return;
-    window.__ersaSearchFacetsPatched = true;
+  searchMain.addEventListener('ersa:facets:before-submit', (event) => {
+    const form = event.detail?.form;
 
-    const originalOnSubmitHandler = FacetFiltersFormClass.prototype.onSubmitHandler;
-    FacetFiltersFormClass.prototype.onSubmitHandler = function onSubmitHandlerPatched(event) {
-      const form = event?.target?.closest?.('form');
-
-      if (form?.id === 'FacetFiltersFormMobile') {
-        event.preventDefault();
-        if (state.mobileResetting || !getMobileDisclosure()?.hasAttribute('open')) {
-          setMobileDirty(false);
-          return;
-        }
-
-        setMobileDirty(true);
-        return;
-      }
-
-      if (!form || !searchMain.contains(form)) {
-        return originalOnSubmitHandler.call(this, event);
-      }
-
+    if (form?.id === 'FacetFiltersFormMobile') {
       event.preventDefault();
-      const mergedParams = new URLSearchParams();
-      const singletonKeys = new Set([
-        'q',
-        'type',
-        'options[prefix]',
-        'options[unavailable_products]',
-        'display_q',
-        'sort_by',
-      ]);
-
-      document
-        .querySelectorAll("main[data-template='search'] facet-filters-form form")
-        .forEach((facetForm) => {
-          if (!['FacetSortForm', 'FacetFiltersForm', 'FacetSortDrawerForm'].includes(facetForm.id)) return;
-
-          new FormData(facetForm).forEach((value, key) => {
-            if (value === '') return;
-            if (singletonKeys.has(key)) {
-              mergedParams.set(key, value);
-              return;
-            }
-
-            mergedParams.append(key, value);
-          });
-        });
-
-      return this.onSubmitForm(mergedParams.toString(), event);
-    };
-
-    const originalRenderProductCount = FacetFiltersFormClass.renderProductCount;
-    FacetFiltersFormClass.renderProductCount = function renderProductCountPatched(html, updateEvent) {
-      const parsedHtml = new DOMParser().parseFromString(html, 'text/html');
-      const sourceCount = parsedHtml.getElementById('ProductCount') || parsedHtml.getElementById('ProductCountDesktop');
-
-      if (!sourceCount) {
-        originalRenderProductCount.call(this, html, updateEvent);
-        syncSearchStateFromUrl();
+      if (state.mobileResetting || !getMobileDisclosure()?.hasAttribute('open')) {
+        setMobileDirty(false);
         return;
       }
 
-      const countMarkup = sourceCount.innerHTML;
-      const productCount = sourceCount.dataset.productCount || '';
-      const totalCount = sourceCount.dataset.totalCount || '';
-      const countContainer = document.getElementById('ProductCount');
-      const countContainerDesktop = document.getElementById('ProductCountDesktop');
+      setMobileDirty(true);
+      return;
+    }
 
-      if (countContainer) {
-        countContainer.innerHTML = countMarkup;
-        countContainer.dataset.productCount = productCount;
-        countContainer.dataset.totalCount = totalCount;
-        countContainer.classList.remove('loading');
-      }
+    if (!form || !searchMain.contains(form)) return;
 
-      if (countContainerDesktop) {
-        countContainerDesktop.innerHTML = countMarkup;
-        countContainerDesktop.classList.remove('loading');
-      }
+    const singletonKeys = [
+      'q',
+      'type',
+      'options[prefix]',
+      'options[unavailable_products]',
+      'display_q',
+      'sort_by',
+    ];
+    const facetForms = Array.from(
+      document.querySelectorAll("main[data-template='search'] facet-filters-form form")
+    ).filter((facetForm) => ['FacetSortForm', 'FacetFiltersForm', 'FacetSortDrawerForm'].includes(facetForm.id));
+    const formEntryGroups = facetForms
+      .sort((left, right) => Number(left === form) - Number(right === form))
+      .map((facetForm) => Array.from(new FormData(facetForm).entries()));
 
-      document
-        .querySelectorAll('.facets-container .loading__spinner, facet-filters-form .loading__spinner')
-        .forEach((spinner) => spinner.classList.add('hidden'));
+    event.detail.searchParams = buildSearchParams(formEntryGroups, { singletonKeys });
+  });
 
-      updateEvent?.resolve(parseInt(productCount, 10) || 0);
-      syncSearchStateFromUrl();
-      document.dispatchEvent(new CustomEvent('search:facets-rendered'));
-    };
-  };
-
-  patchFacetFilters();
   syncSearchStateFromUrl();
 
   document.addEventListener(
@@ -415,6 +366,11 @@
   document.addEventListener('search:facets-rendered', () => {
     state.mobileApplying = false;
     setMobileDirty(false);
+    syncSearchStateFromUrl();
+  });
+
+  document.addEventListener('shopify:section:load', (event) => {
+    if (!event.target.closest?.("main[data-template='search']") && !searchMain.contains(event.target)) return;
     syncSearchStateFromUrl();
   });
 

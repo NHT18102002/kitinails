@@ -23,6 +23,17 @@
       });
       return params.toString();
     });
+  const buildSearchParams =
+    window.ErsaFacetsHelpers?.buildSearchParams ||
+    ((entryGroups) => {
+      const params = new URLSearchParams();
+      Array.from(entryGroups || []).forEach((entries) => {
+        Array.from(entries || []).forEach(([key, value]) => {
+          if (key && value != null && value !== '') params.append(key, value);
+        });
+      });
+      return params.toString();
+    });
 
   const state = {
     mobileApplying: false,
@@ -175,18 +186,12 @@
     const form = getMobileForm();
     if (!form || typeof FacetFiltersForm === 'undefined') return;
 
-    const searchParams = new URLSearchParams();
-    const formData = new FormData(form);
-
-    formData.forEach((value, key) => {
-      if (value === '') return;
-      searchParams.append(key, value);
-    });
+    const searchParams = buildSearchParams([Array.from(new FormData(form).entries())]);
 
     state.mobileApplying = true;
     setMobileDirty(false);
     closeMobileDrawer();
-    FacetFiltersForm.renderPage(searchParams.toString(), null, true);
+    FacetFiltersForm.renderPage(searchParams, null, true);
   };
 
   const reorderFilterGroupContainer = (container) => {
@@ -261,55 +266,12 @@
     setReferenceDesktopLayout(Boolean(desktopSelection?.strictReferenceMode && isDesktopViewport()));
   };
 
-  const patchFacetFilters = () => {
-    if (window.__ersaCollectionFacetsPatched || typeof FacetFiltersForm === 'undefined') return;
-    window.__ersaCollectionFacetsPatched = true;
+  collectionMain.addEventListener('ersa:facets:before-submit', (event) => {
+    if (event.detail?.form?.id !== 'FacetFiltersFormMobile') return;
+    event.preventDefault();
+    setMobileDirty(true);
+  });
 
-    const originalOnSubmitHandler = FacetFiltersForm.prototype.onSubmitHandler;
-    FacetFiltersForm.prototype.onSubmitHandler = function onSubmitHandlerPatched(event) {
-      const form = event?.target?.closest?.('form');
-      if (form?.id === 'FacetFiltersFormMobile') {
-        event.preventDefault();
-        setMobileDirty(true);
-        return;
-      }
-
-      return originalOnSubmitHandler.call(this, event);
-    };
-
-    FacetFiltersForm.renderProductCount = function renderProductCountPatched(html, updateEvent) {
-      const parsedHtml = new DOMParser().parseFromString(html, 'text/html');
-      const sourceCount = parsedHtml.getElementById('ProductCount') || parsedHtml.getElementById('ProductCountDesktop');
-      if (!sourceCount) return;
-
-      const countMarkup = sourceCount.innerHTML;
-      const productCount = sourceCount.dataset.productCount || '';
-      const totalCount = sourceCount.dataset.totalCount || '';
-      const countContainer = document.getElementById('ProductCount');
-      const countContainerDesktop = document.getElementById('ProductCountDesktop');
-
-      if (countContainer) {
-        countContainer.innerHTML = countMarkup;
-        countContainer.dataset.productCount = productCount;
-        countContainer.dataset.totalCount = totalCount;
-        countContainer.classList.remove('loading');
-      }
-
-      if (countContainerDesktop) {
-        countContainerDesktop.innerHTML = countMarkup;
-        countContainerDesktop.classList.remove('loading');
-      }
-
-      document
-        .querySelectorAll('.facets-container .loading__spinner, facet-filters-form .loading__spinner')
-        .forEach((spinner) => spinner.classList.add('hidden'));
-
-      updateEvent?.resolve(parseInt(productCount, 10) || 0);
-      document.dispatchEvent(new CustomEvent('collection:facets-rendered'));
-    };
-  };
-
-  patchFacetFilters();
   applyReferenceFilterLayout();
   setSortPanelOpen(false);
   syncDesktopControls();
@@ -460,6 +422,12 @@
 
   document.addEventListener('collection:facets-rendered', () => {
     state.mobileApplying = false;
+    applyReferenceFilterLayout();
+    syncDesktopControls();
+  });
+
+  document.addEventListener('shopify:section:load', (event) => {
+    if (!event.target.closest?.("main[data-template='collection']") && !collectionMain.contains(event.target)) return;
     applyReferenceFilterLayout();
     syncDesktopControls();
   });

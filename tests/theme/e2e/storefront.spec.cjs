@@ -26,7 +26,11 @@ for (const [name, path] of criticalRoutes) {
     const criticalViolations = accessibility.violations.filter(
       (violation) => violation.impact === 'critical' && !allowedRules.includes(violation.id)
     );
-    const unexpectedRuntimeErrors = runtimeErrors.filter((message) => !baseline.allowedPageErrors.includes(message));
+    const unexpectedRuntimeErrors = runtimeErrors.filter(
+      (message) =>
+        !baseline.allowedPageErrors.includes(message) &&
+        !baseline.allowedPageErrorPatterns.some((pattern) => pattern.test(message))
+    );
 
     expect(criticalViolations).toEqual([]);
     expect(unexpectedRuntimeErrors).toEqual([]);

@@ -151,14 +151,22 @@ class FacetFiltersForm extends HTMLElement {
 
   static renderProductCount(html, updateEvent) {
     const parsedHtml = new DOMParser().parseFromString(html, 'text/html');
-    const sourceCount = parsedHtml.getElementById('ProductCount');
+    const sourceCount = parsedHtml.getElementById('ProductCount') || parsedHtml.getElementById('ProductCountDesktop');
+    if (!sourceCount) return;
+
     const count = sourceCount.innerHTML;
+    const productCount = sourceCount.dataset.productCount || '';
+    const totalCount = sourceCount.dataset.totalCount || '';
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
-    container.innerHTML = count;
-    container.dataset.productCount = sourceCount.dataset.productCount || '';
-    container.dataset.totalCount = sourceCount.dataset.totalCount || '';
-    container.classList.remove('loading');
+
+    if (container) {
+      container.innerHTML = count;
+      container.dataset.productCount = productCount;
+      container.dataset.totalCount = totalCount;
+      container.classList.remove('loading');
+    }
+
     if (containerDesktop) {
       containerDesktop.innerHTML = count;
       containerDesktop.classList.remove('loading');
@@ -168,7 +176,17 @@ class FacetFiltersForm extends HTMLElement {
     );
     loadingSpinners.forEach((spinner) => spinner.classList.add('hidden'));
 
-    updateEvent?.resolve(parseInt(sourceCount.dataset.productCount) || 0);
+    const parsedProductCount = parseInt(productCount, 10) || 0;
+    updateEvent?.resolve(parsedProductCount);
+
+    const facetsContainer = document.querySelector('.facets-container');
+    const template = facetsContainer?.dataset.template || document.querySelector('main[data-template]')?.dataset.template || '';
+    const detail = { template, productCount: parsedProductCount };
+    document.dispatchEvent(new CustomEvent('ersa:facets:rendered', { detail }));
+
+    if (template === 'collection' || template === 'search') {
+      document.dispatchEvent(new CustomEvent(`${template}:facets-rendered`, { detail }));
+    }
   }
 
   static renderFilters(html, event) {
@@ -338,6 +356,21 @@ class FacetFiltersForm extends HTMLElement {
 
   onSubmitHandler(event) {
     event.preventDefault();
+    const form = event.target.closest('form');
+    const submitDetail = { form, searchParams: null };
+    const beforeSubmitEvent = new CustomEvent('ersa:facets:before-submit', {
+      bubbles: true,
+      cancelable: true,
+      detail: submitDetail,
+    });
+
+    this.dispatchEvent(beforeSubmitEvent);
+    if (beforeSubmitEvent.defaultPrevented) return;
+    if (typeof submitDetail.searchParams === 'string') {
+      this.onSubmitForm(submitDetail.searchParams, event);
+      return;
+    }
+
     const sortFilterForms = document.querySelectorAll('facet-filters-form form');
     if (event.srcElement.className == 'mobile-facets__checkbox') {
       const searchParams = this.createSearchParams(event.target.closest('form'));
