@@ -1,0 +1,522 @@
+/* Product page Seafoam reference pass: remove empty-feeling vertical gaps and restore benefits block */
+body:has(main[data-template='product']) .product__info-container {
+  row-gap: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container > * + * {
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product-form__buttons {
+  margin-top: 1.9rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-seel-note {
+  margin-top: 1rem !important;
+  min-height: 3.9rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal {
+  gap: 0.2rem !important;
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .icon-with-text__item {
+  min-height: 4rem !important;
+  border-radius: 0.5rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products {
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products__container {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .summary__title {
+  margin: 0 0 1.5rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .accordion__title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products slideshow-component {
+  display: block !important;
+  padding: 1.6rem 0 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .complementary-slider {
+  min-height: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-slide li {
+  padding: 0 !important;
+  border-radius: 0.7rem !important;
+  background: #fbf9f8 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal {
+  min-height: 14.8rem !important;
+  padding: 1.6rem 1.4rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+  grid-template-columns: 10.6rem minmax(0, 1fr) !important;
+  column-gap: 1.8rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+  width: 10.6rem !important;
+  min-width: 10.6rem !important;
+  flex-basis: 10.6rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__content {
+  align-content: center !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card__information::before {
+  content: 'Buy It With';
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #111;
+  font-family: var(--ersa-body-font, Nunito, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .quick-add {
+  margin-top: 1.2rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .quick-add__submit {
+  min-width: 10.8rem !important;
+  width: 10.8rem !important;
+  min-height: 3.2rem !important;
+  height: 3.2rem !important;
+  padding: 0 1.3rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 1.1rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .slider-buttons {
+  min-height: 2rem !important;
+  margin-top: 0.7rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta {
+  margin-top: 1.4rem !important;
+  min-height: 11.2rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion {
+  max-width: 46rem !important;
+  margin-top: 0 !important;
+  border-top: 0.1rem solid rgba(17, 17, 17, 0.12) !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion + .product__accordion {
+  border-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion details,
+body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+  min-height: 4.6rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+  padding: 1.2rem 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion .summary__title {
+  min-height: 2.2rem !important;
+  align-items: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits {
+  background: #fff !important;
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__inner {
+  max-width: 144rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+  max-width: 72rem !important;
+  margin: 0 auto 6.2rem !important;
+  text-align: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading {
+  margin: 0 !important;
+  color: #111 !important;
+  font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__media {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  margin-bottom: 3rem !important;
+  overflow: hidden !important;
+  border-radius: 0.6rem !important;
+  background: #f8f3f5 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__image,
+body:has(main[data-template='product']) .ersa-product-benefits__placeholder {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__title {
+  margin: 0 0 0.6rem !important;
+  color: #111 !important;
+  font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
+  font-size: 2.4rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__text,
+body:has(main[data-template='product']) .ersa-product-benefits__text p {
+  margin: 0 !important;
+  color: #111 !important;
+  font-family: var(--ersa-body-font, Nunito, sans-serif) !important;
+  font-size: 1.45rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  body:has(main[data-template='product']) .ersa-product-benefits {
+    padding-top: 4.8rem !important;
+    padding-bottom: 4.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__inner {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+    max-width: 72.8rem !important;
+    margin-bottom: 5.4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 3.36rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid {
+    display: flex !important;
+    gap: 2rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__item {
+    flex: 0 0 calc((90% - 2rem) / 2) !important;
+    min-width: calc((90% - 2rem) / 2) !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 3.36rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body:has(main[data-template='product']) #shopify-section-template--20456552235159__main {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .product__info-container .product-form__buttons {
+    margin-top: 1.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note {
+    margin-top: 1rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal {
+    min-height: 12.8rem !important;
+    padding: 1.4rem 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+    grid-template-columns: 7.6rem minmax(0, 1fr) !important;
+    column-gap: 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+    width: 7.6rem !important;
+    min-width: 7.6rem !important;
+    flex-basis: 7.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-custom-cta {
+    margin-top: 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .product__accordion details,
+  body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+    min-height: 4.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+    max-width: 35rem !important;
+    margin-bottom: 4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 2.8rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 3.2rem 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__media {
+    aspect-ratio: 1 / 1 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__title {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__text,
+  body:has(main[data-template='product']) .ersa-product-benefits__text p {
+    font-size: 1.45rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Final PDP benefits fidelity pass: mirrors the reference text highlight and typography. */
+body:has(main[data-template='product']) .ersa-product-benefits__heading {
+  display: inline-block !important;
+  font-family: 'Playfair Display', serif !important;
+  position: relative !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__title {
+  font-family: 'Playfair Display', serif !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  width: 19.4rem;
+  height: 0.8rem;
+  border-bottom: 0.3rem solid #db3851;
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  pointer-events: none;
+}
+
+@media screen and (min-width: 1200px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+    max-width: 84rem !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 2.7rem !important;
+    line-height: 3.5rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+    top: 6.4rem;
+    right: 2.6rem;
+    bottom: auto;
+    left: auto;
+    width: 13.4rem;
+    transform: rotate(-1deg);
+  }
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading {
+  display: inline-block !important;
+  font-family: 'Playfair Display', serif !important;
+  position: relative !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__title {
+  font-family: 'Playfair Display', serif !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  width: 19.4rem;
+  height: 0.8rem;
+  border-bottom: 0.3rem solid #db3851;
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+    top: 9.8rem;
+    left: 8rem;
+    right: auto;
+    bottom: auto;
+    width: 13.4rem;
+    transform: rotate(-1deg);
+  }
+}
+
+main[data-template='index'] .banner__heading {
+  max-width: 52rem !important;
+  font-size: clamp(4.6rem, 3.15vw, 6.4rem) !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.02 !important;
+}
+
+.collection-hero--with-image {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 48rem !important;
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.collection-hero--with-image .collection-hero__inner {
+  position: relative !important;
+  display: grid !important;
+  min-height: 48rem !important;
+  padding: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  place-items: center !important;
+  isolation: isolate;
+}
+
+.collection-hero--with-image .collection-hero__image-container {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 48rem !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.collection-hero--with-image .collection-hero__image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 42% !important;
+}
+
+.collection-hero--with-image .collection-hero__inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.collection-hero--with-image .collection-hero__text-wrapper {
+  max-width: min(68rem, calc(100vw - 4rem)) !important;
+  padding: 0 2rem !important;
+  text-align: center !important;
+}
+
+.collection-hero--with-image .collection-hero__title {
+  max-width: none !important;
+  color: #fff !important;
+  font-size: clamp(4.8rem, 4vw, 7.4rem) !important;
+  line-height: 0.98 !important;
+  text-shadow: 0 0.2rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+.collection-hero--with-image .collection-hero__description,
+.collection-hero--with-image .collection-hero__description p {
+  margin: 1rem auto 0 !important;
+  max-width: 48rem !important;
+  color: #fff !important;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+}
+
+body:has(.collection-hero) #MainContent > .shopify-section + .shopify-section,
+main[data-template='search'] #MainContent > .shopify-section + .shopify-section {
+  margin-top: 0 !important;
+}
+
+body:has(.collection-hero) .facets-wrapper,
+body:has(.collection-hero) .facets-container,
+main[data-template='search'] .facets-wrapper,
+main[data-template='search'] .facets-container,
+body:has(.template-search__header) .facets-wrapper,
+body:has(.template-search__header) .facets-container {
+  min-height: auto !important;
+  height: auto !important;
+  padding-top: 1.6rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+main[data-template='search'] .template-search__header,
+body:has(.template-search__header) .template-search__header {
+  padding-top: 5.6rem !important;
+  padding-bottom: 4.2rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  .collection-hero--with-image,
+  .collection-hero--with-image .collection-hero__inner,
+  .collection-hero--with-image .collection-hero__image-container {
+    min-height: 34rem !important;
+  }
+
+  .collection-hero--with-image .collection-hero__title {
+    font-size: clamp(4rem, 12vw, 5.6rem) !important;
+  }
+}
+

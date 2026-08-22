@@ -1,0 +1,511 @@
+/* Product page Seafoam reference pass final cascade */
+body:has(main[data-template='product']) .product__info-container {
+  row-gap: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container > * + * {
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product-form__buttons {
+  margin-top: 1.9rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-seel-note {
+  margin-top: 1rem !important;
+  min-height: 3.9rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal {
+  gap: 0.2rem !important;
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .icon-with-text__item {
+  min-height: 4rem !important;
+  border-radius: 0.5rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products {
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products__container {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .summary__title {
+  margin: 0 0 1.5rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .accordion__title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products slideshow-component {
+  display: block !important;
+  padding: 1.6rem 0 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .complementary-slider {
+  min-height: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-slide li {
+  padding: 0 !important;
+  border-radius: 0.7rem !important;
+  background: #fbf9f8 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal {
+  min-height: 14.8rem !important;
+  padding: 1.6rem 1.4rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+  grid-template-columns: 10.6rem minmax(0, 1fr) !important;
+  column-gap: 1.8rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+  width: 10.6rem !important;
+  min-width: 10.6rem !important;
+  flex-basis: 10.6rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__content {
+  align-content: center !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card__information::before {
+  content: 'Buy It With';
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #111;
+  font-family: var(--ersa-body-font, Nunito, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .quick-add {
+  margin-top: 1.2rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .quick-add__submit {
+  min-width: 10.8rem !important;
+  width: 10.8rem !important;
+  min-height: 3.2rem !important;
+  height: 3.2rem !important;
+  padding: 0 1.3rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 1.1rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .slider-buttons {
+  min-height: 2rem !important;
+  margin-top: 0.7rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta {
+  margin-top: 1.4rem !important;
+  min-height: 11.2rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion {
+  max-width: 46rem !important;
+  margin-top: 0 !important;
+  border-top: 0.1rem solid rgba(17, 17, 17, 0.12) !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion + .product__accordion {
+  border-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion details,
+body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+  min-height: 4.6rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+  padding: 1.2rem 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion .summary__title {
+  min-height: 2.2rem !important;
+  align-items: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits {
+  background: #fff !important;
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__inner {
+  max-width: 144rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+  max-width: 72rem !important;
+  margin: 0 auto 6.2rem !important;
+  text-align: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading {
+  margin: 0 !important;
+  color: #111 !important;
+  font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__media {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  margin-bottom: 3rem !important;
+  overflow: hidden !important;
+  border-radius: 0.6rem !important;
+  background: #f8f3f5 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__image,
+body:has(main[data-template='product']) .ersa-product-benefits__placeholder {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__title {
+  margin: 0 0 0.6rem !important;
+  color: #111 !important;
+  font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
+  font-size: 2.4rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__text,
+body:has(main[data-template='product']) .ersa-product-benefits__text p {
+  margin: 0 !important;
+  color: #111 !important;
+  font-family: var(--ersa-body-font, Nunito, sans-serif) !important;
+  font-size: 1.45rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  body:has(main[data-template='product']) .ersa-product-benefits {
+    padding-top: 4.8rem !important;
+    padding-bottom: 4.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__inner {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+    max-width: 72.8rem !important;
+    margin-bottom: 5.4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 3.36rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid {
+    display: flex !important;
+    gap: 2rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__item {
+    flex: 0 0 calc((90% - 2rem) / 2) !important;
+    min-width: calc((90% - 2rem) / 2) !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 3.36rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body:has(main[data-template='product']) #shopify-section-template--20456552235159__main {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .product__info-container .product-form__buttons {
+    margin-top: 1.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note {
+    margin-top: 1rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal {
+    min-height: 12.8rem !important;
+    padding: 1.4rem 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+    grid-template-columns: 7.6rem minmax(0, 1fr) !important;
+    column-gap: 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+    width: 7.6rem !important;
+    min-width: 7.6rem !important;
+    flex-basis: 7.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-custom-cta {
+    margin-top: 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .product__accordion details,
+  body:has(main[data-template='product']) .product__info-container .product__accordion summary {
+    min-height: 4.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
+    max-width: 35rem !important;
+    margin-bottom: 4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__heading {
+    font-size: 2.8rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 3.2rem 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__media {
+    aspect-ratio: 1 / 1 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__title {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-benefits__text,
+  body:has(main[data-template='product']) .ersa-product-benefits__text p {
+    font-size: 1.45rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Final PDP benefits fidelity pass: mirrors the reference text highlight and typography. */
+body:has(main[data-template='product']) .ersa-product-benefits__heading {
+  display: inline-block !important;
+  font-family: 'Playfair Display', serif !important;
+  position: relative !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__title {
+  font-family: 'Playfair Display', serif !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  width: 19.4rem;
+  height: 0.8rem;
+  border-bottom: 0.3rem solid #db3851;
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
+    top: 9.8rem !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 6.6rem !important;
+    display: block !important;
+    width: 13.4rem !important;
+    transform: rotate(-1deg) !important;
+  }
+}
+
+/* Final PDP social gallery cleanup: compact mobile carousel and real dots like the reference. */
+body:has(main[data-template='product']) .ersa-social-gallery__dots {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery {
+    padding-bottom: 2.4rem !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__inner,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__inner {
+    max-width: 100vw !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__header,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__header {
+    margin-bottom: 2.4rem !important;
+    padding-inline: 2rem !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__track,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__track {
+    display: flex !important;
+    width: 100vw !important;
+    margin-inline: 0 !important;
+    padding: 0 4rem 0.8rem 2rem !important;
+    gap: 2rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-padding-left: 2rem !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__track::-webkit-scrollbar,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__track::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__track::after,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__track::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item {
+    position: relative !important;
+    flex: 0 0 calc(100vw - 6rem) !important;
+    width: calc(100vw - 6rem) !important;
+    min-width: calc(100vw - 6rem) !important;
+    max-width: calc(100vw - 6rem) !important;
+    padding: 0 !important;
+    scroll-snap-align: start !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item::before,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item-header,
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item-footer,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item-header,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item-footer {
+    padding-inline: 0 !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item-header,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item-header {
+    margin-bottom: 1rem !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__item-header p,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__item-header p {
+    font-size: 1.2rem !important;
+    line-height: 1.3 !important;
+    text-transform: uppercase !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__image-link,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__image-link {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 0 !important;
+    margin-bottom: 1.4rem !important;
+    overflow: hidden !important;
+    border-radius: 0.6rem !important;
+    background: #f7f4f1 !important;
+    box-shadow: none !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__image,
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__placeholder,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__image,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__placeholder {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__button,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__button {
+    font-size: 1.4rem !important;
+    letter-spacing: 0.02em !important;
+    text-underline-offset: 0.3rem !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__dots,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__dots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+    height: 1.2rem !important;
+    margin-top: 0.2rem !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__dot,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__dot {
+    display: block !important;
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+    border: 0.1rem solid rgba(17, 17, 17, 0.35) !important;
+    border-radius: 999rem !important;
+    background: transparent !important;
+  }
+
+  #MainContent .section-ersa-social-gallery .ersa-social-gallery__dot.is-active,
+  body:has(main[data-template='product']) .section-ersa-social-gallery .ersa-social-gallery__dot.is-active {
+    width: 2.4rem !important;
+    border-color: #111 !important;
+    background: #fff !important;
+  }
+}
+

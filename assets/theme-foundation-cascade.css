@@ -1,0 +1,15 @@
+/* Kiti visual QA overrides loaded after custom-theme.css */
+main[data-template='index'] .banner__slideshow-image { animation: none !important; }
+main[data-template='index'] .banner__slideshow-image--1 { opacity: 1 !important; }
+main[data-template='index'] .banner__slideshow-image:not(.banner__slideshow-image--1) { opacity: 0 !important; }
+
+main[data-template='index'] .banner__heading,
+.collection-hero__title,
+.template-search .template-search__header h1,
+.template-search .h1,
+.product__title h1,
+.product__title .h1 {
+  font-family: 'Iowan Old Style', Baskerville, 'Times New Roman', serif !important;
+  font-weight: 400 !important;
+}
+

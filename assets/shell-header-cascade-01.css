@@ -1,0 +1,390 @@
+/* Header shop mega menu: desktop Kiti reference layout */
+@media screen and (min-width: 990px) {
+  .header__desktop-nav header-menu {
+    display: block !important;
+  }
+
+  .header__desktop-nav header-menu > details {
+    position: static !important;
+  }
+
+  .header__desktop-nav header-menu > details > summary.header__menu-item {
+    position: relative !important;
+  }
+
+  .header__desktop-nav header-menu > details > summary.header__menu-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: -3.6rem !important;
+    left: -3.6rem !important;
+    z-index: 51 !important;
+    height: 7.2rem !important;
+    background: transparent !important;
+  }
+
+  .header__desktop-nav header-menu > details.mega-menu .mega-menu__content {
+    top: 100% !important;
+    margin-top: 0 !important;
+    transform: translateY(0) !important;
+  }
+
+  .header__desktop-nav header-menu > details[open] > .mega-menu__content,
+  .header__desktop-nav header-menu > details:hover > .mega-menu__content,
+  .header__desktop-nav header-menu > details:focus-within > .mega-menu__content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .header__desktop-nav header-menu > details > .header__submenu {
+    margin-top: 0 !important;
+  }
+
+  .header__menu-list-item:has(.mega-menu--ersa-shop) {
+    position: static !important;
+  }
+
+  .mega-menu--ersa-shop {
+    position: static !important;
+  }
+
+  .mega-menu--ersa-shop > summary.header__menu-item {
+    position: relative !important;
+  }
+
+  .mega-menu--ersa-shop > summary.header__menu-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: -3.2rem !important;
+    left: -3.2rem !important;
+    z-index: 51 !important;
+    height: 5.6rem !important;
+    background: transparent !important;
+  }
+
+  .mega-menu--ersa-shop > summary.header__menu-item::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: -0.9rem !important;
+    width: 0.34rem !important;
+    height: 0.34rem !important;
+    border-radius: 50% !important;
+    background: #111 !important;
+    opacity: 0 !important;
+    transform: translateX(-50%) !important;
+    transition: opacity 180ms ease !important;
+  }
+
+  .mega-menu--ersa-shop[open] > summary.header__menu-item::after,
+  .mega-menu--ersa-shop:hover > summary.header__menu-item::after {
+    opacity: 1 !important;
+  }
+
+  .mega-menu--ersa-shop .ersa-shop-mega {
+    top: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 50 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-top: 0.1rem solid rgba(17, 17, 17, 0.08) !important;
+    border-radius: 0 0 0.6rem 0.6rem !important;
+    background: #fff !important;
+    box-shadow: 0 1.8rem 3.4rem rgba(17, 17, 17, 0.08) !important;
+    color: #222 !important;
+    overflow: visible !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(0) !important;
+    transition: opacity 160ms ease, visibility 160ms ease !important;
+  }
+
+  .mega-menu--ersa-shop[open] .ersa-shop-mega,
+  .mega-menu--ersa-shop:focus-within .ersa-shop-mega,
+  header-menu:hover details.mega-menu--ersa-shop .ersa-shop-mega,
+  header-menu details.mega-menu--ersa-shop:hover .ersa-shop-mega {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .ersa-shop-mega__inner {
+    width: min(118rem, calc(100vw - 8rem)) !important;
+    max-width: 118rem !important;
+    min-height: 42rem !important;
+    margin: 0 auto !important;
+    padding: 9.8rem 0 2.4rem !important;
+  }
+
+  .ersa-shop-mega__columns {
+    display: grid !important;
+    grid-template-columns: minmax(14rem, 1fr) minmax(20rem, 1.35fr) minmax(15rem, 1fr) minmax(14rem, 1fr) minmax(21rem, 1.35fr) !important;
+    gap: clamp(3.8rem, 4.1vw, 6.6rem) !important;
+    align-items: start !important;
+  }
+
+  .ersa-shop-mega__column {
+    min-width: 0 !important;
+  }
+
+  .ersa-shop-mega__heading {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 0 1.1rem !important;
+    padding: 0 !important;
+    color: #222 !important;
+    font-family: var(--ersa-body-font, Nunito, Assistant, sans-serif) !important;
+    font-size: 1.9rem !important;
+    font-weight: 500 !important;
+    line-height: 1.18 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+  }
+
+  .ersa-shop-mega__links {
+    display: grid !important;
+    gap: 0.72rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ersa-shop-mega__links a,
+  .ersa-shop-mega__bundle {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    color: #2b2b2b !important;
+    font-family: var(--ersa-body-font, Nunito, Assistant, sans-serif) !important;
+    font-size: 1.45rem !important;
+    font-weight: 400 !important;
+    line-height: 1.32 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transition: color 160ms ease, opacity 160ms ease !important;
+  }
+
+  .ersa-shop-mega__links a:hover,
+  .ersa-shop-mega__links a:focus-visible,
+  .ersa-shop-mega__heading:hover,
+  .ersa-shop-mega__heading:focus-visible,
+  .ersa-shop-mega__bundle:hover,
+  .ersa-shop-mega__bundle:focus-visible {
+    color: #000 !important;
+    opacity: 0.72 !important;
+    text-decoration: none !important;
+  }
+
+  .ersa-shop-mega__link--accent {
+    gap: 0.72rem !important;
+    color: #ef3b45 !important;
+  }
+
+  .ersa-shop-mega__hot {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 3.9rem !important;
+    height: 2.4rem !important;
+    padding: 0 0.72rem !important;
+    border-radius: 0.28rem !important;
+    background: #e32731 !important;
+    color: #fff !important;
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  .ersa-shop-mega__bundle {
+    display: inline-block !important;
+    margin-top: 1.6rem !important;
+    color: #222 !important;
+    font-size: 1.9rem !important;
+    font-weight: 500 !important;
+    line-height: 1.12 !important;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  .ersa-shop-mega__inner {
+    width: min(96rem, calc(100vw - 5rem)) !important;
+    min-height: 38rem !important;
+    padding-top: 7.2rem !important;
+  }
+
+  .ersa-shop-mega__columns {
+    grid-template-columns: minmax(12rem, 1fr) minmax(18rem, 1.35fr) minmax(12rem, 1fr) minmax(12rem, 1fr) minmax(17rem, 1.2fr) !important;
+    gap: 3rem !important;
+  }
+
+  .ersa-shop-mega__heading {
+    font-size: 1.65rem !important;
+  }
+
+  .ersa-shop-mega__links a {
+    font-size: 1.28rem !important;
+  }
+}
+
+/* Header search expansion: keep search below the header row instead of covering it */
+.section-header .header-wrapper:has(.header__search details[open]) {
+  background: rgb(var(--color-background)) !important;
+  border-bottom: 0 !important;
+  border-bottom-color: transparent !important;
+  box-shadow: 0 0.8rem 2.4rem rgba(var(--color-shadow), 0.08) !important;
+}
+
+.section-header .header__search details[open] > .search-modal {
+  position: fixed !important;
+  top: var(--header-height, 6rem) !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  z-index: 49 !important;
+  display: block !important;
+  width: 100vw !important;
+  height: auto !important;
+  min-height: 0 !important;
+  opacity: 1 !important;
+  border-top: 0 !important;
+  border-bottom: 0.1rem solid rgba(17, 17, 17, 0.1) !important;
+  background: rgb(var(--color-background)) !important;
+  box-shadow: 0 1.2rem 2.8rem rgba(var(--color-shadow), 0.08) !important;
+}
+
+.section-header .header__search details[open] .modal-overlay,
+.section-header .header__search details[open] .modal-overlay::after {
+  display: none !important;
+  content: none !important;
+}
+
+.section-header .header__search .search-modal__content {
+  width: min(100%, 92rem) !important;
+  height: auto !important;
+  min-height: 7.2rem !important;
+  margin: 0 auto !important;
+  padding: 1.2rem 6.4rem 1.2rem 2rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.section-header .header__search .search-modal__form {
+  max-width: 74rem !important;
+}
+
+.section-header .header__search .search-modal__form .field {
+  min-height: 4.8rem !important;
+}
+
+.section-header .header__search .search__input.field__input {
+  height: 4.8rem !important;
+  min-height: 4.8rem !important;
+  border-radius: 0.8rem !important;
+  background: #f7f7f7 !important;
+  font-size: 1.5rem !important;
+}
+
+.section-header .header__search details[open] .header__icon-close {
+  display: none !important;
+}
+
+.section-header .header__search .search-modal__close-button {
+  display: flex !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 1.4rem !important;
+  margin: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.section-header .header__search predictive-search {
+  position: relative !important;
+}
+
+.section-header .header__search .predictive-search--header {
+  top: calc(100% + 0.8rem) !important;
+  right: 0 !important;
+  left: 0 !important;
+  z-index: 50 !important;
+  width: 100% !important;
+  max-height: min(52rem, calc(100vh - var(--header-height, 6rem) - 10rem)) !important;
+  border-radius: 0.8rem !important;
+  overflow-y: auto !important;
+}
+
+@media screen and (max-width: 749px) {
+  .section-header .header__search details[open] > .search-modal {
+    top: var(--header-height, 6rem) !important;
+  }
+
+  .section-header .header__search .search-modal__content {
+    min-height: 6.8rem !important;
+    padding: 1rem 5.6rem 1rem 1.6rem !important;
+  }
+
+  .section-header .header__search .search-modal__form .field,
+  .section-header .header__search .search__input.field__input {
+    min-height: 4.6rem !important;
+    height: 4.6rem !important;
+  }
+
+  .section-header .header__search .search-modal__close-button {
+    right: 0.8rem !important;
+  }
+
+}
+
+/* Header hover reveal: slide the white header surface down on desktop hover/open states */
+.section-header:focus-within .header-wrapper::before,
+.section-header:has(header-menu details[open]) .header-wrapper::before,
+.section-header:has(.header__search details[open]) .header-wrapper::before {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .section-header:hover .header-wrapper::before {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header-wrapper {
+  color: rgb(var(--color-foreground)) !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__heading-link .h2,
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__menu-item,
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__icon,
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__icon span,
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .desktop-localization-wrapper,
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .desktop-localization-wrapper *,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__heading-link .h2,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__menu-item,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__icon,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .header__icon span,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .desktop-localization-wrapper,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) .desktop-localization-wrapper * {
+  color: rgb(var(--color-foreground)) !important;
+}
+
+.template-index .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) #HeaderMenu-hot,
+body:has(main[data-template='index']) .section-header:not(.scrolled-past-header):is(:hover, :focus-within, :has(header-menu details[open]), :has(.header__search details[open])) #HeaderMenu-hot {
+  color: #fff !important;
+}
+

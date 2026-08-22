@@ -1,0 +1,199 @@
+/* Cart drawer layout fix: prevent product text from collapsing into vertical letters */
+cart-drawer .drawer__inner {
+  width: min(46.6rem, 100vw) !important;
+  border-radius: 0 !important;
+}
+
+cart-drawer cart-drawer-items {
+  padding: 0 2.8rem !important;
+}
+
+cart-drawer .drawer__cart-items-wrapper {
+  width: 100% !important;
+}
+
+cart-drawer .cart-items,
+cart-drawer .cart-items tbody {
+  display: block !important;
+  width: 100% !important;
+}
+
+cart-drawer .cart-item {
+  display: grid !important;
+  grid-template-columns: 10rem minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "media details totals"
+    "media details quantity" !important;
+  column-gap: 1.8rem !important;
+  row-gap: 1rem !important;
+  align-items: start !important;
+  width: 100% !important;
+  padding: 2rem 0 !important;
+  border-bottom: 0.1rem solid #f0f0f0 !important;
+}
+
+cart-drawer .cart-item__media {
+  grid-area: media !important;
+  width: 10rem !important;
+  height: 10rem !important;
+  padding: 0 !important;
+}
+
+cart-drawer .cart-item__image {
+  width: 10rem !important;
+  height: 10rem !important;
+  max-width: 10rem !important;
+  object-fit: cover !important;
+  border-radius: 0.4rem !important;
+}
+
+cart-drawer .cart-item__details {
+  grid-area: details !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+cart-drawer .cart-item__title,
+cart-drawer .cart-item__name {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+cart-drawer .cart-item__name {
+  display: block !important;
+  font-size: 1.55rem !important;
+  line-height: 1.22 !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  white-space: normal !important;
+}
+
+cart-drawer .cart-item__details .product-option {
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  color: #777 !important;
+  word-break: normal !important;
+}
+
+cart-drawer .cart-item__totals {
+  grid-area: totals !important;
+  width: max-content !important;
+  min-width: 6.2rem !important;
+  padding: 0 !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+}
+
+cart-drawer .cart-item__price-wrapper,
+cart-drawer .cart-item__price-wrapper .price {
+  white-space: nowrap !important;
+}
+
+cart-drawer .cart-item__quantity {
+  grid-area: quantity !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  align-self: start !important;
+}
+
+cart-drawer .cart-item__quantity-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1.6rem !important;
+  width: auto !important;
+  margin-top: 0 !important;
+}
+
+cart-drawer .select-quantity-popout {
+  min-width: 7.4rem !important;
+  height: 3.4rem !important;
+}
+
+cart-drawer .cart-remove-button-link {
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 430px) {
+  cart-drawer cart-drawer-items {
+    padding: 0 1.8rem !important;
+  }
+
+  cart-drawer .drawer__footer {
+    padding-left: 1.8rem !important;
+    padding-right: 1.8rem !important;
+  }
+
+  cart-drawer .cart-item {
+    grid-template-columns: 8.8rem minmax(0, 1fr) !important;
+    grid-template-areas:
+      "media details"
+      "media totals"
+      "media quantity" !important;
+    column-gap: 1.4rem !important;
+  }
+
+  cart-drawer .cart-item__media,
+  cart-drawer .cart-item__image {
+    width: 8.8rem !important;
+    height: 8.8rem !important;
+    max-width: 8.8rem !important;
+  }
+
+  cart-drawer .cart-item__totals,
+  cart-drawer .cart-item__quantity-wrapper {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* Final cart drawer item grid override with matching specificity */
+.cart-drawer .cart-item {
+  display: grid !important;
+  grid-template-columns: 10rem minmax(12rem, 1fr) minmax(10rem, auto) !important;
+  grid-template-areas:
+    "media details totals"
+    "media details quantity" !important;
+  column-gap: 1.8rem !important;
+  row-gap: 1rem !important;
+  align-items: start !important;
+}
+
+.cart-drawer .cart-item__details {
+  grid-area: details !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.cart-drawer .cart-item__totals {
+  grid-area: totals !important;
+}
+
+.cart-drawer .cart-items .cart-item__quantity,
+.cart-drawer .cart-item__quantity {
+  grid-area: quantity !important;
+  grid-column: quantity !important;
+  width: auto !important;
+}
+
+@media screen and (max-width: 430px) {
+  .cart-drawer .cart-item {
+    grid-template-columns: 8.8rem minmax(0, 1fr) !important;
+    grid-template-areas:
+      "media details"
+      "media totals"
+      "media quantity" !important;
+  }
+}
+

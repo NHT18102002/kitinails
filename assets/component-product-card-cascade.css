@@ -1,0 +1,76 @@
+/* Product card cart button square override */
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit,
+main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-add__submit {
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 0.6rem !important;
+}
+
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__icon--collection svg,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__icon--collection img.icon-cart-outline {
+  stroke-width: 1.05 !important;
+}
+
+/* Product card cart button compact size override */
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit,
+main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-add__submit {
+  width: 3.4rem !important;
+  min-width: 3.4rem !important;
+  max-width: 3.4rem !important;
+  height: 3.4rem !important;
+  min-height: 3.4rem !important;
+  max-height: 3.4rem !important;
+}
+
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit > span.quick-add__icon--collection,
+main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-add__icon--collection,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__icon--collection img.icon-cart-outline {
+  width: 1.7rem !important;
+  height: 1.7rem !important;
+}
+
+/* Product card cart hover border suppression */
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit:hover,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add:hover .quick-add__submit,
+main[data-template='collection'] #product-grid .card__inner > .quick-add:hover .quick-add__submit {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit:hover::before,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit:hover::after,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add:hover .quick-add__submit::before,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add:hover .quick-add__submit::after,
+main[data-template='collection'] #product-grid .card__inner > .quick-add:hover .quick-add__submit::before,
+main[data-template='collection'] #product-grid .card__inner > .quick-add:hover .quick-add__submit::after {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Collection page: remove moving black promo bars */
+body:has(main[data-template='collection']) .announcement-bar-section {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__marquee {
+  display: none !important;
+}
+
+/* Collection product card: remove Dawn's black button ring from the cart icon */
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit.button::after,
+main[data-template='collection'] #product-grid .card-wrapper .quick-add__submit.button:not([disabled]):hover::after,
+main[data-template='collection'] #product-grid .card-wrapper:hover .quick-add__submit.button::after,
+main[data-template='collection'] #product-grid .card-wrapper:focus-within .quick-add__submit.button::after,
+main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-add__submit.button::after,
+main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-add__submit.button:not([disabled]):hover::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+

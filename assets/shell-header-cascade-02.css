@@ -1,0 +1,11 @@
+/* Header cart icon: keep the real SVG thin and scale it slightly larger */
+.section-header .header__icon--cart .svg-wrapper {
+  width: 2.7rem !important;
+  height: 2.7rem !important;
+}
+
+.section-header .header__icon--cart .svg-wrapper > svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}

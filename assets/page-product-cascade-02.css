@@ -1,0 +1,757 @@
+/* Product page final reference parity */
+body:has(main[data-template='product']) .product-quantity-select-wrapper {
+  position: relative !important;
+  width: 12rem !important;
+  max-width: 12rem !important;
+}
+
+body:has(main[data-template='product']) .product-quantity-select-wrapper .quantity__input {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 12rem !important;
+  min-width: 12rem !important;
+  max-width: 12rem !important;
+  height: 4rem !important;
+  min-height: 4rem !important;
+  padding: 0 3.4rem 0 2rem !important;
+  border: 0.1rem solid #111 !important;
+  border-radius: 0.6rem !important;
+  background: #fff !important;
+  color: #111 !important;
+  box-shadow: none !important;
+  font-size: 1.45rem !important;
+  font-weight: 400 !important;
+  line-height: 4rem !important;
+  text-align: left !important;
+  text-align-last: left !important;
+  cursor: pointer !important;
+}
+
+body:has(main[data-template='product']) .product-quantity-select__caret {
+  position: absolute !important;
+  top: 50% !important;
+  right: 1.7rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+}
+
+body:has(main[data-template='product']) .product-quantity-select__caret svg {
+  display: block !important;
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal {
+  width: 100% !important;
+  max-width: 45.5rem !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.6rem !important;
+  margin-top: 1.1rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .icon-with-text__item {
+  width: 100% !important;
+  min-height: 3.8rem !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  padding: 0.8rem 1.1rem !important;
+  border-radius: 0.4rem !important;
+  background: #f6f7f8 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .svg-wrapper {
+  width: 2rem !important;
+  height: 2rem !important;
+  min-width: 2rem !important;
+  margin: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .h4 {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #111 !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products {
+  width: 100% !important;
+  max-width: 45.5rem !important;
+  margin-top: 1.9rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products__container {
+  padding: 1.4rem 1.6rem !important;
+  border: 0 !important;
+  border-radius: 0.7rem !important;
+  background: #fbf9f8 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .summary__title {
+  margin: 0 0 0.9rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .accordion__title {
+  color: #111 !important;
+  font-size: 1.45rem !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+  text-transform: none !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+  grid-template-columns: 9rem minmax(0, 1fr) !important;
+  column-gap: 1.6rem !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+  width: 9rem !important;
+  min-width: 9rem !important;
+  flex-basis: 9rem !important;
+  background: transparent !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__media,
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .media {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__media img,
+body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .media > img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .card__heading {
+  color: #111 !important;
+  font-size: 1.45rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .complementary-products .price {
+  color: #111 !important;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-seel-note__icon {
+  flex: 0 0 2.8rem !important;
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpath d='M3.3 7 12 12l8.7-5'/%3E%3Cpath d='M12 22V12'/%3E%3C/svg%3E") !important;
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta {
+  position: relative !important;
+  max-width: 45.5rem !important;
+  margin-top: 1.9rem !important;
+  padding: 2.4rem 2rem 2.2rem 5.6rem !important;
+  background: #fafbfc !important;
+  text-align: left !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 2.4rem !important;
+  left: 2.2rem !important;
+  width: 2rem !important;
+  height: 2.8rem !important;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32' fill='none' stroke='%23111' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 1.5c4.4 3.5 7 8.5 7 15.4 0 7.9-3.4 12.8-7 12.8S5 24.8 5 16.9C5 10 7.6 5 12 1.5Z'/%3E%3Cpath d='M9 21.5h6'/%3E%3Cpath d='M8.5 25h7'/%3E%3C/svg%3E") !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta p {
+  margin: 0 0 1.8rem !important;
+  color: #111 !important;
+  font-size: 1.45rem !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-custom-cta__link {
+  display: inline !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 0 0.2rem !important;
+  border: 0 !important;
+  border-bottom: 0.1rem solid currentColor !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  font-size: 1.35rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion summary .icon-caret {
+  display: none !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion summary::after {
+  content: '+' !important;
+  margin-left: auto !important;
+  color: #111 !important;
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .product__accordion details[open] summary::after {
+  content: '-' !important;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  body:has(main[data-template='product']) header.header {
+    grid-template-columns: minmax(4.4rem, 1fr) auto minmax(4.4rem, 1fr) !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) header-drawer {
+    display: block !important;
+    justify-self: start !important;
+    margin-left: -1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .header__inline-menu,
+  body:has(main[data-template='product']) .header__icon--account {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .header__heading,
+  body:has(main[data-template='product']) .header__heading-link {
+    justify-self: center !important;
+  }
+
+  body:has(main[data-template='product']) .header__icons {
+    justify-self: end !important;
+  }
+
+  body:has(main[data-template='product']) product-info[id^='MainProduct'] > .page-width {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product {
+    display: grid !important;
+    grid-template-columns: minmax(0, calc((100% - 6rem) / 2)) minmax(0, calc((100% - 6rem) / 2)) !important;
+    column-gap: 6rem !important;
+    align-items: start !important;
+    width: 100vw !important;
+    max-width: 102.4rem !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-inline: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product--large:not(.product--no-media) .product__media-wrapper,
+  body:has(main[data-template='product']) .product--large:not(.product--no-media) .product__info-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body:has(main[data-template='product']) fieldset.product-form__input,
+  body:has(main[data-template='product']) .product__info-container .product-form__quantity,
+  body:has(main[data-template='product']) .product__info-container .product-form__buttons,
+  body:has(main[data-template='product']) .product__info-container .product-form__submit,
+  body:has(main[data-template='product']) .product__info-container .icon-with-text,
+  body:has(main[data-template='product']) .product__info-container .complementary-products,
+  body:has(main[data-template='product']) .product__info-container .product__accordion,
+  body:has(main[data-template='product']) .ersa-product-custom-cta {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product-form__input .form__label {
+    padding-right: 12rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-list,
+  body:has(main[data-template='product']) .product__media-list .product__media-item,
+  body:has(main[data-template='product']) .product__media-wrapper .global-media-settings,
+  body:has(main[data-template='product']) .product__media-wrapper .product-media-container,
+  body:has(main[data-template='product']) .product__modal-opener {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper .thumbnail-slider {
+    margin-top: 1.2rem !important;
+    align-items: flex-start !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper .slider-mobile-gutter .slider-button,
+  body:has(main[data-template='product']) .product__media-wrapper .thumbnail-slider .slider-button {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider,
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider--tablet-up {
+    width: 100% !important;
+    padding: 0 !important;
+    gap: 1.2rem !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider::-webkit-scrollbar,
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider--tablet-up::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-list__item,
+  body:has(main[data-template='product']) .thumbnail-list__item.slider__slide {
+    flex: 0 0 8.8rem !important;
+    width: 8.8rem !important;
+    min-width: 8.8rem !important;
+    height: 8.8rem !important;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  body:has(main[data-template='product']) header.header {
+    grid-template-columns: minmax(4.4rem, 1fr) auto minmax(4.4rem, 1fr) !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+
+  body:has(main[data-template='product']) header-drawer {
+    display: block !important;
+    justify-self: start !important;
+    margin-left: -1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .header__inline-menu,
+  body:has(main[data-template='product']) .header__icon--account {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .header__heading,
+  body:has(main[data-template='product']) .header__heading-link {
+    justify-self: center !important;
+  }
+
+  body:has(main[data-template='product']) .header__icons {
+    justify-self: end !important;
+  }
+
+  body:has(main[data-template='product']) product-info[id^='MainProduct'] > .page-width {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product {
+    display: grid !important;
+    grid-template-columns: minmax(0, calc((100% - 6rem) / 2)) minmax(0, calc((100% - 6rem) / 2)) !important;
+    column-gap: 6rem !important;
+    align-items: start !important;
+    width: 100vw !important;
+    max-width: 102.4rem !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-inline: 6rem !important;
+  }
+
+  body:has(main[data-template='product']) .product--large:not(.product--no-media) .product__media-wrapper,
+  body:has(main[data-template='product']) .product--large:not(.product--no-media) .product__info-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container,
+  body:has(main[data-template='product']) fieldset.product-form__input,
+  body:has(main[data-template='product']) .product__info-container .icon-with-text,
+  body:has(main[data-template='product']) .product__info-container .complementary-products,
+  body:has(main[data-template='product']) .product__info-container .product__accordion,
+  body:has(main[data-template='product']) .ersa-product-custom-cta {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-list,
+  body:has(main[data-template='product']) .product__media-list .product__media-item,
+  body:has(main[data-template='product']) .product__media-wrapper .global-media-settings,
+  body:has(main[data-template='product']) .product__media-wrapper .product-media-container,
+  body:has(main[data-template='product']) .product__modal-opener {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .product {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-inline: 0.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper,
+  body:has(main[data-template='product']) .product__info-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide),
+  body:has(main[data-template='product']) .product__media-list {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-list .product__media-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-inline: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper .thumbnail-slider {
+    width: calc(100% + 4rem) !important;
+    margin: 1.2rem -2rem 0 !important;
+    align-items: flex-start !important;
+  }
+
+  body:has(main[data-template='product']) .product__media-wrapper .thumbnail-slider .slider-button {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0.5rem 2rem !important;
+    gap: 1.2rem !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    scroll-padding-left: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-slider .thumbnail-list.slider::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body:has(main[data-template='product']) .thumbnail-list__item.slider__slide {
+    flex: 0 0 9rem !important;
+    width: 9rem !important;
+    min-width: 9rem !important;
+    height: 9rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__title h1 {
+    font-size: 3rem !important;
+    line-height: 1.06 !important;
+  }
+
+  body:has(main[data-template='product']) .product-form__quantity .form__label {
+    margin-bottom: 0.7rem !important;
+  }
+
+  body:has(main[data-template='product']) .product-quantity-select-wrapper,
+  body:has(main[data-template='product']) .product-quantity-select-wrapper .quantity__input {
+    width: 12rem !important;
+    min-width: 12rem !important;
+    max-width: 12rem !important;
+    height: 4rem !important;
+    min-height: 4rem !important;
+  }
+
+  body:has(main[data-template='product']) .product-form__submit {
+    min-height: 4.6rem !important;
+    height: 4.6rem !important;
+    border-radius: 0.7rem !important;
+    font-size: 1.4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    column-gap: 0.5rem !important;
+    row-gap: 0 !important;
+    min-height: 4.5rem !important;
+    margin-top: 1.2rem !important;
+    font-size: 1.55rem !important;
+    line-height: 1.16 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note__icon {
+    flex: 0 0 3.4rem !important;
+    width: 3.4rem !important;
+    height: 3.4rem !important;
+    margin-top: 0.1rem !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpath d='M3.3 7 12 12l8.7-5'/%3E%3Cpath d='M12 22V12'/%3E%3C/svg%3E") !important;
+    color: transparent !important;
+    font-size: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note strong {
+    flex: 1 1 calc(100% - 4rem) !important;
+    max-width: calc(100% - 4rem) !important;
+    font-size: 1.55rem !important;
+    line-height: 1.16 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note__brand {
+    margin-left: 3.9rem !important;
+    font-size: 1.55rem !important;
+    line-height: 1.16 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-seel-note__help {
+    display: inline-flex !important;
+    margin-top: 0.1rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card-wrapper {
+    grid-template-columns: 7.6rem minmax(0, 1fr) !important;
+    column-gap: 1.2rem !important;
+  }
+
+  body:has(main[data-template='product']) .product__info-container .complementary-products .card--horizontal .card__inner {
+    width: 7.6rem !important;
+    min-width: 7.6rem !important;
+    flex-basis: 7.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-custom-cta {
+    margin-top: 1.9rem !important;
+    padding: 2.4rem 2rem 2.2rem 5.6rem !important;
+  }
+}
+
+/* Product Island Glow campaign section */
+body:has(main[data-template='product']) #shopify-section-template--20456552235159__product_island_glow {
+  margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow {
+  padding-top: 6rem !important;
+  padding-bottom: 8rem !important;
+  background: #fff !important;
+  overflow: hidden !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__inner {
+  display: grid !important;
+  grid-template-columns: minmax(0, 82rem) minmax(42rem, 1fr) !important;
+  gap: clamp(5.6rem, 6vw, 10rem) !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 160rem !important;
+  margin: 0 auto !important;
+  padding-inline: clamp(6rem, 6.8vw, 12.6rem) !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__media-stack {
+  position: relative !important;
+  min-height: 56rem !important;
+  width: 100% !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__media-card {
+  position: absolute !important;
+  display: block !important;
+  width: min(43rem, 56%) !important;
+  height: 51rem !important;
+  border-radius: 0.7rem !important;
+  overflow: hidden !important;
+  background: #f8f5f5 !important;
+  text-decoration: none !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__media-card--primary {
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 2 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__media-card--secondary {
+  top: 0 !important;
+  left: min(36rem, 47%) !important;
+  z-index: 1 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__image,
+body:has(main[data-template='product']) .ersa-product-island-glow__placeholder {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__panel {
+  width: 100% !important;
+  max-width: 68rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__eyebrow {
+  display: none !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__heading {
+  margin: 0 !important;
+  color: #e7177e !important;
+  font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
+  font-size: clamp(4rem, 3.2vw, 5.2rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__text {
+  max-width: 67rem !important;
+  margin: 2rem auto 0 !important;
+  color: #111 !important;
+  font-size: 1.48rem !important;
+  font-weight: 400 !important;
+  line-height: 1.58 !important;
+  text-align: center !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__text p {
+  margin: 0 !important;
+}
+
+body:has(main[data-template='product']) .ersa-product-island-glow__button {
+  min-width: 23.8rem !important;
+  min-height: 4.2rem !important;
+  margin-top: 2.4rem !important;
+  padding: 1.2rem 2.6rem !important;
+  border: 0 !important;
+  border-radius: 0.6rem !important;
+  background: #050505 !important;
+  color: #fff !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+}
+
+@media screen and (max-width: 1199px) {
+  body:has(main[data-template='product']) .ersa-product-island-glow {
+    padding-top: 4.8rem !important;
+    padding-bottom: 5.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__inner {
+    grid-template-columns: 1fr !important;
+    gap: 3.6rem !important;
+    padding-inline: 2rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__media-stack {
+    max-width: 72rem !important;
+    min-height: 46rem !important;
+    margin-inline: auto !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__media-card {
+    width: 58% !important;
+    height: 40rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__media-card--secondary {
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__panel {
+    max-width: 68rem !important;
+    margin-inline: auto !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) .ersa-product-island-glow {
+    padding-top: 3.6rem !important;
+    padding-bottom: 4.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__inner {
+    padding-inline: 1.8rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__media-stack {
+    min-height: 34rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__media-card {
+    width: 68% !important;
+    height: 29rem !important;
+    border-radius: 0.6rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__heading {
+    font-size: 3.4rem !important;
+  }
+
+  body:has(main[data-template='product']) .ersa-product-island-glow__text {
+    margin-top: 1.4rem !important;
+    font-size: 1.32rem !important;
+    line-height: 1.5 !important;
+  }
+
+body:has(main[data-template='product']) .ersa-product-island-glow__button {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 4.4rem !important;
+    margin-top: 2rem !important;
+  }
+}
+
