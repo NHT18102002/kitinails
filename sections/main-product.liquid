@@ -599,6 +599,7 @@
                                   {% endif %}
                                 >
                                   <ul class="list-unstyled" role="list">
+                                    {% comment %}theme-check-disable UndefinedObject{% endcomment %}
                                     {%- for product in complementary_products
                                       limit: block.settings.products_per_page
                                       offset: continue
@@ -623,6 +624,7 @@
                                       </li>
                                       {%- assign skip_card_product_styles = true -%}
                                     {%- endfor -%}
+                                    {% comment %}theme-check-enable UndefinedObject{% endcomment %}
                                   </ul>
                                 </div>
                               {%- endfor -%}
@@ -740,14 +742,6 @@
         </script>
         <script src="{{ 'product-model.js' | asset_url }}" defer></script>
       {%- endif -%}
-
-      {%- liquid
-        if product.selected_or_first_available_variant.featured_media
-          assign seo_media = product.selected_or_first_available_variant.featured_media
-        else
-          assign seo_media = product.featured_media
-        endif
-      -%}
 
       <script type="application/ld+json">
         {{ product | structured_data }}

@@ -30,6 +30,6 @@ This map records current runtime ownership and the intended consolidation bounda
 | `card-product.liquid` | 887-line baseline | Orchestrator now delegates media, badges, pricing and standard quick-add; bulk quick-add remains an explicit Dawn compatibility branch |
 | `facets.liquid` | 1,038 lines | Desktop/mobile controls, sorting, active filters and disclosures |
 
-## Deprecated candidates
+## Removed legacy candidates
 
-`header-drawer`, `header-dropdown-menu`, `header-mega-menu`, `header-normalized-url`, `header-shop-mega-menu`, and `quick-order-product-row` currently have no static consumer according to Theme Check. They are not removed until templates, section groups, settings data, active store configuration, and the full preview suite all prove them unused.
+`header-drawer`, `header-dropdown-menu`, `header-mega-menu`, `header-normalized-url`, `header-shop-mega-menu`, and `quick-order-product-row` were removed in Phase 8. Theme Check and repository-wide scans found no consumer in Liquid, templates, section groups, or settings data; the canonical `header-primary-*` chain and the full preview suite remained operational after deletion.

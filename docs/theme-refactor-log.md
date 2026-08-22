@@ -86,3 +86,13 @@ The product UGC rail's static rules and inline interaction moved to `section-pro
 The repeated `custom-theme.css` links were audited in source order. Removing the copies in `ersa-collection-grid` and `ersa-as-seen-in` is pixel-neutral because the later reviews-section copy remains the final cascade application. Removing that last late copy causes 2–37% homepage visual diffs, so it remains an explicit Phase 8 compatibility boundary rather than being silently replaced with a duplicate file under a new name.
 
 The leading UTF-8 BOM in `ersa-reviews-carousel.liquid` also creates a directly observed anonymous line box of roughly 27 px. It is intentionally preserved for visual parity in this behavior-preserving roadmap and recorded as legacy debt; deleting it requires a separately approved visual migration. Home and product snapshots remain unchanged at all canonical Chromium viewports after the owned UGC extraction.
+
+## Phase 8 — legacy audit and hardening
+
+Repository-wide Liquid, template, section-group and settings scans confirmed that the deprecated Dawn header chain and `quick-order-product-row` had no runtime consumer. The six orphan snippets were removed only after schema, asset/snippet reference, duplicate custom-element and full preview contracts continued to pass. Header behavior remains owned by the canonical `header-primary-*` chain.
+
+Safe Liquid lint debt was removed by initializing the color-scheme accumulator, deleting unused assignments and normalizing local variable names. The valid Liquid pagination contract `offset: continue` is retained and has a targeted `UndefinedObject` exception around that loop. Theme Check now reports zero offenses rather than the 13-warning Phase 0 baseline.
+
+The full browser gate exercises 240 project/browser cases. A transient WebKit active-facet timeout passed on immediate isolated rerun. Shopify's development proxy also emits a WebKit CORS error for its injected `/api/event/collect` web-pixel endpoint; the test-only runtime baseline now recognizes that exact local telemetry form alongside the existing worker form. Storefront errors remain failures.
+
+`custom-theme.css` and `legacy-compat.css` remain the only incomplete roadmap item. The Phase 7 cascade experiment directly proved that removing the final late `custom-theme.css` application changes 2–37% of homepage pixels, so deleting or mechanically renaming either catch-all would violate the locked behavior-preservation requirement. Their remaining rules require additional vertical-slice ownership checkpoints with fixture coverage; this checkpoint does not disguise either file under a new name.
