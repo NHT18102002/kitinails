@@ -1,0 +1,36 @@
+# Theme architecture refactor decision log
+
+## Phase 0 — regression baseline
+
+Date: 2026-08-22
+
+Scope was limited to test and documentation tooling; no storefront runtime file was changed.
+
+### Direct observations
+
+- Store inspected: `develop-store-5y6bipog.myshopify.com` through Shopify CLI local preview.
+- Local development theme ID: `152839782551`; production was not published.
+- Persistent unpublished checkpoint theme: `Ersa Architecture Refactor`, ID `152839979159`.
+- Routes exercised: homepage, `/collections/all`, multi-variant product `/products/safari`, search with/without results, empty cart, and `/pages/contact`.
+- Chromium visual baselines were captured at 1440, 1024, 768, and 390 px for home, collection, product, empty search, and empty cart.
+- Chromium and WebKit interaction/runtime suite passed 48 scenarios; six viewport-inapplicable scenarios were skipped.
+- Theme Check inspected 1,526 files with 0 errors and 13 existing warnings.
+- Theme CSS/JS total was 1,429,548 bytes; assets referenced globally by `layout/theme.liquid` totaled 916,164 bytes.
+
+### Baseline allowances
+
+- Shopify's local theme-dev proxy injects one script that WebKit may reject through CORS. The exact message is allowlisted for local-preview runtime assertions only.
+- The existing complementary-products slider exposes `role=list` with `role=group` children. Axe reports `aria-required-children` on the product fixture. This pre-existing critical rule is recorded, not silently ignored globally, and remains a hardening item.
+- Sold-out and stable single-variant fixture paths are environment-configurable because the development catalog did not provide confirmed immutable handles during baseline capture.
+
+### Decisions
+
+- Node's built-in test runner is used for schema, reference and pure-helper contracts.
+- Playwright runs Chromium and WebKit; Chromium is the only visual golden engine.
+- Public section schema interfaces are protected by SHA-256 fingerprints.
+- Template section targets, literal snippet/asset references, and duplicate custom-element registrations fail the contract suite.
+- Root Node tooling is test-only and does not create a storefront build pipeline.
+
+### Evidence classification
+
+The routes, console behavior, accessibility output, screenshots, Theme Check result and asset sizes above were directly observed. Legacy-candidate status is an inference from static references and Theme Check until active store configuration is also inspected. Confidence is high for the recorded fixture outputs and medium for unused-file classification.

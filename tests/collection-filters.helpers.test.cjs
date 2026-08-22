@@ -7,36 +7,39 @@ const {
   selectCollectionFilterGroups,
 } = require('../assets/collection-filters.helpers.js');
 
-test('selectCollectionFilterGroups returns only reference filters in reference order when all are present', () => {
+test('selectCollectionFilterGroups places reference filters first without hiding supported extras', () => {
   const groups = [
-    { id: 'availability', label: 'Availability' },
-    { id: 'shape', label: 'Shape' },
-    { id: 'color', label: 'Color' },
-    { id: 'style', label: 'Style' },
-    { id: 'length', label: 'Length' },
-    { id: 'price', label: 'Price' },
-  ];
-
-  const result = selectCollectionFilterGroups(groups, { preferredLabels: REFERENCE_FILTER_LABELS });
-
-  assert.equal(result.strictReferenceMode, true);
-  assert.deepEqual(
-    result.groups.map((group) => group.label),
-    ['Color', 'Length', 'Shape', 'Style']
-  );
-});
-
-test('selectCollectionFilterGroups keeps original groups when the reference set is incomplete', () => {
-  const groups = [
-    { id: 'availability', label: 'Availability' },
-    { id: 'color', label: 'Color' },
-    { id: 'price', label: 'Price' },
+    { element: 'availability', label: 'Availability' },
+    { element: 'shape', label: 'Shape' },
+    { element: 'color', label: 'Color' },
+    { element: 'style', label: 'Style' },
+    { element: 'length', label: 'Length' },
+    { element: 'price', label: 'Price' },
   ];
 
   const result = selectCollectionFilterGroups(groups, { preferredLabels: REFERENCE_FILTER_LABELS });
 
   assert.equal(result.strictReferenceMode, false);
-  assert.deepEqual(result.groups, groups);
+  assert.deepEqual(
+    result.groups.map((group) => group.label),
+    ['Color', 'Length', 'Shape', 'Style', 'Availability', 'Price']
+  );
+});
+
+test('selectCollectionFilterGroups keeps available reference filters first when the set is incomplete', () => {
+  const groups = [
+    { element: 'availability', label: 'Availability' },
+    { element: 'color', label: 'Color' },
+    { element: 'price', label: 'Price' },
+  ];
+
+  const result = selectCollectionFilterGroups(groups, { preferredLabels: REFERENCE_FILTER_LABELS });
+
+  assert.equal(result.strictReferenceMode, false);
+  assert.deepEqual(
+    result.groups.map((group) => group.label),
+    ['Color', 'Availability', 'Price']
+  );
 });
 
 test('buildClearAllSearchParams preserves sort_by and drops filter params', () => {

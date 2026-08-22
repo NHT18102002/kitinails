@@ -30,6 +30,8 @@ build/
 tmp/
 coverage/
 test-results/
+playwright-report/
+blob-report/
 .codex-temp/
 .codegraph/
 _edge-profile/

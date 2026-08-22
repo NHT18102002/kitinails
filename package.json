@@ -1,16 +1,26 @@
 {
   "name": "ersanails",
   "version": "1.0.0",
-  "description": "Đây là repository cho việc nghiên cứu và xây dựng một theme Shopify Online Store 2.0 nguyên bản cho thương hiệu press-on nails. Dự án có thể học các pattern UX công khai từ các website cùng ngành, nhưng không được sao chép source code, hình ảnh, video, nội dung sản phẩm, review, font, logo, nhận diện thương hiệu hoặc bố cục pixel-perfect của đối thủ.",
+  "description": "Authorized Ersa Nails Shopify Online Store 2.0 theme rebuild and theme-quality tooling.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:theme:unit",
+    "test:theme:unit": "node --test tests/*.test.cjs tests/theme/*.test.cjs",
+    "test:theme:e2e": "playwright test",
+    "test:theme:e2e:update": "playwright test --update-snapshots=all",
+    "check:theme": "shopify theme check --no-color",
+    "check:theme:all": "npm run check:theme && npm run test:theme:unit",
+    "report:theme:assets": "node scripts/theme-asset-report.cjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1"
+  }
 }
