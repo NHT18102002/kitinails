@@ -1,76 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-
-/* Foundation */
-:root {
-  --foundation-page-gutter-mobile: 1.8rem;
-  --foundation-page-gutter-desktop: 6rem;
-  --foundation-section-gap-mobile: max(var(--spacing-sections-mobile, 0rem), 3.2rem);
-  --foundation-section-gap-desktop: max(var(--spacing-sections-desktop, 0rem), 4.8rem);
-  --foundation-border-subtle: rgba(var(--color-foreground), 0.1);
-  --foundation-border-medium: rgba(var(--color-foreground), 0.18);
-  --foundation-surface-soft: rgba(var(--color-background), 0.96);
-  --foundation-shadow-soft: 0 1rem 2.8rem rgba(var(--color-shadow), 0.08);
-  --foundation-shadow-strong: 0 1.6rem 3.8rem rgba(var(--color-shadow), 0.12);
-  --foundation-radius-card: max(var(--product-card-corner-radius, 0rem), 0.8rem);
-  --foundation-radius-control: max(var(--buttons-radius, 0rem), 0.8rem);
-  --foundation-radius-panel: 1.6rem;
-  --foundation-focus-ring: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0 0.55rem rgba(var(--color-foreground), 0.24);
-  --shell-surface: rgba(var(--color-background), 0.94);
-  --shell-surface-strong: rgba(var(--color-background), 0.98);
-  --shell-border-subtle: rgba(var(--color-foreground), 0.12);
-  --shell-pill-radius: 999px;
-}
-
-body.gradient {
-  background:
-    radial-gradient(circle at 50% -8rem, rgba(var(--color-background-contrast), 0.08), transparent 36rem),
-    linear-gradient(180deg, rgba(var(--color-background), 0.98), rgb(var(--color-background)));
-}
-
-#MainContent .page-width,
-#MainContent .page-width-desktop,
-#MainContent .page-width-tablet {
-  width: 100%;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: var(--foundation-page-gutter-mobile);
-  padding-right: var(--foundation-page-gutter-mobile);
-}
-
-.content-for-layout > .shopify-section {
-  scroll-margin-top: 8rem;
-}
-
-.content-for-layout > .shopify-section + .shopify-section {
-  margin-top: var(--foundation-section-gap-mobile);
-}
-
-/* Foundation - Global shell */
-.utility-bar,
-.header-wrapper,
-.footer {
-  background-color: var(--shell-surface-strong);
-}
-
-.utility-bar,
-.footer {
-  border-color: var(--shell-border-subtle);
-}
-
-.section-header.scrolled-past-header .header-wrapper,
-.shopify-section-header-sticky .header-wrapper {
-  box-shadow: none;
-}
-
-/* Sticky Header Group éˆ?make entire header group (announcement bar + header) stick to top */
-.shopify-section-group-header-group {
-  position: sticky;
-  top: 0;
-  z-index: 4;
-}
-
 /* Typography */
 body,
 .rte,
@@ -3013,11 +2940,6 @@ textarea:focus-visible,
 
 /* Visual parity pass - Kiti reference alignment */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-:root {
-  --ersa-body-font: 'Nunito', var(--font-body-family), sans-serif;
-  --ersa-display-font: 'Playfair Display', var(--font-heading-family), serif;
-}
 
 body,
 button,

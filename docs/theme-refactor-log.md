@@ -34,3 +34,9 @@ Scope was limited to test and documentation tooling; no storefront runtime file 
 ### Evidence classification
 
 The routes, console behavior, accessibility output, screenshots, Theme Check result and asset sizes above were directly observed. Legacy-candidate status is an inference from static references and Theme Check until active store configuration is also inspected. Confidence is high for the recorded fixture outputs and medium for unused-file classification.
+
+## Phase 1 — foundation boundary
+
+The existing global token values moved unchanged into `theme-tokens.css`. The first document-wide layout and shell primitives moved unchanged into `theme-foundation.css`. Both assets remain in the exact cascade position previously occupied by the opening of `custom-theme.css`: after Dawn `base.css` and before the remaining compatibility rules. Brand font aliases were also centralized without changing their values.
+
+The former `custom-theme-overrides.css` is now explicitly named `legacy-compat.css`, at the same cascade position. This checkpoint deliberately leaves feature and page rules in the two transitional stylesheets. Moving those rules is gated by their vertical slices so that later selectors and existing `!important` declarations retain their original cascade behavior.

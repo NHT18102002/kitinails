@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --foundation-page-gutter-mobile: 1.8rem;
+  --foundation-page-gutter-desktop: 6rem;
+  --foundation-section-gap-mobile: max(var(--spacing-sections-mobile, 0rem), 3.2rem);
+  --foundation-section-gap-desktop: max(var(--spacing-sections-desktop, 0rem), 4.8rem);
+  --foundation-border-subtle: rgba(var(--color-foreground), 0.1);
+  --foundation-border-medium: rgba(var(--color-foreground), 0.18);
+  --foundation-surface-soft: rgba(var(--color-background), 0.96);
+  --foundation-shadow-soft: 0 1rem 2.8rem rgba(var(--color-shadow), 0.08);
+  --foundation-shadow-strong: 0 1.6rem 3.8rem rgba(var(--color-shadow), 0.12);
+  --foundation-radius-card: max(var(--product-card-corner-radius, 0rem), 0.8rem);
+  --foundation-radius-control: max(var(--buttons-radius, 0rem), 0.8rem);
+  --foundation-radius-panel: 1.6rem;
+  --foundation-focus-ring: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.55rem rgba(var(--color-foreground), 0.24);
+  --shell-surface: rgba(var(--color-background), 0.94);
+  --shell-surface-strong: rgba(var(--color-background), 0.98);
+  --shell-border-subtle: rgba(var(--color-foreground), 0.12);
+  --shell-pill-radius: 999px;
+  --ersa-body-font: 'Nunito', var(--font-body-family), sans-serif;
+  --ersa-display-font: 'Playfair Display', var(--font-heading-family), serif;
+}

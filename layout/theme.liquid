@@ -314,8 +314,10 @@
       >
     {%- endif -%}
 
+    {{ 'theme-tokens.css' | asset_url | stylesheet_tag }}
+    {{ 'theme-foundation.css' | asset_url | stylesheet_tag }}
     {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
-    {{ 'custom-theme-overrides.css' | asset_url | stylesheet_tag }}
+    {{ 'legacy-compat.css' | asset_url | stylesheet_tag }}
     {{ 'header-unified.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'custom-theme.js' | asset_url }}" defer="defer"></script>
 

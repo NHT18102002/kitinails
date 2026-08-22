@@ -1,0 +1,48 @@
+body.gradient {
+  background:
+    radial-gradient(circle at 50% -8rem, rgba(var(--color-background-contrast), 0.08), transparent 36rem),
+    linear-gradient(180deg, rgba(var(--color-background), 0.98), rgb(var(--color-background)));
+}
+
+#MainContent .page-width,
+#MainContent .page-width-desktop,
+#MainContent .page-width-tablet {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: var(--foundation-page-gutter-mobile);
+  padding-right: var(--foundation-page-gutter-mobile);
+}
+
+.content-for-layout > .shopify-section {
+  scroll-margin-top: 8rem;
+}
+
+.content-for-layout > .shopify-section + .shopify-section {
+  margin-top: var(--foundation-section-gap-mobile);
+}
+
+/* Foundation - Global shell */
+.utility-bar,
+.header-wrapper,
+.footer {
+  background-color: var(--shell-surface-strong);
+}
+
+.utility-bar,
+.footer {
+  border-color: var(--shell-border-subtle);
+}
+
+.section-header.scrolled-past-header .header-wrapper,
+.shopify-section-header-sticky .header-wrapper {
+  box-shadow: none;
+}
+
+/* Sticky header group: announcement bar and header remain together. */
+.shopify-section-group-header-group {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}

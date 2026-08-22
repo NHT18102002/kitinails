@@ -4,7 +4,7 @@ This map records current runtime ownership and the intended consolidation bounda
 
 | Feature | Liquid owners | CSS owners | JavaScript owners | Status / boundary |
 | --- | --- | --- | --- | --- |
-| Global document | `layout/theme.liquid`, `snippets/meta-tags.liquid` | `base.css`, transitional `custom-theme*.css` | `global.js`, `custom-theme.js`, `details-*.js` | Dawn foundation; custom catch-all files are transitional |
+| Global document | `layout/theme.liquid`, `snippets/meta-tags.liquid` | `base.css`, `theme-tokens.css`, `theme-foundation.css`, transitional `custom-theme.css` and `legacy-compat.css` | `global.js`, `custom-theme.js`, `details-*.js` | Dawn foundation; catch-all files are transitional |
 | Header and navigation | `sections/header.liquid`, `header-primary-*`, `header-search` | `header-unified.css`, transitional custom rules | header behavior in `global.js` and inline section code | `header-primary-*` is canonical; orphan Dawn header snippets remain deprecated until store-config audit |
 | Announcement | `sections/announcement-bar.liquid` | transitional custom rules | section inline behavior | Shell feature |
 | Footer | `sections/footer.liquid` | `section-footer.css`, transitional custom rules | section inline behavior | Shell feature; inline behavior will become idempotent asset |
@@ -24,7 +24,7 @@ This map records current runtime ownership and the intended consolidation bounda
 | File | Baseline size | Risk |
 | --- | ---: | --- |
 | `custom-theme.css` | 497,253 bytes | Multiple features and successive overrides; globally loaded and redundantly referenced by three sections |
-| `custom-theme-overrides.css` | 172,814 bytes | Catch-all final overrides; overlaps heavily with the preceding file |
+| `legacy-compat.css` | 172,814-byte baseline | Temporary catch-all formerly named `custom-theme-overrides.css`; overlaps heavily with the preceding file |
 | `main-product.liquid` | 2,418 lines | Rendering, schema, structured data, media and commerce orchestration |
 | `featured-product.liquid` | 1,565 lines | Duplicates substantial PDP composition while maintaining a distinct schema |
 | `card-product.liquid` | 887 lines | Media, badges, pricing and quick-add responsibilities overlap |
