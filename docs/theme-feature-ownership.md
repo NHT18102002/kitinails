@@ -12,7 +12,7 @@ This map records current runtime ownership and the intended consolidation bounda
 | Product cards | `card-product`, `product-card-media`, `product-card-badges`, `product-card-price`, `product-card-quick-add`, shared `price` | `component-card.css`, `component-price.css`, quick-add assets, transitional overrides | `quick-add.js`, `product-form.js` | One explicit Liquid contract shared by home, collection, search, recommendations and cross-sells; CSS overrides remain a later ownership migration |
 | Collection facets | `main-collection-product-grid`, `facets` | `feature-facets.css`, `page-collection.css` | `facets.js`, `facets.helpers.js`, `collection-filters.helpers.js`, `collection-filters.js` | Shared core/event contract; collection adapter owns reference layout and toolbar |
 | Search | `main-search`, `facets` | `feature-facets.css`, `page-search.css` | `facets.js`, `facets.helpers.js`, `search-page.js`, `main-search.js` | Shares facets core; search composition and canonical query remain page-owned |
-| Product detail | `main-product`, `featured-product`, product-domain snippets | `section-main-product.css`, component assets, transitional overrides | `product-info.js`, `product-form.js`, media and pickup modules | Public section schemas remain independent |
+| Product detail | `main-product`, `featured-product`, `product-title-block`, `product-price-block`, `product-rating-block`, media, variant, buy-button and disclosure snippets | `section-main-product.css`, component assets, transitional overrides | `product-info.js`, `product-form.js`, media and pickup modules | Public section schemas remain independent; shared presentation blocks receive explicit product/block/surface arguments |
 | Cart drawer | `sections/cart-drawer`, `snippets/cart-drawer`, cross-sells/progress snippets | cart drawer/component styles plus transitional overrides | `cart-drawer.js`, `cart.js`, disclosure modules | `PUB_SUB_EVENTS.cartUpdate` and section IDs are compatibility boundaries |
 | Cart page | `main-cart-items`, `main-cart-footer` | cart component styles plus transitional overrides | `cart.js`, quantity modules | Share line-item rendering only where markup contracts match |
 | Predictive search | `predictive-search`, `header-search` | `component-predictive-search.css` | `predictive-search.js`, `search-form.js` | Shell-owned |
@@ -25,8 +25,8 @@ This map records current runtime ownership and the intended consolidation bounda
 | --- | ---: | --- |
 | `custom-theme.css` | 497,253 bytes | Multiple features and successive overrides; globally loaded and redundantly referenced by three sections |
 | `legacy-compat.css` | 172,814-byte baseline | Temporary catch-all formerly named `custom-theme-overrides.css`; overlaps heavily with the preceding file |
-| `main-product.liquid` | 2,418 lines | Rendering, schema, structured data, media and commerce orchestration |
-| `featured-product.liquid` | 1,565 lines | Duplicates substantial PDP composition while maintaining a distinct schema |
+| `main-product.liquid` | 2,346 lines after Phase 4 | Public PDP orchestrator and independent schema; title, pricing and rating presentation now delegate to product-domain snippets |
+| `featured-product.liquid` | 1,499 lines after Phase 4 | Public featured-product orchestrator and independent schema; shared presentation delegates without schema generation |
 | `card-product.liquid` | 887-line baseline | Orchestrator now delegates media, badges, pricing and standard quick-add; bulk quick-add remains an explicit Dawn compatibility branch |
 | `facets.liquid` | 1,038 lines | Desktop/mobile controls, sorting, active filters and disclosures |
 

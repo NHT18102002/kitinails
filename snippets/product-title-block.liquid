@@ -1,0 +1,25 @@
+{% comment %}
+  Renders the title block shared by the main and featured product sections.
+
+  Required arguments: product, block, surface.
+  Optional argument: placeholder.
+{% endcomment %}
+
+{%- if surface == 'featured' -%}
+  <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+    {%- unless placeholder -%}
+      {{ product.title | escape }}
+    {%- else -%}
+      {{ 'onboarding.product_title' | t }}
+    {%- endunless -%}
+  </h2>
+{%- else -%}
+  <div class="product__title" {{ block.shopify_attributes }}>
+    <h1>{{ product.title | escape }}</h1>
+    <a href="{{ product.url }}" class="product__title">
+      <h2 class="h1">
+        {{ product.title | escape }}
+      </h2>
+    </a>
+  </div>
+{%- endif -%}

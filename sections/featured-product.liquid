@@ -109,50 +109,20 @@
                     {{- block.settings.text -}}
                   </p>
                 {%- when 'title' -%}
-                  <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                    {%- unless placeholder -%}
-                      {{ product.title | escape }}
-                    {%- else -%}
-                      {{ 'onboarding.product_title' | t }}
-                    {%- endunless -%}
-                  </h2>
+                  {% render 'product-title-block',
+                    product: product,
+                    block: block,
+                    surface: 'featured',
+                    placeholder: placeholder
+                  %}
                 {%- when 'price' -%}
-                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                    {%- render 'price',
-                      product: product,
-                      placeholder: placeholder,
-                      use_variant: true,
-                      show_badges: true,
-                      price_class: 'price--large'
-                    -%}
-                  </div>
-                  {%- if product.quantity_price_breaks_configured? -%}
-                    <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
-                      <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-                    </div>
-                  {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if cart.duties_included and cart.taxes_included -%}
-                        {{ 'products.product.duties_and_taxes_included' | t }}
-                      {%- elsif cart.taxes_included -%}
-                        {{ 'products.product.taxes_included' | t }}
-                      {%- elsif cart.duties_included -%}
-                        {{ 'products.product.duties_included' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                  {%- unless placeholder -%}
-                    <div {{ block.shopify_attributes }}>
-                      {%- form 'product', product -%}
-                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                        {{ form | payment_terms }}
-                      {%- endform -%}
-                    </div>
-                  {%- endunless -%}
+                  {% render 'product-price-block',
+                    product: product,
+                    block: block,
+                    section_id: section.id,
+                    surface: 'featured',
+                    placeholder: placeholder
+                  %}
                 {%- when 'sku' -%}
                   <p
                     class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -421,43 +391,7 @@
                 {%- when 'custom_liquid' -%}
                   {{ block.settings.custom_liquid }}
                 {%- when 'rating' -%}
-                  {%- if product.metafields.reviews.rating.value != blank -%}
-                    <div class="rating-wrapper">
-                      {% liquid
-                        assign rating_decimal = 0
-                        assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
-                        if decimal >= 0.3 and decimal <= 0.7
-                          assign rating_decimal = 0.5
-                        elsif decimal > 0.7
-                          assign rating_decimal = 1
-                        endif
-                      %}
-                      <div
-                        class="rating"
-                        role="img"
-                        aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
-                      >
-                        <span
-                          aria-hidden="true"
-                          class="rating-star"
-                          style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-                        ></span>
-                      </div>
-                      <p class="rating-text caption">
-                        <span aria-hidden="true">
-                          {{- product.metafields.reviews.rating.value }} /
-                          {{ product.metafields.reviews.rating.value.scale_max -}}
-                        </span>
-                      </p>
-                      <p class="rating-count caption">
-                        <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                        <span class="visually-hidden">
-                          {{- product.metafields.reviews.rating_count }}
-                          {{ 'accessibility.total_reviews' | t -}}
-                        </span>
-                      </p>
-                    </div>
-                  {%- endif -%}
+                  {% render 'product-rating-block', product: product, count_style: 'parentheses' %}
                 {%- when 'icon-with-text' -%}
                   {% render 'icon-with-text', block: block %}
               {%- endcase -%}

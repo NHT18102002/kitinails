@@ -52,3 +52,11 @@ The former `custom-theme-overrides.css` is now explicitly named `legacy-compat.c
 `card-product.liquid` remains the single public orchestrator used by homepage rails, collection, search, related products, cross-sells and complementary products. Primary/secondary media, sale/sold-out badges, price composition and standard quick-add now live in explicit `product-card-*` snippets. Arguments include product, section/form IDs, layout context, color schemes, image loading behavior and captured visual labels; the new snippets do not infer their owner from an ambient section or block.
 
 Bulk quick-add remains inside the orchestrator because its modal, quantity-price-break and section contracts differ from standard card quick-add. Existing URLs, image `srcset`/`sizes`, badge IDs, percentage calculation, price output, accessible labels and product-form IDs are unchanged.
+
+## Phase 4 — product detail composition
+
+`main-product` and `featured-product` remain the public section owners and retain independent Theme Editor schemas. Their duplicated title, price/tax/installment and review-rating markup now delegates to `product-title-block`, `product-price-block` and `product-rating-block`. Each shared snippet receives the product, block, section ID and surface mode explicitly; the intentional heading, placeholder, installment-form and review-count differences remain surface-specific branches.
+
+Existing media-gallery, media-modal, variant-picker, buy-buttons and disclosure snippets continue to own their established runtime boundaries. Quantity controls were not combined because the active main-product select control and Dawn featured-product stepper expose different markup and behavior. No schema generation or public ID rename was introduced.
+
+Direct validation used `/products/safari` on the local development preview and the Shopify Section Rendering endpoint for the unconfigured featured-product placeholder. The Chromium visual product snapshots matched at 1440, 1024, 768 and 390 px. The new PDP suite passed gallery, pricing, form, variant-update and duplicate Theme Editor reload contracts in Chromium and WebKit; disclosure scenarios were skipped because this fixture does not render a product disclosure block. Confidence is high for the active PDP fixture and medium for merchant configurations not represented by the fixture catalog.
