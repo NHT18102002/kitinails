@@ -1,0 +1,53 @@
+{% comment %}
+  Renders a cart line total while preserving each surface's established semantics.
+
+  Required arguments: item, surface.
+  Supported surfaces: page, drawer.
+{% endcomment %}
+
+{%- render 'loading-spinner' -%}
+<div class="cart-item__price-wrapper">
+  {%- if item.original_line_price != item.final_line_price -%}
+    {%- if surface == 'drawer' -%}
+      <div class="cart-item__discounted-prices">
+        <span class="visually-hidden">
+          {{ 'products.product.price.regular_price' | t }}
+        </span>
+        <s class="cart-item__old-price price price--end">
+          {{ item.original_line_price | money }}
+        </s>
+        <span class="visually-hidden">
+          {{ 'products.product.price.sale_price' | t }}
+        </span>
+        <span class="price price--end">
+          {{ item.final_line_price | money }}
+        </span>
+      </div>
+    {%- else -%}
+      <dl class="cart-item__discounted-prices">
+        <dt class="visually-hidden">
+          {{ 'products.product.price.regular_price' | t }}
+        </dt>
+        <dd>
+          <s class="cart-item__old-price price price--end">
+            {{ item.original_line_price | money }}
+          </s>
+        </dd>
+        <dt class="visually-hidden">
+          {{ 'products.product.price.sale_price' | t }}
+        </dt>
+        <dd class="price price--end">
+          {{ item.final_line_price | money }}
+        </dd>
+      </dl>
+    {%- endif -%}
+  {%- else -%}
+    <span class="price price--end">
+      {{ item.original_line_price | money }}
+    </span>
+  {%- endif -%}
+
+  {%- if item.variant.available and item.unit_price_measurement -%}
+    {% render 'unit-price', price: item.unit_price, measurement: item.unit_price_measurement %}
+  {%- endif -%}
+</div>

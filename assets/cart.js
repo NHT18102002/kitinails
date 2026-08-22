@@ -65,8 +65,12 @@ class CartItems extends window.StandardEvents.createViewEventElement(HTMLElement
   }
 
   resetQuantityInput(id) {
-    const input = this.querySelector(`#Quantity-${id}`);
-    input.value = input.getAttribute('value');
+    const input =
+      this.querySelector(`#Quantity-${id}`) ||
+      this.querySelector(`#Drawer-quantity-${id}`) ||
+      this.querySelector(`#Drawer-quantity-input-${id}`);
+    if (!input) return;
+    input.value = input.dataset.originalValue ?? input.getAttribute('value');
     this.isEnterPressed = false;
   }
 
@@ -80,14 +84,19 @@ class CartItems extends window.StandardEvents.createViewEventElement(HTMLElement
   validateQuantity(event) {
     const inputValue = parseInt(event.target.value);
     const index = event.target.dataset.index;
+    const constraints = window.CartHelpers.normalizeQuantityConstraints({
+      min: event.target.dataset.min ?? event.target.getAttribute('min'),
+      max: event.target.max ?? event.target.getAttribute('max'),
+      step: event.target.step ?? event.target.getAttribute('step'),
+    });
     let message = '';
 
-    if (inputValue < event.target.dataset.min) {
-      message = window.quickOrderListStrings.min_error.replace('[min]', event.target.dataset.min);
-    } else if (inputValue > parseInt(event.target.max)) {
-      message = window.quickOrderListStrings.max_error.replace('[max]', event.target.max);
-    } else if (inputValue % parseInt(event.target.step) !== 0) {
-      message = window.quickOrderListStrings.step_error.replace('[step]', event.target.step);
+    if (inputValue < constraints.min) {
+      message = window.quickOrderListStrings.min_error.replace('[min]', constraints.min);
+    } else if (constraints.max !== null && inputValue > constraints.max) {
+      message = window.quickOrderListStrings.max_error.replace('[max]', constraints.max);
+    } else if (inputValue % constraints.step !== 0) {
+      message = window.quickOrderListStrings.step_error.replace('[step]', constraints.step);
     }
 
     if (message) {
@@ -106,6 +115,15 @@ class CartItems extends window.StandardEvents.createViewEventElement(HTMLElement
   }
 
   onChange(event) {
+    if (event.target.matches('.select-quantity-popout') && event.target.value === '10+') {
+      event.target.style.display = 'none';
+      const numberInput = event.target.nextElementSibling;
+      numberInput.style.display = 'block';
+      numberInput.value = 10;
+      numberInput.focus();
+      numberInput.dispatchEvent(new Event('change', { bubbles: true }));
+      return;
+    }
     this.validateQuantity(event);
   }
 

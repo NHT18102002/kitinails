@@ -1,0 +1,100 @@
+{% comment %}
+  Renders the shared title, unit price, options, properties and discounts for a cart line.
+
+  Required arguments: item, surface, show_vendor.
+  Supported surfaces: page, drawer.
+{% endcomment %}
+
+{%- if show_vendor -%}
+  <p class="caption-with-letter-spacing{% if surface == 'drawer' %} light{% endif %}">{{ item.product.vendor }}</p>
+{%- endif -%}
+
+<div class="cart-item__title">
+  <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+  {%- assign disclosure_prefix = 'CartDisclosureModal-cart-' -%}
+  {%- if surface == 'drawer' -%}
+    {%- assign disclosure_prefix = 'CartDisclosureModal-drawer-' -%}
+  {%- endif -%}
+  {%- assign cart_disclosure_modal_id = disclosure_prefix | append: item.key | replace: ':', '-' -%}
+  {%- render 'cart-disclosure-indicator', product: item.product, modal_id: cart_disclosure_modal_id -%}
+</div>
+
+{%- if item.original_price != item.final_price -%}
+  <div class="cart-item__discounted-prices">
+    <span class="visually-hidden">
+      {{ 'products.product.price.regular_price' | t }}
+    </span>
+    <s class="cart-item__old-price product-option">
+      {{- item.original_price | money -}}
+    </s>
+    <span class="visually-hidden">
+      {{ 'products.product.price.sale_price' | t }}
+    </span>
+    <strong class="cart-item__final-price product-option">
+      {{ item.final_price | money }}
+    </strong>
+  </div>
+{%- else -%}
+  <div class="product-option">
+    {{ item.original_price | money }}
+  </div>
+{%- endif -%}
+
+{%- if item.product.has_only_default_variant == false
+  or item.properties.size != 0
+  or item.selling_plan_allocation != null
+-%}
+  <dl>
+    {%- if item.product.has_only_default_variant == false -%}
+      {%- for option in item.options_with_values -%}
+        <div class="product-option">
+          <dt>{{ option.name }}:</dt>
+          <dd>
+            {{- option.value -}}
+            {%- if surface == 'drawer' and forloop.last == false %}, {% endif %}
+          </dd>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- for property in item.properties -%}
+      {%- assign property_first_char = property.first | slice: 0 -%}
+      {%- if property.last != blank and property_first_char != '_' -%}
+        <div class="product-option">
+          <dt>{{ property.first }}:</dt>
+          <dd>
+            {%- if property.last contains '/uploads/' -%}
+              <a
+                href="{{ property.last }}"
+                class="link"
+                target="_blank"
+                {% if surface == 'drawer' %}
+                  aria-describedby="a11y-new-window-message"
+                {% endif %}
+              >
+                {{ property.last | split: '/' | last }}
+              </a>
+            {%- else -%}
+              {{ property.last }}
+            {%- endif -%}
+          </dd>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </dl>
+
+  <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+{%- endif -%}
+
+<ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+  {%- for discount in item.line_level_discount_allocations -%}
+    <li class="discounts__discount">
+      {{- 'icon-discount.svg' | inline_asset_content -}}
+      {%- if surface == 'page' -%}
+        {{ discount.discount_application.title | escape }}
+      {%- else -%}
+        {{ discount.discount_application.title }}
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>
