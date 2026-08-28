@@ -522,8 +522,8 @@
 }
 
 .footer--ersa .footer__content-top {
-  padding-top: clamp(5.6rem, 5vw, 7.6rem);
-  padding-bottom: clamp(3.8rem, 4vw, 6rem);
+  padding-top: clamp(3.6rem, 3.2vw, 5rem);
+  padding-bottom: clamp(2.8rem, 3vw, 4.8rem);
 }
 
 .footer--ersa .footer__nav-grid {
@@ -551,14 +551,14 @@
   align-items: center;
   gap: 0.8rem;
   width: auto;
-  margin: 0 0 2.6rem;
+  margin: 0 0 1.4rem;
   padding: 0;
   background: transparent;
   border: 0;
   color: #fff;
   cursor: default;
   font: inherit;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
@@ -604,7 +604,7 @@
   display: inline-block;
   padding: 0;
   font-size: 1.8rem;
-  line-height: 1.95;
+  line-height: 1.5;
   text-decoration: none;
   transition: color var(--duration-short) ease, opacity var(--duration-short) ease;
 }
@@ -627,9 +627,9 @@
 }
 
 .footer--ersa .footer-block__newsletter-description {
-  margin: 0 0 2.4rem;
-  font-size: 1.7rem;
-  line-height: 1.55;
+  margin: 0 0 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
 }
 
 .footer--ersa .newsletter-form,
@@ -638,7 +638,7 @@
 }
 
 .footer--ersa .newsletter-form__field-wrapper .field {
-  min-height: 6rem;
+  min-height: 4.4rem;
 }
 
 .footer--ersa .newsletter-form__field-wrapper .field::before,
@@ -650,9 +650,9 @@
 }
 
 .footer--ersa .field__input {
-  height: 6rem;
-  min-height: 6rem;
-  padding: 1.6rem 5.6rem 1.6rem 2.4rem;
+  height: 4.4rem;
+  min-height: 4.4rem;
+  padding: 1.2rem 5.2rem 1.2rem 1.8rem;
   background: #050505;
   border: 0;
   border-radius: 0.8rem;
@@ -665,9 +665,9 @@
 }
 
 .footer--ersa .field__label {
-  top: 1.8rem;
-  left: 2.4rem;
-  font-size: 1.6rem;
+  top: 1.2rem;
+  left: 1.8rem;
+  font-size: 1.3rem;
 }
 
 .footer--ersa .field__input:focus ~ .field__label,
@@ -690,7 +690,7 @@
 
 .footer--ersa .footer__content-bottom {
   border-top: 0;
-  padding: clamp(2rem, 3vw, 3.8rem) 0 clamp(4rem, 4vw, 5.6rem);
+  padding: clamp(1.6rem, 2vw, 2.8rem) 0 clamp(2.4rem, 3vw, 4rem);
 }
 
 .footer--ersa .footer__utility {
@@ -704,7 +704,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  min-height: 7.8rem;
+  min-height: 5.4rem;
 }
 
 .footer--ersa .footer__list-social.list-social {
@@ -739,7 +739,7 @@
   justify-content: center;
   gap: 1rem;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 1.2rem;
 }
 
 .footer--ersa .footer__localization:empty {
@@ -771,19 +771,19 @@
 .footer--ersa .footer__copyright {
   margin: 0;
   color: rgba(255, 255, 255, 0.86);
-  font-size: 1.3rem;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.5;
   text-align: center;
 }
 
 .footer--ersa .copyright__content {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .footer--ersa .policies {
   display: flex;
   justify-content: center;
-  gap: 1.8rem;
+  gap: 1.4rem;
   margin: 1rem 0 0;
   padding: 0;
 }
@@ -801,7 +801,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  min-height: 7.8rem;
+  min-height: 5.4rem;
 }
 
 .footer--ersa .footer__payment {
@@ -881,8 +881,8 @@
   }
 
   .footer--ersa .footer__content-top {
-    padding-top: 4.2rem;
-    padding-bottom: 2.8rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 
   .footer--ersa .footer__nav-grid {
@@ -898,10 +898,10 @@
   .footer--ersa .footer-block__heading {
     justify-content: space-between;
     width: 100%;
-    min-height: 5.4rem;
+    min-height: 4.4rem;
     margin: 0;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .footer--ersa .footer-title__button .icon-caret {
@@ -922,13 +922,13 @@
 
   .footer--ersa .footer-block__details-content,
   .footer--ersa .footer-block__newsletter {
-    padding-bottom: 2.4rem;
+    padding-bottom: 1.4rem;
   }
 
   .footer--ersa .footer-block__details-content a,
   .footer--ersa .footer-block__details-content .list-menu__item--link {
-    font-size: 1.5rem;
-    line-height: 2;
+    font-size: 1.3rem;
+    line-height: 1.6;
   }
 
   .footer--ersa .footer-block__newsletter,
@@ -939,20 +939,20 @@
   }
 
   .footer--ersa .footer-block__newsletter-description {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .footer--ersa .field__input {
-    height: 5.4rem;
-    min-height: 5.4rem;
+    height: 4.6rem;
+    min-height: 4.6rem;
   }
 
   .footer--ersa .footer__content-bottom {
-    padding: 2.8rem 0 4rem;
+    padding: 1.8rem 0 2.8rem;
   }
 
   .footer--ersa .footer__utility {
-    row-gap: 2.2rem;
+    row-gap: 1.6rem;
   }
 
   .footer--ersa .footer__utility-center {
