@@ -72,6 +72,10 @@ Desktop.ini
 # Private clean-room visual references
 public/image-website/
 
+# Local agent skills and generated UI reference snapshots
+.agents/
+tmp-pdp-reference-*.png
+
 # Catalog import tooling outputs
 data/catalog/raw/
 data/catalog/assets/
