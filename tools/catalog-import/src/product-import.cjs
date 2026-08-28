@@ -15,22 +15,32 @@ function buildImportRequestHash(request) {
   return createManifestHash(request);
 }
 
-function buildProductSetMutationInput(request) {
+function buildProductSetMutationInput(request, { preserveInventory = false } = {}) {
   const seenFileIds = new Set();
+  const input = {
+    ...request.input,
+    files: Array.isArray(request?.input?.files)
+      ? request.input.files
+          .map((file) => ({ id: file?.id || '' }))
+          .filter((file) => {
+            if (!file.id || seenFileIds.has(file.id)) return false;
+            seenFileIds.add(file.id);
+            return true;
+          })
+      : [],
+  };
+
+  if (preserveInventory && Array.isArray(input.variants)) {
+    input.variants = input.variants.map((variant) => {
+      if (!variant || typeof variant !== 'object') return variant;
+      const { inventoryQuantities, ...withoutInventory } = variant;
+      return withoutInventory;
+    });
+  }
+
   return {
     identifier: request.identifier,
-    input: {
-      ...request.input,
-      files: Array.isArray(request?.input?.files)
-        ? request.input.files
-            .map((file) => ({ id: file?.id || '' }))
-            .filter((file) => {
-              if (!file.id || seenFileIds.has(file.id)) return false;
-              seenFileIds.add(file.id);
-              return true;
-            })
-        : [],
-    },
+    input,
   };
 }
 
@@ -243,7 +253,12 @@ async function importSingleProduct({ graphql, selected, synchronous }) {
   try {
     const payload = await runWithRetries(() =>
       graphql(MUTATION_PRODUCT_SET, {
-        ...buildProductSetMutationInput(request),
+        // Inventory is merchant-managed after a product exists. The source
+        // crawl only carries an availability flag, so never let an update
+        // replace an Admin-entered quantity with the demo 50/0 value.
+        ...buildProductSetMutationInput(request, {
+          preserveInventory: guard.decision !== 'create',
+        }),
         synchronous,
       })
     );

@@ -164,7 +164,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -225,7 +225,7 @@
       "settings": {
         "heading": "4 Reasons Why Millions are Switching to Handmade Press-ons",
         "heading_size": "h1",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 76,
         "padding_bottom": 112
       }
@@ -243,7 +243,7 @@
         "secondary_image_filename": "Summer2026_ErsaNails_PressOnNails_15.webp",
         "button_label": "DISCOVER THE COLLECTION",
         "button_link": "/collections/island-glow-club",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -284,7 +284,7 @@
         "heading_size": "h1",
         "rating_text": "",
         "subheading": "Be the first to write a review",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 48,
         "padding_bottom": 44
       }
@@ -352,7 +352,7 @@
       "settings": {
         "heading": "Kiti Babes in Action",
         "heading_size": "h1",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 48,
         "padding_bottom": 60
       }
@@ -413,7 +413,7 @@
         "heading": "Get Inspired by Every Look",
         "heading_size": "h1",
         "text": "",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -421,7 +421,7 @@
     "product_you_may_like": {
       "type": "featured-collection",
       "settings": {
-        "collection": "best-seller",
+        "collection": "summer-vibes",
         "products_to_show": 8,
         "title": "YOU MAY ALSO LIKE",
         "heading_size": "h1",
@@ -433,7 +433,7 @@
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "link",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-light-text",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -518,8 +518,8 @@
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
-        "container_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-light-text",
+        "color_scheme": "scheme-light-text",
         "open_first_collapsible_row": false,
         "image": "",
         "padding_top": 48,

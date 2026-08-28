@@ -2,18 +2,18 @@
   Renders product-card primary and optional secondary media.
 
   Required arguments: product, image_shape, color_scheme, link_media,
-  show_secondary_image, lazy_load, page_width.
+  show_secondary_image, lazy_load, page_width, unified_card.
 {% endcomment %}
 
-<div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ color_scheme }} gradient{% endif %}">
+<div class="{% if unified_card %}product-card__media-frame{% else %}card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ color_scheme }} gradient{% endif %}{% endif %}">
   {%- if link_media -%}
     <a
-      class="collection-card-media-link"
+      class="{% if unified_card %}product-card__media-link{% else %}collection-card-media-link{% endif %}"
       href="{{ product.url }}"
       aria-label="{{ product.title | escape }}"
     >
   {%- endif -%}
-  <div class="media media--transparent media--hover-effect">
+  <div class="{% if unified_card %}product-card__media{% else %}media media--transparent media--hover-effect{% endif %}">
     {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
     <img
       srcset="
@@ -28,7 +28,7 @@
       src="{{ product.featured_media | image_url: width: 533 }}"
       sizes="(min-width: {{ page_width }}px) {{ page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
       alt="{{ product.featured_media.alt | escape }}"
-      class="motion-reduce"
+      class="{% if unified_card %}product-card__image product-card__image--primary{% else %}motion-reduce{% endif %}"
       {% unless lazy_load == false %}
         loading="lazy"
       {% endunless %}
@@ -51,7 +51,7 @@
         src="{{ product.media[1] | image_url: width: 533 }}"
         sizes="(min-width: {{ page_width }}px) {{ page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
         alt="{{ product.media[1].alt | escape }}"
-        class="motion-reduce"
+        class="{% if unified_card %}product-card__image product-card__image--secondary{% else %}motion-reduce{% endif %}"
         loading="lazy"
         width="{{ product.media[1].width }}"
         height="{{ product.media[1].height }}"

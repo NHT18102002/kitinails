@@ -1,25 +1,25 @@
 /* Mobile homepage hero: make image fill height instead of sitting above blank content */
 @media screen and (max-width: 749px) {
-  main[data-template='index'] #shopify-section-template--20456552071319__hero {
+  main[data-template='index'] slideshow-component {
     min-height: 100svh !important;
     overflow: hidden !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow.banner--large,
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__slide {
+  main[data-template='index'] slideshow-component .slideshow.banner--large,
+  main[data-template='index'] slideshow-component .slideshow__slide {
     height: 100svh !important;
     min-height: 100svh !important;
     max-height: none !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__slide {
+  main[data-template='index'] slideshow-component .slideshow__slide {
     position: relative !important;
     display: flex !important;
     align-items: stretch !important;
     overflow: hidden !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__media.banner__media {
+  main[data-template='index'] slideshow-component .slideshow__media.banner__media {
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
@@ -29,9 +29,9 @@
     z-index: 0 !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__media.banner__media img,
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__media.banner__media svg,
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .banner__slideshow-image {
+  main[data-template='index'] slideshow-component .slideshow__media.banner__media img,
+  main[data-template='index'] slideshow-component .slideshow__media.banner__media svg,
+  main[data-template='index'] slideshow-component .banner__slideshow-image {
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
@@ -42,7 +42,7 @@
     object-position: center center !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__text-wrapper.banner__content {
+  main[data-template='index'] slideshow-component .slideshow__text-wrapper.banner__content {
     position: relative !important;
     z-index: 2 !important;
     width: 100% !important;
@@ -54,7 +54,7 @@
     background: transparent !important;
   }
 
-  main[data-template='index'] #shopify-section-template--20456552071319__hero .slideshow__text.banner__box {
+  main[data-template='index'] slideshow-component .slideshow__text.banner__box {
     background: transparent !important;
     color: #fff !important;
   }

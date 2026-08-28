@@ -63,7 +63,7 @@ Checks performed:
 - Form controls showed the new 50px minimum height where applicable.
 - Browser console errors caused by this phase: none observed.
 
-Note: port `9292` was already in use by an existing `shopify theme dev --store develop-store-5y6bipog.myshopify.com --open` process, so validation reused that active preview.
+Note: port `9292` was already in use by an existing `shopify theme dev --store kitinails.myshopify.com --open` process, so validation reused that active preview.
 
 ## 8. Known limitations due to missing brand assets
 

@@ -12,6 +12,7 @@
   - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
   - skip_styles: {Boolean} Don't include component styles. Useful when rendering multiple product cards in a loop. Default: false (optional)
   - quick_add: {Boolean} Show the quick add button.
+  - show_secondary_image: {Boolean} Enables the secondary image for legacy horizontal cards. Unified vertical cards render the secondary product media whenever it is available.
   - section_id: {String} The ID of the section that contains this card.
   - card_layout_context: {String} Optional scoped layout variant for a specific card use case.
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
@@ -93,20 +94,38 @@
       assign render_collection_media_link = true
     endif
 
-    assign quick_add_container_classes = 'quick-add no-js-hidden'
-    if is_homepage_best_sellers_card
-      assign quick_add_container_classes = quick_add_container_classes | append: ' quick-add--homepage-best-sellers'
+    assign use_unified_product_card = true
+    if horizontal_class
+      assign use_unified_product_card = false
     endif
 
+    if use_unified_product_card and card_product.url != blank
+      assign render_collection_media_link = true
+    endif
+
+    assign render_secondary_product_image = show_secondary_image
+    if use_unified_product_card
+      assign render_secondary_product_image = true
+    endif
+
+    assign has_secondary_product_image = false
+    if card_product.media[1] != null and render_secondary_product_image
+      assign has_secondary_product_image = true
+    endif
+
+    assign product_card_price_class = ''
+    assign quick_add_container_classes = 'quick-add no-js-hidden'
     assign quick_add_submit_base_classes = 'quick-add__submit button button--full-width button--secondary'
-    if is_homepage_best_sellers_card
-      assign quick_add_submit_base_classes = quick_add_submit_base_classes | append: ' quick-add__submit--homepage-best-sellers'
+    if use_unified_product_card
+      assign product_card_price_class = 'product-card__price'
+      assign quick_add_container_classes = 'product-card__quick-buy no-js-hidden'
+      assign quick_add_submit_base_classes = 'product-card__quick-buy-button'
     endif
   -%}
 
   {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
-  {%- capture homepage_quick_buy_visual -%}
-    <span class="quick-add__icon quick-add__icon--homepage-best-sellers" aria-hidden="true">
+  {%- capture product_card_quick_buy_visual -%}
+    <span class="product-card__quick-buy-icon" aria-hidden="true">
       <img
         class="icon icon-cart-outline"
         src="{{ 'icon-cart.svg' | asset_url }}"
@@ -115,12 +134,12 @@
         height="21"
       >
     </span>
-    <span class="quick-add__label quick-add__label--homepage-best-sellers" aria-hidden="true">
-      {{- 'products.product.add_to_cart' | t -}}
+    <span class="product-card__quick-buy-label" aria-hidden="true">
+      QUICK BUY
     </span>
   {%- endcapture -%}
-  {%- capture homepage_sold_out_visual -%}
-    <span class="quick-add__icon quick-add__icon--homepage-best-sellers" aria-hidden="true">
+  {%- capture product_card_sold_out_visual -%}
+    <span class="product-card__quick-buy-icon" aria-hidden="true">
       <img
         class="icon icon-cart-outline"
         src="{{ 'icon-cart.svg' | asset_url }}"
@@ -129,19 +148,8 @@
         height="21"
       >
     </span>
-    <span class="quick-add__label quick-add__label--homepage-best-sellers" aria-hidden="true">
+    <span class="product-card__quick-buy-label" aria-hidden="true">
       {{- 'products.product.sold_out' | t -}}
-    </span>
-  {%- endcapture -%}
-  {%- capture collection_quick_buy_visual -%}
-    <span class="quick-add__icon quick-add__icon--collection" aria-hidden="true">
-      <img
-        class="icon icon-cart-outline"
-        src="{{ 'icon-cart.svg' | asset_url }}"
-        alt=""
-        width="21"
-        height="21"
-      >
     </span>
   {%- endcapture -%}
   {%- capture standard_quick_add_markup -%}
@@ -155,31 +163,36 @@
         submit_classes: quick_add_submit_base_classes,
         requires_pdp_selection: requires_pdp_selection,
         horizontal: horizontal_quick_add,
-        homepage_context: is_homepage_best_sellers_card,
-        listing_context: is_collection_style_card,
-        homepage_quick_buy_visual: homepage_quick_buy_visual,
-        homepage_sold_out_visual: homepage_sold_out_visual,
-        listing_quick_buy_visual: collection_quick_buy_visual
+        unified_card: use_unified_product_card,
+        quick_buy_visual: product_card_quick_buy_visual,
+        sold_out_visual: product_card_sold_out_visual
       %}
     {% endif %}
   {%- endcapture -%}
 
   <product-component view-event-payload="{{ card_product | standard_event_data: 'view', context: product_view_context | escape }}">
-    <div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div class="card-wrapper product-card-wrapper{% if use_unified_product_card %} product-card-wrapper--unified{% endif %}{% if has_secondary_product_image %} product-card-wrapper--has-secondary-media{% endif %}{% unless use_unified_product_card %} underline-links-hover{% endunless %}">
       <div
         class="
-          card card--{{ settings.card_style }}
-          {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
-          {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+          card
+          {% if use_unified_product_card %}
+            product-card product-card--unified
+          {% else %}
+            card--{{ settings.card_style }}
+            {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+            {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+          {% endif %}
           {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
           {% if extend_height %} card--extend-height{% endif %}
-          {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
+          {% unless use_unified_product_card %}
+            {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
+          {% endunless %}
           {% if horizontal_class %} card--horizontal{% endif %}
         "
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         <div
-          class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
+          class="card__inner{% if use_unified_product_card %} product-card__media-container{% else %} {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}{% endif %}"
           style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
         >
           {%- if card_product.featured_media -%}
@@ -188,18 +201,19 @@
               image_shape: image_shape,
               color_scheme: settings.card_color_scheme,
               link_media: render_collection_media_link,
-              show_secondary_image: show_secondary_image,
+              show_secondary_image: render_secondary_product_image,
               lazy_load: lazy_load,
-              page_width: settings.page_width
+              page_width: settings.page_width,
+              unified_card: use_unified_product_card
             %}
           {%- endif -%}
           {%- if render_quick_add_in_media -%}
             {{ standard_quick_add_markup }}
           {%- endif -%}
-          <div class="card__content">
-            <div class="card__information">
+          <div class="{% if use_unified_product_card %}product-card__overlay{% else %}card__content{% endif %}">
+            <div class="{% if use_unified_product_card %}product-card__overlay-content{% else %}card__information{% endif %}">
               <h3
-                class="card__heading"
+                class="{% if use_unified_product_card %}product-card__heading product-card__heading--overlay{% else %}card__heading{% endif %}"
                 {% if card_product.featured_media == null and settings.card_style == 'standard' %}
                   id="title-{{ section_id }}-{{ card_product.id }}"
                 {% endif %}
@@ -214,10 +228,10 @@
                 </a>
               </h3>
             </div>
-            {%- if is_homepage_best_sellers_card or request.page_type == 'collection' or request.page_type == 'search' -%}
+            {%- if use_unified_product_card or is_homepage_best_sellers_card or request.page_type == 'collection' or request.page_type == 'search' -%}
               <button
                 type="button"
-                class="product-card__wishlist"
+                class="{% if use_unified_product_card %}product-card__favorite{% else %}product-card__wishlist{% endif %}"
                 aria-label="Add {{ card_product.title | escape }} to wishlist"
               >
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
@@ -235,24 +249,20 @@
             %}
           </div>
         </div>
-        <div class="card__content{% if is_homepage_best_sellers_card %} card__content--homepage-best-sellers{% endif %}">
-          <div class="card__information{% if is_homepage_best_sellers_card %} card__information--homepage-best-sellers{% endif %}">
+        <div class="{% if use_unified_product_card %}product-card__content{% else %}card__content{% if is_homepage_best_sellers_card %} card__content--homepage-best-sellers{% endif %}{% endif %}">
+          <div class="{% if use_unified_product_card %}product-card__information{% else %}card__information{% if is_homepage_best_sellers_card %} card__information--homepage-best-sellers{% endif %}{% endif %}">
             {%- if is_homepage_best_sellers_card -%}
-              {%- if show_rating -%}
+              {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
                 {% liquid
-                  assign rating_value = 5
-                  assign rating_max = 5
+                  assign rating_value = card_product.metafields.reviews.rating.value.rating
+                  assign rating_max = card_product.metafields.reviews.rating.value.scale_max
                   assign rating_decimal = 0
                   assign review_count = card_product.metafields.reviews.rating_count | default: 0
-                  if card_product.metafields.reviews.rating.value != blank
-                    assign rating_value = card_product.metafields.reviews.rating.value.rating
-                    assign rating_max = card_product.metafields.reviews.rating.value.scale_max
-                    assign decimal = rating_value | modulo: 1
-                    if decimal >= 0.3 and decimal <= 0.7
-                      assign rating_decimal = 0.5
-                    elsif decimal > 0.7
-                      assign rating_decimal = 1
-                    endif
+                  assign decimal = rating_value | modulo: 1
+                  if decimal >= 0.3 and decimal <= 0.7
+                    assign rating_decimal = 0.5
+                  elsif decimal > 0.7
+                    assign rating_decimal = 1
                   endif
                 %}
                 <div class="product-card__review-row">
@@ -268,17 +278,12 @@
                     ></span>
                   </div>
                   <p class="rating-count caption">
-                    <span aria-hidden="true">
-                      {{- review_count }} reviews
-                    </span>
-                    <span class="visually-hidden">
-                      {{- review_count }} reviews
-                    </span>
+                    {{- review_count }} {{ 'accessibility.total_reviews' | t -}}
                   </p>
                 </div>
               {%- endif -%}
               <h3
-                class="card__heading card__heading--homepage-best-sellers{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+                class="{% if use_unified_product_card %}product-card__heading{% else %}card__heading card__heading--homepage-best-sellers{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}{% endif %}"
                 {% if card_product.featured_media or settings.card_style == 'card' %}
                   id="title-{{ section_id }}-{{ card_product.id }}"
                 {% endif %}
@@ -292,12 +297,12 @@
                   {{ card_product.title | escape }}
                 </a>
               </h3>
-              <div class="card-information card-information--homepage-best-sellers">
-                {% render 'product-card-price', product: card_product, price_class: '', show_compare_at_price: true %}
+              <div class="{% if use_unified_product_card %}product-card__pricing{% else %}card-information card-information--homepage-best-sellers{% endif %}">
+                {% render 'product-card-price', product: card_product, price_class: product_card_price_class, show_compare_at_price: true %}
               </div>
             {%- else -%}
               <h3
-                class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+                class="{% if use_unified_product_card %}product-card__heading{% else %}card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}{% endif %}"
                 {% if card_product.featured_media or settings.card_style == 'card' %}
                   id="title-{{ section_id }}-{{ card_product.id }}"
                 {% endif %}
@@ -311,7 +316,7 @@
                   {{ card_product.title | escape }}
                 </a>
               </h3>
-              <div class="card-information">
+              <div class="{% if use_unified_product_card %}product-card__pricing{% else %}card-information{% endif %}">
                 {%- if card_meta_line != blank -%}
                   <p class="product-card__details caption-large light">
                     {{ card_meta_line | escape }}
@@ -337,33 +342,25 @@
                       assign rating_decimal = 1
                     endif
                   %}
-                  <div
-                    class="rating"
-                    role="img"
-                    aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="rating-star"
-                      style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-                    ></span>
+                  <div class="product-card__review-row">
+                    <div
+                      class="rating"
+                      role="img"
+                      aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="rating-star"
+                        style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                      ></span>
+                    </div>
+                    <p class="rating-count caption">
+                      {{- card_product.metafields.reviews.rating_count }} {{ 'accessibility.total_reviews' | t -}}
+                    </p>
                   </div>
-                  <p class="rating-text caption">
-                    <span aria-hidden="true">
-                      {{- card_product.metafields.reviews.rating.value }} /
-                      {{ card_product.metafields.reviews.rating.value.scale_max -}}
-                    </span>
-                  </p>
-                  <p class="rating-count caption">
-                    <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
-                    <span class="visually-hidden">
-                      {{- card_product.metafields.reviews.rating_count }}
-                      {{ 'accessibility.total_reviews' | t -}}
-                    </span>
-                  </p>
                 {%- endif -%}
 
-                {% render 'product-card-price', product: card_product, price_class: '', show_compare_at_price: true %}
+                {% render 'product-card-price', product: card_product, price_class: product_card_price_class, show_compare_at_price: true %}
                 {%- if card_product.quantity_price_breaks_configured? -%}
                   {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                     {% liquid
@@ -606,14 +603,16 @@
               </div>
             {% endif %}
           {% endif %}
-          {% render 'product-card-badges',
-            product: card_product,
-            section_id: section_id,
-            id_prefix: 'Badge',
-            position: settings.badge_position,
-            sold_out_color_scheme: settings.sold_out_badge_color_scheme,
-            sale_color_scheme: settings.sale_badge_color_scheme
-          %}
+          {%- unless use_unified_product_card -%}
+            {% render 'product-card-badges',
+              product: card_product,
+              section_id: section_id,
+              id_prefix: 'Badge',
+              position: settings.badge_position,
+              sold_out_color_scheme: settings.sold_out_badge_color_scheme,
+              sale_color_scheme: settings.sale_badge_color_scheme
+            %}
+          {%- endunless -%}
         </div>
       </div>
     </div>

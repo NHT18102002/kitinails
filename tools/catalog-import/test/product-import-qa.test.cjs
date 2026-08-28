@@ -55,6 +55,48 @@ test('compareImportedProduct reports mismatches across status, tags, metafields,
   assert.equal(result.mismatches.includes('inventoryQuantities'), true);
 });
 
+test('compareImportedProduct does not fail on Admin-managed inventory during updates', () => {
+  const result = compareImportedProduct({
+    preserveInventory: true,
+    expectedRequest: {
+      identifier: { handle: 'fairy-garden' },
+      input: {
+        status: 'DRAFT',
+        tags: [],
+        files: [],
+        metafields: [],
+        variants: [
+          {
+            sku: 'FG-XS',
+            price: '49.99',
+            compareAtPrice: null,
+            inventoryQuantities: [{ locationId: 'gid://shopify/Location/2', quantity: 50 }],
+          },
+        ],
+      },
+    },
+    importedProduct: {
+      handle: 'fairy-garden',
+      status: 'DRAFT',
+      tags: [],
+      mediaCount: 0,
+      sourceUrl: '',
+      metafields: {},
+      variants: [
+        {
+          sku: 'FG-XS',
+          price: '49.99',
+          compareAtPrice: '',
+          inventoryByLocation: { 'gid://shopify/Location/2': 7 },
+        },
+      ],
+    },
+  });
+
+  assert.equal(result.mismatches.includes('inventoryQuantities'), false);
+  assert.deepEqual(result.mismatches, []);
+});
+
 test('buildQaSummary counts matched, mismatched, and missing products', () => {
   const summary = buildQaSummary([
     { handle: 'a', missing: false, mismatches: [] },

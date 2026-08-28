@@ -486,6 +486,32 @@
   margin-top: 0.4rem;
 }
 
+/* Shared vertical-card rating contract: rating and its review count are one
+   compact metadata group, never separate grid rows. */
+.product-card__review-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  margin: 0;
+  color: var(--product-card-ink, rgb(var(--color-foreground)));
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.product-card__review-row .rating-star {
+  --color-rating-star: var(--product-card-ink, rgb(var(--color-foreground)));
+}
+
+.product-card__review-row .rating-count {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 /* Specificity needed due to the changes below */
 .card-information
   > *:not(.visually-hidden:first-child)

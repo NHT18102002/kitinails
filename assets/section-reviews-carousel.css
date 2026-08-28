@@ -1,0 +1,177 @@
+/*
+ * Reviews carousel owner
+ *
+ * The review rail is intentionally constrained to a centered content frame.
+ * Cards stay inside that frame while the track provides the only horizontal
+ * scroll surface. This prevents long review lists from widening the page.
+ */
+.section-ersa-reviews-carousel .ersa-reviews-carousel__inner {
+  width: min(100%, 124rem);
+  max-width: 124rem;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track-shell {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr) 4.4rem;
+  align-items: center;
+  gap: clamp(0.8rem, 1.4vw, 1.6rem);
+  width: 100%;
+  max-width: 124rem;
+  margin-inline: auto;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track-wrapper {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track {
+  --reviews-carousel-gap: 1.6rem;
+  --reviews-carousel-card-width: calc((100% - 4.8rem) / 4);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--reviews-carousel-card-width);
+  gap: var(--reviews-carousel-gap);
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 1.2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track:active {
+  cursor: grabbing;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__track:focus-visible {
+  outline: 0.2rem solid rgb(var(--color-foreground));
+  outline-offset: 0.2rem;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  order: var(--review-order, 0);
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__card--no-image {
+  align-content: start;
+  gap: 1.2rem;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__card--no-image .ersa-reviews-carousel__card-author {
+  margin-top: 0;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav {
+  display: grid;
+  width: 4.4rem;
+  height: 4.4rem;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.18);
+  border-radius: 50%;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  box-shadow: 0 0.4rem 1.4rem rgba(var(--color-shadow), 0.08);
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav:hover:not(:disabled) {
+  border-color: rgb(var(--color-foreground));
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  transform: scale(1.04);
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav:focus-visible {
+  outline: 0.2rem solid rgb(var(--color-foreground));
+  outline-offset: 0.3rem;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav .svg-wrapper,
+.section-ersa-reviews-carousel .ersa-reviews-carousel__nav svg {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__inner {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1.2rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__track-shell {
+    grid-template-columns: 3.6rem minmax(0, 1fr) 3.6rem;
+    gap: 0.4rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__track {
+    --reviews-carousel-gap: 1rem;
+    --reviews-carousel-card-width: 100%;
+    padding-bottom: 0.8rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__nav {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__nav .svg-wrapper,
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__nav svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__card {
+    border-radius: 1.6rem;
+    padding: 1.6rem;
+  }
+
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__card--no-image .ersa-reviews-carousel__card-author {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__nav,
+  .section-ersa-reviews-carousel .ersa-reviews-carousel__card {
+    transition: none;
+  }
+}

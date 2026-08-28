@@ -301,10 +301,10 @@ Observed from current files:
 - No new file changes unless QA exposes a bug.
 
 **Commands:**
-- `shopify theme dev --store develop-store-5y6bipog.myshopify.com`
+- `shopify theme dev --store kitinails.myshopify.com`
 - `shopify theme check`
 - `git diff --check`
-- `shopify theme push --store develop-store-5y6bipog.myshopify.com --theme 151645159575`
+- `shopify theme push --store kitinails.myshopify.com --theme 151645159575`
 
 **Manual QA:**
 - Compare reference and local/preview at:

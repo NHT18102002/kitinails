@@ -77,7 +77,12 @@
     </div>
 
     <div class="ersa-must-have__content">
-      <div class="ersa-must-have__products featured-collection--homepage-best-sellers" role="list">
+      <div
+        class="ersa-must-have__products featured-collection--homepage-best-sellers"
+        role="list"
+        aria-label="{{ section.settings.heading | escape }} products"
+        tabindex="0"
+      >
         {%- if selected_collection != blank and selected_collection.all_products_count > 0 -%}
           {%- for product in selected_collection.products limit: products_to_show -%}
             <div class="ersa-must-have__product" role="listitem">
@@ -114,19 +119,19 @@
 
 {% schema %}
 {
-  "name": "Kiti must-have essentials",
+  "name": "Nails Art Collection",
   "tag": "section",
   "class": "section section-ersa-must-have",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Tools & Accessories" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Must-Have Nail Essentials" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Nails Art Collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Nails Art" },
     { "type": "select", "id": "heading_size", "label": "Heading size", "default": "h1", "options": [ { "value": "h2", "label": "Small" }, { "value": "h1", "label": "Medium" }, { "value": "h0", "label": "Large" } ] },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Get the essential tools for perfect nails.</p>" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Discover hand-painted press-on designs made to express your style.</p>" },
     { "type": "image_picker", "id": "image", "label": "Feature image" },
     { "type": "text", "id": "image_filename", "label": "Theme asset filename fallback", "default": "Sangria_-_ErsaNails_PressOnNails_007.webp" },
     { "type": "collection", "id": "collection", "label": "Product collection" },
-    { "type": "range", "id": "products_to_show", "min": 2, "max": 6, "step": 1, "default": 4, "label": "Products to show" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP ALL TOOLS" },
+    { "type": "range", "id": "products_to_show", "min": 2, "max": 16, "step": 1, "default": 4, "label": "Products to show" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP NAILS ART" },
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "select", "id": "image_ratio", "label": "Product image ratio", "default": "portrait", "options": [ { "value": "adapt", "label": "Adapt" }, { "value": "portrait", "label": "Portrait" }, { "value": "square", "label": "Square" } ] },
     { "type": "checkbox", "id": "show_secondary_image", "default": true, "label": "Show second image on hover" },

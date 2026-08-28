@@ -64,7 +64,7 @@
   }
 
   .ersa-collection-campaign__eyebrow {
-    margin: 0 0 0.8rem;
+    margin: 0.8rem 0 0;
     color: #fff;
     font-family: var(--ersa-body-font, Nunito, sans-serif);
     font-size: 1.6rem;
@@ -256,7 +256,7 @@
     }
 
     .ersa-collection-campaign__eyebrow {
-      margin-bottom: 0.4rem;
+      margin-top: 0.4rem;
       font-size: 1.45rem;
     }
 
@@ -348,18 +348,20 @@
     {%- endif -%}
 
     <div class="ersa-collection-campaign__content">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="ersa-collection-campaign__eyebrow">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
       {%- if section.settings.heading != blank -%}
         <h2 class="ersa-collection-campaign__heading">{{ section.settings.heading }}</h2>
       {%- endif -%}
-      <ul class="ersa-collection-campaign__timer" aria-label="{{ section.settings.heading | escape }} countdown">
-        <li><strong>{{ section.settings.countdown_days }}</strong><span>{{ section.settings.days_label }}</span></li>
-        <li><strong>{{ section.settings.countdown_hours }}</strong><span>{{ section.settings.hours_label }}</span></li>
-        <li><strong>{{ section.settings.countdown_minutes }}</strong><span>{{ section.settings.minutes_label }}</span></li>
-        <li><strong>{{ section.settings.countdown_seconds }}</strong><span>{{ section.settings.seconds_label }}</span></li>
-      </ul>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ersa-collection-campaign__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.countdown_days != blank or section.settings.countdown_hours != blank or section.settings.countdown_minutes != blank or section.settings.countdown_seconds != blank -%}
+        <ul class="ersa-collection-campaign__timer" aria-label="{{ section.settings.heading | escape }} countdown">
+          <li><strong>{{ section.settings.countdown_days }}</strong><span>{{ section.settings.days_label }}</span></li>
+          <li><strong>{{ section.settings.countdown_hours }}</strong><span>{{ section.settings.hours_label }}</span></li>
+          <li><strong>{{ section.settings.countdown_minutes }}</strong><span>{{ section.settings.minutes_label }}</span></li>
+          <li><strong>{{ section.settings.countdown_seconds }}</strong><span>{{ section.settings.seconds_label }}</span></li>
+        </ul>
+      {%- endif -%}
     </div>
   </div>
 

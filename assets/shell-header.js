@@ -112,3 +112,54 @@ if (!customElements.get('sticky-header')) {
 
   customElements.define('sticky-header', StickyHeader);
 }
+
+/* The desktop Shop All link remains a normal navigation link while offering a
+ * keyboard route into its hover-only collection panel. */
+(() => {
+  const triggerSelector = '[data-collection-menu-trigger]';
+
+  const handleCollectionMenuKeydown = (event) => {
+    const trigger = event.currentTarget;
+    const menuItem = trigger.closest('.header__menu-list-item--collection-menu');
+    const panel = menuItem?.querySelector('.header-collection-dropdown__panel');
+    if (!panel) return;
+
+    if (event.key === 'ArrowDown') {
+      const firstCollectionLink = panel.querySelector('.header-collection-dropdown__link');
+      if (!firstCollectionLink) return;
+
+      event.preventDefault();
+      window.requestAnimationFrame(() => firstCollectionLink.focus());
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      menuItem.querySelector(triggerSelector)?.focus();
+    }
+  };
+
+  const bindCollectionMenuKeyboard = (scope = document) => {
+    scope.querySelectorAll(triggerSelector).forEach((trigger) => {
+      if (trigger.dataset.collectionMenuKeyboardBound === 'true') return;
+      trigger.dataset.collectionMenuKeyboardBound = 'true';
+      trigger.addEventListener('keydown', handleCollectionMenuKeydown);
+
+      const panel = trigger
+        .closest('.header__menu-list-item--collection-menu')
+        ?.querySelector('.header-collection-dropdown__panel');
+      if (!panel || panel.dataset.collectionMenuKeyboardBound === 'true') return;
+      panel.dataset.collectionMenuKeyboardBound = 'true';
+      panel.addEventListener('keydown', handleCollectionMenuKeydown);
+    });
+  };
+
+  const initializeCollectionMenuKeyboard = () => bindCollectionMenuKeyboard();
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCollectionMenuKeyboard, { once: true });
+  } else {
+    initializeCollectionMenuKeyboard();
+  }
+
+  document.addEventListener('shopify:section:load', initializeCollectionMenuKeyboard);
+})();

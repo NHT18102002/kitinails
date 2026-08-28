@@ -49,13 +49,15 @@ Before deleting or replacing large portions of the theme, inspect dependencies a
 * Expected workflow tools: Shopify CLI, Shopify Theme Check, Chrome browser inspection, and Git
 * Current repository state: this workspace uses official Shopify Dawn `v15.5.0` as the technical base, commit `83d5e6b4094d8019820bffafe04b242d0602ffe2`
 * Project documentation is preserved under `docs/`
-* Do not claim or add a Node build pipeline, jQuery, frameworks, app dependencies, or package scripts unless the repository later verifies them
+* The root `package.json` contains verified Node/Playwright theme-quality tooling only; it is not a storefront build pipeline
+* Do not add jQuery, frontend frameworks, app dependencies, a storefront build pipeline, or new package scripts unless the repository and approved task require them
 * Dawn is the technical base only; the agent may substantially redesign or replace its visual components to match the authorized reference storefront
 
 # Repository Map
 
 * `docs/`: English research, rebuild, UX, SEO, accessibility, performance, feature, URL, and technology evidence
 * `docs/vietnamese/`: Vietnamese versions of project research documents
+* `docs/ui-development-rules.md`: canonical rules and quality gates for every storefront UI/UX change
 * `layout/`: global Shopify theme wrappers such as `theme.liquid` and `password.liquid`
 * `templates/`: JSON and Liquid templates for index, product, collection, page, blog, article, search, cart, policy, and customer pages
 * `templates/customers/`: customer account templates if the theme uses classic customer accounts
@@ -115,7 +117,15 @@ When reproducing assets or content from the reference website:
 
 7. Shopify development themes may expire or be deleted after inactivity; important work must be committed to Git and pushed to an unpublished theme.
 
-8. There are no verified package scripts in this repository today; use direct Shopify CLI commands unless future scripts are added and documented.
+8. Use the verified root quality scripts when relevant:
+
+   ```bash
+   npm run check:theme:all
+   npm run report:theme:assets
+   npm run test:theme:e2e
+   ```
+
+   These scripts are test and validation tooling only; they do not build storefront assets.
 
 9. Use browser inspection against both the reference site and the local preview for visual QA.
 
@@ -138,6 +148,42 @@ When reproducing assets or content from the reference website:
 * Keep product taxonomy configurable for shape, length, finish, style, size guide group, included items, care instructions, and cross-sells.
 * Prefer Shopify Search & Discovery-compatible filters and native product recommendations before app-heavy alternatives.
 * Reuse existing Dawn components when they can be adapted efficiently; replace them when they prevent close visual or functional matching.
+
+# UI/UX Development Rules and Required Skill
+
+`docs/ui-development-rules.md` is the canonical implementation and validation contract for every storefront UI change. Read it together with `docs/theme-architecture.md` and `docs/theme-feature-ownership.md` before editing UI code.
+
+The repository-provided `ui-ux-pro-max` skill must be loaded and used before designing, implementing, reviewing, or fixing any task that changes:
+
+* Visual appearance, layout, typography, color, icons, spacing, or motion
+* Responsive behavior
+* Page or component structure
+* Navigation, forms, feedback, or interaction behavior
+* Accessibility or usability
+
+Use the skill according to the smallest relevant scope:
+
+* New page or system-wide visual direction: use its `--design-system` workflow.
+* Targeted component or UX concern: use one focused `--domain` search.
+* Review work: apply the relevant Quick Reference and pre-delivery checks.
+
+The skill has no Shopify/Liquid-specific stack. Treat its output as design intelligence, not repository authority:
+
+* Project-owner instructions, Shopify contracts, the authorized Ersa Nails reference, theme architecture, and feature ownership take precedence.
+* Do not apply React, Tailwind, shadcn, native-app, GSAP, icon-package, or framework suggestions unless the current task and repository explicitly support them.
+* Translate applicable guidance into existing Liquid, CSS, and vanilla JavaScript patterns.
+* Do not install dependencies or persist generated design-system files unless the user explicitly requests it.
+* Do not expose private store data, customer data, credentials, or security-sensitive content in skill queries.
+
+Non-negotiable UI ownership rules:
+
+* Identify the Liquid, CSS, and JavaScript owner before editing.
+* New feature styling belongs to its canonical `shell-*`, `component-*`, `feature-*`, `page-*`, or `section-*` owner.
+* `brand-NN-*` and `*-cascade-*` files are compatibility zones. Do not append new design rules to them merely to win the cascade.
+* Do not create catch-all override stylesheets, add new `!important`, or load local-feature assets globally.
+* Preserve section filenames, setting IDs, block types, template section IDs, Shopify/Dawn DOM hooks, AJAX payloads, and Theme Editor behavior unless an approved migration explicitly changes them.
+* New JavaScript must be idempotent across initial load and `shopify:section:load`, with listener/observer teardown or duplicate-registration protection.
+* Every UI task must validate accessibility, keyboard behavior, reduced motion, relevant commerce states, and the 1440/1024/768/390px viewports.
 
 # Required Storefront Capabilities
 

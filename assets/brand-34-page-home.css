@@ -139,7 +139,7 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length,
 .template-index .ersa-collection-grid--shop-by-shape,
 .template-index .ersa-collection-grid--shop-by-length {
   overflow: hidden !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-collection-grid--shop-by-shape,
@@ -406,7 +406,7 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collecti
 
   main[data-template='index'] .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid,
   .template-index .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    grid-template-columns: repeat(var(--ersa-collection-grid-columns, 4), minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 0.6rem !important;
   }
 
@@ -447,7 +447,7 @@ main[data-template='index'] .ersa-collection-grid--shop-by-length .ersa-collecti
 /* Phase 3 rework refinements: keep Shape/Length adjacent and fix section-scoped overrides */
 main[data-template='index'] #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid,
 .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid {
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] #shopify-section-template--20456552071319__browse_length .ersa-collection-grid,
@@ -641,7 +641,7 @@ main[data-template='index'] #shopify-section-template--20456552071319__collectio
   aspect-ratio: 0.91 / 1 !important;
   border-radius: 0 !important;
   overflow: hidden !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] #shopify-section-template--20456552071319__collection_grid .ersa-collection-grid__image {
@@ -692,7 +692,7 @@ main[data-template='index'] .ersa-as-seen-in__logo-img {
 main[data-template='index'] .ersa-icon-row {
   padding-top: 4rem !important;
   padding-bottom: 4rem !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-icon-row__grid {
@@ -732,7 +732,7 @@ main[data-template='index'] .ersa-must-have__media {
   top: 8rem !important;
   min-height: 72rem !important;
   overflow: hidden !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-must-have__image,
@@ -782,13 +782,13 @@ main[data-template='index'] .ersa-must-have__products {
 }
 
 main[data-template='index'] .ersa-must-have__placeholder-card {
-  background: #f7f4f1 !important;
+  background: #fff !important;
   padding: 1.6rem !important;
   text-align: center !important;
 }
 
 main[data-template='index'] .ersa-reviews-carousel {
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-reviews-carousel__heading,
@@ -821,7 +821,7 @@ main[data-template='index'] .ersa-social-gallery__item {
 
 main[data-template='index'] .ersa-social-gallery__image-link {
   aspect-ratio: 0.78 / 1 !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-social-gallery__image,
@@ -845,8 +845,8 @@ main[data-template='index'] .ersa-collection-grid--shop-by-shape,
 .template-index .ersa-collection-grid--shop-by-shape,
 #shopify-section-template--20456552071319__browse_shape,
 #shopify-section-template--20456552071319__browse_shape .gradient {
-  background: #f9f9f9 !important;
-  background-color: #f9f9f9 !important;
+  background: #fff !important;
+  background-color: #fff !important;
 }
 
 /* Ensure Shop By Shape uses the requested gray across all nested wrappers */
@@ -858,8 +858,8 @@ main[data-template='index'] #shopify-section-template--20456552071319__browse_sh
 .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid.gradient,
 .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__inner,
 .template-index #shopify-section-template--20456552071319__browse_shape .ersa-collection-grid__grid {
-  background: #f9f9f9 !important;
-  background-color: #f9f9f9 !important;
+  background: #fff !important;
+  background-color: #fff !important;
 }
 
 /* Shop By Shape large desktop sizing */
@@ -1002,7 +1002,7 @@ main[data-template='index'] .ersa-icon-row,
   margin-top: 0 !important;
   padding-top: clamp(2.6rem, 2.8vw, 3.6rem) !important;
   padding-bottom: clamp(2.8rem, 2.8vw, 3.8rem) !important;
-  background: #f7f7f7 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-icon-row__inner,
@@ -1318,7 +1318,7 @@ main[data-template='index'] .section-ersa-icon-row .ersa-icon-row,
   min-height: 16.2rem !important;
   padding-top: 3.2rem !important;
   padding-bottom: 3.2rem !important;
-  background: #f7f7f7 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .section-ersa-icon-row .ersa-icon-row__inner,
@@ -1527,6 +1527,29 @@ main[data-template='index'] .section-ersa-icon-row .ersa-icon-row__text p,
   .template-index .ersa-must-have__products {
     margin-top: 0 !important;
   }
+
+  /* Keep the feature image anchored while the Nails Art product rail scrolls. */
+  main[data-template='index'] .ersa-must-have__content,
+  .template-index .ersa-must-have__content {
+    align-self: stretch;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+
+  main[data-template='index'] .ersa-must-have__products,
+  .template-index .ersa-must-have__products {
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--color-foreground), 0.28) transparent;
+    padding-right: 0.8rem !important;
+  }
 }
 
 @media screen and (max-width: 989px) {
@@ -1539,6 +1562,27 @@ main[data-template='index'] .section-ersa-icon-row .ersa-icon-row__text p,
   .template-index .ersa-must-have__media {
     position: relative !important;
     isolation: isolate !important;
+  }
+
+  main[data-template='index'] .ersa-must-have__content,
+  .template-index .ersa-must-have__content {
+    min-height: 0;
+    height: min(70svh, 56rem);
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+
+  main[data-template='index'] .ersa-must-have__products,
+  .template-index .ersa-must-have__products {
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--color-foreground), 0.28) transparent;
+    padding-right: 0.8rem !important;
   }
 
   main[data-template='index'] .ersa-must-have__media::before,
@@ -1612,7 +1656,7 @@ main[data-template='index'] .ersa-must-have__media,
   height: clamp(58rem, 44vw, 82rem) !important;
   border-radius: 0.6rem !important;
   overflow: hidden !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 main[data-template='index'] .ersa-must-have__media::before,
@@ -2074,7 +2118,7 @@ main[data-template='index'] #shopify-section-template--20456552071319__trust_row
 .template-index #shopify-section-template--20456552071319__trust_row {
   display: block !important;
   overflow: visible !important;
-  background: #f7f7f7 !important;
+  background: #fff !important;
   z-index: 2 !important;
 }
 

@@ -193,6 +193,11 @@
   min-width: 20rem;
 }
 
+.ersa-collection-grid.color-scheme-1 .ersa-collection-grid__view-all .button--secondary {
+  color: rgb(var(--color-foreground));
+  border-color: rgb(var(--color-foreground));
+}
+
 @media screen and (max-width: 989px) {
   .ersa-collection-grid__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -321,6 +326,15 @@
   transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
 
+.ersa-reviews-carousel__card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.25 / 1;
+  border-radius: 1.4rem;
+  object-fit: cover;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
 .ersa-reviews-carousel__card:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 2rem 4.8rem rgba(var(--color-shadow), 0.1);
@@ -393,6 +407,14 @@
   letter-spacing: 0.02em;
 }
 
+.ersa-reviews-carousel__sample-label {
+  color: rgba(var(--color-foreground), 0.52);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .ersa-reviews-carousel__verified {
   display: inline-flex;
   align-items: center;
@@ -408,36 +430,36 @@
 
 @media screen and (max-width: 749px) {
   .ersa-reviews-carousel {
-    max-width: 100% !important;
-    overflow-x: clip !important;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   .ersa-reviews-carousel__inner {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .ersa-reviews-carousel__track-wrapper {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
   }
 
   .ersa-reviews-carousel__track {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     grid-auto-columns: min(32rem, calc(100vw - 5.6rem));
-    justify-content: start !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-padding-left: 0;
     box-sizing: border-box;
@@ -447,6 +469,11 @@
     min-height: auto;
     border-radius: 1.8rem;
     padding: 2rem;
+  }
+
+  .ersa-reviews-carousel__card-image {
+    aspect-ratio: 1.2 / 1;
+    border-radius: 1.2rem;
   }
 
   .ersa-reviews-carousel__heading {

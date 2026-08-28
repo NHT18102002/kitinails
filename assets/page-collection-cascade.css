@@ -366,6 +366,141 @@ main[data-template='collection'] .pagination-wrapper {
   }
 }
 
+/* Collection visual system: keep the native facets markup and AJAX hooks,
+   while presenting the product catalogue as the supplied reference. */
+body:has(main[data-template='collection']) .announcement-bar-section {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__marquee {
+  display: flex !important;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__content {
+  padding-top: 0;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__heading {
+  font-size: clamp(3.4rem, 3.4vw, 5.2rem);
+}
+
+main[data-template='collection'] .ersa-collection-campaign__heading + .ersa-collection-campaign__eyebrow {
+  margin-top: 0.7rem;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+@media screen and (min-width: 750px) {
+  main[data-template='collection'] .collection-filters-panel {
+    width: 20rem !important;
+    max-width: 20rem !important;
+  }
+
+  main[data-template='collection'] .facets-vertical.page-width {
+    grid-template-columns: 20rem minmax(0, 1fr) !important;
+    column-gap: 3rem !important;
+  }
+
+  main[data-template='collection'] .facets-vertical-sort.page-width {
+    padding-left: 29rem !important;
+  }
+
+  main[data-template='collection'] .facets__heading--vertical {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+  }
+
+  main[data-template='collection'] .facets__summary {
+    min-height: 3.3rem !important;
+  }
+
+  main[data-template='collection'] .facets__summary-label,
+  main[data-template='collection'] .facets__summary > div > span:first-child {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.035em;
+  }
+
+  main[data-template='collection'] .facets__summary > div::after {
+    font-size: 1.65rem !important;
+  }
+
+  main[data-template='collection'] .facets__display-vertical {
+    padding: 0.1rem 0 0.9rem !important;
+  }
+
+  main[data-template='collection'] .facets__value-pill {
+    min-height: 2.25rem !important;
+    padding: 0.2rem 0 !important;
+    font-size: 1.15rem !important;
+  }
+
+  main[data-template='collection'] .facets__value-pill-box {
+    flex-basis: 1.15rem !important;
+    inline-size: 1.15rem !important;
+    block-size: 1.15rem !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='collection'] .ersa-collection-campaign__heading {
+    font-size: 3rem;
+  }
+
+  main[data-template='collection'] .ersa-collection-campaign__heading + .ersa-collection-campaign__eyebrow {
+    font-size: 1.25rem;
+  }
+
+  main[data-template='collection'] [data-mobile-facets-disclosure][open] .mobile-facets {
+    padding: 1.2rem !important;
+    background: #f4e9ef !important;
+  }
+
+  main[data-template='collection'] [data-mobile-facets-disclosure][open] .mobile-facets__inner {
+    inset: 1.2rem !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    border: 0 !important;
+    background: #fff !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__close {
+    top: calc(2.2rem + env(safe-area-inset-top)) !important;
+    right: auto !important;
+    left: 2.8rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__header {
+    padding: calc(5.4rem + env(safe-area-inset-top)) 2rem 1.8rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__heading {
+    font-family: var(--font-heading-family) !important;
+    font-size: 2.5rem !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__details--sort {
+    border-top: 0.1rem solid #111 !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__summary {
+    min-height: 5.3rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__summary span:first-child {
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+  }
+}
+
 /* Collection page reference pass: campaign stack, responsive toolbar, product cards */
 body:has(main[data-template='collection']) .announcement-bar,
 body:has(main[data-template='collection']) .announcement-bar-section {
@@ -1247,6 +1382,134 @@ main[data-template='collection'] #product-grid .card__inner > .quick-add .quick-
 
   main[data-template='collection'] #product-grid.product-grid {
     margin-top: 0 !important;
+  }
+}
+
+/* Final, source-order owner rules for the collection catalogue. */
+main[data-template='collection'] .ersa-collection-campaign__marquee {
+  display: flex !important;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__content {
+  padding-top: 0;
+}
+
+main[data-template='collection'] .ersa-collection-campaign__heading {
+  font-size: clamp(3.4rem, 3.4vw, 5.2rem);
+}
+
+main[data-template='collection'] .ersa-collection-campaign__heading + .ersa-collection-campaign__eyebrow {
+  margin-top: 0.7rem;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+@media screen and (min-width: 750px) {
+  main[data-template='collection'] .collection-filters-panel {
+    width: 20rem !important;
+    max-width: 20rem !important;
+  }
+
+  main[data-template='collection'] .facets-vertical.page-width {
+    grid-template-columns: 20rem minmax(0, 1fr) !important;
+    column-gap: 3rem !important;
+  }
+
+  main[data-template='collection'] .facets-vertical-sort.page-width {
+    padding-left: 29rem !important;
+  }
+
+  main[data-template='collection'] .facets__heading--vertical {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+  }
+
+  main[data-template='collection'] .facets__summary {
+    min-height: 3.3rem !important;
+  }
+
+  main[data-template='collection'] .facets__summary-label,
+  main[data-template='collection'] .facets__summary > div > span:first-child {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.035em;
+  }
+
+  main[data-template='collection'] .facets__summary > div::after {
+    font-size: 1.65rem !important;
+  }
+
+  main[data-template='collection'] .facets__display-vertical {
+    padding: 0.1rem 0 0.9rem !important;
+  }
+
+  main[data-template='collection'] .facets__value-pill {
+    min-height: 2.25rem !important;
+    padding: 0.2rem 0 !important;
+    font-size: 1.15rem !important;
+  }
+
+  main[data-template='collection'] .facets__value-pill-box {
+    flex-basis: 1.15rem !important;
+    inline-size: 1.15rem !important;
+    block-size: 1.15rem !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='collection'] .ersa-collection-campaign__heading {
+    font-size: 3rem;
+  }
+
+  main[data-template='collection'] .ersa-collection-campaign__heading + .ersa-collection-campaign__eyebrow {
+    font-size: 1.25rem;
+  }
+
+  main[data-template='collection'] [data-mobile-facets-disclosure][open] .mobile-facets {
+    padding: 1.2rem !important;
+    background: #f4e9ef !important;
+  }
+
+  main[data-template='collection'] [data-mobile-facets-disclosure][open] .mobile-facets__inner {
+    inset: 1.2rem !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    border: 0 !important;
+    background: #fff !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__close {
+    top: calc(2.2rem + env(safe-area-inset-top)) !important;
+    right: auto !important;
+    left: 2.8rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__header {
+    padding: calc(5.4rem + env(safe-area-inset-top)) 2rem 1.8rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__heading {
+    font-family: var(--font-heading-family) !important;
+    font-size: 2.5rem !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__details--sort {
+    border-top: 0.1rem solid #111 !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__summary {
+    min-height: 5.3rem !important;
+  }
+
+  main[data-template='collection'] .mobile-facets__summary span:first-child {
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
   }
 }
 

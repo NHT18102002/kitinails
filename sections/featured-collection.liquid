@@ -50,6 +50,10 @@
     assign is_homepage_product_rail = true
   elsif request.page_type == 'index' and has_collection and section.settings.collection.handle == 'island-glow-club'
     assign is_homepage_product_rail = true
+  elsif request.page_type == 'index' and has_collection and section.settings.collection.handle == 'summer-vibes'
+    assign is_homepage_product_rail = true
+  elsif request.page_type == 'index' and has_collection and section.settings.collection.handle == 'cute-nails'
+    assign is_homepage_product_rail = true
   elsif request.page_type == 'product' and has_collection and section.settings.collection.handle == 'best-seller'
     assign is_homepage_best_sellers = true
     assign is_homepage_product_rail = true
@@ -126,6 +130,10 @@
         {%- assign homepage_rail_link_label = 'Shop summer' -%}
         {%- if is_homepage_best_sellers -%}
           {%- assign homepage_rail_link_label = 'Shop best sellers' -%}
+        {%- elsif section.settings.collection.handle == 'cute-nails' -%}
+          {%- assign homepage_rail_link_label = 'Shop cute nails' -%}
+        {%- elsif section.settings.collection.handle == 'summer-vibes' -%}
+          {%- assign homepage_rail_link_label = 'Shop summer vibes' -%}
         {%- endif -%}
         <a
           href="{{ section.settings.collection.url }}"

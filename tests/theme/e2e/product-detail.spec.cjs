@@ -57,7 +57,7 @@ test('variant picker updates the selected variant without a page runtime error',
 
 test('product disclosure remains keyboard operable', async ({ page }) => {
   await page.goto(fixtures.productMultiVariant, { waitUntil: 'domcontentloaded' });
-  const disclosure = page.locator('product-info details.product__accordion').first();
+  const disclosure = page.locator('product-info .product__accordion details').first();
   test.skip((await disclosure.count()) === 0, 'Fixture exposes no product disclosure');
 
   const summary = disclosure.locator('summary').first();
@@ -121,4 +121,27 @@ test('product UGC rail stays idempotent after Theme Editor reloads', async ({ pa
   await next.click();
   await expect.poll(() => track.evaluate((element) => element.scrollLeft)).toBeGreaterThan(cardDistance * 0.8);
   expect(await track.evaluate((element) => element.scrollLeft)).toBeLessThan(cardDistance * 1.2);
+});
+
+test('PDP image rails support mouse drag without activating an image link', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.endsWith('1440'), 'Desktop pointer-drag interaction');
+  await page.goto(fixtures.productMultiVariant, { waitUntil: 'domcontentloaded' });
+
+  const track = page.locator('[data-ersa-social-gallery] .ersa-social-gallery__track').first();
+  test.skip((await track.count()) === 0, 'Product fixture has no social image rail');
+  await track.scrollIntoViewIfNeeded();
+
+  const canScroll = await track.evaluate((element) => element.scrollWidth > element.clientWidth);
+  test.skip(!canScroll, 'Social image rail has no overflow for this fixture');
+
+  const before = await track.evaluate((element) => element.scrollLeft);
+  const bounds = await track.boundingBox();
+  expect(bounds).toBeTruthy();
+
+  await page.mouse.move(bounds.x + bounds.width * 0.72, bounds.y + bounds.height * 0.5);
+  await page.mouse.down();
+  await page.mouse.move(bounds.x + bounds.width * 0.28, bounds.y + bounds.height * 0.5, { steps: 6 });
+  await page.mouse.up();
+
+  await expect.poll(() => track.evaluate((element) => element.scrollLeft)).toBeGreaterThan(before + 20);
 });

@@ -443,3 +443,97 @@ if (!customElements.get('product-info')) {
     }
   );
 }
+
+// Keep native <details> semantics while adding a short opening motion to PDP accordions.
+// Closing remains native so Escape, keyboard activation and assistive technology state stay immediate.
+(() => {
+  const DETAILS_SELECTOR = 'product-info .product__accordion > details';
+  const initializedAttribute = 'data-product-accordion-motion';
+  const activeAnimations = new WeakMap();
+
+  function prefersReducedMotion() {
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function clearMotionStyles(content) {
+    content.style.removeProperty('height');
+    content.style.removeProperty('overflow');
+    content.style.removeProperty('opacity');
+    content.style.removeProperty('transform');
+  }
+
+  function animateOpen(details) {
+    const content = details.querySelector(':scope > .accordion__content');
+    if (!content || prefersReducedMotion() || typeof content.animate !== 'function') return;
+
+    activeAnimations.get(details)?.cancel();
+    details.open = true;
+
+    content.style.height = '0px';
+    content.style.overflow = 'hidden';
+    content.style.opacity = '0';
+    content.style.transform = 'translateY(-0.6rem)';
+
+    const animation = content.animate(
+      [
+        { height: '0px', opacity: 0, transform: 'translateY(-0.6rem)' },
+        { height: `${content.scrollHeight}px`, opacity: 1, transform: 'translateY(0)' },
+      ],
+      {
+        duration: 240,
+        easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      }
+    );
+
+    activeAnimations.set(details, animation);
+    animation.onfinish = () => {
+      if (activeAnimations.get(details) !== animation) return;
+      clearMotionStyles(content);
+      activeAnimations.delete(details);
+    };
+  }
+
+  function bindAccordionMotion(details) {
+    if (details.hasAttribute(initializedAttribute)) return;
+    details.setAttribute(initializedAttribute, 'true');
+
+    details.addEventListener('click', (event) => {
+      const summary = event.target.closest('summary');
+      if (!summary || summary.parentElement !== details || details.open) return;
+
+      const content = details.querySelector(':scope > .accordion__content');
+      if (!content || prefersReducedMotion() || typeof content.animate !== 'function') return;
+
+      event.preventDefault();
+      summary.setAttribute('aria-expanded', 'true');
+      animateOpen(details);
+    });
+
+    details.addEventListener('toggle', () => {
+      if (details.open) return;
+      activeAnimations.get(details)?.cancel();
+      const content = details.querySelector(':scope > .accordion__content');
+      if (content) clearMotionStyles(content);
+      activeAnimations.delete(details);
+    });
+  }
+
+  function initializeAccordionMotion(scope = document) {
+    const root = scope instanceof Element ? scope : document;
+    root.querySelectorAll(DETAILS_SELECTOR).forEach(bindAccordionMotion);
+  }
+
+  function initializeWhenReady() {
+    initializeAccordionMotion();
+    document.addEventListener('shopify:section:load', (event) => initializeAccordionMotion(event.target));
+  }
+
+  if (!window.__ersaProductAccordionMotionInitialized) {
+    window.__ersaProductAccordionMotionInitialized = true;
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeWhenReady, { once: true });
+    } else {
+      initializeWhenReady();
+    }
+  }
+})();

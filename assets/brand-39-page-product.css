@@ -107,7 +107,7 @@ body:has(.product) .product__title,
 body:has(.product) .product__title h1 {
   margin: 0 !important;
   font-family: var(--ersa-heading-font, 'Iowan Old Style', Baskerville, 'Times New Roman', serif) !important;
-  font-size: clamp(3rem, 2.45vw, 3.8rem) !important;
+  font-size: clamp(2.4rem, 1.55vw, 3rem) !important;
   line-height: 1.06 !important;
   font-weight: 400 !important;
   letter-spacing: -0.04em !important;
@@ -333,7 +333,7 @@ body:has(.product) .accordion__title {
   .template-product .product__title h1,
   body:has(.product) .product__title,
   body:has(.product) .product__title h1 {
-    font-size: 3rem !important;
+    font-size: 2.2rem !important;
   }
 
   .template-product .product__info-container > * + *,
@@ -520,7 +520,7 @@ body:has(.product) .product__info-container .icon-with-text .h4 {
     aspect-ratio: 4 / 5 !important;
     border-radius: 1.4rem !important;
     margin-bottom: 1.4rem !important;
-    background: #f7f4f1 !important;
+    background: #fff !important;
     box-shadow: 0 1.4rem 3rem rgba(17, 17, 17, 0.14) !important;
   }
 
@@ -556,7 +556,7 @@ body:has(.product) .product__info-container .complementary-products__container {
   padding: 1.4rem !important;
   border: 0 !important;
   border-radius: 0 !important;
-  background: #f5f3f1 !important;
+  background: #fff !important;
 }
 
 .template-product .product__info-container .complementary-products .summary__title,
@@ -602,7 +602,7 @@ body:has(.product) .product__info-container .complementary-products .card--horiz
   width: 8.4rem !important;
   min-width: 8.4rem !important;
   aspect-ratio: 1 / 1.18 !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
 }
 
 .template-product .product__info-container .complementary-products .card--horizontal .card__media,
@@ -748,7 +748,7 @@ body:has(.product) .product__info-container .complementary-products__container {
 body:has(.product) .product__info-container .complementary-slide li {
   padding: 1.6rem 1.8rem !important;
   border-radius: 0.6rem !important;
-  background: #f5f3f1 !important;
+  background: #fff !important;
 }
 
 .template-product .product__info-container .complementary-products .summary__title,
@@ -966,7 +966,7 @@ body:has(.product) .ersa-product-custom-cta {
   max-width: 45.5rem !important;
   margin: 2.4rem 0 0 !important;
   padding: 1.8rem 2rem !important;
-  background: #f7f4f1 !important;
+  background: #fff !important;
   text-align: center !important;
 }
 
@@ -1492,7 +1492,7 @@ body:has(.product) .product-form__buttons + * {
     margin-bottom: 1.3rem !important;
     border-radius: 1.4rem !important;
     overflow: hidden !important;
-    background: #f7f4f1 !important;
+    background: #fff !important;
     box-shadow: 0 1.4rem 3.2rem rgba(17, 17, 17, 0.14) !important;
   }
 
@@ -1845,7 +1845,7 @@ body:has(.product) .product-form__buttons + * {
   .template-product .product__title h1,
   body:has(.product) .product__title,
   body:has(.product) .product__title h1 {
-    font-size: 3.2rem !important;
+    font-size: 2.6rem !important;
   }
 }
 /* Product page laptop control widths fit narrow info column */
@@ -2160,7 +2160,7 @@ body:has(main[data-template='product']) .product-form__input .form__label { padd
     display: grid !important;
     grid-template-columns: minmax(0, 62.3rem) minmax(0, 46rem) !important;
     column-gap: 14.1rem !important;
-    justify-content: start !important;
+    justify-content: center !important;
     align-items: start !important;
     max-width: 132rem !important;
     padding-inline: 0 !important;

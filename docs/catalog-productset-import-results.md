@@ -39,6 +39,20 @@ npm run import:products:qa
 - Media reuse was stabilized by stripping mutable file fields from `productSet` file inputs and reusing Shopify file IDs only.
 - QA compares DRAFT status, source URL, tags, metafields, media count, variants, and demo inventory quantities.
 
+## Inventory ownership
+
+The source crawl exposes only an availability flag, so the initial product creation
+uses demo quantities (`50` for an available source variant and `0` for a sold-out
+source variant). Once a product exists, inventory is merchant-managed in Shopify
+Admin. Product updates now omit `inventoryQuantities`, which prevents a later
+catalog import from replacing an Admin-entered Available quantity. Import QA also
+skips quantity comparison for update/adopt records while continuing to verify
+quantities for newly created products.
+
+To edit stock, open the product in Shopify Admin, activate the variant at the
+intended location (for example, `Shop location`), enable quantity tracking, and
+edit the `Available` value. Do not use a catalog re-import as an inventory editor.
+
 ## Key manifests
 
 - `data/catalog/manifests/productset-import.json`

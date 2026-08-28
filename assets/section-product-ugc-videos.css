@@ -39,6 +39,19 @@
   scrollbar-width: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .ersa-product-ugc-videos__track {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .ersa-product-ugc-videos__track.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+}
+
 .ersa-product-ugc-videos__track::-webkit-scrollbar {
   display: none;
 }

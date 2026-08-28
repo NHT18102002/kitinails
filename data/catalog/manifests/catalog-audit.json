@@ -2423,7 +2423,7 @@
       "conflicts": [],
       "pendingHandlesCount": 591,
       "diagnostics": {
-        "storeDomain": "develop-store-5y6bipog.myshopify.com",
+        "storeDomain": "kitinails.myshopify.com",
         "previewProbe": {
           "status": 401,
           "reason": "preview_access_token_invalid"
@@ -17896,7 +17896,7 @@
     "conflicts": [],
     "pendingHandlesCount": 591,
     "diagnostics": {
-      "storeDomain": "develop-store-5y6bipog.myshopify.com",
+      "storeDomain": "kitinails.myshopify.com",
       "previewProbe": {
         "status": 401,
         "reason": "preview_access_token_invalid"

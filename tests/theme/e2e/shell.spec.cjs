@@ -10,6 +10,58 @@ function unexpectedRuntimeErrors(messages) {
   );
 }
 
+const canonicalDesktopMenuIds = [
+  'HeaderMenu-shop-all',
+  'HeaderMenu-best-seller',
+  'HeaderMenu-accessories',
+  'HeaderMenu-custom-orders',
+  'HeaderMenu-about-us',
+];
+
+test('canonical desktop header renders the same navigation on standard storefront pages', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.endsWith('1440'), 'Desktop shell parity');
+  test.setTimeout(120_000);
+
+  const routes = [fixtures.home, fixtures.collection, fixtures.productMultiVariant, fixtures.searchResults, fixtures.cart, fixtures.informationPage];
+
+  for (const route of routes) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+
+    const header = page.locator('.shopify-section-group-header-group.section-header');
+    await expect(header).toHaveCount(1);
+    await expect(header.locator('.header__desktop-nav [id^="HeaderMenu-"]')).toHaveCount(canonicalDesktopMenuIds.length);
+    await expect
+      .poll(() => header.locator('.header__desktop-nav [id^="HeaderMenu-"]').evaluateAll((items) => items.map((item) => item.id)))
+      .toEqual(canonicalDesktopMenuIds);
+
+    for (const id of canonicalDesktopMenuIds) {
+      await expect(header.locator(`#${id}`)).toBeVisible();
+    }
+  }
+});
+
+test('collection navigation exposes one readable current destination', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.endsWith('1440'), 'Desktop active navigation');
+
+  const routes = [
+    { path: fixtures.collection, id: 'HeaderMenu-shop-all' },
+    { path: '/collections/tools-accessories', id: 'HeaderMenu-accessories' },
+    { path: '/collections', id: 'HeaderMenu-custom-orders' },
+  ];
+
+  for (const { path, id } of routes) {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+
+    const header = page.locator('.shopify-section-group-header-group.section-header');
+    const currentItem = header.locator('.header__desktop-nav [aria-current="page"]');
+    await expect(currentItem).toHaveCount(1);
+    await expect(currentItem).toHaveAttribute('id', id);
+    await expect(currentItem.locator('.header__active-menu-item')).toHaveCSS('color', 'rgb(17, 17, 17)');
+  }
+
+  await expect(page.locator('#HeaderMenu-accessories')).toHaveAttribute('href', '/collections/tools-accessories');
+});
+
 test('canonical desktop collection menu remains keyboard operable', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.endsWith('1440'), 'Desktop shell interaction');
   await page.goto(fixtures.home, { waitUntil: 'domcontentloaded' });
@@ -21,6 +73,7 @@ test('canonical desktop collection menu remains keyboard operable', async ({ pag
   await page.keyboard.press('Enter');
   await expect(menu).toHaveAttribute('open', '');
   await expect(menu.locator('.header-collection-dropdown__link').first()).toBeVisible();
+  await expect(menu.locator('.header-collection-dropdown__media').first()).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(menu).not.toHaveAttribute('open', '');
 });

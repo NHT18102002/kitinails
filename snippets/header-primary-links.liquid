@@ -6,7 +6,7 @@
 {% endcomment %}
 
 {%- liquid
-  assign primary_menu_items = 'Shop All::/collections/all||Best Seller::/collections/all?sort_by=best-selling||Accessories::/collections/all||Custom Orders::/collections||About Us::/pages/about-us'
+  assign primary_menu_items = 'Shop All::/collections/all||Best Seller::/collections/all?sort_by=best-selling||Accessories::/collections/tools-accessories||Custom Orders::/collections||About Us::/pages/about-us'
   assign primary_menu_items = primary_menu_items | split: '||'
 -%}
 
@@ -37,6 +37,9 @@
           <summary
             id="HeaderDrawer-{{ primary_menu_handle }}"
             class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if is_current_link %} menu-drawer__menu-item--active{% endif %}"
+            {% if is_current_link %}
+              aria-current="page"
+            {% endif %}
           >
             {{- primary_menu_label | escape -}}
             <span class="svg-wrapper">
@@ -69,25 +72,26 @@
     {%- endif -%}
   {%- else -%}
     {%- if is_shop_all -%}
-      <li class="header__menu-list-item header__menu-list-item--has-children">
-        <header-menu>
-          <details id="Details-HeaderMenu-{{ primary_menu_handle }}" class="header-collection-dropdown">
-            <summary
-              id="HeaderMenu-{{ primary_menu_handle }}"
-              class="header__menu-item list-menu__item link focus-inset"
-            >
-              <span{% if is_current_link %} class="header__active-menu-item"{% endif %}>
-                {{- primary_menu_label | escape -}}
-              </span>
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </summary>
-            {%- render 'header-collection-menu',
-              index: forloop.index,
-              menu_color_scheme: section.settings.menu_color_scheme,
-              menu_context: 'desktop'
-            -%}
-          </details>
-        </header-menu>
+      <li class="header__menu-list-item header__menu-list-item--has-children header__menu-list-item--collection-menu">
+        <a
+          id="HeaderMenu-{{ primary_menu_handle }}"
+          href="{{ primary_menu_url }}"
+          class="header__menu-item list-menu__item link link--text focus-inset"
+          aria-controls="HeaderCollectionMenu-{{ forloop.index }}"
+          data-collection-menu-trigger
+          {% if is_current_link %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span{% if is_current_link %} class="header__active-menu-item"{% endif %}>
+            {{- primary_menu_label | escape -}}
+          </span>
+        </a>
+        {%- render 'header-collection-menu',
+          index: forloop.index,
+          menu_color_scheme: section.settings.menu_color_scheme,
+          menu_context: 'desktop'
+        -%}
       </li>
     {%- else -%}
       <li class="header__menu-list-item">

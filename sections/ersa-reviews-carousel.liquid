@@ -1,5 +1,8 @@
 ﻿<!-- theme-brand-styles-anchor -->{% render 'theme-brand-styles' %}
 
+{{ 'section-reviews-carousel.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-reviews-carousel.js' | asset_url }}" defer="defer"></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -41,21 +44,72 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="ersa-reviews-carousel__track-wrapper">
-        <div
-          class="ersa-reviews-carousel__track{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-          {% endif %}
+      <div class="ersa-reviews-carousel__track-shell">
+        <button
+          type="button"
+          class="ersa-reviews-carousel__nav ersa-reviews-carousel__nav--prev"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+          aria-controls="ReviewsTrack-{{ section.id }}"
+          data-reviews-carousel-prev
         >
+          <span class="svg-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true">
+              <path d="m15 6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <div class="ersa-reviews-carousel__track-wrapper">
+          <div
+            id="ReviewsTrack-{{ section.id }}"
+            class="ersa-reviews-carousel__track{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            role="region"
+            aria-label="{{ section.settings.heading | default: 'Customer reviews' | escape }}"
+            tabindex="0"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+            {% endif %}
+          >
+          {%- assign reviews_with_image_index = 0 -%}
+          {%- assign reviews_without_image_index = 0 -%}
           {%- for block in section.blocks -%}
+            {%- assign has_review_image = false -%}
+            {%- if block.settings.review_image != blank or block.settings.review_image_filename != blank -%}
+              {%- assign has_review_image = true -%}
+              {%- assign reviews_with_image_index = reviews_with_image_index | plus: 1 -%}
+              {%- assign review_order = reviews_with_image_index | times: 2 -%}
+            {%- else -%}
+              {%- assign reviews_without_image_index = reviews_without_image_index | plus: 1 -%}
+              {%- assign review_order = reviews_without_image_index | times: 2 | minus: 1 -%}
+            {%- endif -%}
             <figure
-              class="ersa-reviews-carousel__card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="ersa-reviews-carousel__card{% unless has_review_image %} ersa-reviews-carousel__card--no-image{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {{ block.shopify_attributes }}
-              {% if settings.animations_reveal_on_scroll %}
-                style="--animation-order: {{ forloop.index }};"
-              {% endif %}
+              style="--review-order: {{ review_order }};{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }};{% endif %}"
             >
+              {%- assign review_image_alt = block.settings.review_image_alt | default: block.settings.review_title | default: 'Customer review' -%}
+              {%- if block.settings.review_image != blank -%}
+                {{
+                  block.settings.review_image
+                  | image_url: width: 720
+                  | image_tag:
+                    widths: '320, 480, 720',
+                    sizes: '(min-width: 750px) 28rem, calc(100vw - 4rem)',
+                    class: 'ersa-reviews-carousel__card-image',
+                    loading: 'lazy',
+                    alt: review_image_alt
+                }}
+              {%- elsif block.settings.review_image_filename != blank -%}
+                <img
+                  class="ersa-reviews-carousel__card-image"
+                  src="{{ block.settings.review_image_filename | asset_url }}"
+                  alt="{{ review_image_alt | escape }}"
+                  width="720"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                >
+              {%- endif -%}
               <div class="ersa-reviews-carousel__card-top">
                 {%- if block.settings.show_stars -%}
                   <div class="ersa-reviews-carousel__card-stars" aria-label="{{ block.settings.rating | default: 5 }} out of 5 stars">
@@ -94,6 +148,9 @@
                 {%- endif -%}
                 <div class="ersa-reviews-carousel__author-info">
                   <span class="ersa-reviews-carousel__author-name">{{ block.settings.author_name | escape }}</span>
+                  {%- if block.settings.sample_content -%}
+                    <span class="ersa-reviews-carousel__sample-label">Sample content</span>
+                  {%- endif -%}
                   {%- if block.settings.verified -%}
                     <span class="ersa-reviews-carousel__verified">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -104,7 +161,22 @@
               </figcaption>
             </figure>
           {%- endfor -%}
+          </div>
         </div>
+
+        <button
+          type="button"
+          class="ersa-reviews-carousel__nav ersa-reviews-carousel__nav--next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+          aria-controls="ReviewsTrack-{{ section.id }}"
+          data-reviews-carousel-next
+        >
+          <span class="svg-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true">
+              <path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
       </div>
     {%- endif -%}
   </div>
@@ -182,7 +254,7 @@
     {
       "type": "review",
       "name": "Review",
-      "limit": 12,
+      "limit": 20,
       "settings": [
         {
           "type": "checkbox",
@@ -206,6 +278,23 @@
           "default": "Love these nails!"
         },
         {
+          "type": "image_picker",
+          "id": "review_image",
+          "label": "Review image"
+        },
+        {
+          "type": "text",
+          "id": "review_image_filename",
+          "label": "Review image asset filename",
+          "info": "Optional theme asset filename used for seeded sample content. Upload a review image above for merchant-managed content."
+        },
+        {
+          "type": "text",
+          "id": "review_image_alt",
+          "label": "Review image alt text",
+          "default": "Customer nail design"
+        },
+        {
           "type": "richtext",
           "id": "review_text",
           "label": "Review text",
@@ -227,6 +316,13 @@
           "id": "verified",
           "default": true,
           "label": "Show verified badge"
+        },
+        {
+          "type": "checkbox",
+          "id": "sample_content",
+          "default": false,
+          "label": "Mark as sample content",
+          "info": "Use this label for preview copy until a verified customer review is available."
         }
       ]
     }

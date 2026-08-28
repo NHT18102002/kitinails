@@ -41,6 +41,38 @@ test('buildProductSetMutationInput strips mutable file fields and keeps only reu
   });
 });
 
+test('buildProductSetMutationInput preserves inventory by omitting quantities for updates', () => {
+  const request = {
+    identifier: { handle: 'fairy-garden' },
+    input: {
+      variants: [
+        {
+          sku: 'FG-XS',
+          price: '49.99',
+          inventoryPolicy: 'DENY',
+          inventoryQuantities: [{ locationId: 'gid://shopify/Location/2', name: 'available', quantity: 50 }],
+        },
+      ],
+    },
+  };
+
+  assert.deepEqual(buildProductSetMutationInput(request, { preserveInventory: true }), {
+    identifier: { handle: 'fairy-garden' },
+    input: {
+      variants: [
+        {
+          sku: 'FG-XS',
+          price: '49.99',
+          inventoryPolicy: 'DENY',
+        },
+      ],
+      files: [],
+    },
+  });
+
+  assert.equal(buildProductSetMutationInput(request).input.variants[0].inventoryQuantities[0].quantity, 50);
+});
+
 test('canReuseImportRecord keeps previously completed imports with the same request hash and source URL', () => {
   assert.equal(
     canReuseImportRecord({

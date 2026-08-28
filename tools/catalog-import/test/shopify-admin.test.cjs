@@ -12,12 +12,12 @@ const {
 
 test('normalizeStoreDomain accepts a myshopify domain or admin URL', () => {
   assert.equal(
-    normalizeStoreDomain('https://develop-store-5y6bipog.myshopify.com/admin'),
-    'develop-store-5y6bipog.myshopify.com'
+    normalizeStoreDomain('https://kitinails.myshopify.com/admin'),
+    'kitinails.myshopify.com'
   );
   assert.equal(
-    normalizeStoreDomain('develop-store-5y6bipog.myshopify.com'),
-    'develop-store-5y6bipog.myshopify.com'
+    normalizeStoreDomain('kitinails.myshopify.com'),
+    'kitinails.myshopify.com'
   );
 });
 
@@ -30,14 +30,14 @@ test('Shopify retry helpers recognize throttling and Retry-After seconds', () =>
 
 test('buildAdminGraphqlEndpoint pins API version 2026-07', () => {
   assert.equal(
-    buildAdminGraphqlEndpoint('develop-store-5y6bipog.myshopify.com'),
-    'https://develop-store-5y6bipog.myshopify.com/admin/api/2026-07/graphql.json'
+    buildAdminGraphqlEndpoint('kitinails.myshopify.com'),
+    'https://kitinails.myshopify.com/admin/api/2026-07/graphql.json'
   );
 });
 
 test('requireAdminEnv rejects missing access token', () => {
   assert.throws(
-    () => requireAdminEnv({ SHOPIFY_STORE_DOMAIN: 'develop-store-5y6bipog.myshopify.com' }),
+    () => requireAdminEnv({ SHOPIFY_STORE_DOMAIN: 'kitinails.myshopify.com' }),
     /SHOPIFY_ADMIN_ACCESS_TOKEN/
   );
 });

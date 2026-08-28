@@ -10,7 +10,10 @@
   endif
 -%}
 
-<section class="ersa-social-gallery color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+<section
+  class="ersa-social-gallery color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding"
+  data-ersa-social-gallery
+>
   <div class="ersa-social-gallery__inner page-width">
     <div class="ersa-social-gallery__header">
       {%- if section.settings.subtitle != blank -%}
@@ -23,7 +26,11 @@
         <div class="ersa-social-gallery__text rte">{{ section.settings.text }}</div>
       {%- endif -%}
     </div>
-    <div class="ersa-social-gallery__track">
+    <div
+      class="ersa-social-gallery__track"
+      tabindex="0"
+      aria-label="{{ section.settings.heading | default: 'Social gallery' | escape }}"
+    >
       {%- for block in section.blocks -%}
         <div class="ersa-social-gallery__item" {{ block.shopify_attributes }}>
           <div class="ersa-social-gallery__item-header">

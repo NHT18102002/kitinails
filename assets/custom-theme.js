@@ -1,16 +1,43 @@
 (() => {
-  const sliderSelector = 'slider-component[data-drag-scroll="homepage-best-sellers"]';
+  const dragTargets = [
+    {
+      componentSelector: 'slider-component[data-drag-scroll="homepage-best-sellers"]',
+      trackSelector: '.slider',
+    },
+    {
+      componentSelector: '[data-ersa-social-gallery]',
+      trackSelector: '.ersa-social-gallery__track',
+    },
+    {
+      componentSelector: '[data-ersa-product-ugc]',
+      trackSelector: '.ersa-product-ugc-videos__track',
+    },
+  ];
   const dragThreshold = 6;
+  const controllers = new WeakMap();
 
-  function initDragSlider(component) {
-    if (!component || component.dataset.dragReady === 'true') return;
+  function getComponents(scope, selector) {
+    const components = [];
 
-    const slider = component.querySelector('.slider');
+    if (scope instanceof Element && scope.matches(selector)) components.push(scope);
+    components.push(...scope.querySelectorAll(selector));
+
+    return components;
+  }
+
+  function initDragSlider(component, trackSelector) {
+    if (!component || component.dataset.dragScrollReady === 'true') return;
+
+    const slider = component.querySelector(trackSelector);
     if (!slider) return;
 
-    component.dataset.dragReady = 'true';
+    component.dataset.dragScrollReady = 'true';
 
-    let isMouseDown = false;
+    const controller = new AbortController();
+    const { signal } = controller;
+    controllers.set(component, controller);
+
+    let pointerId = null;
     let startX = 0;
     let startScrollLeft = 0;
     let didDrag = false;
@@ -18,36 +45,37 @@
     const hasFinePointer = () => window.matchMedia('(pointer:fine)').matches;
 
     const reset = () => {
-      isMouseDown = false;
+      pointerId = null;
       slider.classList.remove('is-dragging');
     };
 
-    slider.addEventListener('dragstart', (event) => event.preventDefault());
+    slider.addEventListener('dragstart', (event) => event.preventDefault(), { signal });
 
-    slider.addEventListener('mousedown', (event) => {
-      if (!hasFinePointer() || event.button !== 0) return;
+    slider.addEventListener('pointerdown', (event) => {
+      if (!hasFinePointer() || event.pointerType !== 'mouse' || event.button !== 0) return;
 
-      isMouseDown = true;
+      pointerId = event.pointerId;
       startX = event.clientX;
       startScrollLeft = slider.scrollLeft;
       didDrag = false;
 
+      slider.setPointerCapture?.(pointerId);
       slider.classList.add('is-dragging');
-    });
+    }, { signal });
 
-    window.addEventListener('mousemove', (event) => {
-      if (!isMouseDown) return;
+    slider.addEventListener('pointermove', (event) => {
+      if (pointerId !== event.pointerId) return;
 
       const deltaX = event.clientX - startX;
-      if (Math.abs(deltaX) > dragThreshold) didDrag = true;
+      if (!didDrag && Math.abs(deltaX) <= dragThreshold) return;
 
+      didDrag = true;
       slider.scrollLeft = startScrollLeft - deltaX;
+      event.preventDefault();
+    }, { signal });
 
-      if (didDrag) event.preventDefault();
-    });
-
-    const completeDrag = () => {
-      if (!isMouseDown) return;
+    const completeDrag = (event) => {
+      if (pointerId !== event.pointerId) return;
 
       slider.dataset.dragMoved = didDrag ? 'true' : 'false';
       reset();
@@ -57,7 +85,8 @@
       }, 0);
     };
 
-    window.addEventListener('mouseup', completeDrag);
+    slider.addEventListener('pointerup', completeDrag, { signal });
+    slider.addEventListener('pointercancel', completeDrag, { signal });
 
     slider.addEventListener(
       'click',
@@ -67,15 +96,32 @@
           event.stopPropagation();
         }
       },
-      true
+      { capture: true, signal }
     );
   }
 
-  function initAll(root = document) {
-    root.querySelectorAll(sliderSelector).forEach(initDragSlider);
+  function destroyAll(root = document) {
+    dragTargets.forEach(({ componentSelector }) => {
+      getComponents(root, componentSelector).forEach((component) => {
+        controllers.get(component)?.abort();
+        controllers.delete(component);
+        delete component.dataset.dragScrollReady;
+      });
+    });
   }
 
-  document.addEventListener('DOMContentLoaded', () => initAll(document), { once: true });
+  function initAll(root = document) {
+    dragTargets.forEach(({ componentSelector, trackSelector }) => {
+      getComponents(root, componentSelector).forEach((component) => initDragSlider(component, trackSelector));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initAll(document), { once: true });
+  } else {
+    initAll(document);
+  }
   document.addEventListener('shopify:section:load', (event) => initAll(event.target));
+  document.addEventListener('shopify:section:unload', (event) => destroyAll(event.target));
 })();
 

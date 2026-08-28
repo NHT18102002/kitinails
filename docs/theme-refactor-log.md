@@ -8,7 +8,7 @@ Scope was limited to test and documentation tooling; no storefront runtime file 
 
 ### Direct observations
 
-- Store inspected: `develop-store-5y6bipog.myshopify.com` through Shopify CLI local preview.
+- Store inspected: `kitinails.myshopify.com` through Shopify CLI local preview.
 - Local development theme ID: `152839782551`; production was not published.
 - Persistent unpublished checkpoint theme: `Ersa Architecture Refactor`, ID `152839979159`.
 - Routes exercised: homepage, `/collections/all`, multi-variant product `/products/safari`, search with/without results, empty cart, and `/pages/contact`.

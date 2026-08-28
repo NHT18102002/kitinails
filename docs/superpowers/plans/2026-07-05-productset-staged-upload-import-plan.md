@@ -331,21 +331,21 @@ const {
 
 test('normalizeStoreDomain accepts a myshopify domain', () => {
   assert.equal(
-    normalizeStoreDomain('https://develop-store-5y6bipog.myshopify.com/admin'),
-    'develop-store-5y6bipog.myshopify.com'
+    normalizeStoreDomain('https://kitinails.myshopify.com/admin'),
+    'kitinails.myshopify.com'
   );
 });
 
 test('buildAdminGraphqlEndpoint pins API 2026-07', () => {
   assert.equal(
-    buildAdminGraphqlEndpoint('develop-store-5y6bipog.myshopify.com'),
-    'https://develop-store-5y6bipog.myshopify.com/admin/api/2026-07/graphql.json'
+    buildAdminGraphqlEndpoint('kitinails.myshopify.com'),
+    'https://kitinails.myshopify.com/admin/api/2026-07/graphql.json'
   );
 });
 
 test('requireAdminEnv rejects missing token', () => {
   assert.throws(
-    () => requireAdminEnv({ SHOPIFY_STORE_DOMAIN: 'develop-store-5y6bipog.myshopify.com' }),
+    () => requireAdminEnv({ SHOPIFY_STORE_DOMAIN: 'kitinails.myshopify.com' }),
     /SHOPIFY_ADMIN_ACCESS_TOKEN/
   );
 });

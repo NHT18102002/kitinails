@@ -24,11 +24,11 @@ test('collectLogSearchRoots includes repo root when tooling runs from nested cwd
 
 test('inferStoreDomainFromLogText extracts myshopify domain from theme dev logs', () => {
   const storeDomain = inferStoreDomainFromLogText(`
-    [2] https://develop-store-5y6bipog.myshopify.com/?preview_theme_id=151269245079
-    [3] https://develop-store-5y6bipog.myshopify.com/admin/themes/151269245079/editor
+    [2] https://kitinails.myshopify.com/?preview_theme_id=151269245079
+    [3] https://kitinails.myshopify.com/admin/themes/151269245079/editor
   `);
 
-  assert.equal(storeDomain, 'develop-store-5y6bipog.myshopify.com');
+  assert.equal(storeDomain, 'kitinails.myshopify.com');
 });
 
 test('detectPreviewProbeReason recognizes expired preview token responses', () => {
@@ -53,7 +53,7 @@ test('getShopifyCliExecutionOptions enables shell mode on Windows', () => {
 
 test('summarizeConflictDiagnostics reports missing admin credentials with available store context', () => {
   const report = summarizeConflictDiagnostics({
-    storeDomain: 'develop-store-5y6bipog.myshopify.com',
+    storeDomain: 'kitinails.myshopify.com',
     adminCredentialsPresent: false,
     previewProbe: { status: 401, reason: 'preview_access_token_invalid' },
     themeInfoProbe: { status: 'ok', themeId: '151269245079' },
@@ -66,7 +66,7 @@ test('summarizeConflictDiagnostics reports missing admin credentials with availa
     conflicts: [],
     pendingHandlesCount: 2,
     diagnostics: {
-      storeDomain: 'develop-store-5y6bipog.myshopify.com',
+      storeDomain: 'kitinails.myshopify.com',
       previewProbe: { status: 401, reason: 'preview_access_token_invalid' },
       themeInfoProbe: { status: 'ok', themeId: '151269245079' },
     },

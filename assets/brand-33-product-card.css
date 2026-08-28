@@ -655,7 +655,7 @@ main[data-template='index'] .featured-collection--homepage-best-sellers .collect
   display: block !important;
   max-width: 88rem !important;
   margin: 2.2rem 0 0 !important;
-  color: #111 !important;
+  color: rgb(var(--color-foreground)) !important;
   font-size: 1.4rem !important;
   line-height: 1.45 !important;
 }
@@ -678,8 +678,8 @@ main[data-template='index'] .featured-collection--homepage-best-sellers .collect
   min-height: 4.6rem !important;
   padding: 0 2.2rem !important;
   border-radius: 0.7rem !important;
-  background: #000 !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #000 !important;
   font-size: 1.4rem !important;
   font-weight: 700 !important;
   letter-spacing: 0 !important;
@@ -715,8 +715,8 @@ main[data-template='index'] .featured-collection--homepage-best-sellers .feature
   min-height: 4.6rem !important;
   padding: 0 2.2rem !important;
   border-radius: 0.7rem !important;
-  background: #000 !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #000 !important;
   font-size: 1.4rem !important;
   font-weight: 700 !important;
   letter-spacing: 0 !important;

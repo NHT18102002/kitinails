@@ -66,6 +66,20 @@ test('custom element names have a single definition owner', () => {
   assert.deepEqual(duplicates, []);
 });
 
+test('unified product cards keep their shared hover-media and quick-buy contracts', () => {
+  const card = fs.readFileSync(path.join(root, 'snippets', 'card-product.liquid'), 'utf8');
+  const media = fs.readFileSync(path.join(root, 'snippets', 'product-card-media.liquid'), 'utf8');
+  const quickAdd = fs.readFileSync(path.join(root, 'snippets', 'product-card-quick-add.liquid'), 'utf8');
+  const styles = fs.readFileSync(path.join(root, 'assets', 'component-product-card-cascade.css'), 'utf8');
+
+  assert.match(card, /product-card-wrapper--has-secondary-media/);
+  assert.match(card, /product-card__quick-buy/);
+  assert.match(media, /product-card__image--secondary/);
+  assert.match(quickAdd, /unified_card/);
+  assert.match(styles, /product-card-wrapper--has-secondary-media:hover/);
+  assert.match(styles, /product-card__quick-buy-button:hover/);
+});
+
 test('brand cascade has ordered feature owners and no catch-all stylesheet', () => {
   const entrypoint = fs.readFileSync(path.join(root, 'snippets', 'theme-brand-styles.liquid'), 'utf8');
   const brandAssets = [...entrypoint.matchAll(/['"](brand-(\d{2})-[^'"]+\.css)['"]\s*\|\s*asset_url/g)].map(

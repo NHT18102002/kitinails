@@ -64,9 +64,25 @@
       <ul class="header-collection-dropdown__grid list-unstyled" role="list">
         {%- for store_collection in store_collections -%}
           {%- unless store_collection.handle == 'frontpage' -%}
-            <li>
+            {%- liquid
+              assign collection_image = store_collection.image | default: store_collection.featured_image
+            -%}
+            <li class="header-collection-dropdown__item">
               <a href="{{ store_collection.url }}" class="header-collection-dropdown__link link focus-inset">
-                {{- store_collection.title | escape -}}
+                <span class="header-collection-dropdown__media{% if collection_image == blank %} header-collection-dropdown__media--placeholder{% endif %}" aria-hidden="true">
+                  {%- if collection_image != blank -%}
+                    {{
+                      collection_image
+                      | image_url: width: 640
+                      | image_tag:
+                        widths: '180, 240, 320, 480, 640',
+                        sizes: '(min-width: 990px) min(15vw, 21rem), 42vw',
+                        loading: 'lazy',
+                        alt: ''
+                    }}
+                  {%- endif -%}
+                </span>
+                <span class="header-collection-dropdown__title">{{- store_collection.title | escape -}}</span>
               </a>
             </li>
           {%- endunless -%}

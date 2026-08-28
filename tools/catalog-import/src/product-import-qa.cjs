@@ -77,7 +77,7 @@ query ProductImportQa($query: String!) {
 }
 `;
 
-function compareImportedProduct({ expectedRequest, importedProduct }) {
+function compareImportedProduct({ expectedRequest, importedProduct, preserveInventory = false }) {
   const mismatches = [];
   if (!importedProduct) {
     return { handle: expectedRequest.identifier.handle, missing: true, mismatches };
@@ -115,11 +115,13 @@ function compareImportedProduct({ expectedRequest, importedProduct }) {
       mismatches.push('variantCompareAtPrice');
     }
 
-    const expectedInventory = expectedVariant.inventoryQuantities?.[0];
-    if (expectedInventory) {
-      const importedQuantity = importedVariant.inventoryByLocation?.[expectedInventory.locationId];
-      if (Number(importedQuantity) !== Number(expectedInventory.quantity)) {
-        mismatches.push('inventoryQuantities');
+    if (!preserveInventory) {
+      const expectedInventory = expectedVariant.inventoryQuantities?.[0];
+      if (expectedInventory) {
+        const importedQuantity = importedVariant.inventoryByLocation?.[expectedInventory.locationId];
+        if (Number(importedQuantity) !== Number(expectedInventory.quantity)) {
+          mismatches.push('inventoryQuantities');
+        }
       }
     }
   }
@@ -148,6 +150,7 @@ async function runProductSetImportQa({ graphql, logger = () => {} }) {
   ]);
 
   const requestsByHandle = new Map((dryRun?.requests || []).map((request) => [request.identifier.handle, request]));
+  const importRecordsByHandle = new Map((importManifest?.records || []).map((record) => [record.handle, record]));
   const qaHandles = (importManifest?.records || [])
     .filter((record) => ['complete', 'skipped_unchanged'].includes(record.status))
     .map((record) => record.handle);
@@ -169,7 +172,16 @@ async function runProductSetImportQa({ graphql, logger = () => {} }) {
     );
     const exact = (data.products?.nodes || []).find((item) => item.handle === handle);
     const imported = exact ? normalizeImportedProduct(exact, locationId) : null;
-    records.push(compareImportedProduct({ expectedRequest: request, importedProduct: imported }));
+    const importRecord = importRecordsByHandle.get(handle);
+    records.push(
+      compareImportedProduct({
+        expectedRequest: request,
+        importedProduct: imported,
+        // Quantity is written only on create. Admin-managed inventory is
+        // intentionally left untouched for updates/adoptions.
+        preserveInventory: importRecord?.decision !== 'create',
+      })
+    );
   });
 
   const manifest = {

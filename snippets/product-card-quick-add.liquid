@@ -10,11 +10,9 @@
   - submit_classes
   - requires_pdp_selection
   - horizontal
-  - homepage_context
-  - listing_context
-  - homepage_quick_buy_visual
-  - homepage_sold_out_visual
-  - listing_quick_buy_visual
+  - unified_card
+  - quick_buy_visual
+  - sold_out_visual
 {% endcomment %}
 
 <div class="{{ container_classes }}">
@@ -30,11 +28,9 @@
       class="{{ submit_classes }}{% if horizontal %} card--horizontal__quick-add animate-arrow{% endif %}"
       aria-label="{{ 'products.product.choose_options' | t }} {{ product.title | escape }}"
     >
-      {%- if homepage_context -%}
+      {%- if unified_card -%}
         <span class="visually-hidden">{{ 'products.product.choose_options' | t }}</span>
-        {{ homepage_quick_buy_visual }}
-      {%- elsif listing_context and horizontal != true -%}
-        {{ listing_quick_buy_visual }}
+        {{ quick_buy_visual }}
       {%- else -%}
         {%- if horizontal -%}
           QUICK BUY
@@ -60,11 +56,9 @@
         aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
         data-product-url="{{ product.url }}"
       >
-        {%- if homepage_context -%}
+        {%- if unified_card -%}
           <span class="visually-hidden">{{ 'products.product.choose_options' | t }}</span>
-          {{ homepage_quick_buy_visual }}
-        {%- elsif listing_context and horizontal != true -%}
-          {{ listing_quick_buy_visual }}
+          {{ quick_buy_visual }}
         {%- else -%}
           {%- if horizontal -%}
             QUICK BUY
@@ -131,7 +125,7 @@
             disabled
           {% endif %}
         >
-          {%- if homepage_context -%}
+          {%- if unified_card -%}
             <span class="visually-hidden">
               {%- if product.selected_or_first_available_variant.available -%}
                 {{ 'products.product.add_to_cart' | t }}
@@ -140,12 +134,10 @@
               {%- endif -%}
             </span>
             {%- if product.selected_or_first_available_variant.available -%}
-              {{ homepage_quick_buy_visual }}
+              {{ quick_buy_visual }}
             {%- else -%}
-              {{ homepage_sold_out_visual }}
+              {{ sold_out_visual }}
             {%- endif -%}
-          {%- elsif listing_context and horizontal != true -%}
-            {{ listing_quick_buy_visual }}
           {%- else -%}
             <span>
               {%- if product.selected_or_first_available_variant.available -%}

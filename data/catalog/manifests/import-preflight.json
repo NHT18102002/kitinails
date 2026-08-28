@@ -3,7 +3,7 @@
   "apiVersion": "2026-07",
   "shop": {
     "name": "develop store",
-    "myshopifyDomain": "develop-store-5y6bipog.myshopify.com",
+    "myshopifyDomain": "kitinails.myshopify.com",
     "currencyCode": "USD"
   },
   "approvalRequired": true,

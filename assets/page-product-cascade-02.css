@@ -62,7 +62,7 @@ body:has(main[data-template='product']) .product__info-container .icon-with-text
   gap: 1rem !important;
   padding: 0.8rem 1.1rem !important;
   border-radius: 0.4rem !important;
-  background: #f6f7f8 !important;
+  background: #fff !important;
 }
 
 body:has(main[data-template='product']) .product__info-container .icon-with-text--horizontal .svg-wrapper {
@@ -171,7 +171,7 @@ body:has(main[data-template='product']) .ersa-product-custom-cta {
   max-width: 45.5rem !important;
   margin-top: 1.9rem !important;
   padding: 2.4rem 2rem 2.2rem 5.6rem !important;
-  background: #fafbfc !important;
+  background: #fff !important;
   text-align: left !important;
 }
 
@@ -480,7 +480,7 @@ body:has(main[data-template='product']) .product__info-container .product__accor
   }
 
   body:has(main[data-template='product']) .product__title h1 {
-    font-size: 3rem !important;
+    font-size: 2.2rem !important;
     line-height: 1.06 !important;
   }
 

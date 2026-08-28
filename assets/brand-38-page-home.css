@@ -50,7 +50,7 @@
   }
 }
 
-/* Mobile Shop By Shape: larger 3-up horizontal scroll cards */
+/* Mobile Shop By Shape: show the four active cards in a 2x2 grid */
 @media screen and (max-width: 749px) {
   #MainContent .ersa-collection-grid--shop-by-shape {
     overflow: hidden !important;
@@ -61,31 +61,19 @@
   }
 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
+    display: grid !important;
+    justify-content: center !important;
     align-items: flex-start !important;
     gap: 1.2rem !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-padding-left: 0 !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding: 0 0 1rem !important;
+    overflow: visible !important;
+    padding: 0 !important;
     margin-inline: 0 !important;
-    scrollbar-width: none !important;
-  }
-
-  #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__grid::-webkit-scrollbar {
-    display: none !important;
   }
 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__card {
-    flex: 0 0 calc((100vw - 4.4rem) / 3) !important;
-    width: calc((100vw - 4.4rem) / 3) !important;
-    min-width: calc((100vw - 4.4rem) / 3) !important;
-    max-width: calc((100vw - 4.4rem) / 3) !important;
-    scroll-snap-align: start !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
   }
 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image-wrapper {
@@ -95,10 +83,11 @@
   }
 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__image {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
+    width: min(100%, 11rem) !important;
+    height: min(100%, 11rem) !important;
+    max-width: 11rem !important;
     object-fit: contain !important;
+    margin: auto;
   }
 
   #MainContent .ersa-collection-grid--shop-by-shape .ersa-collection-grid__info {
@@ -484,7 +473,7 @@
     aspect-ratio: 1 / 1 !important;
     border-radius: 0.8rem !important;
     margin-bottom: 1.6rem !important;
-    background: #f7f4f1 !important;
+    background: #fff !important;
   }
 
   #MainContent .ersa-social-gallery__button,

@@ -1,10 +1,74 @@
 /* Product page Seafoam reference pass final cascade */
+/* Page owner for the breathing room below the persistent header. */
+body:has(main[data-template='product']) main[data-template='product'] product-info[id^='MainProduct'][data-update-url='true'] {
+  padding-top: clamp(1.6rem, 2.5vw, 3.2rem) !important;
+}
+
 body:has(main[data-template='product']) .product__info-container {
-  row-gap: 0 !important;
+  row-gap: 1rem !important;
 }
 
 body:has(main[data-template='product']) .product__info-container > * + * {
   margin-top: 0 !important;
+}
+
+body:has(main[data-template='product']) .product__title,
+body:has(main[data-template='product']) .product__title h1 {
+  line-height: 1.16 !important;
+}
+
+body:has(main[data-template='product']) .product__info-container .price,
+body:has(main[data-template='product']) .product__info-container .price-item {
+  line-height: 1.45 !important;
+}
+
+body:has(main[data-template='product']) .product__tax {
+  line-height: 1.5 !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext,
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext p {
+  line-height: 1.65 !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext p {
+  margin: 0 0 0.8rem !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext ul {
+  margin: 0.8rem 0 0 !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext li {
+  margin: 0 !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext li + li {
+  margin-top: 0.35rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext,
+  body:has(main[data-template='product']) main[data-template='product'] .product__text.inline-richtext p {
+    line-height: 1.6 !important;
+  }
+}
+
+/* PDP surface palette: white backgrounds only; product media itself remains unchanged. */
+body:has(main[data-template='product']) main[data-template='product'] .product__media-wrapper .global-media-settings,
+body:has(main[data-template='product']) main[data-template='product'] .product__media-wrapper .product-media-container,
+body:has(main[data-template='product']) main[data-template='product'] .product__media-wrapper .product__modal-opener,
+body:has(main[data-template='product']) main[data-template='product'] .product__media-wrapper .thumbnail {
+  background: #fff !important;
+}
+
+body:has(main[data-template='product']) main[data-template='product'] .icon-with-text__item,
+body:has(main[data-template='product']) main[data-template='product'] .complementary-slide li,
+body:has(main[data-template='product']) main[data-template='product'] .ersa-product-benefits__media,
+body:has(main[data-template='product']) main[data-template='product'] .featured-collection .product-card__media-container,
+body:has(main[data-template='product']) main[data-template='product'] .featured-collection .product-card__media,
+body:has(main[data-template='product']) main[data-template='product'] .ersa-product-ugc-videos__media {
+  background: #fff !important;
 }
 
 body:has(main[data-template='product']) .product__info-container .product-form__buttons {
@@ -147,6 +211,7 @@ body:has(main[data-template='product']) .ersa-product-benefits {
 
 body:has(main[data-template='product']) .ersa-product-benefits__inner {
   max-width: 144rem !important;
+  margin-inline: auto !important;
 }
 
 body:has(main[data-template='product']) .ersa-product-benefits__heading-wrap {
@@ -353,6 +418,43 @@ body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
   pointer-events: none;
 }
 
+/* PDP desktop horizontal lists: centre the visible list inside a shared content frame.
+ * Overflow remains inside its slider so additional products stay reachable by drag,
+ * slider buttons and keyboard controls. */
+@media screen and (min-width: 990px) {
+  body:has(main[data-template='product']) .featured-collection__title {
+    width: min(calc(100% - 10rem), 132rem) !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  body:has(main[data-template='product']) .featured-collection__title-content {
+    width: 100% !important;
+  }
+
+  body:has(main[data-template='product']) .featured-collection > slider-component {
+    --desktop-margin-left-first-item: 0px;
+    width: min(calc(100% - 10rem), 132rem) !important;
+    max-width: 132rem !important;
+    margin-inline: auto !important;
+  }
+
+  body:has(main[data-template='product']) .featured-collection > slider-component .slider--desktop {
+    scroll-padding-left: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .featured-collection > slider-component .slider--desktop .slider__slide:first-child {
+    margin-left: 0 !important;
+    scroll-margin-left: 0 !important;
+  }
+
+  body:has(main[data-template='product']) .featured-collection > slider-component .slider--desktop.grid--4-col-desktop .grid__item {
+    flex: 0 0 calc((100% - (var(--grid-desktop-horizontal-spacing) * 3)) / 4) !important;
+    width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 3)) / 4) !important;
+    max-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 3)) / 4) !important;
+  }
+}
+
 @media screen and (max-width: 749px) {
   body:has(main[data-template='product']) .ersa-product-benefits__heading::after {
     top: 9.8rem !important;
@@ -460,7 +562,7 @@ body:has(main[data-template='product']) .ersa-social-gallery__dots {
     margin-bottom: 1.4rem !important;
     overflow: hidden !important;
     border-radius: 0.6rem !important;
-    background: #f7f4f1 !important;
+    background: #fff !important;
     box-shadow: none !important;
   }
 
